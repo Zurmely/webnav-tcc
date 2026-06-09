@@ -1,0 +1,66 @@
+{
+  "id": "casino_slot_sugar_rush",
+  "name": "Sugar Rush 1000",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_slot_sugar_rush/casino_slot_sugar_rush_loading_bet365.png",
+      "title": "Tela de carregamento",
+      "description": "Tela de carregamento do Sugar Rush 1000 com o logo da Pragmatic Play.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_sugar_rush/casino_slot_sugar_rush_paytable_01_bet365.png",
+      "title": "Regras do jogo",
+      "description": "Primeira página das regras, com símbolos e valores de pagamento.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_sugar_rush/casino_slot_sugar_rush_paytable_02_bet365.png",
+      "title": "Regras, parte 2",
+      "description": "Página explicando as mecânicas de Extra de Queda e Modo Multiplicadoras.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_sugar_rush/casino_slot_sugar_rush_paytable_03_bet365.png",
+      "title": "Regras, parte 3",
+      "description": "Página com informações sobre o prêmio máximo e a compra de rodadas grátis.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_sugar_rush/casino_slot_sugar_rush_paytable_04_bet365.png",
+      "title": "Regras, parte 4",
+      "description": "Página com as regras gerais, RTP e volatilidade do jogo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_sugar_rush/casino_slot_sugar_rush_paytable_05_bet365.png",
+      "title": "Regras, parte 5",
+      "description": "Página com instruções de como jogar.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_sugar_rush/casino_slot_sugar_rush_paytable_06_bet365.png",
+      "title": "Regras, parte 6",
+      "description": "Página com as opções do menu de configurações.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_sugar_rush/casino_slot_sugar_rush_paytable_07_bet365.png",
+      "title": "Regras, parte 7",
+      "description": "Última página, com as regras e configurações do jogo automático.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_sugar_rush/casino_slot_sugar_rush_gameplay_01_bet365.png",
+      "title": "Tela principal",
+      "description": "Tela principal do jogo com a grade de doces e o painel de apostas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_sugar_rush/casino_slot_sugar_rush_gameplay_02_bet365.png",
+      "title": "Bônus ativo",
+      "description": "Sessão com bônus de rodadas grátis ativo e multiplicadores na lateral esquerda.",
+      "darkPatterns": ""
+    }
+  ]
+}

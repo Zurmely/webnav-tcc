@@ -1,0 +1,54 @@
+{
+  "id": "casino_slot_ronaldinho_spins",
+  "name": "Ronaldinho Spins",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_slot_ronaldinho_spins/casino_slot_ronaldinho_spins_01_bet365.png",
+      "title": "Tela de carregamento",
+      "description": "Tela de carregamento do Ronaldinho Spins com a imagem do atleta e a marca do jogo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_ronaldinho_spins/casino_slot_ronaldinho_spins_02_bet365.png",
+      "title": "Sugestão de troca de idioma",
+      "description": "Modal perguntando se o jogador quer mudar o idioma do jogo para o inglês, já que o navegador está configurado nessa língua.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_ronaldinho_spins/casino_slot_ronaldinho_spins_03_bet365.png",
+      "title": "Introdução, atualização do símbolo",
+      "description": "Tela de introdução apresentando os símbolos wild do Ronaldinho e o recurso de atualização de símbolo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_ronaldinho_spins/casino_slot_ronaldinho_spins_04_bet365.png",
+      "title": "Animação de abertura",
+      "description": "Animação de abertura com o personagem do Ronaldinho no gramado do estádio.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_ronaldinho_spins/casino_slot_ronaldinho_spins_05_bet365.png",
+      "title": "Regras, wilds em expansão",
+      "description": "Tabela de pagamentos explicando os wilds em expansão, que aparecem nos rolos 2, 3 e 4 e preenchem toda a coluna.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_ronaldinho_spins/casino_slot_ronaldinho_spins_06_bet365.png",
+      "title": "Compra de bônus",
+      "description": "Tela de compra de bônus com três opções: Bônus por R$17,50, Super Bônus por R$35,00 e Bônus Ultra por R$60,00, em uma aposta de R$0,50.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_ronaldinho_spins/casino_slot_ronaldinho_spins_07_bet365.png",
+      "title": "Ganho",
+      "description": "Rodada com ganho de R$1,00 exibido como feedback, com o troféu dourado entre os símbolos.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_ronaldinho_spins/casino_slot_ronaldinho_spins_08_bet365.png",
+      "title": "Linha de pagamento",
+      "description": "Ganho de R$1,00 com a linha de pagamento destacada e a indicação de que ela paga R$0,25.",
+      "darkPatterns": ""
+    }
+  ]
+}

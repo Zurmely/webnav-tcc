@@ -1,0 +1,84 @@
+{
+  "tags": [
+    {
+      "id": "urgencia",
+      "name": "Urgência",
+      "description": "Pressão de tempo artificial — contadores regressivos, \"oferta acaba em…\" — para induzir uma decisão imediata e impulsiva."
+    },
+    {
+      "id": "escassez",
+      "name": "Escassez",
+      "description": "Sugestão de disponibilidade limitada (\"últimas vagas\", \"poucos restantes\") para criar medo de perder a oportunidade."
+    },
+    {
+      "id": "isca_e_troca",
+      "name": "Isca e Troca",
+      "description": "Bait and switch: a ação do usuário produz um resultado diferente do anunciado ou esperado."
+    },
+    {
+      "id": "confirmshaming",
+      "name": "Confirmshaming",
+      "description": "Linguagem que envergonha ou culpa o usuário por recusar uma opção (ex.: \"Não, prefiro perder meu bônus\")."
+    },
+    {
+      "id": "obstrucao",
+      "name": "Obstrução",
+      "description": "Roach motel: torna fácil entrar e difícil sair — dificulta sacar, cancelar, fechar conta ou desativar recursos."
+    },
+    {
+      "id": "acao_forcada",
+      "name": "Ação Forçada",
+      "description": "Exige uma etapa extra desnecessária para concluir uma ação desejada (ex.: reconhecimento facial obrigatório para sacar)."
+    },
+    {
+      "id": "insistencia",
+      "name": "Insistência",
+      "description": "Nagging: repetição persistente de pedidos, pop-ups ou notificações para empurrar o usuário a uma ação."
+    },
+    {
+      "id": "interferencia_visual",
+      "name": "Interferência Visual",
+      "description": "Hierarquia visual manipulada — cores, tamanho e contraste — que destaca a opção lucrativa para a casa e esconde a alternativa."
+    },
+    {
+      "id": "pre_selecao",
+      "name": "Pré-seleção",
+      "description": "Opções marcadas por padrão a favor da casa (bônus, valores, consentimentos), exigindo ação para desmarcar."
+    },
+    {
+      "id": "custos_ocultos",
+      "name": "Custos Ocultos",
+      "description": "Taxas, condições ou exigências de aposta (rollover) reveladas tarde demais no fluxo."
+    },
+    {
+      "id": "gamificacao",
+      "name": "Gamificação",
+      "description": "Elementos de jogo — recompensas, giros, conquistas, barras de progresso — usados para prolongar o engajamento e o tempo de aposta."
+    },
+    {
+      "id": "prova_social_falsa",
+      "name": "Prova Social Falsa",
+      "description": "Notificações de supostos \"ganhadores\" ou atividade ao vivo para sugerir que ganhar é fácil e comum."
+    },
+    {
+      "id": "custo_irrecuperavel",
+      "name": "Falácia do Custo Irrecuperável",
+      "description": "Explora o investimento já feito (sunk cost) para induzir o usuário a continuar apostando para \"não perder\" o que gastou."
+    },
+    {
+      "id": "ofuscacao",
+      "name": "Ofuscação",
+      "description": "Informação importante escondida ou de difícil acesso (ex.: ferramentas de jogo responsável, limites, termos do bônus)."
+    },
+    {
+      "id": "recompensa_intermitente",
+      "name": "Recompensa Intermitente",
+      "description": "Reforço variável e imprevisível (quase-vitórias, prêmios aleatórios) para estimular a repetição compulsiva."
+    },
+    {
+      "id": "moeda_virtual",
+      "name": "Ofuscação Monetária",
+      "description": "Uso de fichas, créditos ou moedas virtuais que distanciam psicologicamente o usuário do valor real do dinheiro apostado."
+    }
+  ]
+}

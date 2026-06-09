@@ -1,0 +1,30 @@
+{
+  "id": "casino_vira_lata_caramelo",
+  "name": "O Vira-Lata Caramelo",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_vira_lata_caramelo/casino_slot_immortals_02_bet365.png",
+      "title": "Tela de carregamento",
+      "description": "Tela de carregamento do O Vira-Lata Caramelo, da Pragmatic Play.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_vira_lata_caramelo/casino_slot_immortals_03_bet365.png",
+      "title": "Regras do jogo",
+      "description": "Regras do jogo com os valores de cada símbolo, o scatter do cachorro caramelo e o prêmio máximo de 5.000x.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_vira_lata_caramelo/casino_slot_immortals_04_bet365.png",
+      "title": "Tela principal",
+      "description": "Tela principal com a grade de símbolos e dois scatters visíveis. O jogo oferece a compra de rodadas grátis por R$20.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_vira_lata_caramelo/casino_slot_immortals_05_bet365.png",
+      "title": "Faça as suas apostas",
+      "description": "Tela entre rodadas com o aviso \"Faça as suas apostas!\" e a instrução para obter o sino e multiplicar o prêmio de queda.",
+      "darkPatterns": ""
+    }
+  ]
+}

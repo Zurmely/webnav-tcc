@@ -1,0 +1,141 @@
+{
+  "id": "register",
+  "name": "Cadastro",
+  "steps": [
+    {
+      "image": "imagens/betano/register/register_welcome_modal_betano.png",
+      "title": "Boas-Vindas",
+      "description": "Modal inicial de boas-vindas com opções para criar conta ou fazer login, exibido na página inicial da Betano.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/register_step1_personal_data_01_betano.png",
+      "title": "Dados pessoais",
+      "description": "Formulário de dados pessoais com campos de e-mail, data de nascimento, CPF, nacionalidade e gênero.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/register_step1_personal_data_02_betano.png",
+      "title": "Cadastro — Etapa 1: Dados Pessoais (Estado 2)",
+      "description": "Continuação do formulário de dados pessoais com campos preenchidos e verificação de idade integrada (ícone de 18+).",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/betano/register/register_step2_address_betano.png",
+      "title": "Endereço",
+      "description": "Formulário de endereço residencial solicitado na segunda etapa do cadastro.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/register_step3_credentials_01_betano.png",
+      "title": "Nome de usuário e senha",
+      "description": "Tela de criação de credenciais com campos de e-mail, nome de usuário e senha.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/register_step3_credentials_02_betano.png",
+      "title": "Cadastro — Etapa 3: Credenciais (Estado 2)",
+      "description": "Continuação da tela de credenciais com campos adicionais ou confirmação de dados.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/betano/register/email_verify_enter_betano.png",
+      "title": "Verificação de e-mail",
+      "description": "Campo para inserção do código de 6 dígitos enviado por e-mail para ativação da conta.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/phone_verify_enter_betano.png",
+      "title": "Verificação de celular",
+      "description": "Tela para digitar o código SMS recebido no número de telefone cadastrado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/register/register_post_signup_prompt_betano.png",
+      "title": "Pós-ativação, definir limites e verificar identidade",
+      "description": "Tela exibida após o cadastro solicitando que o usuário defina limites de jogo responsável e verifique sua identidade.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/kyc_verify_prompt_betano.png",
+      "title": "Verificar identidade",
+      "description": "Modal solicitando que o usuário verifique sua identidade para desbloquear todas as funcionalidades da conta.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/kyc_unica_verify_01_betano.png",
+      "title": "Verificar identidade, parte 2",
+      "description": "Início do processo KYC via plataforma Unico, com modal informativo sobre o processo de verificação de identidade da Betano.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/kyc_unica_verify_02_betano.png",
+      "title": "Verificar identidade, parte 3",
+      "description": "Continuação do processo de verificação biométrica via Unico.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/Group 2.png",
+      "title": "Definir limites de conta",
+      "description": "Modal para definição dos limites de campo, com campos de limite de tempo de acesso e limite de perda.",
+      "darkPatterns": "Os limites de perda e de tempo de acesso são incrivelmente altos.",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/register_account_active_betano.png",
+      "title": "Conta ativada",
+      "description": "Confirmação de que a conta foi ativada com sucesso após a conclusão do cadastro.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/responsible_gambling_mandatory_limits_betano.png",
+      "title": "Definir limites de conta",
+      "description": "Modal para definição dos limites de campo, com campos de limite de tempo de acesso e limite de perda.",
+      "darkPatterns": "",
+      "tags": [],
+      "ignore": true
+    },
+    {
+      "image": "imagens/betano/register/responsible_gambling_loss_limit_open_betano.png",
+      "title": "Padrão Deceptivo — Dropdown de Limite de Perda com Sugestão",
+      "description": "Dropdown do limite de perda aberto mostrando valores sugeridos pela plataforma como âncoras de referência.",
+      "darkPatterns": "Dropdown do limite de perda aberto mostrando valores sugeridos pela plataforma como âncoras de referência.",
+      "ignore": true
+    },
+    {
+      "image": "imagens/betano/register/responsible_gambling_session_limit_open_betano.png",
+      "title": "Padrão Deceptivo — Dropdown de Limite de Sessão com Sugestão",
+      "description": "Dropdown do limite de tempo de sessão aberto com valor padrão sugerido pela Betano.",
+      "darkPatterns": "Dropdown do limite de tempo de sessão aberto com valor padrão sugerido pela Betano.",
+      "ignore": true
+    },
+    {
+      "image": "imagens/betano/register/responsible_gambling_limits_confirmed_betano.png",
+      "title": "Limites",
+      "description": "Confirmação de que os limites obrigatórios foram definidos com sucesso, liberando o acesso completo à plataforma.",
+      "darkPatterns": "",
+      "ignore": true,
+      "tags": []
+    },
+    {
+      "image": "imagens/betano/register/kyc_unica_verify_03_betano.png",
+      "title": "Modal pós-cadastro",
+      "description": "Modal que busca obter a autorização do usuário para envio de conteúdo promocional.",
+      "darkPatterns": "",
+      "tags": []
+    }
+  ],
+  "done": true
+}

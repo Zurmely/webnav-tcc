@@ -1,0 +1,63 @@
+{
+  "id": "promotions",
+  "name": "Promoções e bônus",
+  "steps": [
+    {
+      "image": "imagens/superbet/promotions/deposit_success_03_superbet.png",
+      "title": "Promoções e bônus, presente recebido",
+      "description": "Tela de exibição do presente recebido após o depósito. Neste caso, 20 giros grátis no slot do cassino Tigre Sortudo.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/promotions/deposit_success_04_superbet.png",
+      "title": "Presente recebido, clique no botão",
+      "description": "Para confirmar a participação na promoção, o botão altera de estado para que um clique adicional de confirmação seja necessário.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/promotions/promotions_bonus_received_superbet.png",
+      "title": "Modal de confirmação do bônus",
+      "description": "Notificação de bônus recebido com informações da expiração e direcionamento para a aba de bônus.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/promotions/promotions_home_01_superbet.png",
+      "title": "Presente resgatado",
+      "description": "Após aceitar o presente: redirecionamento para a seção de bônus com informações sobre o bônus recebido.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/promotions/promotions_home_02_superbet.png",
+      "title": "Presente resgatado, detalhes exibidos",
+      "description": "Detalhes da promoção expandidos.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/promotions/casino_slot_tigre_sortudo_24_superbet.png",
+      "title": "Promoções e bônus do Cassino",
+      "description": "Promoção recebida após redirecionamento do Tigrinho.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/promotions/casino_slot_tigre_sortudo_25_superbet.png",
+      "title": "Modal 2 de promoção",
+      "description": "Outro modal que foi aberto após ignorar o primeiro.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/promotions/casino_slot_tigre_sortudo_26_superbet.png",
+      "title": "Modal 3 de promoção",
+      "description": "Outro modal que foi aberto após ignorar o segundo.",
+      "darkPatterns": "",
+      "tags": []
+    }
+  ],
+  "done": true
+}

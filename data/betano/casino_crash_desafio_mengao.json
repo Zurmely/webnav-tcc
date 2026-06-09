@@ -1,0 +1,84 @@
+{
+  "id": "casino_crash_desafio_mengao",
+  "name": "Desafio do Mengão",
+  "steps": [
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_01_betano.png",
+      "title": "Tela de carregamento",
+      "description": "Tela inicial do Desafio do Mengão com o carregamento e um tooltip de boas-vindas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_02_betano.png",
+      "title": "Cobrança a caminho do gol",
+      "description": "Cobrança sendo batida em direção ao gol enquanto o multiplicador cresce.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_03_betano.png",
+      "title": "Multiplicador em progressão",
+      "description": "Multiplicador em progressão com o goleiro do Flamengo em tela.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_04_betano.png",
+      "title": "Coleta parcial",
+      "description": "Rodada em andamento com multiplicador de 1,30x a 27,00x e botão de coleta de 50% visível.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_05_betano.png",
+      "title": "Tutorial",
+      "description": "Tutorial do jogo com as instruções de deslizar ou clicar para apostar e de clicar para coletar.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_06_betano.png",
+      "title": "Direções de chute",
+      "description": "Rodada com multiplicador de 1,20x a 16,00x e as direções de chute visíveis na bola.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_07_betano.png",
+      "title": "Dificuldade média",
+      "description": "Aposta ativa com a dificuldade média selecionada.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_08_betano.png",
+      "title": "Chute realizado",
+      "description": "Chute realizado com o resultado em andamento.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_09_betano.png",
+      "title": "Dificuldade difícil",
+      "description": "Rodada na dificuldade difícil, com multiplicador de 1,50x a 40,00x.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_10_betano.png",
+      "title": "Fim da rodada",
+      "description": "Estado final da rodada com o resultado visível.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_11_betano.png",
+      "title": "Nova cobrança",
+      "description": "Nova cobrança posicionada na dificuldade média, com multiplicador de 1,30x a 27,00x.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_12_betano.png",
+      "title": "Multiplicador elevado",
+      "description": "Rodada na dificuldade difícil com multiplicador elevado em tela.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_13_betano.png",
+      "title": "Botão de coleta",
+      "description": "Botão de coleta em destaque durante a rodada ativa.",
+      "darkPatterns": ""
+    }
+  ]
+}

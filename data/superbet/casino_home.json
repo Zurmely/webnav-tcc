@@ -1,0 +1,42 @@
+{
+  "id": "casino_home",
+  "name": "Cassino",
+  "steps": [
+    {
+      "image": "imagens/superbet/casino_home/casino_home_02_superbet.png",
+      "title": "Visão inicial",
+      "description": "Visão inicial do Cassino com atalhos rápidos, jogos mais jogados e \"jogos da fortuna\", no estilo \"tigrinho\".",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/casino_home/casino_home_01_superbet.png",
+      "title": "Visão inicial com scroll do Cassino",
+      "description": "Página inicial do Cassino completa.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/casino_home/casino_home_03_superbet.png",
+      "title": "Visão inicial com hover em card do top 10",
+      "description": "Hover em um dos cards dos top 10 jogos.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/casino_home/casino_home_04_superbet.png",
+      "title": "Visão inicial com hover em card de jogos da fortuna",
+      "description": "Hover em um dos cards dos jogos estilo \"tigrinho\".",
+      "darkPatterns": "O indicador de volatilidade não é explicado previamente ao usuário em nenhum outro momento da jornada. A partir disto, não é possível inferir se 5 é a melhor volatilidade, ou a pior, podendo desorientar usuários.",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/casino_home/casino_home_overview_superbet.png",
+      "title": "Casino — Visão Geral Completa (Composição)",
+      "description": "Imagem composta com scroll completo do casino Superbet e captures de diferentes seções lado a lado.",
+      "darkPatterns": "",
+      "ignore": true
+    }
+  ],
+  "done": true
+}

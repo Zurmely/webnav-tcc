@@ -1,0 +1,70 @@
+{
+  "id": "account",
+  "name": "Configurações da conta",
+  "steps": [
+    {
+      "image": "imagens/superbet/account/account_transaction_history_superbet.png",
+      "title": "Histórico de Transações",
+      "description": "Visão das transações efetuadas separadas por tipo.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/account/account_payment_history_superbet.png",
+      "title": "Histórico de Pagamento",
+      "description": "Histórico de pagamento com o depósito inicial e com o valor retirado.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/account/account_sports_bet_history_superbet.png",
+      "title": "Histórico de Apostas Esportivas",
+      "description": "Visão das apostas esportivas, com valores das apostas simples e múltiplas, com cores e valores indicando ganhos e perdas.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/account/account_casino_history_01_superbet.png",
+      "title": "Histórico de Cassino",
+      "description": "Visão das apostas no Cassino. Nesta plataforma, majoritariamente no Tigrinho. Diferentemente do apresentado no Tigrinho, aqui as apostas exibem apenas o valor ganho, e não retornos percentuais.",
+      "darkPatterns": "Esta tela reforça o padrão deceptivo do prêmio do Tigrinho. Enquanto aqui o ganho é exibido como realmente aconteceu, isto é, 2 centavos a mais, uma vez que apostei 10 centavos e retornaram 12, no Tigrinho este valor seria exibido como um prêmio de 12 centavos.",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/account/account_casino_history_02_superbet.png",
+      "title": "Conta — Histórico de Cassino (Passo 2)",
+      "description": "Continuação do histórico de cassino com mais rodadas do Tigre Sortudo 1000 e botão \"Ver Mais Antigo\".",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/account/account_transaction_history_02_superbet.png",
+      "title": "Histórico de Transações",
+      "description": "Visão detalhada de todas as transações, com valor anterior, valor posterior e informações de usuário, método e data.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/account/account_fiscal_report_superbet.png",
+      "title": "Relatório Fiscal",
+      "description": "Página para emissão de relatórios fiscais destinada a declaração de imposto de renda.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/account/account_profile_feedback_superbet.png",
+      "title": "CSAT",
+      "description": "CSAT exibido durante a navegação nas configurações de conta. Este CSAT foca em como a plataforma te recompensa como jogador, e não em relação a navegação nas configurações.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/account/account_supercoins_superbet.png",
+      "title": "SuperCoins, gamificação",
+      "description": "Página do programa de fidelidade e gamificação de missões, exibindo recompensas disponíveis e forma de acumulação de moedas.",
+      "darkPatterns": "",
+      "tags": []
+    }
+  ],
+  "done": true
+}

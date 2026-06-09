@@ -1,0 +1,42 @@
+{
+  "id": "casino_home",
+  "name": "Cassino",
+  "steps": [
+    {
+      "image": "imagens/betano/casino_home/casino_home_betano.png",
+      "title": "Página inicial do cassino",
+      "description": "Página inicial do cassino da Betano com jogos exclusivos, torneios e categorias em destaque.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_home/casino_home_overview_betano.png",
+      "title": "Visão geral do cassino",
+      "description": "Captura completa da seção de cassino mostrando todas as categorias, provedores e jogos disponíveis.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_home/casino_home_lobby_betano.png",
+      "title": "Voltar ao último jogo",
+      "description": "Lobby do cassino com uma notificação no canto da tela sugerindo o retorno ao último jogo jogado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_home/casino_home_bonus_notification_betano.png",
+      "title": "Notificação de bônus ativo",
+      "description": "Notificação de bônus ativo com 10 rodadas grátis exibida sobre a página do cassino, incentivando o retorno ao jogo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_home/casino_home_lucky_pot_bonus_betano.png",
+      "title": "Bônus do Lucky Pot",
+      "description": "Pop-up sobreposto à página informando que o prêmio do Lucky Pot está disponível, com botão para iniciar o jogo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_home/promotions_free_spins_popup_betano.png",
+      "title": "Rodadas grátis",
+      "description": "Modal promocional informando que 10 rodadas grátis estão disponíveis, com botão para escolher os jogos.",
+      "darkPatterns": ""
+    }
+  ]
+}

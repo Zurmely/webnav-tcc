@@ -1,0 +1,24 @@
+{
+  "id": "casino_search",
+  "name": "Busca no cassino",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_search/casino_search_blackjack_bet365.png",
+      "title": "Busca por Blackjack",
+      "description": "Resultado de busca pela palavra \"blackjack\", exibindo os jogos disponíveis em grade.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_search/casino_search_sugar_rush_bet365.png",
+      "title": "Busca por Sugar Rush",
+      "description": "Resultado de busca pela palavra \"sugar rush\", mostrando o jogo Sugar Rush 1000.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_search/casino_search_ronaldinho_bet365.png",
+      "title": "Busca por Ronaldinho",
+      "description": "Resultado de busca pela palavra \"Ronaldinho\", mostrando os slots Ronaldinho Spins e Ronaldinho Scores.",
+      "darkPatterns": ""
+    }
+  ]
+}

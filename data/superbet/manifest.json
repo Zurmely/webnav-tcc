@@ -1,0 +1,16 @@
+{
+  "id": "superbet",
+  "name": "Superbet",
+  "flows": [
+    "register",
+    "deposit",
+    "promotions",
+    "casino_home",
+    "casino_slot_tigre_sortudo",
+    "sports_betting",
+    "account",
+    "withdraw",
+    "sports_betting_open_bets",
+    "phone_verify"
+  ]
+}

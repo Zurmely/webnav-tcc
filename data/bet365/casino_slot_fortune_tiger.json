@@ -1,0 +1,72 @@
+{
+  "id": "casino_slot_fortune_tiger",
+  "name": "Fortune Tiger",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_slot_fortune_tiger_01_bet365.png",
+      "title": "Tela principal",
+      "description": "Tela principal do Fortune Tiger com grade 3x3 de símbolos orientais e painel de apostas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_slot_fortune_tiger_02_bet365.png",
+      "title": "Rodada em andamento",
+      "description": "Rodada em andamento com símbolos de moedas e do tigre nos rolos.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_slot_fortune_tiger_03_bet365.png",
+      "title": "Combinação com ganho",
+      "description": "Combinação de símbolos formada e valor do ganho exibido.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_slot_fortune_tiger_04_bet365.png",
+      "title": "Símbolos especiais",
+      "description": "Símbolos especiais em posição de vitória durante a rodada.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_slot_fortune_tiger_05_bet365.png",
+      "title": "Multiplicador",
+      "description": "Rodada com combinação de símbolos e multiplicador em tela.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_slot_fortune_tiger_06_bet365.png",
+      "title": "Espera entre rodadas",
+      "description": "Estado de espera entre uma rodada e outra.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_slot_fortune_tiger_07_bet365.png",
+      "title": "Nova rodada",
+      "description": "Nova rodada iniciada com os símbolos posicionados.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_slot_fortune_tiger_08_bet365.png",
+      "title": "Combinação vencedora",
+      "description": "Combinação vencedora com símbolos do tigre.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_slot_fortune_tiger_09_bet365.png",
+      "title": "Resultado da rodada",
+      "description": "Estado final da rodada com o resultado exibido.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_slot_fortune_tiger_10_bet365.png",
+      "title": "Configurações do jogo",
+      "description": "Painel de configurações e informações do jogo aberto.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_fortune_tiger/casino_crash_fly365_09_bet365.png",
+      "title": "Fly365, resultado da rodada",
+      "description": "Fly365 exibindo o resultado da rodada com o multiplicador final atingido.",
+      "darkPatterns": ""
+    }
+  ]
+}

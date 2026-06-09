@@ -1,0 +1,60 @@
+{
+  "id": "casino_slot_caramelo_sortudo",
+  "name": "Caramelo Sortudo",
+  "steps": [
+    {
+      "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_01_betano.png",
+      "title": "Tela principal",
+      "description": "Tela principal do Caramelo Sortudo com grade 5x3, símbolos de cartas, o cachorro caramelo e o painel de apostas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_02_betano.png",
+      "title": "Rodada em andamento",
+      "description": "Rodada em andamento com os símbolos animados em tela.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_03_betano.png",
+      "title": "Combinações em formação",
+      "description": "Continuação da rodada com combinações em formação.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_04_betano.png",
+      "title": "Resultado com ganho",
+      "description": "Resultado da rodada com o ganho exibido.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_05_betano.png",
+      "title": "Jackpot progressivo",
+      "description": "Tela com o jackpot progressivo visível no topo, acima de R$230 mil.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_intro_betano.png",
+      "title": "Tela de introdução",
+      "description": "Modal de introdução apresentando as regras básicas do jogo, com 9 rolos e 11 símbolos, incluindo wild e scatter. O texto é exibido em inglês.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_paytable_01_betano.png",
+      "title": "Regras, símbolos",
+      "description": "Tabela de pagamentos com todos os símbolos do jogo e seus valores de prêmio.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_paytable_02_betano.png",
+      "title": "Regras, bônus do frango",
+      "description": "Página da tabela explicando o bônus do frango grelhado, em que 3 símbolos de bônus ativam a grelha giratória que premia de 25x a 100x a aposta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_paytable_03_betano.png",
+      "title": "Regras, jackpot",
+      "description": "Página explicando o recurso de jackpot em 4 níveis, ativado aleatoriamente durante o jogo, com prêmios baseados nos naipes das cartas.",
+      "darkPatterns": ""
+    }
+  ]
+}

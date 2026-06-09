@@ -1,0 +1,36 @@
+{
+  "id": "casino_slot_gates_olympus",
+  "name": "Gates of Olympus",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_slot_gates_olympus/casino_slot_gates_olympus_paytable_01_bet365.png",
+      "title": "Regras do jogo",
+      "description": "Primeira página da tabela de pagamentos, com símbolos e valores de prêmio.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_gates_olympus/casino_slot_gates_olympus_paytable_02_bet365.png",
+      "title": "Regras, parte 2",
+      "description": "Página da tabela explicando a mecânica de Extra de Queda e o sistema de multiplicadores.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_gates_olympus/casino_slot_gates_olympus_freespins_rules_bet365.png",
+      "title": "Regras das rodadas grátis",
+      "description": "Modal com as regras das Rodadas Grátis, exibido durante o jogo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_gates_olympus/casino_slot_gates_olympus_freespins_active_bet365.png",
+      "title": "Rodadas grátis ativas",
+      "description": "Tela de jogo com 4 rodadas grátis ativas e multiplicador em ação.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_gates_olympus/casino_slot_gates_olympus_gameplay_01_bet365.png",
+      "title": "Multiplicador de queda",
+      "description": "Tela de jogo mostrando a mecânica de queda de símbolos e multiplicadores em cascata.",
+      "darkPatterns": ""
+    }
+  ]
+}

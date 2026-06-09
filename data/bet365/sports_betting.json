@@ -1,0 +1,168 @@
+{
+  "id": "sports_betting",
+  "name": "Apostas Esportivas",
+  "steps": [
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_homepage_overview_bet365.png",
+      "title": "Visão geral da página",
+      "description": "Captura completa da página de apostas esportivas mostrando todas as seções disponíveis.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_match_detail_01_bet365.png",
+      "title": "Detalhes da partida",
+      "description": "Página de detalhes de uma partida com os mercados disponíveis, odds e destaque para o recurso de Aposta Aumentada.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_match_detail_02_bet365.png",
+      "title": "Mais mercados",
+      "description": "Continuação da página de detalhes da partida com mercados adicionais de aposta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_bet_slip_01_bet365.png",
+      "title": "Carrinho de apostas",
+      "description": "Carrinho de apostas aberto com as seleções adicionadas, o valor da aposta e o ganho potencial calculado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_bet_slip_02_bet365.png",
+      "title": "Edição do carrinho",
+      "description": "Carrinho com as seleções e os valores em estado de edição.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_bet_slip_03_bet365.png",
+      "title": "Revisão da aposta",
+      "description": "Carrinho com a confirmação das seleções antes de finalizar a aposta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_bet_placed_bet365.png",
+      "title": "Aposta feita",
+      "description": "Confirmação de aposta efetuada, com a mensagem \"Aposta Feita\" e os detalhes da transação.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_bet_builder_reuse_bet365.png",
+      "title": "Reutilizar seleções",
+      "description": "Recurso que permite replicar as seleções de uma aposta anterior no construtor de apostas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_open_bets_01_bet365.png",
+      "title": "Apostas em aberto",
+      "description": "Seção Minhas Apostas exibindo as apostas em aberto com a opção de encerramento antecipado (cashout).",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_open_bets_02_bet365.png",
+      "title": "Apostas em aberto, parte 2",
+      "description": "Lista de apostas ativas com odds atualizadas e valores de cashout disponíveis.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_open_bets_03_bet365.png",
+      "title": "Apostas em aberto, parte 3",
+      "description": "Apostas em aberto com informações de partidas ao vivo e cashout em tempo real.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_06_bet365.png",
+      "title": "Aposta combinada em aberto",
+      "description": "Aposta de R$5,00 do tipo Criar Aposta com duas seleções e retorno potencial de R$13,75, com botão para encerrar a aposta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_07_bet365.png",
+      "title": "Aposta anulada",
+      "description": "Aba de apostas resolvidas exibindo uma aposta com as seleções anuladas e o valor de R$5,00 devolvido.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_08_bet365.png",
+      "title": "Ofertas personalizadas",
+      "description": "Aba Pra Você com ofertas direcionadas ao usuário, como jackpot, aumentos de ganho e um jogo gratuito de recompensas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_09_bet365.png",
+      "title": "Aumentos de ganho",
+      "description": "Seção Seus Aumentos expandida, listando as partidas elegíveis para o aumento de 25% nos ganhos.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_10_bet365.png",
+      "title": "Página da Série A",
+      "description": "Página da competição com banners promocionais, lista de partidas com odds e o carrinho de aposta aberto sugerindo ganhos aumentados.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_11_bet365.png",
+      "title": "Sugestão de mais seleções",
+      "description": "Carrinho com uma aposta dupla montada e aviso de ganhos aumentados de 25% caso mais duas seleções sejam adicionadas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_12_bet365.png",
+      "title": "Aposta dupla feita",
+      "description": "Confirmação de aposta dupla de R$5,00 com retorno potencial de R$10,38, já incluindo o aumento.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_13_bet365.png",
+      "title": "Apostas em e-soccer",
+      "description": "Lista de partidas de futebol virtual (e-soccer) com o carrinho aberto e duas seleções de R$2,00 cada.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_14_bet365.png",
+      "title": "Odds alteradas",
+      "description": "As odds das seleções mudam dentro do carrinho, que exibe o aviso de disponibilidade e o botão para aceitar as alterações.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_15_bet365.png",
+      "title": "Seleções indisponíveis como Criar Aposta",
+      "description": "Aviso de que as seleções atuais não podem ser combinadas como Criar Aposta, com o valor total ajustado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_16_bet365.png",
+      "title": "Aposta no empate",
+      "description": "Confirmação de aposta de R$2,00 no empate de uma partida de e-soccer, com retorno potencial de R$3,33.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_17_bet365.png",
+      "title": "Home de esportes com acumuladores",
+      "description": "Página inicial de esportes com banners promocionais e cartões de apostas acumuladas prontas, como \"A noite dos favoritos\" e \"Chuva de gols\".",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_18_bet365.png",
+      "title": "Minhas apostas em aberto",
+      "description": "Lista de apostas em aberto, simples e dupla, cada uma com seu botão de encerramento e valor de cashout.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_19_bet365.png",
+      "title": "Dupla com aumento",
+      "description": "Aposta dupla de R$5,00 com selo de acumuladores aumentados e opção de encerrar por R$4,75.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_20_bet365.png",
+      "title": "Cashout em tempo real",
+      "description": "Durante as partidas, o valor de encerramento das apostas muda em tempo real, como o destaque de R$2,31 na aposta do empate.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/sports_betting/sports_betting_homepage_bet365.png",
+      "title": "Página inicial",
+      "description": "Página inicial das apostas esportivas com partidas em destaque, odds em tempo real e categorias de esportes.",
+      "darkPatterns": ""
+    }
+  ]
+}

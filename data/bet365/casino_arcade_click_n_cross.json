@@ -1,0 +1,42 @@
+{
+  "id": "casino_arcade_click_n_cross",
+  "name": "Click 'N' Cross",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_arcade_click_n_cross/casino_arcade_click_n_cross_paytable_bet365.png",
+      "title": "Tabela de multiplicadores",
+      "description": "Modal com a tabela de multiplicadores do jogo, que variam de 1x a 23,8x conforme a dificuldade.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_arcade_click_n_cross/casino_arcade_click_n_cross_01_bet365.png",
+      "title": "Tela inicial",
+      "description": "Tela inicial com a estrada de dois sentidos e multiplicadores visíveis no percurso.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_arcade_click_n_cross/casino_arcade_click_n_cross_02_bet365.png",
+      "title": "Tokens coletados",
+      "description": "Partida em andamento com tokens de multiplicador coletados.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_arcade_click_n_cross/casino_arcade_click_n_cross_03_bet365.png",
+      "title": "Multiplicador alto",
+      "description": "Carro cruzando a estrada com multiplicador acumulado de +841,95.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_arcade_click_n_cross/casino_arcade_click_n_cross_04_bet365.png",
+      "title": "Encerrar aposta",
+      "description": "Botão \"Encerrar aposta\" em destaque durante a travessia, permitindo coletar o valor atual.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_arcade_click_n_cross/casino_arcade_click_n_cross_05_bet365.png",
+      "title": "Fim do percurso",
+      "description": "Estado final da rodada, com cones de trânsito indicando o fim do percurso.",
+      "darkPatterns": ""
+    }
+  ]
+}

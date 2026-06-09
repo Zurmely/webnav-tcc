@@ -1,0 +1,60 @@
+{
+  "id": "casino_mines_game",
+  "name": "Minas",
+  "steps": [
+    {
+      "image": "imagens/betano/casino_mines_game/casino_mines_game_01_betano.png",
+      "title": "Tela inicial",
+      "description": "Tela inicial do Minas com a grade 5x5 fechada, uma estrela revelada e aposta de R$1,00.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_mines_game/casino_mines_game_02_betano.png",
+      "title": "Ganhos progressivos",
+      "description": "Partida com mais casas reveladas, acumulando ganhos progressivos.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_mines_game/casino_mines_game_03_betano.png",
+      "title": "Multiplicador crescente",
+      "description": "O multiplicador cresce conforme mais estrelas são encontradas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_mines_game/casino_mines_game_04_betano.png",
+      "title": "Estado intermediário",
+      "description": "Estado intermediário da partida, com casas reveladas e multiplicador atualizado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_mines_game/casino_mines_game_05_betano.png",
+      "title": "Várias estrelas reveladas",
+      "description": "Partida com várias estrelas reveladas e ganho acumulado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_mines_game/casino_mines_game_06_betano.png",
+      "title": "Fase avançada",
+      "description": "Fase avançada da partida, com a maioria das casas seguras reveladas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_mines_game/casino_slot_starlight_princess_03_betano.png",
+      "title": "Starlight Princess, regras",
+      "description": "Página das regras do Starlight Princess 1000 com informações sobre rodadas grátis e recursos especiais.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_mines_game/casino_slot_starlight_princess_04_betano.png",
+      "title": "Starlight Princess, regras 2",
+      "description": "Página das regras com as configurações de jogo automático.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_mines_game/casino_slot_starlight_princess_05_betano.png",
+      "title": "Starlight Princess, regras 3",
+      "description": "Página final das regras do jogo.",
+      "darkPatterns": ""
+    }
+  ]
+}

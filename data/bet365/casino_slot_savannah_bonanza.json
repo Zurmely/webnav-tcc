@@ -1,0 +1,84 @@
+{
+  "id": "casino_slot_savannah_bonanza",
+  "name": "Savannah Bonanza",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_01_bet365.png",
+      "title": "Introdução e regras",
+      "description": "Tela de introdução do Savannah Bonanza com a tabela de pagamentos e as mecânicas do jogo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_02_bet365.png",
+      "title": "Tabela de pagamento",
+      "description": "Página da tabela de pagamento explicando o símbolo de bônus, que aciona giros grátis, e os multiplicadores de x2 e x3.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_03_bet365.png",
+      "title": "Tela de abertura",
+      "description": "Tela de abertura destacando os multiplicadores e o ganho de até 5000x, com botão para continuar.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_04_bet365.png",
+      "title": "Animação de introdução",
+      "description": "Animação de introdução do jogo, com um animal escondido entre as folhas da savana.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_05_bet365.png",
+      "title": "Tela principal",
+      "description": "Tela principal com a grade de animais, o painel de Aposta de Ouro e aposta de R$10.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_06_bet365.png",
+      "title": "Escolha do valor de aposta",
+      "description": "Pop-up de escolha do valor de aposta, com opções de R$1 a R$250 e R$10 selecionado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_07_bet365.png",
+      "title": "Valor de aposta alterado",
+      "description": "Mesmo pop-up com R$1 selecionado. O valor da Aposta de Ouro cai junto, para R$1,25.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_08_bet365.png",
+      "title": "Compra de bônus",
+      "description": "Modal de compra de bônus oferecendo giros grátis com 4 ou mais símbolos de bônus garantidos por R$100, em uma aposta de R$1.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_09_bet365.png",
+      "title": "Ganho em cascata",
+      "description": "Rodada com ganho de R$0,40 no modo de queda, com símbolos desaparecendo da grade.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_10_bet365.png",
+      "title": "Ganho de R$1,90",
+      "description": "Rodada com ganho de R$1,90 exibido no topo da grade.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_11_bet365.png",
+      "title": "Multiplicadores na grade",
+      "description": "Rodada com multiplicador x4 no painel lateral e símbolos de X2 e de bônus na grade.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_12_bet365.png",
+      "title": "Ganho com multiplicador",
+      "description": "Rodada com ganho de R$0,40 e símbolo de X3 presente na grade.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_13_bet365.png",
+      "title": "Ganho de R$1,20",
+      "description": "Rodada com ganho de R$1,20 e símbolo dourado de multiplicador na grade.",
+      "darkPatterns": ""
+    }
+  ]
+}

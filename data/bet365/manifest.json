@@ -1,0 +1,30 @@
+{
+  "id": "bet365",
+  "name": "Bet365",
+  "flows": [
+    "area_deslogada",
+    "register",
+    "email_verify",
+    "phone_verify",
+    "kyc",
+    "responsible_gambling",
+    "deposit",
+    "promotions",
+    "casino_home",
+    "casino_search",
+    "sports_betting",
+    "casino_crash_fly365",
+    "casino_crash_up_only",
+    "casino_blackjack_cashback",
+    "casino_slot_gates_olympus",
+    "casino_slot_gallo_gold",
+    "casino_slot_sugar_rush",
+    "casino_arcade_click_n_cross",
+    "casino_slot_fortune_tiger",
+    "casino_slot_immortals",
+    "casino_slot_ronaldinho_spins",
+    "casino_slot_savannah_bonanza",
+    "casino_roleta_super_spin",
+    "casino_vira_lata_caramelo"
+  ]
+}

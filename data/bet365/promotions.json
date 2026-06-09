@@ -1,0 +1,12 @@
+{
+  "id": "promotions",
+  "name": "Promoções",
+  "steps": [
+    {
+      "image": "imagens/bet365/promotions/promotions_home_bet365.png",
+      "title": "Página de promoções",
+      "description": "Página de ofertas e promoções disponíveis para o usuário, incluindo bônus ativos e ofertas de boas-vindas.",
+      "darkPatterns": ""
+    }
+  ]
+}

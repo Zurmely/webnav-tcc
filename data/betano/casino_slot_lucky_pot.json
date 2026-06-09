@@ -1,0 +1,48 @@
+{
+  "id": "casino_slot_lucky_pot",
+  "name": "Lucky Pot",
+  "steps": [
+    {
+      "image": "imagens/betano/casino_slot_lucky_pot/casino_slot_lucky_pot_01_betano.png",
+      "title": "Tabela de pagamentos",
+      "description": "Tabela de pagamento do Lucky Pot com os símbolos, multiplicadores e os jackpots progressivos no topo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_lucky_pot/casino_slot_lucky_pot_02_betano.png",
+      "title": "Tela principal",
+      "description": "Tela de jogo com a grade de símbolos e rodada ativa.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_lucky_pot/casino_slot_lucky_pot_03_betano.png",
+      "title": "Combinação em formação",
+      "description": "Rodada com uma combinação de símbolos em formação.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_lucky_pot/casino_slot_lucky_pot_04_betano.png",
+      "title": "Resultado da rodada",
+      "description": "Resultado da rodada exibido em tela.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_lucky_pot/casino_slot_lucky_pot_05_betano.png",
+      "title": "Símbolos do jogo",
+      "description": "Rodada com os símbolos de cartas e itens irlandeses visíveis.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_lucky_pot/casino_slot_lucky_pot_loading_betano.png",
+      "title": "Tela de carregamento",
+      "description": "Tela de carregamento do Lucky Pot com o logo da provedora SYNOT Games.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_slot_lucky_pot/casino_slot_lucky_pot_paytable_02_betano.png",
+      "title": "Visão multijogo",
+      "description": "Tabela de pagamentos exibida no modo de visualização múltipla, com o painel de busca de jogos na lateral.",
+      "darkPatterns": ""
+    }
+  ]
+}

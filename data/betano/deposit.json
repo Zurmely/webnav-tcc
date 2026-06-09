@@ -1,0 +1,60 @@
+{
+  "id": "deposit",
+  "name": "Depósito",
+  "steps": [
+    {
+      "image": "imagens/betano/deposit/deposit_payment_methods_betano.png",
+      "title": "Métodos de pagamento",
+      "description": "Tela de seleção do método de pagamento para o depósito, com Pix e bancos disponíveis.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/deposit/deposit_pix_setup_01_betano.png",
+      "title": "Escolha do valor",
+      "description": "Tela inicial do depósito via Pix com campo de valor e atalhos de R$50, R$200 e R$500.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/deposit/deposit_pix_setup_02_betano.png",
+      "title": "Valor digitado",
+      "description": "Campo de valor preenchido manualmente. O botão de depósito segue desabilitado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/deposit/deposit_pix_setup_03_betano.png",
+      "title": "Valor ajustado",
+      "description": "Valor ajustado para R$20,00, ainda com o botão de depósito desabilitado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/deposit/deposit_pix_setup_04_betano.png",
+      "title": "Autorização e depósito liberado",
+      "description": "Ao marcar a caixa que autoriza o armazenamento dos dados bancários no perfil, o botão de depósito é habilitado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/deposit/deposit_pix_setup_05_betano.png",
+      "title": "Processando a solicitação",
+      "description": "Tela de carregamento exibida enquanto a solicitação de depósito é processada.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/deposit/deposit_pix_setup_06_betano.png",
+      "title": "Depósito concluído",
+      "description": "Confirmação do depósito com o valor, o novo saldo e os botões de transações e \"Comece a jogar\".",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/deposit/deposit_pix_setup_07_betano.png",
+      "title": "Histórico de transações",
+      "description": "Histórico de transações exibindo o depósito via Pix concluído.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/deposit/deposit_pix_qrcode_betano.png",
+      "title": "Código QR do Pix",
+      "description": "Código QR gerado para efetuar o depósito via Pix, com código copiável.",
+      "darkPatterns": ""
+    }
+  ]
+}

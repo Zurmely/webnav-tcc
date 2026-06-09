@@ -1,0 +1,84 @@
+{
+  "id": "withdraw",
+  "name": "Saque",
+  "steps": [
+    {
+      "image": "imagens/superbet/withdraw/sports_betting_open_bets_10_superbet.png",
+      "title": "Modal de valores",
+      "description": "Modal de atalhos de conta, inclusive para iniciar o saque.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/withdraw/sports_betting_open_bets_11_superbet.png",
+      "title": "Retirada",
+      "description": "Informações do valor disponível para retirada.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/withdraw/sports_betting_open_bets_12_superbet.png",
+      "title": "Adição de conta bancária",
+      "description": "Para efetuar a retirada, é necessário adicionar uma conta bancária.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/withdraw/sports_betting_open_bets_13_superbet.png",
+      "title": "Modal de conta bancária",
+      "description": "Modal para preenchimento dos dados de conta bancária.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/withdraw/sports_betting_open_bets_14_superbet.png",
+      "title": "Verificação de identidade",
+      "description": "Verificação de identidade para adição de conta bancária.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/withdraw/sports_betting_open_bets_15_superbet.png",
+      "title": "Apostas em Aberto — Cashout (Passo 15)",
+      "description": "Sequência completa da funcionalidade de apostas em aberto com opção de cashout total ou parcial disponível em tempo real.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/withdraw/sports_betting_open_bets_16_superbet.png",
+      "title": "Confirmação de adição de conta",
+      "description": "Modal que confirma a adição de uma conta bancária.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/withdraw/sports_betting_open_bets_17_superbet.png",
+      "title": "Seleção de valor pra retirada",
+      "description": "Seleção de valor para retirada, agora com uma conta bancária adicionada.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/withdraw/sports_betting_open_bets_18_superbet.png",
+      "title": "Valor e conta definidos",
+      "description": "O botão de retirada agora aparece ativo, uma vez que o valor e destino foram selecionados.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/withdraw/sports_betting_open_bets_19_superbet.png",
+      "title": "Verificação para retirada",
+      "description": "Para efetuar a retirada é necessário confirmar a identidade mais uma vez.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/withdraw/withdraw_success_superbet.png",
+      "title": "Modal de confirmação de retirada",
+      "description": "Modal que confirma a retirada. Apesar da informação de retirada bem sucedida, diferentemente do depósito, que é instantâneo, a retirada levou 4 minutos para ser concluída.",
+      "darkPatterns": "",
+      "tags": []
+    }
+  ],
+  "done": true
+}

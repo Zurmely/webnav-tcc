@@ -1,0 +1,84 @@
+{
+  "id": "casino_crash_fly365",
+  "name": "Fly365",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_fly365_01_bet365.png",
+      "title": "Início do voo",
+      "description": "Fly365 com o avião em voo e multiplicador crescente, com painel de aposta e botão de encerrar aposta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_fly365_02_bet365.png",
+      "title": "Multiplicador subindo",
+      "description": "Rodada em andamento com multiplicador mais alto e histórico das rodadas anteriores visível.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_fly365_03_bet365.png",
+      "title": "Aposta ativa",
+      "description": "Aposta ativa com o multiplicador em progressão.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_fly365_04_bet365.png",
+      "title": "Trajetória ascendente",
+      "description": "Avião em trajetória ascendente com o multiplicador em tela.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_20_bet365.png",
+      "title": "Up Only, painel de apostas",
+      "description": "Up Only com o painel de apostas expandido e opções de valor visíveis.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_19_bet365.png",
+      "title": "Up Only, fim de sessão",
+      "description": "Up Only em estado final de sessão com o saldo atualizado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_18_bet365.png",
+      "title": "Up Only, histórico",
+      "description": "Up Only mostrando o histórico de multiplicadores recentes na lateral.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_12_bet365.png",
+      "title": "Up Only, crash",
+      "description": "Momento do crash, com o foguete explodindo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_13_bet365.png",
+      "title": "Up Only, ganho coletado",
+      "description": "Ganho coletado pelo jogador antes do crash.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_14_bet365.png",
+      "title": "Up Only, apostas duplas",
+      "description": "Interface de apostas duplas simultâneas aberta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_15_bet365.png",
+      "title": "Up Only, jogo automático",
+      "description": "Configurações de jogo automático abertas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_16_bet365.png",
+      "title": "Up Only, espera",
+      "description": "Fase de espera para o início de uma nova rodada.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_17_bet365.png",
+      "title": "Up Only, resultado",
+      "description": "Resultado de múltiplas apostas exibido em tela.",
+      "darkPatterns": ""
+    }
+  ]
+}

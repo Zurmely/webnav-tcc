@@ -1,0 +1,106 @@
+{
+  "id": "register",
+  "name": "Cadastro",
+  "steps": [
+    {
+      "image": "imagens/bet365/register/register_step1_personal_data_bet365.png",
+      "title": "Primeiro passo de criação de conta",
+      "description": "Formulário único de dados pessoais solicitando nome, e-mail, telefone, sexo, data de nascimento e CPF.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/bet365/register/register_step2_credentials_bet365.png",
+      "title": "Segundo passo, senha e limites",
+      "description": "Tela de criação de senha com campos de limites de jogo responsável (limite de perda e limite de sessão) integrados ao próprio cadastro.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/register_step2_loss_limit_open_bet365.png",
+      "title": "Limite de perda",
+      "description": "Dropdown do limite de perda diário aberto, com valores sugeridos pela plataforma durante o cadastro.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/bet365/register/register_step2_session_limit_open_bet365.png",
+      "title": "Limite de sessão",
+      "description": "Dropdown do limite de sessão aberto com valor padrão pré-selecionado pela plataforma.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/bet365/register/register_step2_terms_bet365.png",
+      "title": "Aceite dos termos",
+      "description": "Seção de Termos e Condições com o botão final de criação de conta ao fim do formulário.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/register_address_bet365.png",
+      "title": "Endereço residencial",
+      "description": "Formulário de endereço residencial solicitado logo após a criação da conta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/register_loading_bet365.png",
+      "title": "Processando o cadastro",
+      "description": "Tela intermediária exibida ao finalizar o cadastro, com a mensagem \"Isso levará um momento...\".",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/bet365/register/email_verify_enter_bet365.png",
+      "title": "Verificação de e-mail",
+      "description": "Campo para digitação do código de 6 dígitos enviado por e-mail, etapa obrigatória para ativar a conta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/phone_verify_send_bet365.png",
+      "title": "Verificação de celular",
+      "description": "Tela de confirmação do número de telefone cadastrado e envio do código de verificação via SMS.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/kyc_start_bet365.png",
+      "title": "Verificação de identidade",
+      "description": "Início do processo de verificação de identidade com a Jumio, parceira da bet365, solicitando uma foto do documento.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/kyc_document_type_select_bet365.png",
+      "title": "Escolha do documento",
+      "description": "Seleção do documento a ser usado na verificação: CNH, CNH digital, RG, passaporte ou licença de residência.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/kyc_document_confirmed_bet365.png",
+      "title": "Documento aceito",
+      "description": "Confirmação de que o documento enviado foi aceito e a identidade foi verificada.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/responsible_gambling_loss_limit_set_bet365.png",
+      "title": "Definição de limite de perda",
+      "description": "Tela de configuração dos limites de perda na seção Limites de Conta, com campos para valores diário, semanal e mensal.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/responsible_gambling_loss_limit_error_bet365.png",
+      "title": "Erro ao definir limite",
+      "description": "Mensagem de erro ao inserir um valor fora do intervalo permitido, entre R$20,00 e R$999.999,00.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/responsible_gambling_loss_limit_confirm_bet365.png",
+      "title": "Confirmação dos novos limites",
+      "description": "Tela de confirmação exibindo os limites atuais e os novos valores antes de salvar.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/register/responsible_gambling_loss_limit_confirmed_bet365.png",
+      "title": "Limites aplicados",
+      "description": "Mensagem de confirmação de que os novos limites de gastos foram aplicados à conta.",
+      "darkPatterns": ""
+    }
+  ]
+}

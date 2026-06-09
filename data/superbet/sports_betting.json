@@ -1,0 +1,253 @@
+{
+  "id": "sports_betting",
+  "name": "Apostas",
+  "steps": [
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_homepage_01_superbet.png",
+      "title": "Visão inicial do website sem conta",
+      "description": "Visão inicial das Apostas com atalhos rápidos, banners de sugestão de apostas e partidas ao vivo.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_homepage_02_superbet.png",
+      "title": "Visão inicial com conta",
+      "description": "Visão inicial após realizar o acesso a uma conta.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting-home-full_superbet.png",
+      "title": "Visão inicial com scroll",
+      "description": "Página inicial de apostas completa.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_homepage_03_superbet.png",
+      "title": "Apostas Esportivas — Homepage: Seção Super Odds",
+      "description": "Homepage exibindo seção \"SUPER ODDS\" com partidas selecionadas e odds aumentadas (São Paulo x Mineout, Botafogo RJ x Internacional RS).",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_homepage_04_superbet.png",
+      "title": "Apostas Esportivas — Homepage: Dicas de Aposta Populares",
+      "description": "Homepage com seções \"SUPER ODDS\" e \"DICAS DE APOSTA POPULARES\" com partidas recomendadas e odds.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_homepage_05_superbet.png",
+      "title": "Apostas Esportivas — Homepage: Torneios e Melhores Partidas",
+      "description": "Homepage exibindo \"TORNEIROS POPULARES\", \"MELHORES PARTIDAS\", \"TOP JOGOS DO SUPER CASSINO\" e \"MI MEJORES PARTIDAS\".",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_homepage_logged_in_superbet.png",
+      "title": "Apostas Esportivas — Homepage (Usuário Logado)",
+      "description": "Homepage com usuário autenticado mostrando saldo no header e opções personalizadas.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_01_superbet.png",
+      "title": "Apostas ao Vivo — Partidas em Andamento",
+      "description": "Seção \"Partidas ao Vivo\" com lista de partidas de múltiplos esportes e painel de apostas lateral vazio.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_02_superbet.png",
+      "title": "Apostas ao Vivo (Passo 2)",
+      "description": "Sequência completa de apostas ao vivo mostrando partidas, flutuação de odds e interface de múltiplas apostas.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_03_superbet.png",
+      "title": "Apostas ao Vivo (Passo 3)",
+      "description": "Sequência completa de apostas ao vivo mostrando partidas, flutuação de odds e interface de múltiplas apostas.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_04_superbet.png",
+      "title": "Montando aposta, usando Super Odd",
+      "description": "Seleção de uma aposta pré-preenchida pela casa. Na lateral do website, uma nova seção de apostas é exibida.",
+      "darkPatterns": "",
+      "tags": [],
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_05_superbet.png",
+      "title": "Montando aposta, usando Super Odd",
+      "description": "Seleção de uma aposta pré-preenchida pela casa. Na lateral do website, uma nova seção de apostas é exibida.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_06_superbet.png",
+      "title": "Informações sobre a Super Múltipla",
+      "description": "Modal exibido após clicar em mais detalhes da Super Múltipla, no painel lateral exibido no passo anterior.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_07_superbet.png",
+      "title": "Apostas em um evento",
+      "description": "Exibida após selecionar um dos eventos disponíveis na página inicial.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_08_superbet.png",
+      "title": "Scroll em apostas em um evento",
+      "description": "Sequência completa de apostas ao vivo mostrando partidas, flutuação de odds e interface de múltiplas apostas.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_09_superbet.png",
+      "title": "Criação de multi-apostas",
+      "description": "Sequência completa de apostas ao vivo mostrando partidas, flutuação de odds e interface de múltiplas apostas.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_10_superbet.png",
+      "title": "Tooltip de multi-apostas",
+      "description": "Tooltip exibido após iniciar a criação de uma multi-aposta.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_11_superbet.png",
+      "title": "Tooltip fechado, bilhete de apostas preenchido",
+      "description": "O tooltip foi fechado e, apesar de estar em multi-apostas, pode-se criar uma aposta simples a partir desta tela.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_12_superbet.png",
+      "title": "Modal de confirmação de aposta",
+      "description": "Uma confirmação da aposta foi exibida após realizá-la.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_13_superbet.png",
+      "title": "Apostas em aberto",
+      "description": "Exibição das apostas em aberto, isto é, que ainda não foram concluídas. É possível dar \"cashout\", isto é, resgatar o valor antes da finalização da aposta para certos eventos.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_14_superbet.png",
+      "title": "Supersocial",
+      "description": "Exibido a partir da página de apostas em aberto. O website sugere usar o Supersocial para ficar por dentro de sugestões de outros usuários para apostar.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_15_superbet.png",
+      "title": "Apostas sugeridas no Supersocial",
+      "description": "O Supersocial exibe apostas de outros usuários e lhe dá a opção de comentar, curtir e realizar as mesmas apostas.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_16_superbet.png",
+      "title": "Visão do Futebol",
+      "description": "Página inicial focada no esporte Futebol, com dicas de aposta, partidas próximas e mais funções. Neste cenário, uma dica de aposta popular foi selecionada para o bilhete.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_17_superbet.png",
+      "title": "Seleção de aposta múltipla",
+      "description": "Múltiplas apostas foram escolhidas para entender o funcionamento da multiplicação de odds e valores.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_18_superbet.png",
+      "title": "Apostas ao Vivo (Passo 18)",
+      "description": "Sequência completa de apostas ao vivo mostrando partidas, flutuação de odds e interface de múltiplas apostas.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_live_betting_19_superbet.png",
+      "title": "Apostas em futebol virtual",
+      "description": "Há a opção de apostar em partidas de futebol virtual, concluídas mais rapidamente e com maior frequência.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_01_superbet.png",
+      "title": "Apostas em aberto, com múltiplas apostas",
+      "description": "Exibição das apostas em aberto, isto é, que ainda não foram concluídas. É possível dar \"cashout\", isto é, resgatar o valor antes da finalização da aposta para certos eventos.\n\nNeste cenário, alguns valores são reduzidos drasticamente, como o de apostas múltiplas. Isto acontece pois a chance de tal aposta ser concluída é muito menor, portanto, o usuário pode pensar que esta é a melhor alternativa.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_02_superbet.png",
+      "title": "Apostas em Aberto — Cashout (Passo 2)",
+      "description": "Sequência completa da funcionalidade de apostas em aberto com opção de cashout total ou parcial disponível em tempo real.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_03_superbet.png",
+      "title": "Termos de aposta",
+      "description": "Os termos de aposta ficam escondidos no final da visão inicial, e dispõem acerca de premiações máximas.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_04_superbet.png",
+      "title": "Apostas em aberto, valor máximo dos termos",
+      "description": "Apesar da odd astronômica, o valor máximo dos termos é exibido como resultado máximo da aposta.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_05_superbet.png",
+      "title": "Apostas liquidadas",
+      "description": "Visão das apostas liquidadas, com um resultado de ganho na aposta.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_06_superbet.png",
+      "title": "Apostas em Aberto — Cashout (Passo 6)",
+      "description": "Sequência completa da funcionalidade de apostas em aberto com opção de cashout total ou parcial disponível em tempo real.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_07_superbet.png",
+      "title": "Apostas liquidadas, com derrota",
+      "description": "Visão das apostas liquidadas, com um resultado de derrota na aposta.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_08_superbet.png",
+      "title": "Apostas liquidadas, com cashout",
+      "description": "Visão das apostas liquidadas, com um resultado de cashout na aposta, permitindo um ganho percentual.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_09_superbet.png",
+      "title": "Apostas em Aberto — Cashout (Passo 9)",
+      "description": "Sequência completa da funcionalidade de apostas em aberto com opção de cashout total ou parcial disponível em tempo real.",
+      "darkPatterns": "",
+      "ignore": true
+    }
+  ],
+  "done": true
+}

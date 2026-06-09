@@ -1,0 +1,35 @@
+{
+  "id": "deposit",
+  "name": "Depósito",
+  "steps": [
+    {
+      "image": "imagens/superbet/deposit/deposit_amount_select_superbet.png",
+      "title": "Página inicial de depósito",
+      "description": "Tela de seleção de valor para depósito com botões de valor rápido e campo de valor personalizado. Exibida assim que o cadastro é finalizado.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/deposit/deposit_pix_qrcode_superbet.png",
+      "title": "Depósito via Pix",
+      "description": "O Pix é a forma de realizar o primeiro depósito. Após a seleção do valor, um código QR é gerado automaticamente.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/deposit/deposit_success_01_superbet.png",
+      "title": "Confirmação do depósito",
+      "description": "Após a confirmação do Pix, um modal de depósito concluído é exibido.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/deposit/deposit_success_02_superbet.png",
+      "title": "\"Presente\" por depósito",
+      "description": "Após a confirmação do depósito, um modal de \"presente\" é exibido, que direciona os usuários para a tela de promoções e bônus, incentivando uma gamificação.",
+      "darkPatterns": "",
+      "tags": []
+    }
+  ],
+  "done": true
+}

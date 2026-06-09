@@ -1,0 +1,135 @@
+{
+  "id": "register",
+  "name": "Cadastro",
+  "steps": [
+    {
+      "image": "imagens/superbet/register/register_step1_cpf_dob_superbet.png",
+      "title": "Primeiro passo de criação de conta",
+      "description": "Primeiro passo do cadastro solicitando CPF e data de nascimento para verificação de elegibilidade.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/register_exit_dark_pattern_superbet.png",
+      "title": "Abandono do cadastro",
+      "description": "Modal exibido ao tentar abandonar o cadastro, busca aumentar a retenção do fluxo.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/register_step2_personal_address_01_superbet.png",
+      "title": "Segundo passo de criação de conta",
+      "description": "Formulário com nome completo, gênero, endereço e telefone, disponível após a verificação de eligibilidade.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/register_step2_personal_address_02_superbet.png",
+      "title": "Segundo passo, dados adicionais",
+      "description": "Formulário do segundo passo com todos os dados adicionais preenchidos.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/register_step3_credentials_01_superbet.png",
+      "title": "Terceiro passo da criação de conta",
+      "description": "Tela de criação de e-mail com sugestão de autocomplete, nome de usuário e senha.",
+      "darkPatterns": "",
+      "tags": [],
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/register/register_step3_credentials_02_superbet.png",
+      "title": "Terceiro passo da criação de conta",
+      "description": "Tela de credenciais com campos de e-mail, usuário e senha. O website sugere e-mails e nomes de usuário de forma automática.",
+      "darkPatterns": "",
+      "tags": [],
+      "ignore": true
+    },
+    {
+      "image": "imagens/superbet/register/register_step3_referral_code_superbet.png",
+      "title": "Terceiro passo da criação de conta",
+      "description": "Tela de credenciais com campos de e-mail, usuário e senha. O website sugere e-mails e nomes de usuário de forma automática.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/register_step3_terms_01_superbet.png",
+      "title": "Terceiro passo, aceite nos termos",
+      "description": "Início da seção de Termos e Condições com checkboxes de aceite e política de privacidade.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/register_step3_terms_02_superbet.png",
+      "title": "Quarto passo, verificação de identidade",
+      "description": "Verificação de identidade facial para liberação do acesso ao website.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/register_step3_terms_03_superbet.png",
+      "title": "Quarto passo, parte 2",
+      "description": "Verificação com a Unico, parceira de verificação facial da Superbet.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/register_step3_terms_04_superbet.png",
+      "title": "Quarto passo, parte 3",
+      "description": "O website lhe dá a opção de escanear um código QR para terminar a verificação de identidade em dispositivos móveis.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/register_step3_terms_05_superbet.png",
+      "title": "Quarto passo, parte 4",
+      "description": "Prosseguimento com a verificação no próprio dispositivo (dotado de câmera).",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/register_step3_terms_06_superbet.png",
+      "title": "Quarto passo, parte 5",
+      "description": "A Unico identificou um de meus documentos já verificados. Agora foi só prosseguir.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/phone_verify_send_superbet.png",
+      "title": "Quinto passo, verificação de celular",
+      "description": "Tela para confirmação do número de telefone e envio do código de verificação via SMS.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/phone_verify_enter_01_superbet.png",
+      "title": "Quinto passo, parte 2",
+      "description": "Campo para inserção do código SMS recebido no celular cadastrado.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/phone_verify_enter_02_superbet.png",
+      "title": "Quinto passo, parte 3",
+      "description": "Continuação da tela de verificação com campo de código em estado de edição.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/phone_verify_enter_03_superbet.png",
+      "title": "Quinto passo, parte 4",
+      "description": "Tela de verificação com código parcialmente inserido.",
+      "darkPatterns": "",
+      "tags": []
+    },
+    {
+      "image": "imagens/superbet/register/phone_verify_enter_04_superbet.png",
+      "title": "Cadastro finalizado",
+      "description": "Tela exibida ao finalizar o cadastro: um modal acima da página de depósito da Superbet.",
+      "darkPatterns": "",
+      "tags": []
+    }
+  ],
+  "done": true
+}

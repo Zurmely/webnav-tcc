@@ -1,0 +1,162 @@
+{
+  "id": "sports_betting",
+  "name": "Apostas Esportivas",
+  "steps": [
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_homepage_betano.png",
+      "title": "Página inicial",
+      "description": "Página inicial das apostas esportivas da Betano com partidas em destaque e mercados disponíveis.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_homepage_logged_in_betano.png",
+      "title": "Página inicial logado",
+      "description": "Página inicial com o usuário autenticado, exibindo o saldo e recomendações personalizadas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_homepage_overview_betano.png",
+      "title": "Visão geral da página",
+      "description": "Captura completa da página de apostas esportivas mostrando todas as seções.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_homepage_02_betano.png",
+      "title": "Cupom de apostas aberto",
+      "description": "Página inicial com o cupom de apostas aberto na lateral e a lista de partidas disponíveis.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_homepage_03_betano.png",
+      "title": "Revisão do cupom",
+      "description": "Cupom em estado de revisão das apostas selecionadas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_homepage_04_betano.png",
+      "title": "Partidas promovidas",
+      "description": "Widget de partidas com cotações promovidas em destaque.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_homepage_05_betano.png",
+      "title": "Lista de partidas",
+      "description": "Lista completa de partidas disponíveis para aposta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_homepage_06_betano.png",
+      "title": "Banner promocional",
+      "description": "Página inicial com o usuário logado e um banner promocional no topo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_01_betano.png",
+      "title": "Apostas ao vivo",
+      "description": "Tela de apostas ao vivo com 134 partidas em andamento, odds em tempo real e painel de detalhes na lateral.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_02_betano.png",
+      "title": "Cupom ao vivo",
+      "description": "Lista de jogos ao vivo com o cupom aberto e uma seleção de odd 1,36 adicionada, com a visualização do campo na lateral.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_03_betano.png",
+      "title": "Aposta ao vivo confirmada",
+      "description": "Aposta simples de R$0,50 no empate confirmada, com a mensagem de sucesso e ganho potencial de R$1,75.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_04_betano.png",
+      "title": "Mercados da partida",
+      "description": "Página de uma partida ao vivo com os mercados de resultado final, total de gols, próximo gol e chance dupla, junto da transmissão ao vivo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_05_betano.png",
+      "title": "Odds em movimento",
+      "description": "Mesma partida instantes depois, com as odds já atualizadas e o aviso sobre possíveis atrasos na informação ao vivo no rodapé.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_06_betano.png",
+      "title": "Cashout disponível",
+      "description": "Lista ao vivo com a aposta do empate em aberto e o botão de cashout exibindo o valor de encerramento.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_07_betano.png",
+      "title": "Cashout em processamento",
+      "description": "Cashout da aposta acionado, com o botão em estado de processamento.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_08_betano.png",
+      "title": "Cashout indisponível",
+      "description": "Aviso de que a seleção não está disponível para cashout no momento.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_09_betano.png",
+      "title": "Apostas resolvidas",
+      "description": "Aba de apostas resolvidas com filtros por tipo, mostrando uma aposta encerrada via cashout e outra ganha.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_10_betano.png",
+      "title": "Aposta perdida",
+      "description": "Aba de resolvidas exibindo uma aposta com o selo de perdida e prêmio de R$0,00.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/sports_betting_live_betting_11_betano.png",
+      "title": "Múltipla ao vivo",
+      "description": "Cupom com uma múltipla de três seleções e odd total de 4,02, montada durante as partidas ao vivo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/casino_slot_lucky_pot_06_betano.png",
+      "title": "Lucky Pot, ganhos",
+      "description": "Lucky Pot mostrando os ganhos da rodada com os valores de saldo e aposta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/casino_slot_lucky_pot_07_betano.png",
+      "title": "Lucky Pot, bônus",
+      "description": "Rodada com a mecânica de rodadas grátis ou bônus ativada.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/casino_slot_lucky_pot_08_betano.png",
+      "title": "Lucky Pot, resultado",
+      "description": "Estado de resultado com os ganhos calculados.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/casino_slot_lucky_pot_09_betano.png",
+      "title": "Lucky Pot, nova rodada",
+      "description": "Nova rodada iniciada com os símbolos posicionados.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/onboarding_age_verification_betano.png",
+      "title": "Verificação de idade",
+      "description": "Modal de verificação de idade exibido no acesso inicial, confirmando que o usuário tem 18 anos ou mais.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/kyc_unica_verify_04_betano.png",
+      "title": "Verificação Unico, etapa final",
+      "description": "Etapa final do processo de verificação com a confirmação do envio dos dados.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/sports_betting/deposit_pix_setup_08_betano.png",
+      "title": "Painel de ofertas",
+      "description": "Página de apostas com o painel de principais ofertas aberto na lateral, exibindo promoções e missões disponíveis.",
+      "darkPatterns": ""
+    }
+  ]
+}

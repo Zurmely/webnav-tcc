@@ -1,0 +1,42 @@
+{
+  "id": "deposit",
+  "name": "Depósito",
+  "steps": [
+    {
+      "image": "imagens/bet365/deposit/deposit_pix_key_select_bet365.png",
+      "title": "Escolha da chave Pix",
+      "description": "Tela de seleção do tipo de chave Pix para o depósito: CPF, e-mail, telefone ou chave aleatória.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/deposit/deposit_pix_qrcode_bet365.png",
+      "title": "Depósito via Pix",
+      "description": "Código QR e código copiável para efetuar o depósito, acompanhados de um contador regressivo de tempo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/deposit/deposit_other_banks_modal_bet365.png",
+      "title": "Outros métodos de pagamento",
+      "description": "Modal listando bancos e métodos de pagamento disponíveis além do Pix.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/deposit/deposit_bank_transfer_facial_required_bet365.png",
+      "title": "Transferência bancária exige reconhecimento facial",
+      "description": "Tela informando que o depósito via transferência bancária só é liberado após a conclusão do reconhecimento facial.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/deposit/deposit_facial_recognition_success_bet365.png",
+      "title": "Reconhecimento facial concluído",
+      "description": "Confirmação de que o reconhecimento facial foi realizado, desbloqueando o depósito bancário.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/deposit/deposit_success_bet365.png",
+      "title": "Depósito concluído",
+      "description": "Confirmação de que o depósito foi processado e o saldo creditado na conta.",
+      "darkPatterns": ""
+    }
+  ]
+}

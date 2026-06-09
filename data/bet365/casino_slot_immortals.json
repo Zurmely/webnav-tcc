@@ -1,0 +1,24 @@
+{
+  "id": "casino_slot_immortals",
+  "name": "Immortals",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_slot_immortals/casino_slot_immortals_01_bet365.png",
+      "title": "Tela de introdução",
+      "description": "Tela de introdução do Immortals (bet365 Originals) com a instrução de girar as rodas para revelar coordenadas e recolher os imortais da grade.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_immortals/casino_slot_ronaldinho_spins_09_bet365.png",
+      "title": "Carregamento do 8 Immortals",
+      "description": "Tela de carregamento do jogo 8 Immortals: Instant Win.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_immortals/casino_slot_ronaldinho_spins_10_bet365.png",
+      "title": "Tabela de pagamento do 8 Immortals",
+      "description": "Tabela de pagamento do 8 Immortals: Instant Win, com os prêmios instantâneos de cada personagem em múltiplos de x1, x10 ou x100 da aposta.",
+      "darkPatterns": ""
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "betano",
+  "name": "Betano",
+  "flows": [
+    "register",
+    "deposit",
+    "casino_home",
+    "casino_crash_desafio_mengao",
+    "casino_mines_game",
+    "casino_slot_caramelo_sortudo",
+    "casino_slot_lucky_pot",
+    "casino_slot_fortune_tiger",
+    "casino_slot_starlight_princess",
+    "sports_betting",
+    "account",
+    "sports_betting_bet_history",
+    "onboarding",
+    "promotions",
+    "kyc",
+    "responsible_gambling",
+    "phone_verify",
+    "email_verify"
+  ]
+}

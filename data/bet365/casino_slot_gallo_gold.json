@@ -1,0 +1,24 @@
+{
+  "id": "casino_slot_gallo_gold",
+  "name": "Gallo Gold",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_slot_gallo_gold/casino_slot_gallo_gold_loading_bet365.png",
+      "title": "Tela de carregamento",
+      "description": "Tela de carregamento do Gallo Gold Bruno's Megaways com animação de introdução.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_gallo_gold/casino_slot_gallo_gold_paytable_01_bet365.png",
+      "title": "Regras, rolo adicional",
+      "description": "Tabela de pagamentos explicando a mecânica do rolo adicional do jogo.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_slot_gallo_gold/casino_slot_gallo_gold_paytable_02_bet365.png",
+      "title": "Regras, combinações",
+      "description": "Página da tabela de pagamentos mostrando as combinações vencedoras e os valores de prêmio.",
+      "darkPatterns": ""
+    }
+  ]
+}

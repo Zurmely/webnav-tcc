@@ -1,0 +1,84 @@
+{
+  "id": "casino_blackjack_cashback",
+  "name": "Blackjack Cashback",
+  "steps": [
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_paytable_bet365.png",
+      "title": "Tabela de pagamentos",
+      "description": "Modal com a tabela de pagamentos do Blackjack Cashback, com valores e regras do cashback.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_01_bet365.png",
+      "title": "Mesa inicial",
+      "description": "Mesa em estado inicial, aguardando a aposta.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_02_bet365.png",
+      "title": "Aposta posicionada",
+      "description": "Aposta posicionada na mesa antes da distribuição das cartas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_03_bet365.png",
+      "title": "Distribuição das cartas",
+      "description": "Cartas sendo distribuídas na mesa.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_04_bet365.png",
+      "title": "Decisão do jogador",
+      "description": "Cartas distribuídas com valores visíveis e botões de decisão para pedir carta ou parar.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_05_bet365.png",
+      "title": "Pedindo carta",
+      "description": "Jogador pede uma carta adicional.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_06_bet365.png",
+      "title": "Nova carta recebida",
+      "description": "Carta adicional recebida e novo valor da mão calculado.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_07_bet365.png",
+      "title": "Resultado da rodada",
+      "description": "Resultado da rodada com as cartas do dealer reveladas.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_08_bet365.png",
+      "title": "Aposta confirmada",
+      "description": "Aposta de R$2,00 confirmada com o resultado da rodada.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_09_bet365.png",
+      "title": "Nova rodada",
+      "description": "Nova rodada iniciada com a aposta reposicionada.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_10_bet365.png",
+      "title": "Cartas da nova rodada",
+      "description": "Distribuição de cartas da nova rodada com os valores iniciais.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_11_bet365.png",
+      "title": "Combinação do jogador",
+      "description": "Mesa com as cartas distribuídas mostrando a combinação do jogador.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_12_bet365.png",
+      "title": "Cashback creditado",
+      "description": "Resultado final da rodada com o cashback sendo creditado.",
+      "darkPatterns": ""
+    }
+  ]
+}
