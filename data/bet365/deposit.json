@@ -38,5 +38,6 @@
       "description": "Confirmação de que o depósito foi processado e o saldo creditado na conta.",
       "darkPatterns": ""
     }
-  ]
+  ],
+  "done": true
 }

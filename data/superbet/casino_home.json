@@ -35,21 +35,79 @@
       "title": "Visão inicial com scroll do Cassino",
       "description": "Página inicial do Cassino completa.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "fake_social_proof",
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h4",
+            "sev": 3
+          },
+          {
+            "id": "h5",
+            "sev": 3
+          },
+          {
+            "id": "h6",
+            "sev": 4
+          },
+          {
+            "id": "h10",
+            "sev": 3
+          }
+        ],
+        "observacoes": "As informações acerca da volatilidade dos jogos não são apresentadas adequadamente. Não é possível inferir o risco a partir do indicador apresentado, exceto caso o usuário leia todos os termos internos da plataforma.\n\nComo Trick Wording, jogos frequentemente associados à perdas são chamados de jogos da fortuna.\n\nUma assimilação de falsas provas sociais são apresentadas, com apresentação de ganhos, mas ocultação das perdas. Busca-se valorizar apenas o que beneficia a plataforma."
+      }
     },
     {
       "image": "imagens/superbet/casino_home/casino_home_03_superbet.png",
       "title": "Visão inicial com hover em card do top 10",
       "description": "Hover em um dos cards dos top 10 jogos.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "comparison_prevention"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h4",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Nem todas as informações são apresentadas neste jogo com hover, diferentemente de outros produtos."
+      }
     },
     {
       "image": "imagens/superbet/casino_home/casino_home_04_superbet.png",
       "title": "Visão inicial com hover em card de jogos da fortuna",
       "description": "Hover em um dos cards dos jogos estilo \"tigrinho\".",
       "darkPatterns": "O indicador de volatilidade não é explicado previamente ao usuário em nenhum outro momento da jornada. A partir disto, não é possível inferir se 5 é a melhor volatilidade, ou a pior, podendo desorientar usuários.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h6",
+            "sev": 4
+          },
+          {
+            "id": "h5",
+            "sev": 3
+          },
+          {
+            "id": "h10",
+            "sev": 3
+          }
+        ],
+        "observacoes": "O indicador de volatilidade não é explicado previamente ao usuário em nenhum outro momento da jornada. A partir disto, não é possível inferir se 5 é a melhor volatilidade, ou a pior, podendo desorientar usuários."
+      }
     },
     {
       "image": "imagens/superbet/casino_home/casino_home_overview_superbet.png",
@@ -58,5 +116,6 @@
       "darkPatterns": "",
       "ignore": true
     }
-  ]
+  ],
+  "done": true
 }

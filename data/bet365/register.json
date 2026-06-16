@@ -102,5 +102,6 @@
       "description": "Mensagem de confirmação de que os novos limites de gastos foram aplicados à conta.",
       "darkPatterns": ""
     }
-  ]
+  ],
+  "done": true
 }
