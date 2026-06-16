@@ -42,21 +42,84 @@
       "title": "Promoções e bônus do Cassino",
       "description": "Promoção recebida após redirecionamento do Tigrinho.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "nagging",
+          "obstruction"
+        ],
+        "gray": [
+          "nagging",
+          "obstruction"
+        ],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          },
+          {
+            "id": "h7",
+            "sev": 2
+          }
+        ],
+        "observacoes": "O usuário é frequentemente interrompido por popups em série enquanto tenta acessar o conteúdo da página."
+      }
     },
     {
       "image": "imagens/superbet/promotions/casino_slot_tigre_sortudo_25_superbet.png",
       "title": "Modal 2 de promoção",
       "description": "Outro modal que foi aberto após ignorar o primeiro.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "nagging",
+          "obstruction"
+        ],
+        "gray": [
+          "nagging",
+          "obstruction"
+        ],
+        "heuristicas": [
+          {
+            "id": "h7",
+            "sev": 2
+          },
+          {
+            "id": "h3",
+            "sev": 2
+          }
+        ],
+        "observacoes": "O usuário é frequentemente interrompido por popups em série enquanto tenta acessar o conteúdo da página."
+      }
     },
     {
       "image": "imagens/superbet/promotions/casino_slot_tigre_sortudo_26_superbet.png",
       "title": "Modal 3 de promoção",
       "description": "Outro modal que foi aberto após ignorar o segundo.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "nagging",
+          "obstruction"
+        ],
+        "gray": [
+          "nagging",
+          "obstruction"
+        ],
+        "heuristicas": [
+          {
+            "id": "h7",
+            "sev": 2
+          },
+          {
+            "id": "h3",
+            "sev": 2
+          }
+        ],
+        "observacoes": "O usuário é frequentemente interrompido por popups em série enquanto tenta acessar o conteúdo da página."
+      }
     }
   ],
   "done": true

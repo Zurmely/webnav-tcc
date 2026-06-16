@@ -7,7 +7,28 @@
       "title": "Visão inicial",
       "description": "Visão inicial do Cassino com atalhos rápidos, jogos mais jogados e \"jogos da fortuna\", no estilo \"tigrinho\".",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h5",
+            "sev": 3
+          },
+          {
+            "id": "h6",
+            "sev": 4
+          },
+          {
+            "id": "h10",
+            "sev": 3
+          }
+        ],
+        "observacoes": "As informações acerca da volatilidade dos jogos não são apresentadas adequadamente. Não é possível inferir o risco a partir do indicador apresentado, exceto caso o usuário leia todos os termos internos da plataforma.\n\nComo Trick Wording, jogos frequentemente associados à perdas são chamados de jogos da fortuna."
+      }
     },
     {
       "image": "imagens/superbet/casino_home/casino_home_01_superbet.png",
@@ -37,6 +58,5 @@
       "darkPatterns": "",
       "ignore": true
     }
-  ],
-  "done": true
+  ]
 }

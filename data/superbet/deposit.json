@@ -28,7 +28,22 @@
       "title": "\"Presente\" por depósito",
       "description": "Após a confirmação do depósito, um modal de \"presente\" é exibido, que direciona os usuários para a tela de promoções e bônus, incentivando uma gamificação.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "nagging"
+        ],
+        "gray": [
+          "nagging"
+        ],
+        "heuristicas": [
+          {
+            "id": "h8",
+            "sev": 2
+          }
+        ],
+        "observacoes": "O usuário é interrompido por popups de promoção enquanto tenta acessar o conteúdo da página, logo após o depósito."
+      }
     }
   ],
   "done": true
