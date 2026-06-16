@@ -90,7 +90,18 @@
       "title": "Definir limites de conta",
       "description": "Modal para definição dos limites de campo, com campos de limite de tempo de acesso e limite de perda.",
       "darkPatterns": "Os limites de perda e de tempo de acesso são incrivelmente altos.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h5",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Os limites de perda e de tempo de acesso são incrivelmente altos."
+      }
     },
     {
       "image": "imagens/betano/register/register_account_active_betano.png",
@@ -134,7 +145,13 @@
       "title": "Modal pós-cadastro",
       "description": "Modal que busca obter a autorização do usuário para envio de conteúdo promocional.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": ""
+      }
     }
   ],
   "done": true
