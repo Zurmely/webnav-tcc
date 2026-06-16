@@ -17,26 +17,79 @@ function ImagePlaceholder(props) {
 }
 window.ImagePlaceholder = ImagePlaceholder;
 
-/* ---- Dark-pattern tag chips ---------------------------------------------- */
-function TagChips(props) {
-  const ids = props.tags || [];
-  const byId = (window.APP_DATA && window.APP_DATA.tagsById) || {};
-  if (!ids.length) return null;
+/* ---- Ficha de catalogação de padrão deceptivo (inline) ------------------- */
+function ChecklistView(props) {
+  const cl = props.checklist || {};
+  const TAX = window.CHECKLIST_TAXONOMY || {};
+  const brById = TAX.brignullById || {};
+  const grById = TAX.grayById || {};
+  const nById = TAX.nielsenById || {};
+  const sevByVal = TAX.severityByValue || {};
+
+  function chip(item) {
+    if (!item) return null;
+    return React.createElement("span", {
+      key: item.id, className: "dp-tag", title: item.pt + " — " + item.def
+    }, item.en);
+  }
+
+  const tipos = (cl.tipos || []).map(id => brById[id]).filter(Boolean);
+  const grays = (cl.gray || []).map(id => grById[id]).filter(Boolean);
+  const heurs = (cl.heuristicas || []).filter(h => h && nById[h.id]);
+
   return (
-    React.createElement("div", { className: "dp-tags" },
-      ids.map(id => {
-        const tag = byId[id];
-        if (!tag) return null;
-        return React.createElement("span", {
-          key: id,
-          className: "dp-tag",
-          title: tag.description
-        }, tag.name);
-      })
+    React.createElement(React.Fragment, null,
+      React.createElement("div", { className: "detail-rule" }),
+      React.createElement("h4", { className: "detail-dp-label" }, "Ficha de catalogação de padrão deceptivo"),
+      React.createElement("div", { className: "ficha-grid" },
+
+        tipos.length
+          ? React.createElement("div", { className: "ficha-field" },
+              React.createElement("div", { className: "ficha-label" }, "Tipo de padrão deceptivo"),
+              React.createElement("div", { className: "dp-tags" }, tipos.map(chip))
+            )
+          : null,
+
+        grays.length
+          ? React.createElement("div", { className: "ficha-field" },
+              React.createElement("div", { className: "ficha-label" }, "Categoria — Gray et al. (2018)"),
+              React.createElement("div", { className: "dp-tags" }, grays.map(chip))
+            )
+          : null,
+
+        heurs.length
+          ? React.createElement("div", { className: "ficha-field" },
+              React.createElement("div", { className: "ficha-label" }, "Heurísticas de Nielsen violadas"),
+              React.createElement("ul", { className: "heur-violations" },
+                heurs.map(h => {
+                  const meta = nById[h.id];
+                  const sev = (typeof h.sev === "number") ? sevByVal[h.sev] : null;
+                  return React.createElement("li", { key: h.id, className: "heur-violation" },
+                    React.createElement("span", { className: "hv-id", title: meta.def }, h.id.toUpperCase()),
+                    React.createElement("span", { className: "hv-name" }, meta.pt),
+                    sev
+                      ? React.createElement("span", { className: "hv-sev", title: sev.def },
+                          React.createElement("span", { className: "hv-sevbox" }, sev.value),
+                          React.createElement("span", { className: "hv-sevlabel" }, "Gravidade " + sev.value + " · " + sev.label)
+                        )
+                      : React.createElement("span", { className: "hv-sev hv-sev--none" }, "gravidade não avaliada")
+                  );
+                })
+              )
+            )
+          : null,
+
+        (cl.observacoes && String(cl.observacoes).trim())
+          ? React.createElement("div", { className: "ficha-field" },
+              React.createElement("div", { className: "ficha-label" }, "Observações"),
+              React.createElement("p", { className: "ficha-obs" }, cl.observacoes)
+            )
+          : null
+      )
     )
   );
 }
-window.TagChips = TagChips;
+window.ChecklistView = ChecklistView;
 
 /* ---- Loading screen ------------------------------------------------------ */
 function LoadingScreen() {
@@ -209,15 +262,8 @@ function ViewerPage(props) {
         React.createElement("div", { className: "detail" },
           React.createElement("h3", { className: "detail-title" }, step.title),
           React.createElement("p", { className: "detail-desc" }, step.description),
-          (step.darkPatterns || (step.tags && step.tags.length))
-            ? React.createElement(React.Fragment, null,
-                React.createElement("div", { className: "detail-rule" }),
-                React.createElement("h4", { className: "detail-dp-label" }, "Sobre os padrões deceptivos"),
-                step.darkPatterns
-                  ? React.createElement("p", { className: "detail-dp" }, step.darkPatterns)
-                  : null,
-                React.createElement(TagChips, { tags: step.tags })
-              )
+          window.checklistHasContent(step.checklist)
+            ? React.createElement(ChecklistView, { checklist: step.checklist })
             : null
         )
       ),

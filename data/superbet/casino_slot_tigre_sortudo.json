@@ -7,7 +7,22 @@
       "title": "Modal de 20 bônus grátis",
       "description": "Após o recebimento do bônus, um modal de 20 bônus grátis é a primeira coisa a ser exibida ao acessar o Tigre Sortudo 1000.",
       "darkPatterns": "Logo ao entrar nesta tela, há uma música muito alta tocando, que busca prender a atenção do usuário.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "sneaking"
+        ],
+        "gray": [
+          "nagging"
+        ],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Logo ao entrar nesta tela, há uma música muito alta tocando, que busca prender a atenção do usuário."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_02_superbet.png",

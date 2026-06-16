@@ -56,14 +56,16 @@
       "title": "CSAT",
       "description": "CSAT exibido durante a navegação nas configurações de conta. Este CSAT foca em como a plataforma te recompensa como jogador, e não em relação a navegação nas configurações.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "ignore": true
     },
     {
       "image": "imagens/superbet/account/account_supercoins_superbet.png",
       "title": "SuperCoins, gamificação",
       "description": "Página do programa de fidelidade e gamificação de missões, exibindo recompensas disponíveis e forma de acumulação de moedas.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "ignore": true
     }
   ],
   "done": true

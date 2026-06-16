@@ -37,6 +37,18 @@
       "title": "Rodadas grátis",
       "description": "Modal promocional informando que 10 rodadas grátis estão disponíveis, com botão para escolher os jogos.",
       "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_home/casino_slot_lucky_pot_loading_betano.png",
+      "title": "Tela de carregamento",
+      "description": "Tela de carregamento do Lucky Pot com o logo da provedora SYNOT Games.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_home/casino_slot_lucky_pot_paytable_02_betano.png",
+      "title": "Visão multijogo",
+      "description": "Tabela de pagamentos exibida no modo de visualização múltipla, com o painel de busca de jogos na lateral.",
+      "darkPatterns": ""
     }
   ]
 }

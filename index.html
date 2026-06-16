@@ -454,6 +454,104 @@
       white-space: nowrap;
     }
 
+    /* ===================== FICHA DE CATALOGAÇÃO (inline) ===================== */
+    .ficha-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ficha-field {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ficha-label {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--gray);
+    }
+
+    .heur-violations {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .heur-violation {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+    }
+
+    .hv-id {
+      flex: 0 0 auto;
+      background: var(--black);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1;
+      padding: 5px 8px;
+      cursor: help;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hv-name {
+      flex: 1 1 auto;
+      min-width: 120px;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .hv-sev {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: help;
+    }
+
+    .hv-sevbox {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 auto;
+      border: 1px solid var(--black);
+      background: var(--yellow);
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hv-sevlabel {
+      font-size: 13px;
+      line-height: 1.2;
+      color: rgba(0, 0, 0, 0.72);
+    }
+
+    .hv-sev--none {
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(0, 0, 0, 0.45);
+    }
+
+    .ficha-obs {
+      font-size: 16px;
+      line-height: 1.55;
+      margin: 0;
+      text-wrap: pretty;
+    }
+
     /* footer */
     .viewer-foot {
       display: flex;
@@ -939,6 +1037,7 @@
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
     integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
     crossorigin="anonymous"></script>
+  <script src="js/checklist-data.js"></script>
   <script src="js/data.js"></script>
   <script src="js/lightbox.js"></script>
   <script src="js/app.js"></script>

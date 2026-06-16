@@ -120,17 +120,19 @@
       "image": "imagens/betano/sports_betting/casino_slot_lucky_pot_06_betano.png",
       "title": "Lucky Pot, ganhos",
       "description": "Lucky Pot mostrando os ganhos da rodada com os valores de saldo e aposta.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/sports_betting/casino_slot_lucky_pot_07_betano.png",
       "title": "Lucky Pot, bônus",
       "description": "Rodada com a mecânica de rodadas grátis ou bônus ativada.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/sports_betting/casino_slot_lucky_pot_08_betano.png",
-      "title": "Lucky Pot, resultado",
+      "title": "Aposta gerada por IA",
       "description": "Estado de resultado com os ganhos calculados.",
       "darkPatterns": ""
     },
@@ -138,25 +140,29 @@
       "image": "imagens/betano/sports_betting/casino_slot_lucky_pot_09_betano.png",
       "title": "Lucky Pot, nova rodada",
       "description": "Nova rodada iniciada com os símbolos posicionados.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/sports_betting/onboarding_age_verification_betano.png",
       "title": "Verificação de idade",
       "description": "Modal de verificação de idade exibido no acesso inicial, confirmando que o usuário tem 18 anos ou mais.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/sports_betting/kyc_unica_verify_04_betano.png",
       "title": "Verificação Unico, etapa final",
       "description": "Etapa final do processo de verificação com a confirmação do envio dos dados.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/sports_betting/deposit_pix_setup_08_betano.png",
       "title": "Painel de ofertas",
       "description": "Página de apostas com o painel de principais ofertas aberto na lateral, exibindo promoções e missões disponíveis.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     }
   ]
 }

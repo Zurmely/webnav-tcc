@@ -74,7 +74,7 @@
     },
     {
       "image": "imagens/bet365/register/kyc_document_confirmed_bet365.png",
-      "title": "Documento aceito",
+      "title": "Documento aceito (e-mail)",
       "description": "Confirmação de que o documento enviado foi aceito e a identidade foi verificada.",
       "darkPatterns": ""
     },

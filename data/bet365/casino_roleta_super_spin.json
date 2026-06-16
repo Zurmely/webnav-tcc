@@ -6,19 +6,23 @@
       "image": "imagens/bet365/casino_roleta_super_spin/casino_crash_fly365_06_bet365.png",
       "title": "Fly365, multiplicador elevado",
       "description": "Fly365 com multiplicador elevado e aposta posicionada.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_roleta_super_spin/casino_crash_fly365_07_bet365.png",
       "title": "Fly365, fim da rodada",
       "description": "Momento próximo ao fim da rodada, entre o crash e a coleta do ganho.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_roleta_super_spin/casino_crash_fly365_08_bet365.png",
       "title": "Fly365, apostas duplas",
       "description": "Painel de apostas duplas com o histórico de multiplicadores anteriores.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     }
-  ]
+  ],
+  "done": true
 }

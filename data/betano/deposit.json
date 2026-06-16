@@ -56,5 +56,6 @@
       "description": "Código QR gerado para efetuar o depósito via Pix, com código copiável.",
       "darkPatterns": ""
     }
-  ]
+  ],
+  "done": true
 }

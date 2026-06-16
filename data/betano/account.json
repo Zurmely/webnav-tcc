@@ -6,25 +6,30 @@
       "image": "imagens/betano/account/account_overview_betano.png",
       "title": "Visão geral da conta",
       "description": "Página de visão geral da conta mostrando o saldo, os últimos depósitos e as apostas abertas.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/account/sports_betting_bet_history_01_betano.png",
       "title": "Histórico de apostas em aberto",
       "description": "Seção de histórico com a aba Em aberto, listando as apostas pendentes de resultado.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/account/sports_betting_bet_history_02_betano.png",
       "title": "Detalhes das apostas",
       "description": "Histórico com os detalhes expandidos de apostas simples e múltiplas realizadas.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/account/sports_betting_bet_history_settled_betano.png",
       "title": "Apostas liquidadas",
       "description": "Aba Liquidada exibindo as apostas já resolvidas, com o resultado e o valor recebido.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     }
-  ]
+  ],
+  "done": true
 }

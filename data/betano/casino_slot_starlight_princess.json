@@ -6,13 +6,16 @@
       "image": "imagens/betano/casino_slot_starlight_princess/casino_slot_starlight_princess_01_betano.png",
       "title": "Regras do jogo",
       "description": "Página das regras com os símbolos, valores de pagamento e o prêmio máximo de 15.000x.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_slot_starlight_princess/casino_slot_starlight_princess_02_betano.png",
       "title": "Regras, parte 2",
       "description": "Segunda página da tabela de pagamentos com mecânicas adicionais do jogo.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     }
-  ]
+  ],
+  "done": true
 }

@@ -14,7 +14,22 @@
       "title": "Abandono do cadastro",
       "description": "Modal exibido ao tentar abandonar o cadastro, busca aumentar a retenção do fluxo.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "obstruction"
+        ],
+        "gray": [
+          "obstruction"
+        ],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          }
+        ],
+        "observacoes": "O usuário tenta sair do fluxo de cadastro, mas é impedido por popups sempre que tenta realizá-lo."
+      }
     },
     {
       "image": "imagens/superbet/register/register_step2_personal_address_01_superbet.png",
