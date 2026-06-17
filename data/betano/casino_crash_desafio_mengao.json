@@ -10,32 +10,60 @@
     },
     {
       "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_02_betano.png",
-      "title": "Cobrança a caminho do gol",
-      "description": "Cobrança sendo batida em direção ao gol enquanto o multiplicador cresce.",
-      "darkPatterns": ""
-    },
-    {
-      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_03_betano.png",
-      "title": "Multiplicador em progressão",
-      "description": "Multiplicador em progressão com o goleiro do Flamengo em tela.",
-      "darkPatterns": ""
+      "title": "Informações do jogo",
+      "description": "Informações sobre o RTP, limites e pagamentos do jogo.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h6",
+            "sev": 2
+          }
+        ],
+        "observacoes": "O RTP não é explicado em todas as telas em que é mencionado. Espera-se que o usuário lembre-se de seu significado e impacto financeiro."
+      }
     },
     {
       "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_04_betano.png",
-      "title": "Coleta parcial",
-      "description": "Rodada em andamento com multiplicador de 1,30x a 27,00x e botão de coleta de 50% visível.",
-      "darkPatterns": ""
+      "title": "Escolha da dificuldade do jogo",
+      "description": "Seletor rotativo de modo de jogo, difícil, médio e fácil. Neste cenário, fácil selecionado.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "O valor de ganho é apresentado como principal, enquanto a chance de retorno deixa de ser explicada."
+      }
+    },
+    {
+      "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_03_betano.png",
+      "title": "Escolha de modo de jogo",
+      "description": "Seletor rotativo de modo de jogo, difícil, médio e fácil. Neste cenário, médio selecionado.",
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_05_betano.png",
       "title": "Tutorial",
       "description": "Tutorial do jogo com as instruções de deslizar ou clicar para apostar e de clicar para coletar.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "Busca-se afastar o apostador do ato de apostar, e trazê-lo para o jogo inofensivo por meio da tentativa de tratar aposta e jogo como sinônimos."
+      }
     },
     {
       "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_06_betano.png",
-      "title": "Direções de chute",
-      "description": "Rodada com multiplicador de 1,20x a 16,00x e as direções de chute visíveis na bola.",
+      "title": "Tutorial, parte 2",
+      "description": "Parte 2 do tutorial, com informação de coleta de metade do valor após o valor apostado ter sido dobrado",
       "darkPatterns": ""
     },
     {
@@ -48,12 +76,23 @@
       "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_08_betano.png",
       "title": "Chute realizado",
       "description": "Chute realizado com o resultado em andamento.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Até que a coleta seja realizada, o feedback da coleta ainda é fraco. Isso ajuda a plataforma a manter o jogador focado em continuar apostando, deixando de lado uma vitória, que ele ainda considera pequena. O destaque no potencial de retorno é muito mais forte visualmente."
+      }
     },
     {
       "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_09_betano.png",
-      "title": "Dificuldade difícil",
-      "description": "Rodada na dificuldade difícil, com multiplicador de 1,50x a 40,00x.",
+      "title": "Gol",
+      "description": "Efeito de feedback quando um gol é realizado.",
       "darkPatterns": ""
     },
     {
@@ -64,21 +103,58 @@
     },
     {
       "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_11_betano.png",
-      "title": "Nova cobrança",
+      "title": "Dificuldade média",
       "description": "Nova cobrança posicionada na dificuldade média, com multiplicador de 1,30x a 27,00x.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "comparison_prevention",
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h4",
+            "sev": 3
+          },
+          {
+            "id": "h1",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Quando o usuário muda de dificuldade, o stepper do multiplicador superior também é alterado. Isso pode fazê-lo pensar que este modo o ajuda a atingir retornos maiores de forma mais rápida, o que não é verdade, uma vez que o retorno neste modo é ainda menor."
+      }
     },
     {
       "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_12_betano.png",
-      "title": "Multiplicador elevado",
-      "description": "Rodada na dificuldade difícil com multiplicador elevado em tela.",
-      "darkPatterns": ""
+      "title": "Dificuldade difícil",
+      "description": "Nova cobrança posicionada na dificuldade média, com multiplicador de 1,50x a 40,00x.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "comparison_prevention",
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 3
+          },
+          {
+            "id": "h4",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Quando o usuário muda de dificuldade, o stepper do multiplicador superior também é alterado. Isso pode fazê-lo pensar que este modo o ajuda a atingir retornos maiores de forma mais rápida, o que não é verdade, uma vez que o retorno neste modo é ainda menor."
+      }
     },
     {
       "image": "imagens/betano/casino_crash_desafio_mengao/casino_crash_desafio_mengao_13_betano.png",
-      "title": "Botão de coleta",
-      "description": "Botão de coleta em destaque durante a rodada ativa.",
+      "title": "Jogo difícil",
+      "description": "Durante o jogo difícil, a torcida atrás do goleiro solta sinalizadores, bem como os sons são alterados.",
       "darkPatterns": ""
     }
-  ]
+  ],
+  "done": true
 }

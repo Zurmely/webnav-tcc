@@ -3,6 +3,12 @@
   "name": "Minas",
   "steps": [
     {
+      "image": "imagens/betano/casino_mines_game/casino_slot_starlight_princess_03_betano.png",
+      "title": "Regras",
+      "description": "Página das regras do Mines.",
+      "darkPatterns": ""
+    },
+    {
       "image": "imagens/betano/casino_mines_game/casino_mines_game_01_betano.png",
       "title": "Tela inicial",
       "description": "Tela inicial do Minas com a grade 5x5 fechada, uma estrela revelada e aposta de R$1,00.",
@@ -18,30 +24,27 @@
       "image": "imagens/betano/casino_mines_game/casino_mines_game_03_betano.png",
       "title": "Multiplicador crescente",
       "description": "O multiplicador cresce conforme mais estrelas são encontradas.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_mines_game/casino_mines_game_04_betano.png",
       "title": "Estado intermediário",
       "description": "Estado intermediário da partida, com casas reveladas e multiplicador atualizado.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_mines_game/casino_mines_game_05_betano.png",
       "title": "Várias estrelas reveladas",
       "description": "Partida com várias estrelas reveladas e ganho acumulado.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_mines_game/casino_mines_game_06_betano.png",
-      "title": "Fase avançada",
-      "description": "Fase avançada da partida, com a maioria das casas seguras reveladas.",
-      "darkPatterns": ""
-    },
-    {
-      "image": "imagens/betano/casino_mines_game/casino_slot_starlight_princess_03_betano.png",
-      "title": "Starlight Princess, regras",
-      "description": "Página das regras do Starlight Princess 1000 com informações sobre rodadas grátis e recursos especiais.",
+      "title": "Multiplicador crescente",
+      "description": "O multiplicador cresce conforme mais estrelas são encontradas.",
       "darkPatterns": ""
     },
     {
@@ -54,7 +57,8 @@
       "image": "imagens/betano/casino_mines_game/casino_slot_starlight_princess_05_betano.png",
       "title": "Starlight Princess, regras 3",
       "description": "Página final das regras do jogo.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     }
   ]
 }

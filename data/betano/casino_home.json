@@ -6,7 +6,8 @@
       "image": "imagens/betano/casino_home/casino_home_betano.png",
       "title": "Página inicial do cassino",
       "description": "Página inicial do cassino da Betano com jogos exclusivos, torneios e categorias em destaque.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_home/casino_home_overview_betano.png",
