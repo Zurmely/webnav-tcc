@@ -16,15 +16,37 @@
     },
     {
       "image": "imagens/betano/casino_slot_lucky_pot/casino_slot_lucky_pot_03_betano.png",
-      "title": "Combinação em formação",
-      "description": "Rodada com uma combinação de símbolos em formação.",
-      "darkPatterns": ""
+      "title": "Jackpot",
+      "description": "Hover em valor de jackpot, exibido no topo da tela.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h6",
+            "sev": 2
+          }
+        ],
+        "observacoes": "As informações sobre o jackpot não ficam disponíveis diretamente nesta tela, requerindo que o usuário memorize o seu funcionamento."
+      }
     },
     {
       "image": "imagens/betano/casino_slot_lucky_pot/casino_slot_lucky_pot_04_betano.png",
       "title": "Resultado da rodada",
       "description": "Resultado da rodada exibido em tela.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 0
+          }
+        ],
+        "observacoes": "Neste cenário é importante apontar também o que foi feito de bom: diferentemente de outros jogos e plataformas, há um aviso sobre as próximas rodadas utilizarem dinheiro real."
+      }
     },
     {
       "image": "imagens/betano/casino_slot_lucky_pot/casino_slot_lucky_pot_05_betano.png",
@@ -32,5 +54,6 @@
       "description": "Rodada com os símbolos de cartas e itens irlandeses visíveis.",
       "darkPatterns": ""
     }
-  ]
+  ],
+  "done": true
 }

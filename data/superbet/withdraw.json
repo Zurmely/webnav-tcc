@@ -5,7 +5,7 @@
     {
       "image": "imagens/superbet/withdraw/sports_betting_open_bets_10_superbet.png",
       "title": "Modal de valores",
-      "description": "Modal de atalhos de conta, inclusive para iniciar o saque.",
+      "description": "Modal de atalhos de conta, inclusive para iniciar o saque. O botão de retirada é muito mais forte.",
       "darkPatterns": "",
       "tags": []
     },
@@ -21,7 +21,22 @@
       "title": "Adição de conta bancária",
       "description": "Para efetuar a retirada, é necessário adicionar uma conta bancária.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "obstruction"
+        ],
+        "gray": [
+          "obstruction"
+        ],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Diferentemente de outras plataformas, que cadastram contas diretamente no depósito, a Superbet escolhe deixar este passo apenas para a retirada, obstruindo o caminho do usuário no saque."
+      }
     },
     {
       "image": "imagens/superbet/withdraw/sports_betting_open_bets_13_superbet.png",
@@ -70,7 +85,22 @@
       "title": "Verificação para retirada",
       "description": "Para efetuar a retirada é necessário confirmar a identidade mais uma vez.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "obstruction"
+        ],
+        "gray": [
+          "obstruction"
+        ],
+        "heuristicas": [
+          {
+            "id": "h7",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Como mencionado, diferentemente de outras plataformas, que cadastram contas diretamente no depósito, a Superbet escolhe deixar este passo apenas para a retirada, obstruindo o caminho do usuário no saque.\n\nIsso incorre em uma verificação adicional também para a retirada. No caso mapeado, como o cadastro de conta e o saque estavam muito próximos, alguma tecnologia poderia ser implementada para evitar a necessidade de dois reconhecimentos em sequência."
+      }
     },
     {
       "image": "imagens/superbet/withdraw/withdraw_success_superbet.png",
@@ -79,5 +109,6 @@
       "darkPatterns": "",
       "tags": []
     }
-  ]
+  ],
+  "done": true
 }
