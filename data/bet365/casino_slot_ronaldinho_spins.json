@@ -48,7 +48,21 @@
       "image": "imagens/bet365/casino_slot_ronaldinho_spins/casino_slot_ronaldinho_spins_08_bet365.png",
       "title": "Linha de pagamento",
       "description": "Ganho de R$1,00 com a linha de pagamento destacada e a indicação de que ela paga R$0,25.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 3
+          }
+        ],
+        "observacoes": "O feedback de ganho se refere ao todo, e não ao momento. Ao começar o jogo com R$ 9, e ficar com R$ 8,50 após algumas jogadas, o ganho total não foi de R$ 1. Novamente, as derrotas não são consideradas."
+      }
     }
-  ]
+  ],
+  "done": true
 }

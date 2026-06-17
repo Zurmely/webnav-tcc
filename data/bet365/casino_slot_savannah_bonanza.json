@@ -23,7 +23,7 @@
     {
       "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_04_bet365.png",
       "title": "Animação de introdução",
-      "description": "Animação de introdução do jogo, com um animal escondido entre as folhas da savana.",
+      "description": "Animação de introdução do jogo, com um animal escondido entre as folhas da savana. Todos os jogos possuem animações bem chamativas.",
       "darkPatterns": ""
     },
     {
@@ -54,7 +54,20 @@
       "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_09_bet365.png",
       "title": "Ganho em cascata",
       "description": "Rodada com ganho de R$0,40 no modo de queda, com símbolos desaparecendo da grade.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 4
+          }
+        ],
+        "observacoes": "Aqui, de forma ainda pior do que em outros jogos analisados, a palavra Ganho é utilizada, mesmo com uma perda efetiva de R$ 0,60, uma vez que a aposta realizada foi de R$ 1."
+      }
     },
     {
       "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_10_bet365.png",
@@ -64,21 +77,36 @@
     },
     {
       "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_11_bet365.png",
-      "title": "Multiplicadores na grade",
+      "title": "Multiplicadores na grade, perda",
       "description": "Rodada com multiplicador x4 no painel lateral e símbolos de X2 e de bônus na grade.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "visual_interference"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 4
+          }
+        ],
+        "observacoes": "Não há feedback sobre a derrota, quando nenhum valor é ganho. Multiplicadores são utilizados para tentar manter o usuário jogando, ensinando-o que a próxima rodada pode ter ganhos 4 vezes maiores."
+      }
     },
     {
       "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_12_bet365.png",
-      "title": "Ganho com multiplicador",
-      "description": "Rodada com ganho de R$0,40 e símbolo de X3 presente na grade.",
+      "title": "Ganho de R$ 0,40",
+      "description": "Rodada com ganho de R$0,40 e símbolo de multiplicador na grade.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_slot_savannah_bonanza/casino_slot_savannah_bonanza_13_bet365.png",
       "title": "Ganho de R$1,20",
       "description": "Rodada com ganho de R$1,20 e símbolo dourado de multiplicador na grade.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     }
-  ]
+  ],
+  "done": true
 }

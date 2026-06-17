@@ -18,13 +18,31 @@
       "image": "imagens/bet365/casino_vira_lata_caramelo/casino_slot_immortals_04_bet365.png",
       "title": "Tela principal",
       "description": "Tela principal com a grade de símbolos e dois scatters visíveis. O jogo oferece a compra de rodadas grátis por R$20.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording",
+          "hidden_costs"
+        ],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "A compra de rodadas grátis quebra toda a ideia das rodadas serem grátis."
+      }
     },
     {
       "image": "imagens/bet365/casino_vira_lata_caramelo/casino_slot_immortals_05_bet365.png",
       "title": "Faça as suas apostas",
       "description": "Tela entre rodadas com o aviso \"Faça as suas apostas!\" e a instrução para obter o sino e multiplicar o prêmio de queda.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "A funcionalidade de duplicação de hipóteses de ganho, matematicamente falando, está cobrando o jogador o mesmo valor que ele pagaria normalmente para obter chances duplicadas de ganhar."
+      }
     }
-  ]
+  ],
+  "done": true
 }

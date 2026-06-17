@@ -73,7 +73,9 @@
       "darkPatterns": "Não ha uma explicação acerca do jogo automático clara antes deste momento, e a ativação direta pode fazer com que mais dinheiro que o esperado seja gasto.",
       "tags": [],
       "checklist": {
-        "tipos": [],
+        "tipos": [
+          "hidden_subscription"
+        ],
         "gray": [],
         "heuristicas": [
           {
