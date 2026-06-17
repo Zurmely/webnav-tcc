@@ -100,7 +100,7 @@
             "sev": 3
           }
         ],
-        "observacoes": "Os limites de perda e de tempo de acesso são incrivelmente altos."
+        "observacoes": "Os limites de perda e de tempo de acesso são incrivelmente altos, podendo resultar em um prejuízo enorme. Os limites de perda deveriam estar em ressonância com os valores mínimos de depósito."
       }
     },
     {
@@ -147,10 +147,21 @@
       "darkPatterns": "",
       "tags": [],
       "checklist": {
-        "tipos": [],
+        "tipos": [
+          "trick_wording"
+        ],
         "gray": [],
-        "heuristicas": [],
-        "observacoes": ""
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          },
+          {
+            "id": "h5",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Um aceite para divulgação de ofertas vem disfarçado/incluso junto de um aceite de promoções. Isso pode fazer com que o usuário aceite algo que não quer, pois junto disso é vendido algo que ele quer."
       }
     }
   ],

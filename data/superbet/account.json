@@ -28,7 +28,13 @@
       "title": "Histórico de Cassino",
       "description": "Visão das apostas no Cassino. Nesta plataforma, majoritariamente no Tigrinho. Diferentemente do apresentado no Tigrinho, aqui as apostas exibem apenas o valor ganho, e não retornos percentuais.",
       "darkPatterns": "Esta tela reforça o padrão deceptivo do prêmio do Tigrinho. Enquanto aqui o ganho é exibido como realmente aconteceu, isto é, 2 centavos a mais, uma vez que apostei 10 centavos e retornaram 12, no Tigrinho este valor seria exibido como um prêmio de 12 centavos.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "Esta tela reforça o padrão deceptivo do prêmio do Tigrinho. Enquanto aqui o ganho é exibido como realmente aconteceu, isto é, 2 centavos a mais, uma vez que apostei 10 centavos e retornaram 12, no Tigrinho este valor seria exibido como um prêmio de 12 centavos."
+      }
     },
     {
       "image": "imagens/superbet/account/account_casino_history_02_superbet.png",
@@ -67,5 +73,6 @@
       "tags": [],
       "ignore": true
     }
-  ]
+  ],
+  "done": true
 }
