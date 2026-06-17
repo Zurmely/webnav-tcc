@@ -10,18 +10,18 @@
       "tags": [],
       "checklist": {
         "tipos": [
-          "sneaking"
+          "nagging"
         ],
         "gray": [
           "nagging"
         ],
         "heuristicas": [
           {
-            "id": "h1",
-            "sev": 3
+            "id": "h3",
+            "sev": 2
           }
         ],
-        "observacoes": "Logo ao entrar nesta tela, há uma música muito alta tocando, que busca prender a atenção do usuário."
+        "observacoes": "Logo ao entrar nesta tela, há uma música muito alta tocando, que busca prender a atenção do usuário.\n\nO caminho do usuário é interrompido pelo popup de bônus grátis, que busca direcionar o usuário para o jogo rapidamente."
       }
     },
     {
@@ -71,21 +71,62 @@
       "title": "Configurações de jogo automático",
       "description": "Configurações exibidas após o final das regras, permitindo que o jogador ative o jogo automático, isto é, jogue várias rodadas com apenas um clique.",
       "darkPatterns": "Não ha uma explicação acerca do jogo automático clara antes deste momento, e a ativação direta pode fazer com que mais dinheiro que o esperado seja gasto.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h6",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Não ha uma explicação acerca do jogo automático clara antes deste momento, e a ativação direta pode fazer com que mais dinheiro que o esperado seja gasto. Espera-se que o usuário tenha memorizado as regras."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_09_superbet.png",
       "title": "Tela inicial",
       "description": "Tela inicial, antes de nenhuma aposta ser realizada.",
       "darkPatterns": "O mascote do jogo, o \"tigrinho\", exibe valores multiplicados junto de seu personagem, quase que como uma promessa de ganho.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "visual_interference"
+        ],
+        "gray": [
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 3
+          }
+        ],
+        "observacoes": "O mascote do jogo, o \"tigrinho\", exibe valores multiplicados junto de seu personagem, quase que como uma promessa de ganho. Isso não se relaciona com o real status do sistema."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_10_superbet.png",
       "title": "Sem ganho",
       "description": "Tela após uma jogada ter sido realizada.",
       "darkPatterns": "Após o jogo, caso não exista ganho, nenhum feedback é exibido.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 4
+          },
+          {
+            "id": "h9",
+            "sev": 4
+          }
+        ],
+        "observacoes": "Após o jogo, caso não exista ganho, nenhum feedback é exibido. Isso ajuda a minimizar a sensação de perda."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_11_superbet.png",
@@ -99,28 +140,76 @@
       "title": "Wildcard",
       "description": "Tela exibida quando uma wildcard aparece. Wildcards são itens da roleta que podem servir como qualquer outro.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "visual_interference"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 4
+          },
+          {
+            "id": "h4",
+            "sev": 4
+          }
+        ],
+        "observacoes": "O valor exibido pelo mascote não está relacionado com nenhum acontecimento. O cenário exibido, com o wildcard, isto é, coringa, não representa o real status do sistema."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_13_superbet.png",
       "title": "Ganho",
       "description": "Nesta tela de ganho, acertei vários itens. Os itens ficam destacados com brilho, e o prêmio é exibido como um feedback.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "Diferentemente da tela com derrota o feedback de ganho é extremamente presente."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_14_superbet.png",
       "title": "Mega ganho",
       "description": "Caso o prêmio ultrapasse em 10x o valor apostado, um modal de mega ganho é exibido, com animações de moedas e com um contador de ganho que sobe do valor apostado até o valor ganho.",
       "darkPatterns": "Não é possível fechar este modal. Diferentemente de quando há perda, este feedback é extremamente chamativo.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "obstruction"
+        ],
+        "gray": [
+          "obstruction"
+        ],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 3
+          },
+          {
+            "id": "h7",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Não é possível fechar este modal, pois espera-se que o usuário compreenda bem a vitória. Diferentemente de quando há perda, este feedback é extremamente chamativo. "
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_15_superbet.png",
       "title": "Jogo paga",
       "description": "Tela exibida após a animação de mega ganho ou ganho simples, informando o quanto o jogo pagou.",
       "darkPatterns": "Neste cenário, apenas o valor de vitória é exibido. Não há feedback do valor perdido.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "Neste cenário, apenas o valor de vitória é exibido. Apesar disso, se R$ 0,10 foram apostados e o prêmio é de R$ 3,00, o saldo real foi de +R$ 2,90."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_16_superbet.png",
@@ -134,7 +223,18 @@
       "title": "Ganho menor que a aposta",
       "description": "Neste cenário, 6 centavos foram retornados em uma aposta de 10 centavos. Independentemente da perda efetiva, o feedback de ganho continua muito forte.",
       "darkPatterns": "Feedback de prêmio falso. Se apostei 10 centavos e apenas 6 retornaram, tive uma perda efetiva de 4 centavos.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 4
+          }
+        ],
+        "observacoes": "Este feedback não representa o status adequado do sistema. Se foram apostados 10 centavos e apenas 6 retornaram, houve uma perda efetiva de 4 centavos.\n\nPara além disso, o valor de prêmio persistiu na vitória."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_18_superbet.png",
@@ -162,35 +262,106 @@
       "title": "Tela de aposta sem bônus",
       "description": "Após a completude do bônus, agora a tela assume um formato um pouco diferente. A exibição do valor a ser apostado e ganho muda de local.",
       "darkPatterns": "Após completar o bônus grátis, o valor da aposta muda repentinamente de 10 centavos para 1 real. Não há nenhum feedback para o usuário.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "hidden_costs",
+          "sneaking"
+        ],
+        "gray": [
+          "sneaking"
+        ],
+        "heuristicas": [
+          {
+            "id": "h9",
+            "sev": 4
+          },
+          {
+            "id": "h1",
+            "sev": 3
+          },
+          {
+            "id": "h5",
+            "sev": 4
+          }
+        ],
+        "observacoes": "Após completar o bônus grátis, o valor da aposta muda repentinamente de 10 centavos para 1 real. Não há nenhum feedback para o usuário, o que pode incorrer em perdas maiores."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_22_superbet.png",
       "title": "Escolha de valor para aposta",
       "description": "Pop-up de escolha de valor para apostas. A confirmação visual é bem fraca, sendo apenas uma borda diferente no valor selecionado.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 1
+          }
+        ],
+        "observacoes": "A visibilidade do valor atual é prejudicada pela escolha do padrão de cores pouco contrastantes."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_23_superbet.png",
       "title": "Modal de promoção",
       "description": "Durante o jogo, fui apresentado este modal invasivo de promoção. Não consegui relacionar o acontecido com nenhum dos momentos da jornada.\n\nOs informativos da promoção estão na seção Promoções e Bônus.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "nagging"
+        ],
+        "gray": [
+          "nagging"
+        ],
+        "heuristicas": [],
+        "observacoes": "Durante o jogo, popups de promoções aparecem sem motivo claro."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_27_superbet.png",
       "title": "Sugestão de uso",
       "description": "O jogo me sugere, por meio de notas de rodapé, pressionar a tecla espaço para ativar a rotação turbo.",
       "darkPatterns": "A rotação turbo não é explicada pelo jogo, a não ser nas regras, que podem ser facilmente puladas. A rotação turbo é um recurso que permite o jogador apostar várias vezes, de forma rápida, efetivando as apostas mais rapidamente, podendo maximizar o ganho do cassino.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h5",
+            "sev": 2
+          },
+          {
+            "id": "h6",
+            "sev": 4
+          }
+        ],
+        "observacoes": "A rotação turbo não é explicada pelo jogo, a não ser nas regras, que podem ser facilmente puladas. A rotação turbo é um recurso que permite o jogador apostar várias vezes, de forma rápida, efetivando as apostas mais rapidamente, podendo maximizar o ganho do cassino."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_28_superbet.png",
       "title": "Ganho (pequeno)",
       "description": "Ganho de 12 centavos, ligeiramente maior que os 10 centavos apostados. O feedback se mantém chamativo.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 3
+          }
+        ],
+        "observacoes": "O feedback de prêmio se mantém chamativo neste cenário, onde a vitória efetiva foi de 2 centavos. Isso é exibido no histórico de apostas da conta, mas aqui, não aparece desta forma."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_29_superbet.png",
@@ -204,7 +375,20 @@
       "title": "Rode para ganhar",
       "description": "Sugestão de jogo, com nota de rodapé me sugerindo rodar para ganhar.",
       "darkPatterns": "O texto \"Rode para ganhar\" funciona quase que como uma promessa, mas nenhum ganho é garantido pela aposta. O texto pode levar o usuário a um caminho inesperado.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          }
+        ],
+        "observacoes": "O texto \"Rode para ganhar\" funciona quase que como uma promessa, mas nenhum ganho é garantido pela aposta. O texto pode levar o usuário a um caminho inesperado."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_31_superbet.png",
@@ -218,7 +402,20 @@
       "title": "Ganho menor que a aposta (aposta sem bônus)",
       "description": "Neste cenário, 6 centavos foram retornados em uma aposta de 10 centavos. Este cenário aparece novamente na análise pois não aconteceu em uma aposta com bônus.",
       "darkPatterns": "Além da perda efetiva de 4 centavos nesta aposta (40% do valor), o mascote exibe \"15x\" junto a si, valor irreal e sem relação com qualquer feedback.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Além da perda efetiva de 4 centavos nesta aposta (40% do valor), o mascote exibe \"15x\" junto a si, valor irreal e sem relação com qualquer feedback."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_33_superbet.png",
@@ -232,7 +429,20 @@
       "title": "Ganho igual a aposta",
       "description": "Neste cenário, 10 centavos foram retornados em uma aposta de 10 centavos. Isso significa que não houve ganho nenhum.",
       "darkPatterns": "Apesar de não haver ganho, os valores continuam sendo tratados como prêmio.",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Apesar de não haver ganho, os valores continuam sendo tratados como prêmio."
+      }
     },
     {
       "image": "imagens/superbet/casino_slot_tigre_sortudo/casino_slot_tigre_sortudo_35_superbet.png",
@@ -241,5 +451,6 @@
       "darkPatterns": "",
       "tags": []
     }
-  ]
+  ],
+  "done": true
 }
