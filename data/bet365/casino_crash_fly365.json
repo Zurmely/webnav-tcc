@@ -3,82 +3,143 @@
   "name": "Fly365",
   "steps": [
     {
+      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_12_bet365.png",
+      "title": "Carregamento",
+      "description": "Tela de carregamento do jogo.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h6",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Espera-se que o jogador lembre do funcionamento de RTP, ao invés de que este funcionamento seja explicado. O uso da nomenclatura RTP busca ocultar a possível e provável perda do usuário.\n\nA exibição do ganho máximo corrobora com este padrão."
+      }
+    },
+    {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_13_bet365.png",
       "title": "Regras",
-      "description": "Ganho coletado pelo jogador antes do crash.",
+      "description": "Parte 1 das regras.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_14_bet365.png",
       "title": "Regras, parte 2",
-      "description": "Interface de apostas duplas simultâneas aberta.",
+      "description": "Parte 2 das regras.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_15_bet365.png",
       "title": "Regras, parte 3",
-      "description": "Configurações de jogo automático abertas.",
+      "description": "Parte 3 das regras.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_16_bet365.png",
       "title": "Regras, parte 4",
-      "description": "Fase de espera para o início de uma nova rodada.",
+      "description": "Parte 4 das regras.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_17_bet365.png",
       "title": "Regras, parte 5",
-      "description": "Resultado de múltiplas apostas exibido em tela.",
+      "description": "Parte 5 das regras.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_18_bet365.png",
       "title": "Regras, final",
-      "description": "Up Only mostrando o histórico de multiplicadores recentes na lateral.",
+      "description": "Parte final das regras.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_fly365_01_bet365.png",
       "title": "Início do voo",
       "description": "Fly365 com o avião em voo e multiplicador crescente, com painel de aposta e botão de encerrar aposta.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "fake_social_proof"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h4",
+            "sev": 3
+          },
+          {
+            "id": "h3",
+            "sev": 2
+          },
+          {
+            "id": "h1",
+            "sev": 3
+          }
+        ],
+        "observacoes": "A presença das apostas de outros jogadores, categorizadas, inclusive, com as maiores apostas, exibe uma falsa prova social de ganhos de outros jogadores. Em relação ao Only Up, neste jogo as apostas são exibidas ainda com nomes, ajudando a criar essa validação, mas num cenário de perda, não há feedback.\n\nA consistência visual do contraste elevado dos botões não se mantém no botão de encerrar aposta, sendo reduzido e prejudicando a visibilidade do status e o controle do usuário."
+      }
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_fly365_02_bet365.png",
-      "title": "Multiplicador subindo",
+      "title": "Aposta perdida",
       "description": "Rodada em andamento com multiplicador mais alto e histórico das rodadas anteriores visível.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 3
+          }
+        ],
+        "observacoes": "A aposta perdida não apresenta feedback de perda para o usuário, apenas mostra que o avião não passou de um certo multiplicador, sendo assim, não há feedback claro."
+      }
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_fly365_03_bet365.png",
       "title": "Aposta ativa",
       "description": "Aposta ativa com o multiplicador em progressão.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_fly365_04_bet365.png",
       "title": "Trajetória ascendente",
       "description": "Avião em trajetória ascendente com o multiplicador em tela.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_20_bet365.png",
-      "title": "Up Only, painel de apostas",
-      "description": "Up Only com o painel de apostas expandido e opções de valor visíveis.",
-      "darkPatterns": ""
+      "title": "Aguardando a próxima rodada",
+      "description": "O avião \"crashou\" e os usuários aguardam a próxima rodada.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h4",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Nota-se novamente o padrão reforçado no contraste no botão de cancelamento."
+      }
     },
     {
       "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_19_bet365.png",
-      "title": "Up Only, fim de sessão",
-      "description": "Up Only em estado final de sessão com o saldo atualizado.",
-      "darkPatterns": ""
-    },
-    {
-      "image": "imagens/bet365/casino_crash_fly365/casino_crash_up_only_12_bet365.png",
-      "title": "Up Only, crash",
-      "description": "Momento do crash, com o foguete explodindo.",
+      "title": "Avião crashou",
+      "description": "Neste cenário, o avião crashou sem que eu tivesse realizado uma aposta.",
       "darkPatterns": ""
     }
-  ]
+  ],
+  "done": true
 }

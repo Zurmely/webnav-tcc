@@ -6,7 +6,8 @@
       "image": "imagens/bet365/casino_home/casino_home_account_menu_bet365.png",
       "title": "Menu da conta",
       "description": "Menu de conta aberto na página do cassino, exibindo saldo, depósitos, saque e opções como Preferências, Jogo Responsável e Sair.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_home/casino_home_bet365.png",
@@ -24,7 +25,8 @@
       "image": "imagens/bet365/casino_home/casino_home_lobby_01_bet365.png",
       "title": "Continuar jogando e favoritos",
       "description": "Seção do lobby exibindo os jogos recentes do usuário e os jogos favoritados.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_home/casino_home_lobby_02_bet365.png",
@@ -39,15 +41,16 @@
       "darkPatterns": ""
     },
     {
-      "image": "imagens/bet365/casino_home/casino_info_rtp_volatility_bet365.png",
-      "title": "O que é RTP e volatilidade",
-      "description": "Página de conteúdo educativo explicando os conceitos de RTP (Retorno ao Jogador) e volatilidade.",
-      "darkPatterns": ""
-    },
-    {
       "image": "imagens/bet365/casino_home/casino_crash_fly365_05_bet365.png",
       "title": "Fly365 durante o voo",
       "description": "Fly365 em fase intermediária do voo, com multiplicador e painel de apostas visíveis.",
+      "darkPatterns": "",
+      "ignore": true
+    },
+    {
+      "image": "imagens/bet365/casino_home/casino_info_rtp_volatility_bet365.png",
+      "title": "O que é RTP e volatilidade",
+      "description": "Página de conteúdo educativo explicando os conceitos de RTP (Retorno ao Jogador) e volatilidade.",
       "darkPatterns": ""
     }
   ]
