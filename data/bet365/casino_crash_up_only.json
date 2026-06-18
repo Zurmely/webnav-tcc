@@ -6,11 +6,12 @@
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_01_bet365.png",
       "title": "Início da rodada",
       "description": "Up Only com o foguete em trajetória ascendente e multiplicador crescente em tela.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_02_bet365.png",
-      "title": "Foguete em voo",
+      "title": "Tela inicial",
       "description": "Foguete em voo com o painel de apostas e valores posicionados.",
       "darkPatterns": ""
     },
@@ -18,61 +19,83 @@
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_03_bet365.png",
       "title": "Histórico de rodadas",
       "description": "Multiplicador ativo e histórico de rodadas anteriores na lateral.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_04_bet365.png",
-      "title": "Aceleração",
-      "description": "Fase de aceleração do foguete com multiplicador elevado.",
+      "title": "Perda",
+      "description": "Perda do valor apostado, com histórico de apostas.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_05_bet365.png",
-      "title": "Aposta ativa",
-      "description": "Foguete em posição avançada com a aposta ativa visível.",
+      "title": "Ganho",
+      "description": "Valor ganho, com multiplicador.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_06_bet365.png",
       "title": "Encerrar aposta",
       "description": "Botão \"Encerrar aposta\" em destaque para a coleta antecipada do ganho.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_07_bet365.png",
-      "title": "Apostas simultâneas",
-      "description": "Estado com apostas simultâneas, automática e manual.",
+      "title": "Progressão de multiplicador",
+      "description": "O multiplicador sobe e o visual da página é alterado.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_08_bet365.png",
-      "title": "Resultado da rodada",
-      "description": "Resultado exibido após o crash ou a coleta.",
+      "title": "Progressão de multiplicador, parte 2",
+      "description": "O multiplicador sobe e o visual da página é alterado.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_09_bet365.png",
-      "title": "Nova rodada",
-      "description": "Nova rodada com o multiplicador reiniciando.",
+      "title": "Progressão de multiplicador, parte 3",
+      "description": "O multiplicador sobe e o visual da página é alterado.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_10_bet365.png",
-      "title": "Jogo automático",
-      "description": "Painel de jogo automático configurado.",
+      "title": "Progressão de multiplicador, parte 4",
+      "description": "O multiplicador sobe e o visual da página é alterado.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_crash_up_only/casino_crash_up_only_11_bet365.png",
-      "title": "Multiplicador alto",
-      "description": "Rodada com um multiplicador alto alcançado.",
-      "darkPatterns": ""
+      "title": "Progressão, parte 5",
+      "description": "A progressão do multiplicador e alteração do visual da página continuam.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "fake_social_proof",
+          "obstruction"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          },
+          {
+            "id": "h7",
+            "sev": 3
+          }
+        ],
+        "observacoes": "O usuário é obrigado a acompanhar o atual multiplicador. Cria-se uma falsa prova social de ganho possível de outros jogadores, quando isso poderia não ser verdade para o jogador.\n\nO jogo depende de usuários acreditarem que outros usuários estão atingindo estes multiplicadores incríveis, quando, na verdade, a experiência poderia facilmente ocorrer localmente."
+      }
     },
     {
       "image": "imagens/bet365/casino_crash_up_only/casino_slot_savannah_bonanza_14_bet365.png",
       "title": "Rodapé da página",
       "description": "Up Only visto com a página rolada, exibindo o rodapé da bet365 com informações institucionais e links de Jogo Responsável.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     }
-  ]
+  ],
+  "done": true
 }

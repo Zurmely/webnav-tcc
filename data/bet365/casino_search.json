@@ -6,13 +6,40 @@
       "image": "imagens/bet365/casino_search/casino_search_blackjack_bet365.png",
       "title": "Busca por Blackjack",
       "description": "Resultado de busca pela palavra \"blackjack\", exibindo os jogos disponíveis em grade.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_search/casino_search_sugar_rush_bet365.png",
       "title": "Busca por Sugar Rush",
       "description": "Resultado de busca pela palavra \"sugar rush\", mostrando o jogo Sugar Rush 1000.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "comparison_prevention",
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 3
+          },
+          {
+            "id": "h3",
+            "sev": 3
+          },
+          {
+            "id": "h4",
+            "sev": 3
+          },
+          {
+            "id": "h8",
+            "sev": 4
+          }
+        ],
+        "observacoes": "Na busca por jogos, os cassinos atribuem diversos variações do mesmo jogo. Há o Sugar Rush, Sugar Rush Xmas, Sugar Rush Super Scatter, Sugar Rush 1000, entre outros.\n\nA variação pequena no visual, mas diretamente no nome, ajuda a construir a ideia no subconsciente de que um dos jogos premia os jogadores, enquanto outros não.\n\nFrequentemente, jogadores migram de um tipo de jogo para outro parecido."
+      }
     },
     {
       "image": "imagens/bet365/casino_search/casino_search_ronaldinho_bet365.png",
@@ -20,5 +47,6 @@
       "description": "Resultado de busca pela palavra \"Ronaldinho\", mostrando os slots Ronaldinho Spins e Ronaldinho Scores.",
       "darkPatterns": ""
     }
-  ]
+  ],
+  "done": true
 }
