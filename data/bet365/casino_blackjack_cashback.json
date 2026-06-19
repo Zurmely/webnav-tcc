@@ -5,7 +5,7 @@
     {
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_paytable_bet365.png",
       "title": "Tabela de pagamentos",
-      "description": "Modal com a tabela de pagamentos do Blackjack Cashback, com valores e regras do cashback.",
+      "description": "Modal com a tabela de pagamentos do Blackjack Cashback, com valores e regras do \"cashback\".",
       "darkPatterns": ""
     },
     {
@@ -18,36 +18,62 @@
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_02_bet365.png",
       "title": "Aposta posicionada",
       "description": "Aposta posicionada na mesa antes da distribuição das cartas.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_03_bet365.png",
-      "title": "Distribuição das cartas",
-      "description": "Cartas sendo distribuídas na mesa.",
-      "darkPatterns": ""
+      "title": "Aposta posicionada",
+      "description": "Aposta posicionada na mesa antes da distribuição das cartas.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h4",
+            "sev": 0
+          }
+        ],
+        "observacoes": "A consistência de cores e botões apresentada é notável em todos os momentos da interface."
+      }
     },
     {
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_04_bet365.png",
       "title": "Decisão do jogador",
       "description": "Cartas distribuídas com valores visíveis e botões de decisão para pedir carta ou parar.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_05_bet365.png",
-      "title": "Pedindo carta",
+      "title": "Decisão do jogador",
       "description": "Jogador pede uma carta adicional.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h2",
+            "sev": 3
+          }
+        ],
+        "observacoes": "A correspondência entre o cashback e a \"saída\" da jogada no mundo real não acontecem de forma adequada. Neste cenário, apenas parte do valor volta ao jogador, com o termo \"cashback\" sendo utilizado para diminuir a percepção de perda, mas como um benefício do jogo."
+      }
     },
     {
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_06_bet365.png",
       "title": "Nova carta recebida",
-      "description": "Carta adicional recebida e novo valor da mão calculado.",
+      "description": "Carta adicional recebida e novo valor da mão calculado. A mão secundária estourou 21. O \"cashback\" sobe a medida que o jogador se aproxima de 21.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_07_bet365.png",
       "title": "Resultado da rodada",
-      "description": "Resultado da rodada com as cartas do dealer reveladas.",
+      "description": "Resultado da rodada com as cartas do dealer reveladas. Ganho na mão primária.",
       "darkPatterns": ""
     },
     {
@@ -60,7 +86,8 @@
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_09_bet365.png",
       "title": "Nova rodada",
       "description": "Nova rodada iniciada com a aposta reposicionada.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_10_bet365.png",
@@ -72,13 +99,16 @@
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_11_bet365.png",
       "title": "Combinação do jogador",
       "description": "Mesa com as cartas distribuídas mostrando a combinação do jogador.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/casino_blackjack_cashback/casino_blackjack_cashback_12_bet365.png",
       "title": "Cashback creditado",
       "description": "Resultado final da rodada com o cashback sendo creditado.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     }
-  ]
+  ],
+  "done": true
 }

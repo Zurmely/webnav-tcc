@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa de calor — Padrões deceptivos por plataforma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #1a1a1a;
+      --white: #ffffff;
+      --yellow: #f3d250;
+      --gray: #d9d9d9;
+      --line: #e6e3da;
+      --muted: #6b6b66;
+      --pad: 40px;
+      --radius: 6px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      font-family: "Merriweather", ui-serif, Georgia, "Times New Roman", serif;
+      color: var(--black);
+      background: #faf9f5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: var(--pad); }
+
+    header.page { border-bottom: 3px solid var(--black); padding-bottom: 22px; margin-bottom: 28px; }
+    header.page .kicker {
+      font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 8px;
+    }
+    header.page h1 { font-size: 30px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; }
+    header.page p.lede { margin: 0; max-width: 720px; color: #333; font-size: 15px; line-height: 1.55; }
+    .src { margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+    .src code { background: #efece2; padding: 1px 6px; border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; }
+    #status { display: inline-block; margin-left: 6px; }
+    .dot { display:inline-block; width:8px; height:8px; border-radius:50%; vertical-align:middle; margin-right:5px; background: var(--gray); }
+    .dot.live { background:#3a9d4a; }
+    .dot.snap { background: var(--yellow); }
+
+    /* summary cards */
+    .cards { display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 30px; }
+    .card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+    .card .num { font-size: 30px; font-weight: 700; line-height: 1; }
+    .card .lbl { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.35; }
+    .card .sub { font-size: 11.5px; color:#444; margin-top: 4px; }
+
+    /* tabs + controls */
+    .toolbar { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom: 18px; }
+    .tabs { display:inline-flex; border:1px solid var(--black); border-radius: var(--radius); overflow:hidden; }
+    .tabs button {
+      font-family: inherit; font-size: 13.5px; border:0; background: var(--white);
+      padding: 9px 16px; cursor:pointer; color:#333; border-right:1px solid var(--line);
+    }
+    .tabs button:last-child { border-right:0; }
+    .tabs button.active { background: var(--black); color: var(--white); }
+    .controls { font-size: 13px; color:#333; display:flex; align-items:center; gap:8px; user-select:none; }
+    .controls input { transform: translateY(1px); }
+
+    .view-desc { font-size: 13.5px; color:#444; margin: 0 0 16px; line-height:1.5; max-width: 760px; }
+    .view-desc strong { font-weight:700; }
+
+    /* heatmap table */
+    .table-scroll { overflow-x:auto; background: var(--white); border:1px solid var(--line); border-radius: var(--radius); }
+    table { border-collapse: collapse; width:100%; min-width: 560px; }
+    th, td { text-align:center; }
+    thead th {
+      font-size: 13px; font-weight:700; padding: 14px 10px; background: var(--black); color: var(--white);
+      position: sticky; top:0;
+    }
+    thead th.rowhead { text-align:left; background: var(--black); }
+    tbody th.rowhead {
+      text-align:left; font-weight:400; font-size: 13.5px; padding: 0 14px; white-space:nowrap;
+      background: #fbfaf6; border-bottom:1px solid var(--line); border-right:1px solid var(--line);
+    }
+    tbody th.rowhead .en { color: var(--muted); font-size: 11px; font-style: italic; display:block; }
+    tbody td {
+      width: 120px; height: 56px; border-bottom:1px solid var(--line); border-right:1px solid var(--line);
+      font-size: 17px; font-weight:700; position:relative; cursor: default;
+    }
+    tbody td .mini { display:block; font-size: 10.5px; font-weight:400; opacity:.85; margin-top:2px; }
+    td.zero { color:#c9c6bd; font-weight:400; background: #fcfcfa; }
+    td.total, th.total { background:#f3f0e6 !important; color: var(--black) !important; font-weight:700; }
+    tbody tr.totalrow th.rowhead, tbody tr.totalrow td { background:#efece2 !important; font-weight:700; border-top:2px solid var(--black); }
+    tbody tr.totalrow th.rowhead { color: var(--black); }
+    tr.hiddenrow { display:none; }
+
+    /* legend */
+    .legend { display:flex; align-items:center; gap:14px; margin-top:20px; flex-wrap:wrap; }
+    .legend .bar { height:14px; width:260px; border-radius:3px; border:1px solid var(--line); }
+    .legend .ticks { display:flex; justify-content:space-between; width:260px; font-size:11px; color:var(--muted); margin-top:4px; }
+    .legend .label { font-size:12.5px; color:#333; }
+
+    .footnote { margin-top: 26px; font-size: 12px; color: var(--muted); line-height:1.5; border-top:1px solid var(--line); padding-top:14px; }
+
+    /* tooltip */
+    #tip {
+      position: fixed; z-index: 50; pointer-events:none; background: var(--black); color:#fff;
+      font-size: 12px; line-height:1.45; padding: 9px 11px; border-radius: 6px; max-width: 280px;
+      box-shadow: 0 6px 22px rgba(0,0,0,.25); opacity:0; transition: opacity .12s; transform: translateY(-4px);
+    }
+    #tip b { color: var(--yellow); }
+    @media (max-width: 720px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      :root { --pad: 22px; }
+    }
+    @media print {
+      body { background:#fff; }
+      .toolbar .controls, #tip { display:none; }
+      .table-scroll { overflow: visible; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page">
+    <p class="kicker">TCC · Ética no design · WebNav</p>
+    <h1>Mapa de calor de padrões deceptivos por plataforma</h1>
+    <p class="lede">
+      Comparação da incidência de <em>dark patterns</em> catalogados nas jornadas das três casas de
+      apostas analisadas. Cada célula indica o número de telas (passos) em que o padrão foi observado;
+      a intensidade da cor cresce com a incidência.
+    </p>
+    <p class="src">
+      Fonte: <code>trabalho-web/webnav-tcc/data</code> · taxonomias de <code>js/checklist-data.js</code>
+      (Brignull 2023, Gray et al. 2018, heurísticas de Nielsen).
+      <span id="status"><span class="dot"></span><span id="status-text">carregando…</span></span>
+    </p>
+  </header>
+
+  <section class="cards" id="cards"></section>
+
+  <div class="toolbar">
+    <div class="tabs" id="tabs">
+      <button data-view="tipos" class="active">Tipos (Brignull)</button>
+      <button data-view="gray">Categorias (Gray)</button>
+      <button data-view="heur">Heurísticas (Nielsen)</button>
+    </div>
+    <label class="controls">
+      <input type="checkbox" id="hideEmpty" /> Ocultar linhas sem ocorrências
+    </label>
+  </div>
+
+  <p class="view-desc" id="viewDesc"></p>
+
+  <div class="table-scroll">
+    <table id="heat">
+      <thead><tr id="headrow"></tr></thead>
+      <tbody id="body"></tbody>
+    </table>
+  </div>
+
+  <div class="legend">
+    <span class="label" id="legendLabel"></span>
+    <div>
+      <div class="bar" id="legendBar"></div>
+      <div class="ticks"><span>0</span><span id="legendMid"></span><span id="legendMax"></span></div>
+    </div>
+  </div>
+
+  <p class="footnote" id="footnote"></p>
+</div>
+
+<div id="tip"></div>
+
+<script>
+/* ============================================================================
+   TAXONOMIAS (espelham js/checklist-data.js) — rótulos PT/EN para os eixos.
+   ========================================================================== */
+var BRIGNULL = [
+  ["comparison_prevention","Prevenção de comparação","Comparison Prevention"],
+  ["confirmshaming","Constrangimento da recusa","Confirmshaming"],
+  ["disguised_ads","Anúncios disfarçados","Disguised Ads"],
+  ["fake_scarcity","Falsa escassez","Fake Scarcity"],
+  ["fake_social_proof","Falsa prova social","Fake Social Proof"],
+  ["fake_urgency","Falsa urgência","Fake Urgency"],
+  ["forced_action","Ação forçada","Forced Action"],
+  ["hard_to_cancel","Difícil de cancelar","Hard to Cancel"],
+  ["hidden_costs","Custos ocultos","Hidden Costs"],
+  ["hidden_subscription","Assinatura oculta","Hidden Subscription"],
+  ["nagging","Insistência","Nagging"],
+  ["obstruction","Obstrução","Obstruction"],
+  ["preselection","Pré-seleção","Preselection"],
+  ["sneaking","Dissimulação","Sneaking"],
+  ["trick_wording","Redação enganosa","Trick Wording"],
+  ["visual_interference","Interferência visual","Visual Interference"]
+];
+var GRAY = [
+  ["nagging","Insistência","Nagging"],
+  ["obstruction","Obstrução","Obstruction"],
+  ["sneaking","Dissimulação","Sneaking"],
+  ["interface_interference","Interferência na interface","Interface Interference"],
+  ["forced_action","Ação forçada","Forced Action"]
+];
+var NIELSEN = [
+  ["h1","Visibilidade do status do sistema","Visibility of system status"],
+  ["h2","Correspondência com o mundo real","Match between system and real world"],
+  ["h3","Controle e liberdade do usuário","User control and freedom"],
+  ["h4","Consistência e padrões","Consistency and standards"],
+  ["h5","Prevenção de erros","Error prevention"],
+  ["h6","Reconhecimento em vez de memorização","Recognition rather than recall"],
+  ["h7","Flexibilidade e eficiência","Flexibility and efficiency of use"],
+  ["h8","Design estético e minimalista","Aesthetic and minimalist design"],
+  ["h9","Reconhecer e recuperar-se de erros","Recognize, diagnose, recover from errors"],
+  ["h10","Ajuda e documentação","Help and documentation"]
+];
+var PLATFORMS = [
+  { id: "bet365", name: "Bet365" },
+  { id: "betano", name: "Betano" },
+  { id: "superbet", name: "Superbet" }
+];
+
+/* ============================================================================
+   SNAPSHOT — agregação pré-computada a partir de data/ (fallback p/ file://).
+   Atualizada em 2026-06-18. Recomputada automaticamente quando servida via http.
+   ========================================================================== */
+var SNAPSHOT = {
+  totalSteps:  { bet365: 165, betano: 113, superbet: 122 },
+  taggedSteps: { bet365: 16,  betano: 15,  superbet: 26  },
+  tipos: {
+    comparison_prevention: {bet365:2, betano:2, superbet:1},
+    confirmshaming:        {bet365:0, betano:0, superbet:0},
+    disguised_ads:         {bet365:0, betano:0, superbet:0},
+    fake_scarcity:         {bet365:0, betano:0, superbet:0},
+    fake_social_proof:     {bet365:3, betano:1, superbet:1},
+    fake_urgency:          {bet365:0, betano:0, superbet:0},
+    forced_action:         {bet365:0, betano:0, superbet:0},
+    hard_to_cancel:        {bet365:0, betano:0, superbet:0},
+    hidden_costs:          {bet365:1, betano:0, superbet:1},
+    hidden_subscription:   {bet365:0, betano:0, superbet:1},
+    nagging:               {bet365:0, betano:2, superbet:6},
+    obstruction:           {bet365:1, betano:0, superbet:7},
+    preselection:          {bet365:0, betano:0, superbet:0},
+    sneaking:              {bet365:0, betano:0, superbet:1},
+    trick_wording:         {bet365:10, betano:7, superbet:5},
+    visual_interference:   {bet365:1, betano:0, superbet:2}
+  },
+  gray: {
+    nagging:                {bet365:0, betano:2, superbet:6},
+    obstruction:            {bet365:0, betano:0, superbet:7},
+    sneaking:               {bet365:0, betano:0, superbet:1},
+    interface_interference: {bet365:0, betano:0, superbet:1},
+    forced_action:          {bet365:0, betano:0, superbet:0}
+  },
+  /* heurísticas: por plataforma → {count, sevsum, sevmax} */
+  heur: {
+    h1:  {bet365:{count:7,sevsum:23,sevmax:4}, betano:{count:6,sevsum:14,sevmax:4}, superbet:{count:9,sevsum:28,sevmax:4}},
+    h2:  {bet365:{count:0,sevsum:0,sevmax:0},  betano:{count:0,sevsum:0,sevmax:0},  superbet:{count:0,sevsum:0,sevmax:0}},
+    h3:  {bet365:{count:3,sevsum:7,sevmax:3},  betano:{count:2,sevsum:6,sevmax:4},  superbet:{count:8,sevsum:17,sevmax:3}},
+    h4:  {bet365:{count:3,sevsum:8,sevmax:3},  betano:{count:2,sevsum:6,sevmax:3},  superbet:{count:3,sevsum:10,sevmax:4}},
+    h5:  {bet365:{count:2,sevsum:6,sevmax:3},  betano:{count:2,sevsum:5,sevmax:3},  superbet:{count:5,sevsum:15,sevmax:4}},
+    h6:  {bet365:{count:3,sevsum:7,sevmax:3},  betano:{count:2,sevsum:4,sevmax:2},  superbet:{count:5,sevsum:19,sevmax:4}},
+    h7:  {bet365:{count:1,sevsum:3,sevmax:3},  betano:{count:1,sevsum:2,sevmax:2},  superbet:{count:5,sevsum:10,sevmax:2}},
+    h8:  {bet365:{count:2,sevsum:6,sevmax:4},  betano:{count:3,sevsum:8,sevmax:4},  superbet:{count:1,sevsum:2,sevmax:2}},
+    h9:  {bet365:{count:0,sevsum:0,sevmax:0},  betano:{count:0,sevsum:0,sevmax:0},  superbet:{count:2,sevsum:8,sevmax:4}},
+    h10: {bet365:{count:1,sevsum:3,sevmax:3},  betano:{count:0,sevsum:0,sevmax:0},  superbet:{count:3,sevsum:9,sevmax:3}}
+  }
+};
+
+/* ============================================================================
+   AGREGAÇÃO AO VIVO — replica a lógica do snapshot lendo data/ via fetch.
+   ========================================================================== */
+function emptyAgg() {
+  var a = { totalSteps:{}, taggedSteps:{}, tipos:{}, gray:{}, heur:{} };
+  PLATFORMS.forEach(function(p){ a.totalSteps[p.id]=0; a.taggedSteps[p.id]=0; });
+  BRIGNULL.forEach(function(b){ a.tipos[b[0]]={}; PLATFORMS.forEach(function(p){ a.tipos[b[0]][p.id]=0; }); });
+  GRAY.forEach(function(g){ a.gray[g[0]]={}; PLATFORMS.forEach(function(p){ a.gray[g[0]][p.id]=0; }); });
+  NIELSEN.forEach(function(h){ a.heur[h[0]]={}; PLATFORMS.forEach(function(p){ a.heur[h[0]][p.id]={count:0,sevsum:0,sevmax:0}; }); });
+  return a;
+}
+
+function aggregateLive() {
+  var agg = emptyAgg();
+  return Promise.all(PLATFORMS.map(function(p){
+    return fetch("data/" + p.id + "/manifest.json")
+      .then(function(r){ if(!r.ok) throw new Error("manifest"); return r.json(); })
+      .then(function(man){
+        var flows = (man.flows || []);
+        return Promise.all(flows.map(function(fid){
+          return fetch("data/" + p.id + "/" + fid + ".json")
+            .then(function(r){ return r.ok ? r.json() : null; })
+            .catch(function(){ return null; });
+        }));
+      })
+      .then(function(flowDocs){
+        flowDocs.forEach(function(doc){
+          if (!doc || !doc.steps) return;
+          doc.steps.forEach(function(s){
+            agg.totalSteps[p.id]++;
+            var cl = s.checklist;
+            if (!cl) return;
+            var tipos = cl.tipos || [], gray = cl.gray || [], heur = cl.heuristicas || [];
+            if (tipos.length || gray.length || heur.length) agg.taggedSteps[p.id]++;
+            tipos.forEach(function(t){ if (agg.tipos[t]) agg.tipos[t][p.id]++; });
+            gray.forEach(function(g){ if (agg.gray[g]) agg.gray[g][p.id]++; });
+            heur.forEach(function(h){
+              var cell = agg.heur[h.id] && agg.heur[h.id][p.id];
+              if (!cell) return;
+              cell.count++; cell.sevsum += (h.sev||0); cell.sevmax = Math.max(cell.sevmax, h.sev||0);
+            });
+          });
+        });
+      });
+  })).then(function(){ return agg; });
+}
+
+/* ============================================================================
+   COR — escala sequencial alinhada à identidade (claro → amarelo → âmbar → queimado)
+   ========================================================================== */
+var STOPS = [
+  [0.00, [253,246,216]], // pálido
+  [0.35, [243,210, 80]], // amarelo da marca
+  [0.70, [224,138, 43]], // âmbar
+  [1.00, [140, 46, 17]]  // queimado
+];
+function lerp(a,b,t){ return Math.round(a + (b-a)*t); }
+function colorFor(t){ // t in [0,1]
+  if (t <= 0) return "rgb(252,252,250)";
+  for (var i=1;i<STOPS.length;i++){
+    if (t <= STOPS[i][0]){
+      var lo=STOPS[i-1], hi=STOPS[i];
+      var f=(t-lo[0])/(hi[0]-lo[0]);
+      var c=[lerp(lo[1][0],hi[1][0],f), lerp(lo[1][1],hi[1][1],f), lerp(lo[1][2],hi[1][2],f)];
+      return "rgb("+c[0]+","+c[1]+","+c[2]+")";
+    }
+  }
+  return "rgb(140,46,17)";
+}
+function textColorFor(t){ return t > 0.55 ? "#fff" : "#1a1a1a"; }
+function legendGradientCss(){
+  return "linear-gradient(90deg," + STOPS.map(function(s){
+    return "rgb("+s[1][0]+","+s[1][1]+","+s[1][2]+") "+(s[0]*100).toFixed(0)+"%";
+  }).join(",") + ")";
+}
+
+/* ============================================================================
+   VIEWS — definição de cada aba do mapa de calor.
+   ========================================================================== */
+var VIEWS = {
+  tipos: {
+    label: "Tipos de padrão deceptivo (Brignull, 2023)",
+    desc: "Cada célula = número de <strong>telas</strong> em que o tipo foi catalogado naquela plataforma. " +
+          "Os 16 tipos de Brignull são listados na íntegra — linhas sem ocorrências evidenciam padrões ausentes.",
+    rows: BRIGNULL,
+    legendLabel: "Telas com o padrão:",
+    cell: function(agg, id, pid){ var n = agg.tipos[id][pid]; return { v:n, label:String(n), tip: n+" tela(s)" }; }
+  },
+  gray: {
+    label: "Categorias de alto nível (Gray et al., 2018)",
+    desc: "Agrupamento em 5 estratégias guarda-chuva. Cada célula = número de <strong>telas</strong> " +
+          "marcadas com a categoria.",
+    rows: GRAY,
+    legendLabel: "Telas com a categoria:",
+    cell: function(agg, id, pid){ var n = agg.gray[id][pid]; return { v:n, label:String(n), tip: n+" tela(s)" }; }
+  },
+  heur: {
+    label: "Heurísticas de Nielsen violadas (gravidade acumulada)",
+    desc: "Cada célula = <strong>soma das gravidades</strong> (escala 0–4) das violações daquela heurística. " +
+          "O número de ocorrências e a gravidade máxima aparecem no tooltip.",
+    rows: NIELSEN,
+    legendLabel: "Gravidade acumulada:",
+    cell: function(agg, id, pid){
+      var c = agg.heur[id][pid];
+      return { v: c.sevsum, label: String(c.sevsum),
+               mini: c.count ? (c.count+"×") : "",
+               tip: c.count+" violação(ões) · gravidade somada "+c.sevsum+" · máx. "+c.sevmax };
+    }
+  }
+};
+
+/* ============================================================================
+   RENDER
+   ========================================================================== */
+var state = { view: "tipos", hideEmpty: false, agg: SNAPSHOT, live: false };
+
+function maxValForView(agg, view){
+  var m = 0;
+  view.rows.forEach(function(r){
+    PLATFORMS.forEach(function(p){ m = Math.max(m, view.cell(agg, r[0], p.id).v); });
+  });
+  return m || 1;
+}
+
+function render(){
+  var view = VIEWS[state.view];
+  var agg = state.agg;
+  var maxV = maxValForView(agg, view);
+
+  // header row
+  var head = '<th class="rowhead">' + view.label + '</th>';
+  PLATFORMS.forEach(function(p){ head += '<th>'+p.name+'</th>'; });
+  head += '<th class="total">Total</th>';
+  document.getElementById("headrow").innerHTML = head;
+
+  // body rows
+  var bodyHtml = "";
+  var colTotals = {}; PLATFORMS.forEach(function(p){ colTotals[p.id]=0; });
+  var grand = 0;
+
+  view.rows.forEach(function(r){
+    var id=r[0], pt=r[1], en=r[2];
+    var cells = PLATFORMS.map(function(p){ return view.cell(agg, id, p.id); });
+    var rowTotal = cells.reduce(function(s,c){ return s+c.v; }, 0);
+    var empty = rowTotal === 0;
+    var tr = '<tr class="'+(empty && state.hideEmpty ? 'hiddenrow':'')+'">';
+    tr += '<th class="rowhead">'+pt+'<span class="en">'+en+'</span></th>';
+    cells.forEach(function(c, i){
+      var pid = PLATFORMS[i].id;
+      colTotals[pid]+=c.v;
+      var t = c.v / maxV;
+      if (c.v === 0){
+        tr += '<td class="zero">·</td>';
+      } else {
+        var tipText = PLATFORMS[i].name + ' · ' + pt + ' — ' + c.tip;
+        tr += '<td style="background:'+colorFor(t)+';color:'+textColorFor(t)+'" '+
+              'data-tip="'+tipText.replace(/"/g,'&quot;')+'">'+c.label+
+              (c.mini?'<span class="mini">'+c.mini+'</span>':'')+'</td>';
+      }
+    });
+    grand += rowTotal;
+    tr += '<td class="total">'+rowTotal+'</td>';
+    tr += '</tr>';
+    bodyHtml += tr;
+  });
+
+  // totals row
+  var trT = '<tr class="totalrow"><th class="rowhead">Total</th>';
+  PLATFORMS.forEach(function(p){ trT += '<td>'+colTotals[p.id]+'</td>'; });
+  trT += '<td class="total">'+grand+'</td></tr>';
+  bodyHtml += trT;
+
+  document.getElementById("body").innerHTML = bodyHtml;
+  document.getElementById("viewDesc").innerHTML = view.desc;
+
+  // legend
+  document.getElementById("legendLabel").textContent = view.legendLabel;
+  document.getElementById("legendBar").style.background = legendGradientCss();
+  document.getElementById("legendMid").textContent = Math.round(maxV/2);
+  document.getElementById("legendMax").textContent = maxV;
+
+  bindTooltips();
+}
+
+function renderCards(){
+  var agg = state.agg;
+  var totalTagged = PLATFORMS.reduce(function(s,p){ return s+agg.taggedSteps[p.id]; }, 0);
+  var totalSteps  = PLATFORMS.reduce(function(s,p){ return s+agg.totalSteps[p.id]; }, 0);
+  var totalInc    = 0;
+  BRIGNULL.forEach(function(b){ PLATFORMS.forEach(function(p){ totalInc += agg.tipos[b[0]][p.id]; }); });
+
+  // most prevalent pattern overall
+  var top = {id:null, total:-1};
+  BRIGNULL.forEach(function(b){
+    var t = PLATFORMS.reduce(function(s,p){ return s+agg.tipos[b[0]][p.id]; }, 0);
+    if (t > top.total) top = {id:b[0], pt:b[1], total:t};
+  });
+  // platform with most tagged screens
+  var topPlat = PLATFORMS.slice().sort(function(a,b){ return agg.taggedSteps[b.id]-agg.taggedSteps[a.id]; })[0];
+
+  var cards = [
+    { num: totalInc, lbl: "Incidências de padrões (tipos × telas)", sub: "em "+totalTagged+" telas catalogadas de "+totalSteps },
+    { num: top.total, lbl: "Padrão mais recorrente", sub: top.pt },
+    { num: agg.taggedSteps[topPlat.id], lbl: "Plataforma mais sinalizada", sub: topPlat.name+" · telas com padrão" },
+    { num: PLATFORMS.length, lbl: "Plataformas comparadas", sub: PLATFORMS.map(function(p){return p.name;}).join(" · ") }
+  ];
+  document.getElementById("cards").innerHTML = cards.map(function(c){
+    return '<div class="card"><div class="num">'+c.num+'</div><div class="lbl">'+c.lbl+'</div><div class="sub">'+c.sub+'</div></div>';
+  }).join("");
+}
+
+/* tooltip */
+var tip = document.getElementById("tip");
+function bindTooltips(){
+  var cells = document.querySelectorAll("td[data-tip]");
+  cells.forEach(function(td){
+    td.addEventListener("mousemove", function(e){
+      tip.textContent = td.getAttribute("data-tip");
+      tip.style.opacity = "1";
+      var x = e.clientX + 14, y = e.clientY + 14;
+      if (x + 290 > window.innerWidth) x = e.clientX - 290;
+      tip.style.left = x + "px"; tip.style.top = y + "px";
+    });
+    td.addEventListener("mouseleave", function(){ tip.style.opacity = "0"; });
+  });
+}
+
+/* controls */
+document.getElementById("tabs").addEventListener("click", function(e){
+  var b = e.target.closest("button"); if (!b) return;
+  state.view = b.getAttribute("data-view");
+  [].forEach.call(this.querySelectorAll("button"), function(x){ x.classList.toggle("active", x===b); });
+  render();
+});
+document.getElementById("hideEmpty").addEventListener("change", function(){
+  state.hideEmpty = this.checked; render();
+});
+
+function setStatus(live){
+  var dot = document.querySelector("#status .dot");
+  var txt = document.getElementById("status-text");
+  if (live){ dot.className = "dot live"; txt.textContent = "dados ao vivo de data/"; }
+  else { dot.className = "dot snap"; txt.textContent = "snapshot embutido (abra via servidor para dados ao vivo)"; }
+}
+
+function setFootnote(){
+  document.getElementById("footnote").innerHTML =
+    "Metodologia: cada jornada das plataformas foi percorrida e suas telas catalogadas com a ficha de padrões " +
+    "deceptivos. As contagens refletem o número de telas marcadas, não a frequência de exibição ao usuário. " +
+    "Heurísticas usam a escala de gravidade de Nielsen (0 = sem problema; 4 = catastrófico). " +
+    "Plataformas: Bet365, Betano e Superbet.";
+}
+
+/* boot */
+setFootnote();
+renderCards();
+render();
+
+aggregateLive()
+  .then(function(agg){
+    state.agg = agg; state.live = true;
+    setStatus(true); renderCards(); render();
+  })
+  .catch(function(){
+    setStatus(false); // keep snapshot
+  });
+</script>
+</body>
+</html>

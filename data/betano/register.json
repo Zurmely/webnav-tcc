@@ -3,6 +3,12 @@
   "name": "Cadastro",
   "steps": [
     {
+      "image": "imagens/betano/register/sports_betting_homepage_betano.png",
+      "title": "Página inicial",
+      "description": "Página inicial das apostas esportivas da Betano com partidas em destaque e mercados disponíveis.",
+      "darkPatterns": ""
+    },
+    {
       "image": "imagens/betano/register/register_welcome_modal_betano.png",
       "title": "Boas-Vindas",
       "description": "Modal inicial de boas-vindas com opções para criar conta ou fazer login, exibido na página inicial da Betano.",
@@ -123,14 +129,26 @@
       "title": "Padrão Deceptivo — Dropdown de Limite de Perda com Sugestão",
       "description": "Dropdown do limite de perda aberto mostrando valores sugeridos pela plataforma como âncoras de referência.",
       "darkPatterns": "Dropdown do limite de perda aberto mostrando valores sugeridos pela plataforma como âncoras de referência.",
-      "ignore": true
+      "ignore": true,
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "Dropdown do limite de perda aberto mostrando valores sugeridos pela plataforma como âncoras de referência."
+      }
     },
     {
       "image": "imagens/betano/register/responsible_gambling_session_limit_open_betano.png",
       "title": "Padrão Deceptivo — Dropdown de Limite de Sessão com Sugestão",
       "description": "Dropdown do limite de tempo de sessão aberto com valor padrão sugerido pela Betano.",
       "darkPatterns": "Dropdown do limite de tempo de sessão aberto com valor padrão sugerido pela Betano.",
-      "ignore": true
+      "ignore": true,
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "Dropdown do limite de tempo de sessão aberto com valor padrão sugerido pela Betano."
+      }
     },
     {
       "image": "imagens/betano/register/responsible_gambling_limits_confirmed_betano.png",

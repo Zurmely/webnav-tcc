@@ -30,7 +30,40 @@
       "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_01_betano.png",
       "title": "Tela principal",
       "description": "Tela principal do Caramelo Sortudo com grade 5x3, símbolos de cartas, o cachorro caramelo e o painel de apostas.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording",
+          "sneaking"
+        ],
+        "gray": [
+          "sneaking",
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 4
+          },
+          {
+            "id": "h3",
+            "sev": 3
+          },
+          {
+            "id": "h4",
+            "sev": 3
+          },
+          {
+            "id": "h7",
+            "sev": 2
+          },
+          {
+            "id": "h6",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Neste cenário, assim como notado em outros slots, não há feedback visual de perda.\n\nPara além disso, os recursos de \"27 ways pay\" e \"jackpot\" são apresentados para instigar o jogo contínuo.\n\nNovamente, a figura do mascote é apresentada de forma a tornar a aposta mais amigável, aproximando o jogador de um cenário familiar/amigável (neste caso, o caramelo sortudo/brasileiro)."
+      }
     },
     {
       "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_02_betano.png",
@@ -56,7 +89,16 @@
       "image": "imagens/betano/casino_slot_caramelo_sortudo/casino_slot_caramelo_sortudo_05_betano.png",
       "title": "Jackpot progressivo",
       "description": "Tela com o jackpot progressivo visível no topo, acima de R$230 mil.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "fake_social_proof"
+        ],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "Apresenta-se uma espécie de falsa prova social quando ganhadores passados são apresentados com valores altos."
+      }
     }
-  ]
+  ],
+  "done": true
 }

@@ -6,19 +6,77 @@
       "image": "imagens/bet365/sports_betting/sports_betting_homepage_overview_bet365.png",
       "title": "Visão geral da página",
       "description": "Captura completa da página de apostas esportivas mostrando todas as seções disponíveis.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "fake_social_proof",
+          "visual_interference",
+          "nagging",
+          "sneaking",
+          "disguised_ads",
+          "trick_wording"
+        ],
+        "gray": [
+          "interface_interference",
+          "nagging"
+        ],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 2
+          },
+          {
+            "id": "h2",
+            "sev": 2
+          },
+          {
+            "id": "h3",
+            "sev": 2
+          },
+          {
+            "id": "h8",
+            "sev": 3
+          },
+          {
+            "id": "h10",
+            "sev": 3
+          },
+          {
+            "id": "h6",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Os anúncios de jogos da plataforma são apresentados como uma espécie de promoção, instigando o jogador a apostar.\n\nApostas \"quentes\" são oferecidas ao jogador para que ele entre em bilhetes que estão sendo muito utilizados.\n\nA visibilidade de jogos que estão ocorrendo é prejudicada pela apresentação de pesos diferentes no visual.\n\nApostas, por vezes, as mesmas, são oferecidas de forma diferente, em locais diferentes, buscando trazer o usuário de volta para o jogo.\n\nO conceito de \"odd\"/chance não é explicado para o usuário, podendo acarretar no não entendimento do risco maior em apostas também com maior retorno.\n\nA exibição de múltiplas apostas em sequência instiga jogadores a criarem apostas múltiplas: maior retorno, mas maior chance de perda."
+      }
     },
     {
       "image": "imagens/bet365/sports_betting/sports_betting_match_detail_01_bet365.png",
       "title": "Detalhes da partida",
       "description": "Página de detalhes de uma partida com os mercados disponíveis, odds e destaque para o recurso de Aposta Aumentada.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording",
+          "visual_interference"
+        ],
+        "gray": [
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h6",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Termos como o pagamento antecipado são apresentados, mas sem a devida apresentação dos termos e condições associados, esperando que o jogador memorize estes padrões.\n\nPara além disso, mudanças na interface são feitas para levar o jogador para a melhor aposta para a plataforma (odd alta)."
+      }
     },
     {
       "image": "imagens/bet365/sports_betting/sports_betting_match_detail_02_bet365.png",
       "title": "Mais mercados",
       "description": "Continuação da página de detalhes da partida com mercados adicionais de aposta.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/sports_betting/sports_betting_bet_slip_01_bet365.png",
@@ -36,7 +94,25 @@
       "image": "imagens/bet365/sports_betting/sports_betting_bet_slip_03_bet365.png",
       "title": "Revisão da aposta",
       "description": "Carrinho com a confirmação das seleções antes de finalizar a aposta.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "sneaking",
+          "visual_interference",
+          "preselection"
+        ],
+        "gray": [
+          "sneaking",
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 4
+          }
+        ],
+        "observacoes": "A interface vem preparada com o oferecimento de uma aposta múltipla, onde as apostas simples vem ocultas por padrão. Apostas múltiplas ajudam a aumentar a chance de ganho da plataforma e perda do usuário."
+      }
     },
     {
       "image": "imagens/bet365/sports_betting/sports_betting_bet_placed_bet365.png",
@@ -58,15 +134,36 @@
       "ignore": true
     },
     {
-      "image": "imagens/bet365/sports_betting/sports_betting_open_bets_02_bet365.png",
+      "image": "imagens/bet365/sports_betting/sports_betting_open_bets_03_bet365.png",
+      "title": "Apostas em aberto",
+      "description": "Apostas em aberto com informações de partidas ao vivo e cashout em tempo real.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "visual_interference"
+        ],
+        "gray": [
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Neste cenário, a plataforma dá a chance para que o usuário encerre a aposta antecipadamente. Enquanto em alguns cenários isso auxilia o usuário a evitar maiores perdas, em outros, isso ajuda a plataforma da mesma maneira."
+      }
+    },
+    {
+      "image": "imagens/bet365/sports_betting/casino_slot_immortals_18_bet365.png",
       "title": "Apostas em aberto, parte 2",
-      "description": "Lista de apostas ativas com odds atualizadas e valores de cashout disponíveis.",
+      "description": "Lista de apostas em aberto, simples e dupla, cada uma com seu botão de encerramento e valor de cashout.",
       "darkPatterns": ""
     },
     {
-      "image": "imagens/bet365/sports_betting/sports_betting_open_bets_03_bet365.png",
-      "title": "Apostas em aberto, parte 3",
-      "description": "Apostas em aberto com informações de partidas ao vivo e cashout em tempo real.",
+      "image": "imagens/bet365/sports_betting/sports_betting_open_bets_02_bet365.png",
+      "title": "Apostas resolvidas (encerradas)",
+      "description": "Lista de apostas ativas com odds atualizadas e valores de cashout disponíveis.",
       "darkPatterns": ""
     },
     {
@@ -80,23 +177,50 @@
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_07_bet365.png",
       "title": "Aposta anulada",
       "description": "Aba de apostas resolvidas exibindo uma aposta com as seleções anuladas e o valor de R$5,00 devolvido.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_09_bet365.png",
       "title": "Aumentos de ganho",
       "description": "Seção Seus Aumentos expandida, listando as partidas elegíveis para o aumento de 25% nos ganhos.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_10_bet365.png",
-      "title": "Página da Série A",
+      "title": "Ganho aumentado",
       "description": "Página da competição com banners promocionais, lista de partidas com odds e o carrinho de aposta aberto sugerindo ganhos aumentados.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "nagging",
+          "visual_interference"
+        ],
+        "gray": [
+          "nagging",
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          },
+          {
+            "id": "h7",
+            "sev": 3
+          },
+          {
+            "id": "h10",
+            "sev": 2
+          }
+        ],
+        "observacoes": "As informações de ganho aumentado são apresentadas durante várias telas, tentando forçar o usuário a adicionar mais seleções. Apesar de isso aumentar seus ganhos, também pode aumentar a chance de perda."
+      }
     },
     {
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_11_bet365.png",
-      "title": "Sugestão de mais seleções",
+      "title": "Sugestão de ganho aumentado",
       "description": "Carrinho com uma aposta dupla montada e aviso de ganhos aumentados de 25% caso mais duas seleções sejam adicionadas.",
       "darkPatterns": ""
     },
@@ -104,7 +228,8 @@
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_12_bet365.png",
       "title": "Aposta dupla feita",
       "description": "Confirmação de aposta dupla de R$5,00 com retorno potencial de R$10,38, já incluindo o aumento.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_13_bet365.png",
@@ -116,7 +241,30 @@
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_14_bet365.png",
       "title": "Odds alteradas",
       "description": "As odds das seleções mudam dentro do carrinho, que exibe o aviso de disponibilidade e o botão para aceitar as alterações.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 4
+          },
+          {
+            "id": "h2",
+            "sev": 4
+          },
+          {
+            "id": "h4",
+            "sev": 3
+          },
+          {
+            "id": "h7",
+            "sev": 3
+          }
+        ],
+        "observacoes": "As informações da aposta foram alteradas no momento do clique na aposta. Enquanto isso evita perdas para a plataforma, é uma forma de punir usuários que poderiam ter realizado uma aposta vencedora."
+      }
     },
     {
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_15_bet365.png",
@@ -134,13 +282,8 @@
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_17_bet365.png",
       "title": "Home de esportes com acumuladores",
       "description": "Página inicial de esportes com banners promocionais e cartões de apostas acumuladas prontas, como \"A noite dos favoritos\" e \"Chuva de gols\".",
-      "darkPatterns": ""
-    },
-    {
-      "image": "imagens/bet365/sports_betting/casino_slot_immortals_18_bet365.png",
-      "title": "Minhas apostas em aberto",
-      "description": "Lista de apostas em aberto, simples e dupla, cada uma com seu botão de encerramento e valor de cashout.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_19_bet365.png",
@@ -152,7 +295,8 @@
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_20_bet365.png",
       "title": "Cashout em tempo real",
       "description": "Durante as partidas, o valor de encerramento das apostas muda em tempo real, como o destaque de R$2,31 na aposta do empate.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/sports_betting/sports_betting_homepage_bet365.png",
@@ -161,5 +305,6 @@
       "darkPatterns": "",
       "ignore": true
     }
-  ]
+  ],
+  "done": true
 }

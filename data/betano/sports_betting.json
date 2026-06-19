@@ -3,12 +3,6 @@
   "name": "Apostas Esportivas",
   "steps": [
     {
-      "image": "imagens/betano/sports_betting/sports_betting_homepage_betano.png",
-      "title": "Página inicial",
-      "description": "Página inicial das apostas esportivas da Betano com partidas em destaque e mercados disponíveis.",
-      "darkPatterns": ""
-    },
-    {
       "image": "imagens/betano/sports_betting/sports_betting_homepage_logged_in_betano.png",
       "title": "Página inicial logado",
       "description": "Página inicial com o usuário autenticado, exibindo o saldo e recomendações personalizadas.",
@@ -18,7 +12,46 @@
       "image": "imagens/betano/sports_betting/sports_betting_homepage_overview_betano.png",
       "title": "Visão geral da página",
       "description": "Captura completa da página de apostas esportivas mostrando todas as seções.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "fake_social_proof",
+          "nagging",
+          "sneaking",
+          "visual_interference",
+          "trick_wording",
+          "disguised_ads",
+          "preselection"
+        ],
+        "gray": [
+          "nagging",
+          "sneaking",
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h2",
+            "sev": 2
+          },
+          {
+            "id": "h3",
+            "sev": 2
+          },
+          {
+            "id": "h6",
+            "sev": 3
+          },
+          {
+            "id": "h8",
+            "sev": 4
+          },
+          {
+            "id": "h10",
+            "sev": 4
+          }
+        ],
+        "observacoes": "Os anúncios de jogos da plataforma são apresentados como uma espécie de promoção, instigando o jogador a apostar.\n\nApostas populares são oferecidas ao jogador para que ele entre em bilhetes que estão sendo muito utilizados.\n\nApostas, por vezes, as mesmas, são oferecidas de forma diferente, em locais diferentes, buscando trazer o usuário de volta para o jogo.\n\nO conceito de \"odd\"/chance não é explicado para o usuário, podendo acarretar no não entendimento do risco maior em apostas também com maior retorno.\n\nA exibição de múltiplas apostas em sequência instiga jogadores a criarem apostas múltiplas: maior retorno, mas maior chance de perda.\n\nA apresentação de múltiplas ofertas associadas a diferentes modalidades, inclusive futebol virtual, muito diferente do futebol na vida real, podem confundir o usuário.\n\nA lista de clubes, sistemas governamentais e outras plataformas pode levar o usuário a acreditar que esta plataforma é apoiada por estes, enquanto, na verdade ela é apenas patrocinadora destes times e eventos, ou simplesmente regulada por entidades governamentais.\n\nElementos como \"quanto você quer ganhar\" instigam o usuário a apostar em eventos, quando a pergunta também poderia ser invertida para \"o quanto você aceita perder\". "
+      }
     },
     {
       "image": "imagens/betano/sports_betting/sports_betting_homepage_02_betano.png",
@@ -30,7 +63,31 @@
       "image": "imagens/betano/sports_betting/sports_betting_homepage_03_betano.png",
       "title": "Revisão do cupom",
       "description": "Cupom em estado de revisão das apostas selecionadas.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "visual_interference",
+          "trick_wording"
+        ],
+        "gray": [
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 3
+          },
+          {
+            "id": "h6",
+            "sev": 3
+          },
+          {
+            "id": "h10",
+            "sev": 4
+          }
+        ],
+        "observacoes": "Informações como as limitações das super odds não são apresentadas de forma clara.\n\nDiferentemente de outras plataformas, que aplicam pelo menos dimming na tela de fundo, a Betano escolhe continuar com o fundo em evidência, podendo levar o usuário à adição de mais eventos em seu bilhete de aposta."
+      }
     },
     {
       "image": "imagens/betano/sports_betting/sports_betting_homepage_04_betano.png",
@@ -48,7 +105,8 @@
       "image": "imagens/betano/sports_betting/sports_betting_homepage_06_betano.png",
       "title": "Banner promocional",
       "description": "Página inicial com o usuário logado e um banner promocional no topo.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/sports_betting/sports_betting_live_betting_01_betano.png",
@@ -84,7 +142,22 @@
       "image": "imagens/betano/sports_betting/sports_betting_live_betting_06_betano.png",
       "title": "Cashout disponível",
       "description": "Lista ao vivo com a aposta do empate em aberto e o botão de cashout exibindo o valor de encerramento.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "visual_interference"
+        ],
+        "gray": [
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Neste cenário, a plataforma dá a chance para que o usuário encerre a aposta antecipadamente. Enquanto em alguns cenários isso auxilia o usuário a evitar maiores perdas, em outros, isso ajuda a plataforma da mesma maneira."
+      }
     },
     {
       "image": "imagens/betano/sports_betting/sports_betting_live_betting_07_betano.png",
@@ -96,7 +169,30 @@
       "image": "imagens/betano/sports_betting/sports_betting_live_betting_08_betano.png",
       "title": "Cashout indisponível",
       "description": "Aviso de que a seleção não está disponível para cashout no momento.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 4
+          },
+          {
+            "id": "h2",
+            "sev": 3
+          },
+          {
+            "id": "h7",
+            "sev": 3
+          },
+          {
+            "id": "h10",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Neste momento, por indisponibilidade de dados da plataforma, minha seleção foi interrompida e não pude executar nenhuma ação em relação a aposta.\n\nNo mundo real, tal tipo de parada não poderia ocorrer, ou, caso pudesse, deveria ser apresentada de forma mais clara em relação aos termos/ajuda/documentaç.ão."
+      }
     },
     {
       "image": "imagens/betano/sports_betting/sports_betting_live_betting_09_betano.png",
@@ -108,7 +204,13 @@
       "image": "imagens/betano/sports_betting/sports_betting_live_betting_10_betano.png",
       "title": "Aposta perdida",
       "description": "Aba de resolvidas exibindo uma aposta com o selo de perdida e prêmio de R$0,00.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "Neste cenário, é interessante apostar que, diferentemente do cassino, a palavra Perda/Perdida é utilizada."
+      }
     },
     {
       "image": "imagens/betano/sports_betting/sports_betting_live_betting_11_betano.png",
@@ -134,7 +236,23 @@
       "image": "imagens/betano/sports_betting/casino_slot_lucky_pot_08_betano.png",
       "title": "Aposta gerada por IA",
       "description": "Estado de resultado com os ganhos calculados.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "fake_social_proof",
+          "visual_interference"
+        ],
+        "gray": [
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h10",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Nesta aposta gerada por IA, a plataforma busca te prometer um ganho específico, previamente configurado pelo usuário, por meio de apostas que a IA acredita serem vencedoras.\n\nA casa justifica cada escolha com uma estatística isolada, sem muita explicação."
+      }
     },
     {
       "image": "imagens/betano/sports_betting/casino_slot_lucky_pot_09_betano.png",
@@ -164,5 +282,6 @@
       "darkPatterns": "",
       "ignore": true
     }
-  ]
+  ],
+  "done": true
 }
