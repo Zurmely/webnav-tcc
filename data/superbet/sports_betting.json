@@ -23,7 +23,44 @@
       "title": "Visão inicial com scroll",
       "description": "Página inicial de apostas completa.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "trick_wording",
+          "preselection",
+          "fake_social_proof",
+          "disguised_ads",
+          "obstruction",
+          "visual_interference"
+        ],
+        "gray": [
+          "interface_interference",
+          "obstruction"
+        ],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 3
+          },
+          {
+            "id": "h3",
+            "sev": 3
+          },
+          {
+            "id": "h4",
+            "sev": 4
+          },
+          {
+            "id": "h10",
+            "sev": 4
+          },
+          {
+            "id": "h6",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Anúncios de jogos de azar e de apostas que beneficiam a plataforma são camuflados como parte da interface e promoções.\n\nA rede social da plataforma, Supersocial, é apresentada como fonte de inspiração, bem como os jogos populares e as melhores apostas.\n\nTermos e condições não são apresentados de forma clara, associados aos jogos. Não apenas T&Cs, mas também os próprios termos de aposta, como Super Odds.\n\nA visibilidade de jogos acontecendo tem tempo real é prejudicada por escolhas visuais.\n\nNão há consistência visual entre os jogos e tipos de aposta, podendo levar a interpretações ambíguas."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_homepage_03_superbet.png",
@@ -87,21 +124,65 @@
       "title": "Montando aposta, usando Super Odd",
       "description": "Seleção de uma aposta pré-preenchida pela casa. Na lateral do website, uma nova seção de apostas é exibida.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "visual_interference",
+          "trick_wording"
+        ],
+        "gray": [
+          "interface_interference"
+        ],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 4
+          },
+          {
+            "id": "h10",
+            "sev": 3
+          }
+        ],
+        "observacoes": "A supermúltipla não é explicada adequadamente para o usuário, bem como as super odds. O usuário pode ser levado a realizar uma aposta com a promessa de que \"receberá 5% a mais\", quando, na verdade, está reduzindo suas chances de ganhar."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_live_betting_06_superbet.png",
       "title": "Informações sobre a Super Múltipla",
       "description": "Modal exibido após clicar em mais detalhes da Super Múltipla, no painel lateral exibido no passo anterior.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h10",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Mesmo com o modal de informações aberto, nem todos os T&Cs são explicados."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_live_betting_07_superbet.png",
       "title": "Apostas em um evento",
       "description": "Exibida após selecionar um dos eventos disponíveis na página inicial.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "preselection"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Propor dicas de apostas pré-selecionadas retira a liberdade do usuário e pode acabar beneficiando as plataformas."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_live_betting_08_superbet.png",
@@ -122,7 +203,13 @@
       "title": "Tooltip de multi-apostas",
       "description": "Tooltip exibido após iniciar a criação de uma multi-aposta.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "É interessante notar que certos fluxos obtém onboardings guiados, enquanto fluxos que poderiam beneficiar o usuário não recebem o mesmo tratamento."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_live_betting_11_superbet.png",
@@ -143,14 +230,33 @@
       "title": "Apostas em aberto",
       "description": "Exibição das apostas em aberto, isto é, que ainda não foram concluídas. É possível dar \"cashout\", isto é, resgatar o valor antes da finalização da aposta para certos eventos.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "Diferentemente do cassino, as apostas apontam apenas o lucro para o usuário, apresentando-se de forma mais transparente."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_live_betting_14_superbet.png",
       "title": "Supersocial",
       "description": "Exibido a partir da página de apostas em aberto. O website sugere usar o Supersocial para ficar por dentro de sugestões de outros usuários para apostar.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "fake_social_proof"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 3
+          }
+        ],
+        "observacoes": "A criação de uma plataforma social dentro de uma plataforma de apostas pode levar a resultados inesperados. Acredita-se que isso pode limitar parte da liberdade do usuário."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_live_betting_15_superbet.png",
@@ -164,14 +270,28 @@
       "title": "Visão do Futebol",
       "description": "Página inicial focada no esporte Futebol, com dicas de aposta, partidas próximas e mais funções. Neste cenário, uma dica de aposta popular foi selecionada para o bilhete.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "ignore": true
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_live_betting_17_superbet.png",
       "title": "Seleção de aposta múltipla",
       "description": "Múltiplas apostas foram escolhidas para entender o funcionamento da multiplicação de odds e valores.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [
+          "preselection"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h3",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Nota-se, mais nesta plataforma do que em outras, o oferecimento de apostas múltiplas pré-preenchidas."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_live_betting_18_superbet.png",
@@ -185,7 +305,18 @@
       "title": "Apostas em futebol virtual",
       "description": "Há a opção de apostar em partidas de futebol virtual, concluídas mais rapidamente e com maior frequência.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 1
+          }
+        ],
+        "observacoes": "A exibição da informação acerca do futebol ser virtual poderia ser apresentada com maior evidência."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_open_bets_01_superbet.png",
@@ -202,16 +333,27 @@
       "ignore": true
     },
     {
-      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_03_superbet.png",
-      "title": "Termos de aposta",
-      "description": "Os termos de aposta ficam escondidos no final da visão inicial, e dispõem acerca de premiações máximas.",
-      "darkPatterns": "",
-      "tags": []
-    },
-    {
       "image": "imagens/superbet/sports_betting/sports_betting_open_bets_04_superbet.png",
       "title": "Apostas em aberto, valor máximo dos termos",
       "description": "Apesar da odd astronômica, o valor máximo dos termos é exibido como resultado máximo da aposta.",
+      "darkPatterns": "",
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h10",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Neste cenário, não havia explicação acerca do motivo pelo qual o pagamento ficava em R$ 2M mesmo com o aumento da odd. Foi necessário buscar ajuda na documentação de termos para entender o funcionamento do pagamento."
+      }
+    },
+    {
+      "image": "imagens/superbet/sports_betting/sports_betting_open_bets_03_superbet.png",
+      "title": "Termos de aposta",
+      "description": "Os termos de aposta ficam escondidos no final da visão inicial, e dispõem acerca de premiações máximas.",
       "darkPatterns": "",
       "tags": []
     },
@@ -220,7 +362,18 @@
       "title": "Apostas liquidadas",
       "description": "Visão das apostas liquidadas, com um resultado de ganho na aposta.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 1
+          }
+        ],
+        "observacoes": "Diferentemente do cenário antes do ganho, aqui o prêmio deixa de ser exibido apenas como lucro, mas ele também é somado ao valor apostado."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_open_bets_06_superbet.png",
@@ -234,7 +387,18 @@
       "title": "Apostas liquidadas, com derrota",
       "description": "Visão das apostas liquidadas, com um resultado de derrota na aposta.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 1
+          }
+        ],
+        "observacoes": "A visibilidade acerca das derrotas não é apresentada de forma tão forte. Apesar disso, o mesmo acontece com as vitórias, então o problema é classificado como estético, acreditando em uma escolha estética ruim."
+      }
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_open_bets_08_superbet.png",
@@ -250,5 +414,6 @@
       "darkPatterns": "",
       "ignore": true
     }
-  ]
+  ],
+  "done": true
 }
