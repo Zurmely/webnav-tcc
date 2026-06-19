@@ -117,9 +117,9 @@ function LoadingScreen() {
   );
 }
 
-/* ---- Sidebar: tab system with optional subtabs --------------------------- */
+/* ---- Sidebar: tab system with section headers and always-visible platforms */
 function Sidebar(props) {
-  const { data, activeTabId, activeAppId, onSelectTab, onSelectApp, open, onClose } = props;
+  const { data, activeTabId, activeAppId, onSelectTab, onSelectPlatform, open, onClose } = props;
   return (
     React.createElement(React.Fragment, null,
       React.createElement("div", {
@@ -132,26 +132,32 @@ function Sidebar(props) {
         React.createElement("nav", { className: "side-nav", "aria-label": "Navegação principal" },
           React.createElement("ul", { className: "tab-list" },
             data.nav.map(tab => {
+              // Section header: non-interactive label with always-visible platform list
+              if (tab.isSection) {
+                return React.createElement("li", { key: tab.id, className: "tab tab--section" },
+                  React.createElement("span", { className: "section-label" }, tab.label),
+                  tab.apps && tab.apps.length > 0
+                    ? React.createElement("ul", { className: "subtab-list subtab-list--flat" },
+                        tab.apps.map(app =>
+                          React.createElement("li", { key: app.id },
+                            React.createElement("button", {
+                              className: "subtab-item" + (app.id === activeAppId && activeTabId === tab.id ? " is-active" : ""),
+                              onClick: () => onSelectPlatform(tab, app)
+                            }, app.name)
+                          )
+                        )
+                      )
+                    : null
+                );
+              }
+              // Regular page tab
               const isActive = tab.id === activeTabId;
-              const hasSubtabs = tab.type === "viewer" && tab.apps && tab.apps.length > 0;
               return React.createElement("li", { key: tab.id, className: "tab" },
                 React.createElement("button", {
                   className: "tab-item" + (isActive ? " is-active" : ""),
                   "aria-current": isActive ? "true" : undefined,
                   onClick: () => onSelectTab(tab)
-                }, tab.label),
-                (isActive && hasSubtabs)
-                  ? React.createElement("ul", { className: "subtab-list" },
-                      tab.apps.map(app =>
-                        React.createElement("li", { key: app.id },
-                          React.createElement("button", {
-                            className: "subtab-item" + (app.id === activeAppId ? " is-active" : ""),
-                            onClick: () => onSelectApp(app)
-                          }, app.name)
-                        )
-                      )
-                    )
-                  : null
+                }, tab.label)
               );
             })
           )
@@ -193,6 +199,22 @@ function WorkPage(props) {
           )
         )
       )
+    )
+  );
+}
+
+/* ---- Embedded view (type: "embed") --------------------------------------- */
+/* References a self-contained page (e.g. the analytics dashboard living in its
+   own folder) via an iframe, keeping the React app untouched. */
+function EmbedPage(props) {
+  return (
+    React.createElement("div", { className: "embed-wrap" },
+      React.createElement("iframe", {
+        className: "embed-frame",
+        src: props.src,
+        title: props.title || "Conteúdo incorporado",
+        loading: "lazy"
+      })
     )
   );
 }
@@ -333,14 +355,11 @@ function App() {
     setTabId(t.id);
     setDrawer(false);
     setStepIdx(0);
-    if (t.type === "viewer" && t.apps && t.apps.length) {
-      setAppId(t.apps[0].id);
-      setFlowId(t.apps[0].flows[0].id);
-    }
   }
-  function selectApp(a) {
-    setAppId(a.id);
-    setFlowId(a.flows[0].id);
+  function selectPlatform(tab, app) {
+    setTabId(tab.id);
+    setAppId(app.id);
+    setFlowId(app.flows[0].id);
     setStepIdx(0);
     setDrawer(false);
   }
@@ -357,7 +376,7 @@ function App() {
         activeTabId: tabId,
         activeAppId: appId,
         onSelectTab: selectTab,
-        onSelectApp: selectApp,
+        onSelectPlatform: selectPlatform,
         open: drawer,
         onClose: () => setDrawer(false)
       }),
@@ -377,7 +396,9 @@ function App() {
               onPrev: prev, onNext: next,
               onOpenLightbox: () => setLightbox(true)
             })
-          : React.createElement(WorkPage, { page: tab.page })
+          : tab.type === "embed"
+            ? React.createElement(EmbedPage, { src: tab.src, title: tab.label })
+            : React.createElement(WorkPage, { page: tab.page })
       ),
 
       isViewer

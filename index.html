@@ -124,6 +124,13 @@
       margin-left: 16px;
     }
 
+    .subtab-list--flat {
+      border-left: none;
+      margin-left: 0;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
     .subtab-item {
       width: 100%;
       text-align: left;
@@ -143,6 +150,23 @@
 
     .subtab-item.is-active {
       background: rgba(255, 255, 255, 0.16);
+    }
+
+    /* section header inside the nav (non-interactive label) */
+    .tab--section {
+      gap: 4px;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      padding: 14px 16px 2px;
+      line-height: 1.2;
+      user-select: none;
     }
 
     .side-foot {
@@ -205,6 +229,21 @@
       gap: 32px;
       padding: var(--pad);
       min-height: 100vh;
+    }
+
+    /* embedded view (analytics dashboard via iframe) */
+    .embed-wrap {
+      flex: 1 1 auto;
+      display: flex;
+      min-width: 0;
+    }
+
+    .embed-frame {
+      width: 100%;
+      height: 100vh;
+      border: none;
+      display: block;
+      background: #faf9f5;
     }
 
     /* mobile topbar */
@@ -935,6 +974,10 @@
         gap: 24px;
       }
 
+      .embed-frame {
+        height: calc(100vh - 73px);
+      }
+
       .app-name {
         display: none;
       }
@@ -1037,10 +1080,10 @@
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
     integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
     crossorigin="anonymous"></script>
-  <script src="js/checklist-data.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/lightbox.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/checklist-data.js?v=2"></script>
+  <script src="js/data.js?v=2"></script>
+  <script src="js/lightbox.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
 </body>
 
 </html>

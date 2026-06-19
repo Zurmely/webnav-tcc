@@ -39,7 +39,7 @@
   // Static nav structure — apps are populated asynchronously from JSON files.
   window.APP_DATA = {
     thesis: thesis,
-    defaultTab: "apendices",
+    defaultTab: "trabalho",
     loading: true,
     nav: [
       {
@@ -64,23 +64,30 @@
               heading: "Sobre os apêndices",
               body:
                 "Os apêndices reúnem as capturas de tela dos fluxos analisados em " +
-                "cada plataforma. Use a aba 'Apêndices' para navegar entre os " +
-                "aplicativos, fluxos e passos."
+                "cada plataforma. Selecione uma plataforma na barra lateral para " +
+                "navegar entre os fluxos e passos."
             }
           ]
         }
       },
       {
-        id: "apendices",
-        label: "Apêndices",
+        id: "plataformas",
+        label: "Plataformas",
         type: "viewer",
+        isSection: true,
         apps: [] // Populated by loadPlatformData()
+      },
+      {
+        id: "analise-dados",
+        label: "Análise de dados",
+        type: "embed",
+        src: "dashboard/index.html"
       }
     ]
   };
 
   // Load JSON data files — per-flow structure via manifest.json
-  var PLATFORM_IDS = ["bet365", "betano", "superbet"];
+  var PLATFORM_IDS = ["betano", "bet365", "superbet"];
 
   function loadPlatform(platformId) {
     return fetch("data/" + platformId + "/manifest.json")
@@ -116,7 +123,7 @@
       .then(function (results) {
         var platforms = results[0];
         var tags = results[1];
-        var apendices = window.APP_DATA.nav.find(function (t) { return t.id === "apendices"; });
+        var apendices = window.APP_DATA.nav.find(function (t) { return t.id === "plataformas"; });
         apendices.apps = platforms;
         // Index tags by id for quick lookup during rendering.
         window.APP_DATA.tags = tags;
