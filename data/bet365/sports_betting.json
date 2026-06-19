@@ -54,7 +54,8 @@
       "image": "imagens/bet365/sports_betting/sports_betting_open_bets_01_bet365.png",
       "title": "Apostas em aberto",
       "description": "Seção Minhas Apostas exibindo as apostas em aberto com a opção de encerramento antecipado (cashout).",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/sports_betting/sports_betting_open_bets_02_bet365.png",
@@ -72,18 +73,13 @@
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_06_bet365.png",
       "title": "Aposta combinada em aberto",
       "description": "Aposta de R$5,00 do tipo Criar Aposta com duas seleções e retorno potencial de R$13,75, com botão para encerrar a aposta.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/bet365/sports_betting/casino_slot_immortals_07_bet365.png",
       "title": "Aposta anulada",
       "description": "Aba de apostas resolvidas exibindo uma aposta com as seleções anuladas e o valor de R$5,00 devolvido.",
-      "darkPatterns": ""
-    },
-    {
-      "image": "imagens/bet365/sports_betting/casino_slot_immortals_08_bet365.png",
-      "title": "Ofertas personalizadas",
-      "description": "Aba Pra Você com ofertas direcionadas ao usuário, como jackpot, aumentos de ganho e um jogo gratuito de recompensas.",
       "darkPatterns": ""
     },
     {
@@ -162,7 +158,8 @@
       "image": "imagens/bet365/sports_betting/sports_betting_homepage_bet365.png",
       "title": "Página inicial",
       "description": "Página inicial das apostas esportivas com partidas em destaque, odds em tempo real e categorias de esportes.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     }
   ]
 }

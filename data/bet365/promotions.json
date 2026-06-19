@@ -7,6 +7,29 @@
       "title": "Página de promoções",
       "description": "Página de ofertas e promoções disponíveis para o usuário, incluindo bônus ativos e ofertas de boas-vindas.",
       "darkPatterns": ""
+    },
+    {
+      "image": "imagens/bet365/promotions/casino_slot_immortals_08_bet365.png",
+      "title": "Ofertas personalizadas",
+      "description": "Aba Pra Você com ofertas direcionadas ao usuário, como jackpot, aumentos de ganho e um jogo gratuito de recompensas.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h5",
+            "sev": 3
+          },
+          {
+            "id": "h10",
+            "sev": 3
+          }
+        ],
+        "observacoes": "As imagens criadas para as promoções possibilitam intepretações ambíguas dos termos e condições, que são exibidos em outra página e possuem um direcionamento reduzido nessa visão."
+      }
     }
   ],
   "done": true

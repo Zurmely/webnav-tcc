@@ -9,15 +9,21 @@
       "darkPatterns": ""
     },
     {
-      "image": "imagens/betano/casino_mines_game/casino_mines_game_01_betano.png",
+      "image": "imagens/betano/casino_mines_game/casino_slot_starlight_princess_04_betano.png",
       "title": "Tela inicial",
+      "description": "Página das regras com as configurações de jogo automático.",
+      "darkPatterns": ""
+    },
+    {
+      "image": "imagens/betano/casino_mines_game/casino_mines_game_01_betano.png",
+      "title": "Ganhos progressivos",
       "description": "Tela inicial do Minas com a grade 5x5 fechada, uma estrela revelada e aposta de R$1,00.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/betano/casino_mines_game/casino_mines_game_02_betano.png",
-      "title": "Ganhos progressivos",
-      "description": "Partida com mais casas reveladas, acumulando ganhos progressivos.",
+      "title": "Ganhos progressivos, parte 2",
+      "description": "Partida com mais estrelas reveladas, acumulando ganhos progressivos.",
       "darkPatterns": ""
     },
     {
@@ -43,15 +49,20 @@
     },
     {
       "image": "imagens/betano/casino_mines_game/casino_mines_game_06_betano.png",
-      "title": "Multiplicador crescente",
+      "title": "Ganhos progressivos, parte 3",
       "description": "O multiplicador cresce conforme mais estrelas são encontradas.",
-      "darkPatterns": ""
-    },
-    {
-      "image": "imagens/betano/casino_mines_game/casino_slot_starlight_princess_04_betano.png",
-      "title": "Starlight Princess, regras 2",
-      "description": "Página das regras com as configurações de jogo automático.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Apesar dos pontos, é importante apontar que este jogo apresenta um visual e feedback consistentes.\n\nIndependente do valor beneficiar o usuário ou a plataforma, as escolhas de design são igualmente ruins, dificultando a visualização da atual situação financeira.\n\nAdemais, a presença de feedback é adequada quando uma mina é exibida."
+      }
     },
     {
       "image": "imagens/betano/casino_mines_game/casino_slot_starlight_princess_05_betano.png",
@@ -60,5 +71,6 @@
       "darkPatterns": "",
       "ignore": true
     }
-  ]
+  ],
+  "done": true
 }

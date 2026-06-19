@@ -13,18 +13,47 @@
       "image": "imagens/betano/casino_home/casino_home_overview_betano.png",
       "title": "Visão geral do cassino",
       "description": "Captura completa da seção de cassino mostrando todas as categorias, provedores e jogos disponíveis.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording",
+          "fake_social_proof"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h8",
+            "sev": 3
+          }
+        ],
+        "observacoes": "Nesta home em específico, há um padrão muito interessante. Enquanto outras casas apresentam apenas jogos mais premiados, a Betano apresenta também os menos premiados.\n\nHá algumas formas de interpretar isso: a casa está sendo transparente e informando quais jogos são \"perdedores\", ou ela está usando de uma falsa transparência para direcionar jogadores?\n\nPara além disso, a seção de maiores vencedores abaixo apresenta uma espécie de prova social de ganhos."
+      }
     },
     {
       "image": "imagens/betano/casino_home/casino_home_lobby_betano.png",
       "title": "Voltar ao último jogo",
       "description": "Lobby do cassino com uma notificação no canto da tela sugerindo o retorno ao último jogo jogado.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "nagging"
+        ],
+        "gray": [
+          "nagging"
+        ],
+        "heuristicas": [
+          {
+            "id": "h8",
+            "sev": 1
+          }
+        ],
+        "observacoes": "Enquanto a overlay de voltar ao último jogo pode se apresentar como facilidade de uso, num contexto de apostas, onde a perda é quase sempre garantida, esta chamada também pode se caracterizar como nagging."
+      }
     },
     {
       "image": "imagens/betano/casino_home/casino_home_bonus_notification_betano.png",
       "title": "Notificação de bônus ativo",
-      "description": "Notificação de bônus ativo com 10 rodadas grátis exibida sobre a página do cassino, incentivando o retorno ao jogo.",
+      "description": "Notificação de bônus ativo com 10 rodadas grátis exibida sobre a página do cassino.",
       "darkPatterns": ""
     },
     {
@@ -50,7 +79,31 @@
       "image": "imagens/betano/casino_home/casino_slot_lucky_pot_paytable_02_betano.png",
       "title": "Visão multijogo",
       "description": "Tabela de pagamentos exibida no modo de visualização múltipla, com o painel de busca de jogos na lateral.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h1",
+            "sev": 4
+          },
+          {
+            "id": "h3",
+            "sev": 4
+          },
+          {
+            "id": "h8",
+            "sev": 4
+          },
+          {
+            "id": "h7",
+            "sev": 2
+          }
+        ],
+        "observacoes": "A Betano apresenta essa função como algo diferente das outras plataformas. Acredita-se que uma visão multijogo é algo extremamente prejudicial para os usuários, pois afeta diretamente várias heurísticas estabelecidas, bem como potencializa a possível perda monetária dos usuários, enquanto maximiza o vício."
+      }
     }
-  ]
+  ],
+  "done": true
 }
