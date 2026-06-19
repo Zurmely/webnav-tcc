@@ -43,7 +43,8 @@
       "image": "imagens/betano/casino_home/casino_slot_lucky_pot_loading_betano.png",
       "title": "Tela de carregamento",
       "description": "Tela de carregamento do Lucky Pot com o logo da provedora SYNOT Games.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_home/casino_slot_lucky_pot_paytable_02_betano.png",

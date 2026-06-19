@@ -10,15 +10,33 @@
       "ignore": true
     },
     {
-      "image": "imagens/bet365/casino_home/casino_home_bet365.png",
-      "title": "Página inicial do cassino",
-      "description": "Página inicial da seção de cassino com jogos em destaque, jackpots ao vivo e categorias de jogos.",
-      "darkPatterns": ""
-    },
-    {
       "image": "imagens/bet365/casino_home/casino_home_overview_bet365.png",
       "title": "Visão geral do cassino",
       "description": "Captura completa da seção de cassino mostrando todas as categorias e jogos disponíveis ao rolar a página.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording",
+          "fake_social_proof"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h8",
+            "sev": 2
+          },
+          {
+            "id": "h5",
+            "sev": 3
+          }
+        ],
+        "observacoes": "A exibição de elementos como os maiores jackpots/ganhos, mas a ausência da apresentação das perdas configura um ambiente que busca trazer o usuário para as apostas, que não possuem retorno garantido.\n\nPara além disso, a apresentação de termos de vitória e bônus em locais não relacionados direcionam o usuário a jogos mais lucrativos para a plataforma."
+      }
+    },
+    {
+      "image": "imagens/bet365/casino_home/casino_home_bet365.png",
+      "title": "Página inicial com nova seção",
+      "description": "A seção porque você jogou aparece nesta visão após o usuário ter jogado algum jogo. Jogos semelhantes são sugeridos via personalização.",
       "darkPatterns": ""
     },
     {
@@ -31,14 +49,27 @@
     {
       "image": "imagens/bet365/casino_home/casino_home_lobby_02_bet365.png",
       "title": "Tooltip do Live Blackjack",
-      "description": "Lobby com tooltip do jogo Live Blackjack, exibindo um jackpot ativo de R$99.465.",
+      "description": "Tooltip do Live Blackjack com o retorno potencial estimado.",
       "darkPatterns": ""
     },
     {
       "image": "imagens/bet365/casino_home/casino_home_lobby_03_bet365.png",
       "title": "Tooltip do Tigre Sortudo Dourado",
-      "description": "Lobby com tooltip do jogo Tigre Sortudo Dourado exibindo informações rápidas do jogo.",
-      "darkPatterns": ""
+      "description": "Tooltip do jogo Tigre Sortudo Dourado exibindo informações de retorno e volatilidade.",
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "comparison_prevention"
+        ],
+        "gray": [],
+        "heuristicas": [
+          {
+            "id": "h6",
+            "sev": 2
+          }
+        ],
+        "observacoes": "Apesar da volatilidade ser melhor apresentada e explicada do que em outras plataformas, ainda faltam explicações adequadas acerca do RTP, possibilitando uma comparação fácil entre os jogos.\n\nNeste cenário, uma função de comparação se faria útil."
+      }
     },
     {
       "image": "imagens/bet365/casino_home/casino_crash_fly365_05_bet365.png",
@@ -51,7 +82,16 @@
       "image": "imagens/bet365/casino_home/casino_info_rtp_volatility_bet365.png",
       "title": "O que é RTP e volatilidade",
       "description": "Página de conteúdo educativo explicando os conceitos de RTP (Retorno ao Jogador) e volatilidade.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "trick_wording"
+        ],
+        "gray": [],
+        "heuristicas": [],
+        "observacoes": "A escolha de palavras neste artigo sobre RTP e volatilidade é particularmente interessante, dado a necessidade da casa de explicar que, na maior parte dos casos, eles assumem que, só de iniciar um jogo, jogadores possuem uma chance maior de perder do que de ganhar dinheiro."
+      }
     }
-  ]
+  ],
+  "done": true
 }

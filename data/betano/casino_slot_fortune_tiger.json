@@ -6,55 +6,75 @@
       "image": "imagens/betano/casino_slot_fortune_tiger/casino_slot_fortune_tiger_01_betano.png",
       "title": "Tela de carregamento",
       "description": "Tela de carregamento do Fortune Tiger com a barra de progresso.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_slot_fortune_tiger/casino_slot_fortune_tiger_02_betano.png",
       "title": "Regras, símbolos",
       "description": "Tabela de valores de pagamento dos símbolos, com a verificação de autenticidade da PGSoft carregando.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_slot_fortune_tiger/casino_slot_fortune_tiger_03_betano.png",
       "title": "Tela de introdução",
       "description": "Tela de introdução do Fortune Tiger com o título do jogo e o botão de iniciar.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_slot_fortune_tiger/casino_slot_fortune_tiger_04_betano.png",
       "title": "RTP do jogo",
       "description": "Tela informativa explicando que o retorno teórico ao jogador (RTP) do jogo é de 96,81%.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_slot_fortune_tiger/casino_slot_fortune_tiger_05_betano.png",
       "title": "Verificação de autenticidade",
       "description": "Modal sugerindo que o jogador verifique a autenticidade do jogo no site da PGSoft.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_slot_fortune_tiger/casino_slot_fortune_tiger_06_betano.png",
       "title": "Tela principal",
       "description": "Tela principal com a grade 3x3 de símbolos orientais e o painel de apostas.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_slot_fortune_tiger/casino_slot_fortune_tiger_07_betano.png",
       "title": "Funcionalidade Tigre da Sorte",
       "description": "Notificação da funcionalidade Tigre da Sorte exibida durante a rodada.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     },
     {
       "image": "imagens/betano/casino_slot_fortune_tiger/casino_slot_fortune_tiger_08_betano.png",
       "title": "Ganhe até 7500x",
       "description": "Banner \"Ganhe até 7500x!\" exibido com símbolos wild em posição de vitória.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "checklist": {
+        "tipos": [
+          "nagging",
+          "trick_wording"
+        ],
+        "gray": [
+          "nagging"
+        ],
+        "heuristicas": [],
+        "observacoes": "Esta imagem do Fortune Tiger foi mantida também nesta plataforma para ilustrar uma mensagem que não foi apresentada no Fortune Tiger da Bet365 ou Superbet: Ganhe até 7500x.\n\nEste cenário mostra um uso de palavras ainda mais direcionado para tentar fazer com que o usuário continue apostando, mesmo após ter perdido dinheiro."
+      }
     },
     {
       "image": "imagens/betano/casino_slot_fortune_tiger/casino_slot_fortune_tiger_09_betano.png",
       "title": "Ganho pequeno",
       "description": "Combinação vencedora de pêssegos com ganho de R$0,24 exibido na tela.",
-      "darkPatterns": ""
+      "darkPatterns": "",
+      "ignore": true
     }
-  ]
+  ],
+  "done": true
 }

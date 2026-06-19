@@ -7,14 +7,16 @@
       "title": "Visão inicial do website sem conta",
       "description": "Visão inicial das Apostas com atalhos rápidos, banners de sugestão de apostas e partidas ao vivo.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "ignore": true
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting_homepage_02_superbet.png",
       "title": "Visão inicial com conta",
       "description": "Visão inicial após realizar o acesso a uma conta.",
       "darkPatterns": "",
-      "tags": []
+      "tags": [],
+      "ignore": true
     },
     {
       "image": "imagens/superbet/sports_betting/sports_betting-home-full_superbet.png",
