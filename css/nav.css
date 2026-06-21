@@ -150,8 +150,17 @@ a { color: inherit; }
   z-index: 100;
   scrollbar-width: none;
   min-height: 64px;
+  transition: padding 0.22s ease, min-height 0.22s ease;
 }
 .secondary-nav::-webkit-scrollbar { display: none; }
+
+.secondary-nav.is-compact {
+  padding: 8px 24px;
+  min-height: 44px;
+}
+
+.secondary-nav.is-compact .chap-tab { padding: 5px 14px; }
+.secondary-nav.is-compact .flow-card { padding: 6px 14px; }
 
 /* ============================================================
    CHAPTER TABS  (Trabalho secondary nav)
@@ -179,7 +188,7 @@ a { color: inherit; }
   cursor: pointer;
   white-space: nowrap;
   margin-left: -1px;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, padding 0.22s ease;
 }
 
 .chap-tab:first-child { margin-left: 0; }
@@ -230,7 +239,7 @@ a { color: inherit; }
   cursor: pointer;
   text-align: left;
   margin-left: -1px;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, padding 0.22s ease;
 }
 
 .flow-card:first-child { margin-left: 0; }
@@ -243,7 +252,19 @@ a { color: inherit; }
 .flow-card:hover:not(.is-active) { background: #f4f4f4; }
 
 .flow-card__name  { font-size: 15px; line-height: 1.1; }
-.flow-card__stats { font-size: 12px; opacity: 0.55; white-space: nowrap; }
+.flow-card__stats {
+  font-size: 12px;
+  opacity: 0.55;
+  white-space: nowrap;
+  overflow: hidden;
+  max-height: 2em;
+  transition: max-height 0.22s ease, opacity 0.18s ease;
+}
+
+.secondary-nav.is-compact .flow-card__stats {
+  max-height: 0;
+  opacity: 0;
+}
 
 /* ============================================================
    RESPONSIVE — mobile

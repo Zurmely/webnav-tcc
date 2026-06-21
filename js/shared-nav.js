@@ -1,25 +1,26 @@
 /* ==========================================================================
-   shared-nav.js — compact nav scroll detection for all pages
+   shared-nav.js — compact nav + secondary nav scroll behaviour for all pages
    ========================================================================== */
 (function () {
   'use strict';
 
-  var heroNav    = document.getElementById('heroNav');
-  var compactNav = document.getElementById('compactNav');
+  /* ---- Secondary nav compact state on scroll ---- */
+  var secondaryNav = document.querySelector('.secondary-nav');
 
-  if (!heroNav || !compactNav) return;
-
-  function setScrolled(yes) {
-    document.body.classList.toggle('nav-scrolled', yes);
-    compactNav.classList.toggle('is-visible', yes);
-    compactNav.setAttribute('aria-hidden', yes ? 'false' : 'true');
+  function setSecondaryCompact(scrollTop) {
+    if (secondaryNav) secondaryNav.classList.toggle('is-compact', scrollTop > 40);
   }
 
-  /* IntersectionObserver: when the hero header exits the viewport */
-  var observer = new IntersectionObserver(
-    function (entries) { setScrolled(!entries[0].isIntersecting); },
-    { threshold: 0, rootMargin: '0px 0px 0px 0px' }
-  );
+  /* Window scroll (betano / bet365 / superbet / dados pages) */
+  window.addEventListener('scroll', function () {
+    setSecondaryCompact(window.scrollY);
+  }, { passive: true });
 
-  observer.observe(heroNav);
+  /* Inner scroll area (trabalho page) */
+  var scrollArea = document.getElementById('scrollArea');
+  if (scrollArea) {
+    scrollArea.addEventListener('scroll', function () {
+      setSecondaryCompact(scrollArea.scrollTop);
+    }, { passive: true });
+  }
 })();
