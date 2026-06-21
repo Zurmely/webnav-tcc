@@ -1,4 +1,4 @@
-<!-- GERADO por trabalho/sync-content.mjs a partir de projeto-final/21-06.md. Não editar — edite o arquivo de origem e rode o script novamente. 2026-06-21T21:10:44.041Z -->
+<!-- GERADO por trabalho/sync-content.mjs a partir de projeto-final/21-06.md. Não editar — edite o arquivo de origem e rode o script novamente. 2026-06-21T21:20:27.220Z -->
 Gabriel Zurmely Gama
 
 **Ética no Design: uma análise crítica da exploração de padrões deceptivos no desenho de interfaces e da experiência de usuário**

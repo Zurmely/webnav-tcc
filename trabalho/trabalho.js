@@ -29,7 +29,7 @@
   ];
   // Bases onde procurar figura_NN.png, na mesma ordem de preferência.
   var PNG_BASES = [
-    "../../../projeto-final/figuras/output/png/", // VIVO
+    "../../../projeto-final/figuras/output-v2/png/", // VIVO
     B + "figuras/"                                // EMBUTIDO
   ];
   var POLL_MS = 1500; // intervalo de checagem do markdown vivo
@@ -426,9 +426,9 @@
     doc.className = "doc";
     doc.innerHTML =
       '<header class="doc-head">' +
-        '<p class="doc-kicker">' + escapeHtml(kicker) + "</p>" +
-        '<h1 class="doc-title">' + escapeHtml(titleText) + "</h1>" +
-        '<div class="doc-head-rule"></div>' +
+      '<p class="doc-kicker">' + escapeHtml(kicker) + "</p>" +
+      '<h1 class="doc-title">' + escapeHtml(titleText) + "</h1>" +
+      '<div class="doc-head-rule"></div>' +
       "</header>" +
       '<div class="prose">' + renderBody(ch) + "</div>";
 
