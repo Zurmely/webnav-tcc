@@ -147,6 +147,7 @@ a { color: inherit; }
   gap: 0;
   position: sticky;
   top: var(--compact-h);
+  margin-top: var(--compact-h); /* push natural position to match sticky-top so content starts below */
   z-index: 100;
   scrollbar-width: none;
   min-height: 64px;
@@ -274,6 +275,9 @@ a { color: inherit; }
   .site-hero { display: none; }
 
   /* Compact nav becomes sticky in-flow (not fixed) */
+  /* compact-nav is sticky on mobile (in flow), so no margin-top needed */
+  .secondary-nav { margin-top: 0; }
+
   .compact-nav {
     position: sticky;
     top: 0;
