@@ -12,18 +12,16 @@
     rel="stylesheet" />
   <style>
     :root {
-      --ink: #1a1a1a;
-      --paper: #faf9f5;
-      --card: #ffffff;
-      --line: #e6e3da;
-      --line-strong: #c9c5b8;
+      --ink: #000;
+      --paper: #fff;
+      --card: #fff;
+      --line: #d9d9d9;
+      --line-strong: #000;
       --muted: #6b6b66;
       --yellow: #f3d250;
       --yellow-soft: #fbf0c2;
       --gray: #d9d9d9;
-      --radius: 8px;
       --pad: 36px;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.05);
     }
 
     * { box-sizing: border-box; }
@@ -102,9 +100,8 @@
       position: sticky;
       top: 0;
       z-index: 30;
-      background: rgba(250, 249, 245, 0.94);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+      border-bottom: 1px solid var(--ink);
       margin: 18px 0 26px;
       padding: 14px 0;
       display: flex;
@@ -137,11 +134,10 @@
       color: #444;
       font-size: 13.5px;
       padding: 7px 14px;
-      border-radius: 999px;
       transition: background 0.14s ease, color 0.14s ease, border-color 0.14s ease;
     }
 
-    .pill:hover { border-color: var(--ink); }
+    .pill:hover { background: #f4f4f4; border-color: var(--ink); }
 
     .pill.is-active {
       background: var(--ink);
@@ -155,7 +151,6 @@
       color: var(--ink);
       font-size: 13.5px;
       padding: 8px 12px;
-      border-radius: 6px;
       max-width: 280px;
     }
 
@@ -165,8 +160,6 @@
       margin-left: auto;
       display: inline-flex;
       border: 1px solid var(--ink);
-      border-radius: 999px;
-      overflow: hidden;
       flex: 0 0 auto;
     }
 
@@ -193,10 +186,8 @@
 
     .stat-card {
       background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border: 1px solid var(--ink);
       padding: 18px 20px;
-      box-shadow: var(--shadow);
     }
 
     .stat-card .num {
@@ -239,13 +230,11 @@
 
     .intro-card {
       background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border: 1px solid var(--ink);
       padding: 22px;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      box-shadow: var(--shadow);
     }
 
     .intro-card h3 { margin: 0; font-size: 19px; }
@@ -261,9 +250,8 @@
 
     .chiplet {
       font-size: 12px;
-      background: var(--paper);
+      background: #f5f5f5;
       border: 1px solid var(--line);
-      border-radius: 999px;
       padding: 4px 11px;
       color: #444;
     }
@@ -283,11 +271,9 @@
     /* ====================== KEY FINDINGS ====================== */
     .findings {
       background: var(--card);
-      border: 1px solid var(--line);
+      border: 1px solid var(--ink);
       border-left: 4px solid var(--yellow);
-      border-radius: var(--radius);
       padding: 22px 24px;
-      box-shadow: var(--shadow);
     }
 
     .findings ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
@@ -300,20 +286,18 @@
     .heat-tools { display: inline-flex; gap: 6px; }
 
     .heat-tools button {
-      border: 1px solid var(--line-strong);
+      border: 1px solid var(--ink);
       background: var(--card);
       color: #444;
       font-size: 12.5px;
       padding: 6px 12px;
-      border-radius: 6px;
     }
 
     .heat-tools button.is-active { background: var(--ink); color: #fff; border-color: var(--ink); }
 
     .table-scroll {
       overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border: 1px solid var(--ink);
       background: var(--card);
     }
 
@@ -380,7 +364,6 @@
     .legend .bar {
       height: 12px;
       width: 200px;
-      border-radius: 3px;
       border: 1px solid var(--line);
       background: linear-gradient(90deg, #fff7d6, var(--yellow) 55%, #b8860b);
     }
@@ -394,10 +377,8 @@
 
     .chart-card {
       background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border: 1px solid var(--ink);
       padding: 20px 22px;
-      box-shadow: var(--shadow);
     }
 
     .chart-card h3 { margin: 0 0 4px; font-size: 16px; }
@@ -420,9 +401,9 @@
     .bar-label .name .en { color: var(--muted); font-style: italic; font-size: 11.5px; }
     .bar-label .val { font-weight: 700; font-variant-numeric: tabular-nums; flex: 0 0 auto; }
 
-    .bar-track { height: 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+    .bar-track { height: 12px; background: #f5f5f5; border: 1px solid var(--line); overflow: hidden; }
 
-    .bar-fill { height: 100%; background: var(--yellow); border-radius: 999px; min-width: 2px; transition: width 0.4s ease; }
+    .bar-fill { height: 100%; background: var(--yellow); min-width: 2px; transition: width 0.4s ease; }
     .bar-fill.sev { background: #d98b2b; }
 
     /* severity distribution */
@@ -434,7 +415,6 @@
       width: 100%;
       max-width: 54px;
       background: var(--yellow);
-      border-radius: 5px 5px 0 0;
       min-height: 3px;
       display: flex;
       align-items: flex-start;
@@ -485,12 +465,10 @@
 
     .det-card {
       background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border: 1px solid var(--ink);
       padding: 18px;
       display: flex;
       gap: 22px;
-      box-shadow: var(--shadow);
     }
 
     .det-thumb {
@@ -499,7 +477,6 @@
       border: 1px solid var(--ink);
       background: var(--paper);
       padding: 0;
-      border-radius: 4px;
       overflow: hidden;
       cursor: zoom-in;
       align-self: flex-start;
@@ -513,11 +490,10 @@
       position: absolute;
       right: 8px;
       bottom: 8px;
-      background: rgba(26, 26, 26, 0.82);
+      background: rgba(0, 0, 0, 0.82);
       color: #fff;
       font-size: 11px;
       padding: 4px 8px;
-      border-radius: 4px;
       opacity: 0;
       transition: opacity 0.15s ease;
     }
@@ -548,8 +524,8 @@
 
     .commentary {
       background: var(--yellow-soft);
-      border: 1px solid #e8d480;
-      border-radius: 6px;
+      border: 1px solid #000;
+      border-left: 4px solid var(--yellow);
       padding: 12px 14px;
       font-size: 14px;
       line-height: 1.6;
@@ -582,7 +558,6 @@
       font-size: 12.5px;
       line-height: 1;
       padding: 6px 11px;
-      border-radius: 5px;
       cursor: help;
     }
 
@@ -604,7 +579,6 @@
       font-size: 11px;
       font-weight: 700;
       padding: 4px 7px;
-      border-radius: 4px;
       cursor: help;
       font-variant-numeric: tabular-nums;
     }
@@ -617,7 +591,6 @@
       width: 22px;
       height: 22px;
       border: 1px solid var(--ink);
-      border-radius: 4px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -635,8 +608,7 @@
       padding: 70px 20px;
       color: var(--muted);
       font-size: 15px;
-      border: 1px dashed var(--line-strong);
-      border-radius: var(--radius);
+      border: 1px dashed var(--ink);
       background: var(--card);
     }
 
@@ -674,7 +646,6 @@
       background: transparent;
       color: #fff;
       font-size: 18px;
-      border-radius: 6px;
     }
 
     .lb-close:hover { background: rgba(255, 255, 255, 0.12); }
@@ -701,7 +672,6 @@
       background: var(--yellow);
       color: var(--ink);
       font-size: 26px;
-      border-radius: 50%;
       opacity: 0.92;
       z-index: 2;
     }

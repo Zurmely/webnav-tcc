@@ -17,7 +17,7 @@
 (function () {
   "use strict";
 
-  var BASE = "../";
+  var BASE = window.DASHBOARD_BASE || "../";
   var PLATFORM_IDS = ["bet365", "betano", "superbet"];
 
   var TAX = window.CHECKLIST_TAXONOMY || {};
@@ -198,18 +198,54 @@
     var app = document.getElementById("app");
     app.innerHTML =
       '<div class="wrap">' +
-        headerHtml() +
-        filterbarHtml() +
+        (window.DASHBOARD_INLINE ? "" : headerHtml()) +
+        (window.DASHBOARD_INLINE ? "" : filterbarHtml()) +
         '<div id="main">' + (state.tab === "overview" ? overviewHtml() : detailedHtml()) + '</div>' +
       '</div>' +
       lightboxHtml();
+    if (window.DASHBOARD_INLINE) renderNav();
     bindTooltips();
   }
 
   function rerenderMain() {
     document.getElementById("main").innerHTML =
       state.tab === "overview" ? overviewHtml() : detailedHtml();
+    if (window.DASHBOARD_INLINE) renderNav();
     bindTooltips();
+  }
+
+  function renderNav() {
+    var el = document.getElementById("dashFilterNav");
+    if (!el) return;
+    el.innerHTML = navControlsHtml();
+  }
+
+  function navControlsHtml() {
+    var pills = '<button class="pill' + (state.platform === "all" ? " is-active" : "") +
+      '" data-act="platform" data-val="all">Todas</button>';
+    MODEL.platforms.forEach(function (p) {
+      pills += '<button class="pill' + (state.platform === p.id ? " is-active" : "") +
+        '" data-act="platform" data-val="' + p.id + '">' + esc(p.name) + '</button>';
+    });
+    var flowDisabled = state.platform === "all";
+    var flowOpts = '<option value="all">Todos os fluxos</option>';
+    if (!flowDisabled) {
+      var plat = MODEL.platforms.find(function (p) { return p.id === state.platform; });
+      (plat ? plat.flows : []).forEach(function (f) {
+        var n = 0;
+        f.steps.forEach(function (s) { if (stepAnnotated(s)) n++; });
+        var lbl = esc(f.name) + (n ? " (" + n + ")" : "");
+        flowOpts += '<option value="' + f.id + '"' + (state.flow === f.id ? " selected" : "") + '>' + lbl + '</option>';
+      });
+    }
+    return '<div class="fgroup"><span class="flabel">Plataforma</span><div class="pills">' + pills + '</div></div>' +
+      '<div class="fgroup"><span class="flabel">Fluxo</span>' +
+      '<select class="fselect" id="flowSelect"' + (flowDisabled ? " disabled" : "") + '>' + flowOpts + '</select>' +
+      '</div>' +
+      '<div class="seg" style="margin-left:auto">' +
+      '<button data-act="tab" data-val="overview"' + (state.tab === "overview" ? ' class="is-active"' : "") + '>Visão geral</button>' +
+      '<button data-act="tab" data-val="detailed"' + (state.tab === "detailed" ? ' class="is-active"' : "") + '>Análise detalhada</button>' +
+      '</div>';
   }
 
   function headerHtml() {
@@ -666,9 +702,9 @@
   function bindTooltips() {
     if (!tipEl) {
       tipEl = document.createElement("div");
-      tipEl.style.cssText = "position:fixed;z-index:300;max-width:300px;background:#1a1a1a;color:#fff;" +
-        "font-size:12.5px;line-height:1.45;padding:8px 11px;border-radius:6px;pointer-events:none;" +
-        "opacity:0;transition:opacity .12s ease;box-shadow:0 6px 24px rgba(0,0,0,.3);font-family:inherit;";
+      tipEl.style.cssText = "position:fixed;z-index:300;max-width:300px;background:#000;color:#fff;" +
+        "font-size:12.5px;line-height:1.45;padding:8px 11px;pointer-events:none;" +
+        "opacity:0;transition:opacity .12s ease;font-family:inherit;";
       document.body.appendChild(tipEl);
     }
   }
