@@ -3,13 +3,26 @@
    ----------------------------------------------------------------------------
    View autônoma e isolada. Lê os mesmos dados do site público
    (../data/{plataforma}/...) e a mesma taxonomia compartilhada
-   (../js/checklist-data.js → window.CHECKLIST_TAXONOMY). Não depende de React
-   nem altera nada do app principal; é referenciada via <iframe> na aba
-   "Análise de dados" do webnav-tcc.
+   (../js/checklist-data.js → window.CHECKLIST_TAXONOMY). Estilo em
+   ../css/dashboard.css. Não depende de React.
+
+   A premissa editorial: o leitor não quer ver "dado sobre o dado", e sim como
+   cada número se relaciona a padrões deceptivos concretos. Por isso TODO
+   elemento analítico (cartão, célula do mapa de calor, barra, gravidade) é
+   clicável e abre uma GAVETA lateral com as telas relacionadas, cada uma com
+   sua ficha de catalogação e comentário.
+
+   Modos de operação (via window.* antes de carregar este arquivo):
+     DASHBOARD_INLINE        → controles vão para #dashFilterNav (secondary-nav)
+     DASHBOARD_BASE          → prefixo até a raiz do site (default "../")
+     DASHBOARD_LOCK_PLATFORM → trava o painel em uma plataforma (páginas de
+                               apêndice); esconde os pills de plataforma
+     DASHBOARD_OPEN_MAPPING  → callback(flowId) p/ abrir o mapeamento do fluxo
+                               na própria página de plataforma (estado vazio)
 
    Os dados analíticos vêm do campo `checklist` de cada passo:
-     checklist.tipos        → tipos de Brignull (16)
-     checklist.gray         → categorias de Gray et al. (5)
+     checklist.tipos        → tipos de Brignull
+     checklist.gray         → categorias de Gray et al.
      checklist.heuristicas  → heurísticas de Nielsen violadas + gravidade (0–4)
      checklist.observacoes  → comentário livre
    O campo `darkPatterns` (texto livre) também é tratado como comentário.
@@ -18,6 +31,8 @@
   "use strict";
 
   var BASE = window.DASHBOARD_BASE || "../";
+  var INLINE = !!window.DASHBOARD_INLINE;
+  var LOCK = window.DASHBOARD_LOCK_PLATFORM || null;
   var PLATFORM_IDS = ["bet365", "betano", "superbet"];
 
   var TAX = window.CHECKLIST_TAXONOMY || {};
@@ -28,6 +43,13 @@
   var BRIGNULL = TAX.brignull || [];
   var GRAY = TAX.gray || [];
   var NIELSEN = TAX.nielsen || [];
+
+  // Metadados das três taxonomias (a "lente" do mapa de calor e distribuições).
+  var LENS = {
+    tipos: { short: "Brignull", col: "Tipo (Brignull)", kick: "Tipo de padrão deceptivo (Brignull)", rows: BRIGNULL },
+    gray: { short: "Gray et al.", col: "Categoria (Gray)", kick: "Categoria — Gray et al.", rows: GRAY },
+    heur: { short: "Nielsen", col: "Heurística (Nielsen)", kick: "Heurística de Nielsen", rows: NIELSEN }
+  };
 
   // Descrição neutra de cada plataforma (contexto editorial para a "introdução").
   var PLATFORM_INTRO = {
@@ -42,14 +64,12 @@
   var MODEL = null; // { platforms: [{id,name,flows:[{id,name,steps:[...]}]}] }
 
   var state = {
-    platform: "all",
+    platform: LOCK || "all",
     flow: "all",
-    tab: "overview",      // overview | detailed
-    heatView: "tipos",    // tipos | gray | heur
-    onlyAnnotated: true
+    lens: "tipos" // tipos | gray | heur
   };
 
-  var detailList = []; // passos atualmente exibidos na visão detalhada (para o lightbox)
+  var detailList = []; // passos exibidos atualmente na gaveta (para o lightbox)
 
   /* ----------------------------- utilidades ------------------------------ */
   function esc(s) {
@@ -70,6 +90,17 @@
 
   function stepAnnotated(s) {
     return clHasContent(s.checklist) || !!(s.darkPatterns && String(s.darkPatterns).trim());
+  }
+
+  function platName(id) {
+    var p = MODEL.platforms.find(function (x) { return x.id === id; });
+    return p ? p.name : id;
+  }
+
+  function flowName(platformId, flowId) {
+    var p = MODEL.platforms.find(function (x) { return x.id === platformId; });
+    var f = p && p.flows.find(function (x) { return x.id === flowId; });
+    return f ? f.name : flowId;
   }
 
   /* ----------------------------- carregamento ---------------------------- */
@@ -101,8 +132,7 @@
   }
 
   /* --------------------------- coleta / agregação ------------------------ */
-  // Retorna a lista plana de passos conforme o filtro atual, cada um anotado
-  // com a plataforma e o fluxo de origem.
+  // Lista plana de passos conforme o filtro, anotada com plataforma e fluxo.
   function collectSteps(opts) {
     opts = opts || {};
     var platformId = opts.platform || state.platform;
@@ -128,7 +158,7 @@
       steps: 0, annotated: 0,
       tipos: {}, gray: {}, heur: {},
       heurSev: {}, sevDist: [0, 0, 0, 0, 0], sevAll: [],
-      tipoTotal: 0
+      tipoTotal: 0, grayTotal: 0, heurTotal: 0
     };
   }
 
@@ -140,14 +170,15 @@
       if (stepAnnotated(s)) a.annotated++;
       var cl = s.checklist || {};
       (cl.tipos || []).forEach(function (id) { a.tipos[id] = (a.tipos[id] || 0) + 1; a.tipoTotal++; });
-      (cl.gray || []).forEach(function (id) { a.gray[id] = (a.gray[id] || 0) + 1; });
-      (cl.heuristicas || []).forEach(function (h) {
-        if (!h || !h.id) return;
-        a.heur[h.id] = (a.heur[h.id] || 0) + 1;
-        if (typeof h.sev === "number") {
-          a.sevAll.push(h.sev);
-          if (h.sev >= 0 && h.sev <= 4) a.sevDist[h.sev]++;
-          (a.heurSev[h.id] = a.heurSev[h.id] || []).push(h.sev);
+      (cl.gray || []).forEach(function (id) { a.gray[id] = (a.gray[id] || 0) + 1; a.grayTotal++; });
+      (cl.heuristicas || []).forEach(function (hh) {
+        if (!hh || !hh.id) return;
+        a.heur[hh.id] = (a.heur[hh.id] || 0) + 1;
+        a.heurTotal++;
+        if (typeof hh.sev === "number") {
+          a.sevAll.push(hh.sev);
+          if (hh.sev >= 0 && hh.sev <= 4) a.sevDist[hh.sev]++;
+          (a.heurSev[hh.id] = a.heurSev[hh.id] || []).push(hh.sev);
         }
       });
     });
@@ -162,7 +193,6 @@
     return best; // [id, count] | null
   }
 
-  // Fluxo (em todas as plataformas, ou na filtrada) com mais ocorrências de tipos.
   function topFlow(platformId) {
     var best = null;
     MODEL.platforms.forEach(function (p) {
@@ -178,8 +208,8 @@
 
   /* ------------------------------ cores heatmap -------------------------- */
   function hexLerp(a, b, t) {
-    function h(x) { return [parseInt(x.slice(1, 3), 16), parseInt(x.slice(3, 5), 16), parseInt(x.slice(5, 7), 16)]; }
-    var ca = h(a), cb = h(b);
+    function hx(x) { return [parseInt(x.slice(1, 3), 16), parseInt(x.slice(3, 5), 16), parseInt(x.slice(5, 7), 16)]; }
+    var ca = hx(a), cb = hx(b);
     var r = Math.round(ca[0] + (cb[0] - ca[0]) * t);
     var g = Math.round(ca[1] + (cb[1] - ca[1]) * t);
     var bl = Math.round(ca[2] + (cb[2] - ca[2]) * t);
@@ -196,56 +226,74 @@
   /* =============================== RENDER =============================== */
   function render() {
     var app = document.getElementById("app");
+    if (!app) return;
     app.innerHTML =
       '<div class="wrap">' +
-        (window.DASHBOARD_INLINE ? "" : headerHtml()) +
-        (window.DASHBOARD_INLINE ? "" : filterbarHtml()) +
-        '<div id="main">' + (state.tab === "overview" ? overviewHtml() : detailedHtml()) + '</div>' +
+        (INLINE ? "" : headerHtml()) +
+        (INLINE ? "" : filterbarHtml()) +
+        '<div id="main">' + mainHtml() + '</div>' +
       '</div>' +
+      drawerHtml() +
       lightboxHtml();
-    if (window.DASHBOARD_INLINE) renderNav();
+    if (INLINE) renderNav();
     bindTooltips();
   }
 
   function rerenderMain() {
-    document.getElementById("main").innerHTML =
-      state.tab === "overview" ? overviewHtml() : detailedHtml();
-    if (window.DASHBOARD_INLINE) renderNav();
+    closeDrawer();
+    var m = document.getElementById("main");
+    if (m) m.innerHTML = mainHtml();
+    if (INLINE) renderNav();
     bindTooltips();
   }
 
   function renderNav() {
     var el = document.getElementById("dashFilterNav");
-    if (!el) return;
-    el.innerHTML = navControlsHtml();
+    if (el) el.innerHTML = controlsHtml();
   }
 
-  function navControlsHtml() {
-    var pills = '<button class="pill' + (state.platform === "all" ? " is-active" : "") +
-      '" data-act="platform" data-val="all">Todas</button>';
-    MODEL.platforms.forEach(function (p) {
-      pills += '<button class="pill' + (state.platform === p.id ? " is-active" : "") +
-        '" data-act="platform" data-val="' + p.id + '">' + esc(p.name) + '</button>';
-    });
-    var flowDisabled = state.platform === "all";
-    var flowOpts = '<option value="all">Todos os fluxos</option>';
-    if (!flowDisabled) {
+  /* ----------------------------- controles ------------------------------ */
+  function pillBtn(val, label) {
+    return '<button class="pill' + (state.platform === val ? " is-active" : "") +
+      '" data-act="platform" data-val="' + esc(val) + '">' + esc(label) + '</button>';
+  }
+
+  function flowSelectHtml() {
+    var disabled = !LOCK && state.platform === "all";
+    var opts = '<option value="all">Todos os fluxos</option>';
+    if (!disabled) {
       var plat = MODEL.platforms.find(function (p) { return p.id === state.platform; });
       (plat ? plat.flows : []).forEach(function (f) {
-        var n = 0;
-        f.steps.forEach(function (s) { if (stepAnnotated(s)) n++; });
-        var lbl = esc(f.name) + (n ? " (" + n + ")" : "");
-        flowOpts += '<option value="' + f.id + '"' + (state.flow === f.id ? " selected" : "") + '>' + lbl + '</option>';
+        if (!f.steps.length) return;
+        var n = f.steps.filter(function (s) { return stepAnnotated(s); }).length;
+        var lbl = esc(f.name) + (n ? " (" + n + ")" : " (—)");
+        opts += '<option value="' + esc(f.id) + '"' + (state.flow === f.id ? " selected" : "") + '>' + lbl + '</option>';
       });
     }
-    return '<div class="fgroup"><span class="flabel">Plataforma</span><div class="pills">' + pills + '</div></div>' +
-      '<div class="fgroup"><span class="flabel">Fluxo</span>' +
-      '<select class="fselect" id="flowSelect"' + (flowDisabled ? " disabled" : "") + '>' + flowOpts + '</select>' +
-      '</div>' +
-      '<div class="seg" style="margin-left:auto">' +
-      '<button data-act="tab" data-val="overview"' + (state.tab === "overview" ? ' class="is-active"' : "") + '>Visão geral</button>' +
-      '<button data-act="tab" data-val="detailed"' + (state.tab === "detailed" ? ' class="is-active"' : "") + '>Análise detalhada</button>' +
-      '</div>';
+    return '<select class="fselect" id="flowSelect"' + (disabled ? " disabled" : "") + '>' + opts + '</select>';
+  }
+
+  function lensSegHtml() {
+    function b(v) {
+      return '<button data-act="lens" data-val="' + v + '"' +
+        (state.lens === v ? ' class="is-active"' : "") + '>' + esc(LENS[v].short) + '</button>';
+    }
+    return '<div class="seg">' + b("tipos") + b("gray") + b("heur") + '</div>';
+  }
+
+  function controlsHtml() {
+    var out = "";
+    if (LOCK) {
+      out += '<div class="fgroup"><span class="flabel">Plataforma</span>' +
+        '<span class="fixed-platform">' + esc(platName(LOCK)) + '</span></div>';
+    } else {
+      var pills = pillBtn("all", "Todas");
+      MODEL.platforms.forEach(function (p) { pills += pillBtn(p.id, p.name); });
+      out += '<div class="fgroup"><span class="flabel">Plataforma</span><div class="pills">' + pills + '</div></div>';
+    }
+    out += '<div class="fgroup"><span class="flabel">Fluxo</span>' + flowSelectHtml() + '</div>';
+    out += '<div class="fgroup"><span class="flabel">Taxonomia</span>' + lensSegHtml() + '</div>';
+    return out;
   }
 
   function headerHtml() {
@@ -262,50 +310,24 @@
         '<p class="lede">Catalogação visual dos padrões deceptivos (<i>deceptive patterns</i>) ' +
         'observados nos fluxos de Bet365, Betano e Superbet, classificados pela taxonomia de ' +
         'Brignull, pelas categorias de Gray <i>et al.</i> e pelas heurísticas de Nielsen. ' +
-        'Filtre por plataforma e fluxo e alterne entre a visão geral e a análise detalhada.</p>' +
+        'Clique em qualquer número, célula ou barra para ver as telas relacionadas.</p>' +
         '<span class="status"><span class="dot live"></span>' +
         annotated + ' de ' + totalSteps + ' telas anotadas · dados ao vivo de <code>../data</code></span>' +
       '</header>';
   }
 
-  /* ----------------------------- filter bar ----------------------------- */
   function filterbarHtml() {
-    var pills = '<button class="pill' + (state.platform === "all" ? " is-active" : "") +
-      '" data-act="platform" data-val="all">Todas</button>';
-    MODEL.platforms.forEach(function (p) {
-      pills += '<button class="pill' + (state.platform === p.id ? " is-active" : "") +
-        '" data-act="platform" data-val="' + p.id + '">' + esc(p.name) + '</button>';
-    });
-
-    var flowDisabled = state.platform === "all";
-    var flowOpts = '<option value="all">Todos os fluxos</option>';
-    if (!flowDisabled) {
-      var plat = MODEL.platforms.find(function (p) { return p.id === state.platform; });
-      (plat ? plat.flows : []).forEach(function (f) {
-        var n = 0;
-        f.steps.forEach(function (s) { if (stepAnnotated(s)) n++; });
-        var lbl = esc(f.name) + (n ? " (" + n + ")" : "");
-        flowOpts += '<option value="' + f.id + '"' + (state.flow === f.id ? " selected" : "") + '>' + lbl + '</option>';
-      });
-    }
-
-    return '' +
-      '<div class="filterbar">' +
-        '<div class="fgroup"><span class="flabel">Plataforma</span><div class="pills">' + pills + '</div></div>' +
-        '<div class="fgroup"><span class="flabel">Fluxo</span>' +
-          '<select class="fselect" id="flowSelect"' + (flowDisabled ? " disabled" : "") + '>' + flowOpts + '</select>' +
-        '</div>' +
-        '<div class="seg">' +
-          '<button data-act="tab" data-val="overview"' + (state.tab === "overview" ? ' class="is-active"' : "") + '>Visão geral</button>' +
-          '<button data-act="tab" data-val="detailed"' + (state.tab === "detailed" ? ' class="is-active"' : "") + '>Análise detalhada</button>' +
-        '</div>' +
-      '</div>';
+    return '<div class="filterbar">' + controlsHtml() + '</div>';
   }
 
-  /* ============================ OVERVIEW ============================ */
-  function overviewHtml() {
-    var recs = collectSteps();
-    var agg = aggregate(recs);
+  /* ============================ CONTEÚDO ============================ */
+  function mainHtml() {
+    // Estado vazio do filtro de fluxo: só mostra dados se existirem.
+    if (state.flow !== "all") {
+      var aggF = aggregate(collectSteps());
+      if (!aggF.annotated) return emptyFlowHtml();
+    }
+    var agg = aggregate(collectSteps());
     return statCardsHtml(agg) +
       introSectionHtml() +
       findingsHtml(agg) +
@@ -313,22 +335,51 @@
       chartsSectionHtml(agg);
   }
 
+  function emptyFlowHtml() {
+    var fname = flowName(state.platform, state.flow);
+    var plat = MODEL.platforms.find(function (p) { return p.id === state.platform; });
+    var flow = plat && plat.flows.find(function (f) { return f.id === state.flow; });
+    var hasSteps = !!(flow && flow.steps.length);
+    var link = "";
+    if (hasSteps && LOCK && typeof window.DASHBOARD_OPEN_MAPPING === "function") {
+      link = '<button class="ef-link" data-act="mapping" data-flow="' + esc(state.flow) + '">' +
+        'Ver mapeamento do fluxo ›</button>';
+    } else if (hasSteps) {
+      link = '<a class="ef-link" href="' + BASE + esc(state.platform) + '/?flow=' +
+        encodeURIComponent(state.flow) + '">Ver mapeamento do fluxo no apêndice ›</a>';
+    }
+    return '<div class="empty-flow">' +
+      '<p class="ef-title">Este filtro não possui padrões deceptivos catalogados</p>' +
+      '<p class="ef-desc">O fluxo <b>' + esc(fname) + '</b> foi percorrido e suas telas estão ' +
+      'registradas, mas nenhum padrão deceptivo foi catalogado neste recorte. ' +
+      'Consulte o mapeamento completo das telas deste fluxo no apêndice.</p>' +
+      link +
+    '</div>';
+  }
+
+  /* ------------------------------ big numbers --------------------------- */
   function statCardsHtml(agg) {
     var distinctTipos = Object.keys(agg.tipos).length;
     var avgSev = avg(agg.sevAll);
-    return '' +
-      '<div class="stat-cards">' +
-        card(agg.annotated + '<span class="of"> / ' + agg.steps + '</span>', "Telas anotadas", "no escopo selecionado") +
-        card(String(agg.tipoTotal), "Ocorrências de padrões", distinctTipos + " tipos distintos catalogados") +
-        card(String(Object.keys(agg.heur).length), "Heurísticas violadas", agg.sevAll.length + " violações registradas") +
-        card(agg.sevAll.length ? fnum(avgSev) : "—", "Gravidade média", "escala de Nielsen (0–4)") +
-      '</div>';
-    function card(num, lbl, sub) {
-      return '<div class="stat-card"><div class="num">' + num + '</div>' +
-        '<div class="lbl">' + lbl + '</div><div class="sub">' + sub + '</div></div>';
+    return '<div class="stat-cards">' +
+      card(agg.annotated + '<span class="of"> / ' + agg.steps + '</span>', "Telas anotadas",
+        "no escopo selecionado", agg.annotated ? "annotated" : null) +
+      card(String(agg.tipoTotal), "Ocorrências de padrões",
+        distinctTipos + " tipos distintos catalogados", agg.tipoTotal ? "tipos" : null) +
+      card(String(Object.keys(agg.heur).length), "Heurísticas violadas",
+        agg.sevAll.length + " violações registradas", agg.heurTotal ? "heur" : null) +
+      card(agg.sevAll.length ? fnum(avgSev) : "—", "Gravidade média",
+        "escala de Nielsen (0–4)", agg.sevAll.length ? "sev" : null) +
+    '</div>';
+
+    function card(num, lbl, sub, stat) {
+      var dr = stat ? ' drill" data-act="drill" data-drill="stat" data-stat="' + stat + '"' : '"';
+      return '<button class="stat-card' + dr + '><div class="num">' + num + '</div>' +
+        '<div class="lbl">' + lbl + '</div><div class="sub">' + sub + '</div></button>';
     }
   }
 
+  /* ------------------------------ introdução ---------------------------- */
   function introSectionHtml() {
     var ids = state.platform === "all" ? PLATFORM_IDS : [state.platform];
     var cards = ids.map(function (pid) {
@@ -342,9 +393,15 @@
       });
       var agg = aggregate(collectSteps({ platform: pid, flow: "all" }));
       var top = topEntry(agg.tipos);
-      var topTxt = top && brById[top[0]]
-        ? '<span class="intro-top">Padrão mais frequente: <b>' + esc(brById[top[0]].pt) + '</b> · ' + top[1] + ' ocorrências</span>'
-        : '<span class="intro-top">Sem padrões catalogados neste recorte.</span>';
+      var topTxt;
+      if (top && brById[top[0]]) {
+        topTxt = '<button class="intro-top drill" data-act="drill" data-drill="lens" data-lens="tipos" ' +
+          'data-row="' + esc(top[0]) + '" data-platform="' + esc(pid) + '">' +
+          'Padrão mais frequente: <b>' + esc(brById[top[0]].pt) + '</b> · ' + top[1] + ' ocorrências' +
+          '<span class="drill-cue">ver telas</span></button>';
+      } else {
+        topTxt = '<span class="intro-top">Sem padrões catalogados neste recorte.</span>';
+      }
       return '<div class="intro-card">' +
         '<h3>' + esc(p.name) + '</h3>' +
         '<p class="desc">' + esc(PLATFORM_INTRO[pid] || "") + '</p>' +
@@ -360,98 +417,103 @@
       '<div class="intro-grid">' + cards + '</div>');
   }
 
+  /* --------------------------- principais achados ----------------------- */
   function findingsHtml(agg) {
     var items = [];
-    if (agg.tipoTotal === 0) {
-      items.push("Nenhuma ocorrência de padrão deceptivo foi catalogada no recorte selecionado.");
+    if (agg.tipoTotal === 0 && agg.heurTotal === 0) {
+      items.push(plain("Nenhuma ocorrência de padrão deceptivo foi catalogada no recorte selecionado."));
     } else {
       var top = topEntry(agg.tipos);
       if (top && brById[top[0]]) {
-        items.push("O tipo mais recorrente é <b>" + esc(brById[top[0]].pt) + "</b> (<i>" +
+        items.push(drillLi("lens", { lens: "tipos", row: top[0] },
+          "O tipo mais recorrente é <b>" + esc(brById[top[0]].pt) + "</b> (<i>" +
           esc(brById[top[0]].en) + "</i>), com <b>" + top[1] + "</b> ocorrências de um total de " +
-          agg.tipoTotal + ".");
+          agg.tipoTotal + "."));
       }
       var tg = topEntry(agg.gray);
       if (tg && grById[tg[0]]) {
-        items.push("Na taxonomia de Gray <i>et al.</i>, predomina a categoria <b>" +
-          esc(grById[tg[0]].pt) + "</b> (" + tg[1] + " registros).");
+        items.push(drillLi("lens", { lens: "gray", row: tg[0] },
+          "Na taxonomia de Gray <i>et al.</i>, predomina a categoria <b>" +
+          esc(grById[tg[0]].pt) + "</b> (" + tg[1] + " registros)."));
       }
       var th = topEntry(agg.heur);
       if (th && nById[th[0]]) {
         var sa = avg(agg.heurSev[th[0]] || []);
-        items.push("A heurística de Nielsen mais violada é a <b>" + th[0].toUpperCase() + " — " +
+        items.push(drillLi("lens", { lens: "heur", row: th[0] },
+          "A heurística de Nielsen mais violada é a <b>" + th[0].toUpperCase() + " — " +
           esc(nById[th[0]].pt) + "</b>, com " + th[1] + " violações" +
-          (sa ? " (gravidade média " + fnum(sa) + ")" : "") + ".");
+          (sa ? " (gravidade média " + fnum(sa) + ")" : "") + "."));
       }
       if (agg.sevAll.length) {
-        items.push("A gravidade média das violações de usabilidade é <b>" + fnum(avg(agg.sevAll)) +
-          "</b> na escala de Nielsen (0–4), indicando problemas entre <i>menores</i> e <i>maiores</i>.");
+        items.push(drillLi("stat", { stat: "sev" },
+          "A gravidade média das violações de usabilidade é <b>" + fnum(avg(agg.sevAll)) +
+          "</b> na escala de Nielsen (0–4), indicando problemas entre <i>menores</i> e <i>maiores</i>."));
       }
       var tf = topFlow(state.platform);
       if (tf) {
-        items.push("O fluxo com maior concentração de padrões é <b>" + esc(tf.flow.name) +
-          "</b> (" + esc(tf.platform.name) + "), com " + tf.n + " ocorrências.");
+        items.push(drillLi("stat", { stat: "patterns", platform: tf.platform.id, flow: tf.flow.id },
+          "O fluxo com maior concentração de padrões é <b>" + esc(tf.flow.name) +
+          "</b> (" + esc(tf.platform.name) + "), com " + tf.n + " ocorrências."));
       }
     }
     return section("Principais achados", "Síntese gerada a partir dos dados filtrados",
-      '<div class="findings"><ul><li>' + items.join("</li><li>") + '</li></ul></div>');
-  }
+      '<div class="findings"><ul>' + items.join("") + '</ul></div>');
 
-  /* ------------------------------ heatmap ------------------------------- */
-  function heatmapSectionHtml() {
-    var tools = '<div class="heat-tools">' +
-      heatBtn("tipos", "Tipos (Brignull)") +
-      heatBtn("gray", "Categorias (Gray)") +
-      heatBtn("heur", "Heurísticas (Nielsen)") +
-      '</div>';
-    return section("Mapa de calor", tools, heatTableHtml());
-
-    function heatBtn(v, lbl) {
-      return '<button data-act="heat" data-val="' + v + '"' +
-        (state.heatView === v ? ' class="is-active"' : "") + '>' + lbl + '</button>';
+    function plain(html) { return '<li>' + html + '</li>'; }
+    function drillLi(kind, d, html) {
+      var attrs = ' data-act="drill" data-drill="' + kind + '"';
+      if (d.lens) attrs += ' data-lens="' + esc(d.lens) + '"';
+      if (d.row) attrs += ' data-row="' + esc(d.row) + '"';
+      if (d.stat) attrs += ' data-stat="' + esc(d.stat) + '"';
+      if (d.platform) attrs += ' data-platform="' + esc(d.platform) + '"';
+      if (d.flow) attrs += ' data-flow="' + esc(d.flow) + '"';
+      return '<li class="drill"' + attrs + '><span>' + html + '</span>' +
+        '<span class="drill-cue">ver telas</span></li>';
     }
   }
 
-  // Linhas = itens da taxonomia escolhida. Colunas = plataformas (quando "Todas")
-  // ou os fluxos com anotações da plataforma selecionada.
-  function heatTableHtml() {
-    var rows, getMeta;
-    if (state.heatView === "tipos") { rows = BRIGNULL; getMeta = function (it) { return { id: it.id, pt: it.pt, en: it.en }; }; }
-    else if (state.heatView === "gray") { rows = GRAY; getMeta = function (it) { return { id: it.id, pt: it.pt, en: it.en }; }; }
-    else { rows = NIELSEN; getMeta = function (it) { return { id: it.id, pt: it.id.toUpperCase() + " · " + it.pt, en: it.en }; }; }
+  /* ------------------------------ mapa de calor ------------------------- */
+  function heatmapSectionHtml() {
+    var hint = '<span class="hint">Linhas: ' + esc(LENS[state.lens].col) +
+      ' · Colunas: ' + (state.platform === "all" ? "plataformas" : "fluxos com anotações") +
+      ' · clique numa célula para ver as telas</span>';
+    return section("Mapa de calor", hint, heatTableHtml());
+  }
 
-    var key = state.heatView === "tipos" ? "tipos" : state.heatView === "gray" ? "gray" : "heur";
+  function heatTableHtml() {
+    var lens = state.lens;
+    var rows = LENS[lens].rows;
+    var key = lens; // tipos|gray|heur
+    function getMeta(it) {
+      if (lens === "heur") return { id: it.id, pt: it.id.toUpperCase() + " · " + it.pt, en: it.en, def: it.def };
+      return { id: it.id, pt: it.pt, en: it.en, def: it.def };
+    }
 
     // colunas
     var cols = [];
     if (state.platform === "all") {
-      cols = MODEL.platforms.map(function (p) { return { id: p.id, name: p.name, agg: aggregate(collectSteps({ platform: p.id, flow: "all" })) }; });
+      cols = MODEL.platforms.map(function (p) {
+        return { kind: "platform", id: p.id, name: p.name, agg: aggregate(collectSteps({ platform: p.id, flow: "all" })) };
+      });
     } else {
       var plat = MODEL.platforms.find(function (p) { return p.id === state.platform; });
       (plat ? plat.flows : []).forEach(function (f) {
         var agg = aggregate(collectSteps({ platform: plat.id, flow: f.id }));
-        if (agg.tipoTotal > 0 || Object.keys(agg.heur).length > 0 || Object.keys(agg.gray).length > 0) {
-          cols.push({ id: f.id, name: f.name, agg: agg });
+        if (agg.tipoTotal > 0 || agg.heurTotal > 0 || agg.grayTotal > 0) {
+          cols.push({ kind: "flow", id: f.id, name: f.name, agg: agg });
         }
       });
     }
 
-    if (!cols.length) {
-      return '<div class="empty-state">Sem dados para o mapa de calor neste recorte.</div>';
-    }
+    if (!cols.length) return '<div class="empty-state">Sem dados para o mapa de calor neste recorte.</div>';
 
-    function val(agg, rowId) {
-      return (key === "tipos" ? agg.tipos : key === "gray" ? agg.gray : agg.heur)[rowId] || 0;
-    }
+    function val(agg, rowId) { return (agg[key] || {})[rowId] || 0; }
 
-    // máximo para normalizar a cor
     var max = 0;
     rows.forEach(function (it) { cols.forEach(function (c) { max = Math.max(max, val(c.agg, it.id)); }); });
     max = max || 1;
 
-    var head = '<thead><tr><th class="rowhead">' +
-      (state.heatView === "tipos" ? "Tipo (Brignull)" : state.heatView === "gray" ? "Categoria (Gray)" : "Heurística (Nielsen)") +
-      '</th>';
+    var head = '<thead><tr><th class="rowhead">' + esc(LENS[lens].col) + '</th>';
     cols.forEach(function (c) { head += '<th>' + esc(c.name) + '</th>'; });
     head += '<th class="total">Total</th></tr></thead>';
 
@@ -466,13 +528,15 @@
         rowTotal += v; colTotals[ci] += v;
         if (v === 0) { tds += '<td class="zero">·</td>'; return; }
         var t = v / max;
-        tds += '<td class="cell" style="background:' + heatColor(t) + ';color:' + heatText(t) + '" ' +
-          'data-tip="' + esc(meta.pt) + ' · ' + esc(c.name) + ': ' + v + '">' + v + '</td>';
+        var ov = c.kind === "platform"
+          ? ' data-platform="' + esc(c.id) + '" data-flow="all"'
+          : ' data-platform="' + esc(state.platform) + '" data-flow="' + esc(c.id) + '"';
+        tds += '<td class="cell drill" style="background:' + heatColor(t) + ';color:' + heatText(t) + '" ' +
+          'data-act="drill" data-drill="lens" data-lens="' + esc(key) + '" data-row="' + esc(it.id) + '"' + ov +
+          ' data-tip="' + esc(meta.pt) + ' · ' + esc(c.name) + ': ' + v + ' — clique para ver as telas">' + v + '</td>';
       });
-      if (rowTotal === 0 && state.heatView !== "heur") {
-        // mantém a linha visível mesmo zerada para Brignull/Gray (referência da taxonomia)
-      }
-      bodyRows += '<tr><th class="rowhead" data-tip="' + esc(it.def || "") + '">' + esc(meta.pt) +
+      bodyRows += '<tr><th class="rowhead drill" data-act="drill" data-drill="lens" data-lens="' + esc(key) +
+        '" data-row="' + esc(it.id) + '" data-tip="' + esc(meta.def || "") + '">' + esc(meta.pt) +
         '<span class="en">' + esc(meta.en) + '</span></th>' + tds +
         '<td class="total">' + rowTotal + '</td></tr>';
     });
@@ -483,29 +547,33 @@
     totalRow += '<td class="total">' + grand + '</td></tr>';
 
     return '<div class="table-scroll"><table class="heat">' + head + '<tbody>' + bodyRows + totalRow + '</tbody></table></div>' +
-      '<div class="legend"><span>Menos frequente</span><span class="bar"></span><span>Mais frequente</span>' +
-      '<span style="margin-left:auto">Colunas: ' + (state.platform === "all" ? "plataformas" : "fluxos com anotações") + '</span></div>';
+      '<div class="legend"><span>Menos frequente</span><span class="bar"></span><span>Mais frequente</span></div>';
   }
 
-  /* ------------------------------- charts ------------------------------- */
+  /* ------------------------------ distribuições ------------------------- */
   function chartsSectionHtml(agg) {
-    return section("Distribuições", "Frequência por taxonomia e gravidade",
-      '<div class="charts-grid">' +
-        barChart("Tipos de padrão (Brignull)", "Ocorrências por tipo catalogado", agg.tipos, brById, false) +
-        barChart("Categorias de Gray et al.", "Agrupamento de alto nível", agg.gray, grById, false) +
-        heurChart(agg) +
-        sevChart(agg) +
-      '</div>');
+    var inner;
+    if (state.lens === "tipos") {
+      inner = barChart("Tipos de padrão (Brignull)", "Ocorrências por tipo · clique para ver as telas",
+        agg.tipos, brById, "tipos", false);
+    } else if (state.lens === "gray") {
+      inner = barChart("Categorias de Gray et al.", "Agrupamento de alto nível · clique para ver as telas",
+        agg.gray, grById, "gray", false);
+    } else {
+      inner = heurChart(agg) + sevChart(agg);
+    }
+    return section("Distribuições", "Frequência segundo a taxonomia selecionada",
+      '<div class="charts-grid">' + inner + '</div>');
   }
 
-  function barChart(title, sub, counts, byId, sev) {
+  function barChart(title, sub, counts, byId, lensKey, sev) {
     var entries = Object.keys(counts).map(function (id) { return [id, counts[id]]; })
       .sort(function (a, b) { return b[1] - a[1]; });
     if (!entries.length) return chartCard(title, sub, '<div class="empty-state" style="padding:30px">Sem dados.</div>');
     var max = entries[0][1] || 1;
     var bars = entries.map(function (e) {
       var meta = byId[e[0]] || { pt: e[0], en: "" };
-      return barRow(meta.pt, meta.en, e[1], e[1] / max, sev);
+      return barRow(meta.pt, meta.en, e[1], e[1] / max, sev, { lens: lensKey, row: e[0] });
     }).join("");
     return chartCard(title, sub, '<div class="bars">' + bars + '</div>');
   }
@@ -519,13 +587,15 @@
       var meta = nById[e[0]] || { pt: e[0], en: "" };
       var sa = avg(agg.heurSev[e[0]] || []);
       var sub = e[0].toUpperCase() + (sa ? " · gravidade " + fnum(sa) : "");
-      return barRow(meta.pt, sub, e[1], e[1] / max, true);
+      return barRow(meta.pt, sub, e[1], e[1] / max, true, { lens: "heur", row: e[0] });
     }).join("");
-    return chartCard("Heurísticas de Nielsen", "Heurísticas violadas + gravidade média", '<div class="bars">' + bars + '</div>');
+    return chartCard("Heurísticas de Nielsen", "Heurísticas violadas + gravidade média · clique para ver as telas", '<div class="bars">' + bars + '</div>');
   }
 
-  function barRow(name, en, val, frac, sev) {
-    return '<div class="bar-row"><div class="bar-label"><span class="name">' + esc(name) +
+  function barRow(name, en, val, frac, sev, drill) {
+    var dr = drill ? ' drill" data-act="drill" data-drill="lens" data-lens="' + esc(drill.lens) +
+      '" data-row="' + esc(drill.row) + '"' : '"';
+    return '<div class="bar-row' + dr + '><div class="bar-label"><span class="name">' + esc(name) +
       (en ? ' <span class="en">' + esc(en) + '</span>' : "") + '</span>' +
       '<span class="val">' + val + '</span></div>' +
       '<div class="bar-track"><div class="bar-fill' + (sev ? " sev" : "") +
@@ -536,9 +606,10 @@
     var max = Math.max.apply(null, agg.sevDist.concat([1]));
     var cols = agg.sevDist.map(function (cnt, v) {
       var meta = sevByVal[v] || { label: "" };
-      var h = Math.round((cnt / max) * 100);
-      return '<div class="sevcol">' +
-        '<div class="col" style="height:' + h + '%" data-tip="Gravidade ' + v + " — " + esc(meta.label) + ': ' + cnt + ' violações">' +
+      var hgt = Math.round((cnt / max) * 100);
+      var dr = cnt ? ' drill" data-act="drill" data-drill="sev" data-sev="' + v + '"' : '"';
+      return '<div class="sevcol' + dr + '>' +
+        '<div class="col" style="height:' + hgt + '%" data-tip="Gravidade ' + v + " — " + esc(meta.label) + ': ' + cnt + ' violações' + (cnt ? ' — clique para ver as telas' : '') + '">' +
         (cnt ? '<span class="cnt">' + cnt + '</span>' : "") + '</div>' +
         '<div class="sevn">' + v + '</div><div class="sevl">' + esc(meta.label || "") + '</div></div>';
     }).join("");
@@ -550,35 +621,122 @@
     return '<div class="chart-card"><h3>' + esc(title) + '</h3><p class="csub">' + esc(sub) + '</p>' + inner + '</div>';
   }
 
-  /* ============================ DETAILED ============================ */
-  function detailedHtml() {
-    var recs = collectSteps();
-    detailList = recs.filter(function (r) { return state.onlyAnnotated ? stepAnnotated(r.step) : true; });
-
-    var intro = '<div class="detail-intro">' +
-      '<p>Comentários e fichas de catalogação registrados em cada tela. Clique na imagem para ampliá-la.</p>' +
-      '<label class="toggle"><input type="checkbox" id="onlyAnnotated"' + (state.onlyAnnotated ? " checked" : "") + '>' +
-      'Somente telas anotadas</label></div>';
-
-    if (!detailList.length) {
-      return intro + '<div class="empty-state">Nenhuma tela ' +
-        (state.onlyAnnotated ? "anotada " : "") + 'neste recorte. Ajuste os filtros acima.</div>';
-    }
-
-    // agrupa por plataforma › fluxo
-    var html = "", lastKey = "";
-    detailList.forEach(function (rec, idx) {
-      var key = rec.platformId + "/" + rec.flowId;
-      if (key !== lastKey) {
-        html += '<div class="det-group-head">' + esc(rec.platformName) + ' &rsaquo; ' + esc(rec.flowName) + '</div>';
-        lastKey = key;
-      }
-      html += detailCard(rec, idx);
-    });
-    return intro + '<div class="det-list">' + html + '</div>';
+  /* =========================== GAVETA (drill) ========================== */
+  function drawerHtml() {
+    return '<div class="dd-backdrop" id="ddBackdrop" data-act="dd-close"></div>' +
+      '<div class="dd" id="dd" role="dialog" aria-modal="true" aria-label="Telas relacionadas">' +
+        '<div class="dd-head" id="ddHead"></div>' +
+        '<div class="dd-body" id="ddBody"></div>' +
+      '</div>';
   }
 
-  function detailCard(rec, idx) {
+  // Lê os data-attrs do alvo, monta o recorte e abre a gaveta.
+  function drillFromTarget(t) {
+    var kind = t.getAttribute("data-drill");
+    var pOv = t.getAttribute("data-platform");
+    var fOv = t.getAttribute("data-flow");
+    var platform = pOv || state.platform;
+    var flow = fOv || (pOv ? "all" : state.flow);
+    var recs = collectSteps({ platform: platform, flow: flow });
+
+    var meta = { kick: "", title: "", sub: "", def: "", match: null };
+    var pred;
+
+    if (kind === "lens") {
+      var key = t.getAttribute("data-lens");
+      var row = t.getAttribute("data-row");
+      meta.match = { key: key, id: row };
+      meta.kick = LENS[key] ? LENS[key].kick : "";
+      if (key === "tipos") { var it = brById[row] || {}; meta.title = it.pt || row; meta.def = it.def || ""; }
+      else if (key === "gray") { var g = grById[row] || {}; meta.title = g.pt || row; meta.def = g.def || ""; }
+      else { var nn = nById[row] || {}; meta.title = (row ? row.toUpperCase() : "") + " · " + (nn.pt || ""); meta.def = nn.def || ""; }
+      pred = function (s) {
+        var cl = s.checklist || {};
+        if (key === "heur") return (cl.heuristicas || []).some(function (hh) { return hh && hh.id === row; });
+        return (cl[key] || []).indexOf(row) >= 0;
+      };
+    } else if (kind === "sev") {
+      var v = parseInt(t.getAttribute("data-sev"), 10);
+      var sv = sevByVal[v] || {};
+      meta.kick = "Gravidade (Nielsen)";
+      meta.title = "Gravidade " + v + " — " + (sv.label || "");
+      meta.def = sv.def || "";
+      meta.match = { key: "sev", id: v };
+      pred = function (s) { return ((s.checklist || {}).heuristicas || []).some(function (hh) { return hh && hh.sev === v; }); };
+    } else { // stat
+      var stat = t.getAttribute("data-stat");
+      var titles = {
+        annotated: "Telas anotadas", patterns: "Telas com padrões catalogados",
+        tipos: "Telas com padrões (Brignull)", gray: "Telas com categorias (Gray)",
+        heur: "Telas com heurísticas violadas", sev: "Telas com gravidade avaliada"
+      };
+      meta.kick = "Telas relacionadas";
+      meta.title = titles[stat] || "Telas";
+      pred = function (s) {
+        var cl = s.checklist || {};
+        switch (stat) {
+          case "annotated": return stepAnnotated(s);
+          case "patterns": return clHasContent(cl);
+          case "tipos": return (cl.tipos || []).length > 0;
+          case "gray": return (cl.gray || []).length > 0;
+          case "heur": return (cl.heuristicas || []).length > 0;
+          case "sev": return (cl.heuristicas || []).some(function (hh) { return typeof hh.sev === "number"; });
+          default: return stepAnnotated(s);
+        }
+      };
+    }
+
+    var records = recs.filter(function (r) { return pred(r.step); });
+    meta.sub = scopeLabel(platform, flow) + " · " + records.length + " tela" + (records.length !== 1 ? "s" : "");
+    openDrawer(meta, records);
+  }
+
+  function scopeLabel(platform, flow) {
+    if (platform === "all") return "Todas as plataformas";
+    var base = platName(platform);
+    if (flow && flow !== "all") base += " › " + flowName(platform, flow);
+    return base;
+  }
+
+  function openDrawer(meta, records) {
+    detailList = records;
+    document.getElementById("ddHead").innerHTML =
+      '<div><p class="dd-kick">' + esc(meta.kick) + '</p>' +
+      '<h2 class="dd-title">' + esc(meta.title) + '</h2>' +
+      '<p class="dd-sub">' + esc(meta.sub) + '</p></div>' +
+      '<button class="dd-close" data-act="dd-close" aria-label="Fechar">✕</button>';
+
+    var body = meta.def ? '<div class="dd-def">' + esc(meta.def) + '</div>' : "";
+    if (!records.length) {
+      body += '<div class="empty-state">Nenhuma tela encontrada neste recorte.</div>';
+    } else {
+      var html = "", lastKey = "";
+      records.forEach(function (rec, idx) {
+        var k = rec.platformId + "/" + rec.flowId;
+        if (k !== lastKey) {
+          html += '<div class="det-group-head">' + esc(rec.platformName) + ' › ' + esc(rec.flowName) + '</div>';
+          lastKey = k;
+        }
+        html += detailCard(rec, idx, meta.match);
+      });
+      body += '<div class="det-list">' + html + '</div>';
+    }
+    document.getElementById("ddBody").innerHTML = body;
+    document.getElementById("ddBody").scrollTop = 0;
+    document.getElementById("dd").classList.add("is-open");
+    document.getElementById("ddBackdrop").classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDrawer() {
+    var dd = document.getElementById("dd");
+    var bd = document.getElementById("ddBackdrop");
+    if (dd) dd.classList.remove("is-open");
+    if (bd) bd.classList.remove("is-open");
+    if (!isLightboxOpen()) document.body.style.overflow = "";
+  }
+
+  function detailCard(rec, idx, match) {
     var s = rec.step;
     var imgSrc = s.image ? BASE + s.image : "";
     var thumb = imgSrc
@@ -598,19 +756,21 @@
         '<h3 class="det-title">' + esc(s.title || "Sem título") + '</h3>' +
         (s.description ? '<p class="det-desc">' + esc(s.description) + '</p>' : "") +
         dp +
-        fichaHtml(s.checklist) +
+        fichaHtml(s.checklist, match) +
       '</div></div>';
   }
 
-  function fichaHtml(cl) {
+  function fichaHtml(cl, match) {
     if (!clHasContent(cl)) return "";
+    match = match || {};
     var fields = "";
 
     var tipos = (cl.tipos || []).map(function (id) { return brById[id]; }).filter(Boolean);
     if (tipos.length) {
       fields += field("Tipo de padrão deceptivo (Brignull)",
         '<div class="chips">' + tipos.map(function (it) {
-          return '<span class="chip" data-tip="' + esc(it.pt + " — " + it.def) + '">' + esc(it.en) + '</span>';
+          var m = match.key === "tipos" && match.id === it.id ? " is-match" : "";
+          return '<span class="chip' + m + '" data-tip="' + esc(it.pt + " — " + it.def) + '">' + esc(it.en) + '</span>';
         }).join("") + '</div>');
     }
 
@@ -618,22 +778,26 @@
     if (grays.length) {
       fields += field("Categoria (Gray et al.)",
         '<div class="chips">' + grays.map(function (it) {
-          return '<span class="chip gray-chip" data-tip="' + esc(it.pt + " — " + it.def) + '">' + esc(it.en) + '</span>';
+          var m = match.key === "gray" && match.id === it.id ? " is-match" : "";
+          return '<span class="chip gray-chip' + m + '" data-tip="' + esc(it.pt + " — " + it.def) + '">' + esc(it.en) + '</span>';
         }).join("") + '</div>');
     }
 
-    var heurs = (cl.heuristicas || []).filter(function (h) { return h && nById[h.id]; });
+    var heurs = (cl.heuristicas || []).filter(function (hh) { return hh && nById[hh.id]; });
     if (heurs.length) {
       fields += field("Heurísticas de Nielsen violadas",
-        '<div class="heurs">' + heurs.map(function (h) {
-          var meta = nById[h.id];
-          var sev = (typeof h.sev === "number") ? sevByVal[h.sev] : null;
+        '<div class="heurs">' + heurs.map(function (hh) {
+          var meta = nById[hh.id];
+          var sev = (typeof hh.sev === "number") ? sevByVal[hh.sev] : null;
+          var matchHeur = match.key === "heur" && match.id === hh.id;
+          var matchSev = match.key === "sev" && hh.sev === match.id;
           var sevHtml = sev
-            ? '<span class="hsev" data-tip="' + esc(sev.def) + '"><span class="sevbox" style="background:' +
-                heatColor(h.sev / 4) + ';color:' + heatText(h.sev / 4) + '">' + sev.value + '</span>' +
+            ? '<span class="hsev' + (matchSev ? " is-match" : "") + '" data-tip="' + esc(sev.def) + '"><span class="sevbox" style="background:' +
+                heatColor(hh.sev / 4) + ';color:' + heatText(hh.sev / 4) + '">' + sev.value + '</span>' +
                 '<span class="sevlab">Gravidade ' + sev.value + " · " + esc(sev.label) + '</span></span>'
             : '<span class="sevlab" style="font-style:italic">gravidade não avaliada</span>';
-          return '<div class="heur"><span class="hid" data-tip="' + esc(meta.def) + '">' + h.id.toUpperCase() +
+          return '<div class="heur"><span class="hid" data-tip="' + esc(meta.def) + '"' +
+            (matchHeur ? ' style="outline:2px solid #000;outline-offset:1px"' : '') + '>' + hh.id.toUpperCase() +
             '</span><span class="hname">' + esc(meta.pt) + '</span>' + sevHtml + '</div>';
         }).join("") + '</div>');
     }
@@ -645,7 +809,7 @@
     return '<div class="ficha">' + fields + '</div>';
 
     function field(lab, inner) {
-      return '<div class="ficha-field"><span class="ficha-lab">' + esc(lab) + '</span>' + inner + '</div>';
+      return '<div class="df-field"><span class="df-lab">' + esc(lab) + '</span>' + inner + '</div>';
     }
   }
 
@@ -653,38 +817,52 @@
   var lbIndex = -1;
 
   function lightboxHtml() {
-    return '<div class="lb" id="lb">' +
-      '<div class="lb-top"><div class="lb-meta" id="lbMeta"></div>' +
-      '<button class="lb-close" data-act="lb-close" aria-label="Fechar">✕</button></div>' +
-      '<div class="lb-stage">' +
-        '<button class="lb-nav lb-prev" data-act="lb-prev" aria-label="Anterior">‹</button>' +
-        '<img class="lb-img" id="lbImg" alt="">' +
-        '<button class="lb-nav lb-next" data-act="lb-next" aria-label="Próxima">›</button>' +
+    return '<div class="dlb" id="dlb">' +
+      '<div class="dlb-top"><div class="dlb-meta" id="dlbMeta"></div>' +
+      '<button class="dlb-close" data-act="dlb-close" aria-label="Fechar">✕</button></div>' +
+      '<div class="dlb-stage">' +
+        '<button class="dlb-nav dlb-prev" data-act="dlb-prev" aria-label="Anterior">‹</button>' +
+        '<img class="dlb-img" id="dlbImg" alt="">' +
+        '<button class="dlb-nav dlb-next" data-act="dlb-next" aria-label="Próxima">›</button>' +
       '</div>' +
-      '<div class="lb-cap" id="lbCap"></div>' +
+      '<div class="dlb-cap" id="dlbCap"></div>' +
     '</div>';
+  }
+
+  function isLightboxOpen() {
+    var lb = document.getElementById("dlb");
+    return !!(lb && lb.classList.contains("is-open"));
   }
 
   function openLightbox(idx) {
     if (!detailList.length) return;
     lbIndex = idx;
     updateLightbox();
-    document.getElementById("lb").classList.add("is-open");
+    document.getElementById("dlb").classList.add("is-open");
+    document.body.style.overflow = "hidden";
   }
 
   function updateLightbox() {
     var rec = detailList[lbIndex];
     if (!rec) return;
     var s = rec.step;
-    document.getElementById("lbImg").src = s.image ? BASE + s.image : "";
-    document.getElementById("lbImg").alt = s.title || "";
-    document.getElementById("lbMeta").innerHTML =
+    document.getElementById("dlbImg").src = s.image ? BASE + s.image : "";
+    document.getElementById("dlbImg").alt = s.title || "";
+    document.getElementById("dlbMeta").innerHTML =
       '<b>' + esc(rec.platformName) + '</b><span class="sep">·</span><span>' + esc(rec.flowName) +
       '</span><span class="count">' + (lbIndex + 1) + " / " + detailList.length + '</span>';
-    document.getElementById("lbCap").textContent = s.title || "";
+    document.getElementById("dlbCap").textContent = s.title || "";
   }
 
-  function closeLightbox() { document.getElementById("lb").classList.remove("is-open"); }
+  function closeLightbox() {
+    var lb = document.getElementById("dlb");
+    if (lb) lb.classList.remove("is-open");
+    // se a gaveta seguir aberta, mantém o scroll travado
+    if (!document.getElementById("dd") || !document.getElementById("dd").classList.contains("is-open")) {
+      document.body.style.overflow = "";
+    }
+  }
+
   function lbStep(d) {
     if (!detailList.length) return;
     lbIndex = (lbIndex + d + detailList.length) % detailList.length;
@@ -693,8 +871,9 @@
 
   /* ----------------------------- section util --------------------------- */
   function section(title, hint, inner) {
+    var hintHtml = /^</.test(hint || "") ? hint : '<span class="hint">' + (hint || "") + '</span>';
     return '<section class="section"><div class="section-head"><h2>' + esc(title) + '</h2>' +
-      '<span class="hint">' + (hint || "") + '</span></div>' + inner + '</section>';
+      hintHtml + '</div>' + inner + '</section>';
   }
 
   /* ------------------------------ tooltips ------------------------------ */
@@ -702,16 +881,14 @@
   function bindTooltips() {
     if (!tipEl) {
       tipEl = document.createElement("div");
-      tipEl.style.cssText = "position:fixed;z-index:300;max-width:300px;background:#000;color:#fff;" +
-        "font-size:12.5px;line-height:1.45;padding:8px 11px;pointer-events:none;" +
-        "opacity:0;transition:opacity .12s ease;font-family:inherit;";
+      tipEl.className = "dash-tip";
       document.body.appendChild(tipEl);
     }
   }
 
   function showTip(target, x, y) {
     var txt = target.getAttribute("data-tip");
-    if (!txt) return;
+    if (!txt) { hideTip(); return; }
     tipEl.textContent = txt;
     tipEl.style.opacity = "1";
     var pad = 14;
@@ -723,7 +900,7 @@
   }
   function hideTip() { if (tipEl) tipEl.style.opacity = "0"; }
 
-  /* ------------------------------- events ------------------------------- */
+  /* ------------------------------- eventos ------------------------------ */
   function onClick(e) {
     var t = e.target.closest("[data-act]");
     if (!t) return;
@@ -735,21 +912,25 @@
       state.platform = val;
       state.flow = "all";
       render();
-    } else if (act === "tab") {
-      if (state.tab === val) return;
-      state.tab = val;
-      render();
-    } else if (act === "heat") {
-      if (state.heatView === val) return;
-      state.heatView = val;
+    } else if (act === "lens") {
+      if (state.lens === val) return;
+      state.lens = val;
       rerenderMain();
+    } else if (act === "drill") {
+      drillFromTarget(t);
+    } else if (act === "dd-close") {
+      closeDrawer();
+    } else if (act === "mapping") {
+      if (typeof window.DASHBOARD_OPEN_MAPPING === "function") {
+        window.DASHBOARD_OPEN_MAPPING(t.getAttribute("data-flow"));
+      }
     } else if (act === "zoom") {
       openLightbox(parseInt(t.getAttribute("data-idx"), 10));
-    } else if (act === "lb-close") {
+    } else if (act === "dlb-close") {
       closeLightbox();
-    } else if (act === "lb-prev") {
+    } else if (act === "dlb-prev") {
       lbStep(-1);
-    } else if (act === "lb-next") {
+    } else if (act === "dlb-next") {
       lbStep(1);
     }
   }
@@ -758,18 +939,18 @@
     if (e.target.id === "flowSelect") {
       state.flow = e.target.value;
       rerenderMain();
-    } else if (e.target.id === "onlyAnnotated") {
-      state.onlyAnnotated = e.target.checked;
-      rerenderMain();
     }
   }
 
   function onKey(e) {
-    var lb = document.getElementById("lb");
-    if (!lb || !lb.classList.contains("is-open")) return;
-    if (e.key === "Escape") closeLightbox();
-    else if (e.key === "ArrowLeft") lbStep(-1);
-    else if (e.key === "ArrowRight") lbStep(1);
+    if (isLightboxOpen()) {
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft") lbStep(-1);
+      else if (e.key === "ArrowRight") lbStep(1);
+      return;
+    }
+    var dd = document.getElementById("dd");
+    if (dd && dd.classList.contains("is-open") && e.key === "Escape") closeDrawer();
   }
 
   function onMove(e) {
@@ -783,13 +964,14 @@
     document.addEventListener("change", onChange);
     document.addEventListener("keydown", onKey);
     document.addEventListener("mousemove", onMove);
-    // fecha lightbox ao clicar no fundo do palco
+    // clicar no fundo do palco do lightbox fecha o lightbox
     document.addEventListener("click", function (e) {
-      if (e.target.classList && e.target.classList.contains("lb-stage")) closeLightbox();
+      if (e.target.classList && e.target.classList.contains("dlb-stage")) closeLightbox();
     });
 
     load().then(render).catch(function (err) {
-      document.getElementById("app").innerHTML =
+      var app = document.getElementById("app");
+      if (app) app.innerHTML =
         '<div class="wrap"><div class="empty-state">Falha ao carregar os dados de análise.<br>' +
         esc(err && err.message ? err.message : err) + '</div></div>';
     });

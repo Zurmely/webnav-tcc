@@ -158,14 +158,7 @@
           className: 'flow-card' + (idx === flowIdx ? ' is-active' : ''),
           onClick: function () { onSelect(idx); }
         },
-          h('span', { className: 'flow-card__name' }, flow.name),
-          h('span', { className: 'flow-card__stats' },
-            flow.steps.length + ' tela' + (flow.steps.length !== 1 ? 's' : '') +
-            (function () {
-              var dp = flow.steps.filter(function (s) { return checklistHasContent(s.checklist); }).length;
-              return dp > 0 ? '  ·  ' + dp + ' padrão' + (dp !== 1 ? 's' : '') : '';
-            }())
-          )
+          h('span', { className: 'flow-card__name' }, flow.name)
         );
       })
     );
@@ -194,8 +187,28 @@
     useEffect(function () {
       loadPlatform(PLATFORM).then(function (p) {
         setPlatform(p);
+        // Deep-link: ?flow=<id> seleciona o fluxo correspondente ao abrir.
+        try {
+          var fid = new URLSearchParams(window.location.search).get('flow');
+          if (fid) {
+            var idx = p.flows.findIndex(function (f) { return f.id === fid; });
+            if (idx >= 0) { setFlowIdx(idx); setStepIdx(0); }
+          }
+        } catch (e) { /* noop */ }
       });
     }, []);
+
+    // Permite que outras partes da página (gaveta de dados) selecionem um fluxo.
+    useEffect(function () {
+      function onSelectFlow(e) {
+        var fid = e.detail && e.detail.flowId;
+        if (!fid || !platform) return;
+        var idx = platform.flows.findIndex(function (f) { return f.id === fid; });
+        if (idx >= 0) { setFlowIdx(idx); setStepIdx(0); }
+      }
+      document.addEventListener('viewer:select-flow', onSelectFlow);
+      return function () { document.removeEventListener('viewer:select-flow', onSelectFlow); };
+    }, [platform]);
 
     var flows = platform ? platform.flows : [];
     var flow  = flows[flowIdx] || null;
@@ -235,9 +248,17 @@
     var viewerContent = step ? h(Fragment, null,
       /* Image + Detail */
       h('div', { className: 'viewer-content' },
-        h('button', {
+        h('div', {
           className: 'viewer-image-wrap',
+          role: 'button',
+          tabIndex: 0,
           onClick: function () { setLbOpen(true); },
+          onKeyDown: function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setLbOpen(true);
+            }
+          },
           'aria-label': 'Abrir imagem em tela cheia'
         },
           imgSrc
@@ -258,10 +279,6 @@
       ),
       /* Footer */
       h('footer', { className: 'viewer-footer' },
-        h('div', { className: 'nav-arrows' },
-          h('button', { className: 'arrow', onClick: prev, 'aria-label': 'Passo anterior' }, '‹'),
-          h('button', { className: 'arrow', onClick: next, 'aria-label': 'Próximo passo'  }, '›')
-        ),
         h('div', { className: 'steps' },
           h('span', { className: 'steps-label' }, 'Passos'),
           h('div',  { className: 'steps-list' },
@@ -273,6 +290,11 @@
               }, i + 1);
             })
           )
+        ),
+        h('div', { className: 'nav-arrows' },
+          h('button', { className: 'arrow', onClick: prev, 'aria-label': 'Passo anterior' }, '‹'),
+          h('span', { className: 'arrow-indicator' }, (stepIdx + 1) + '/' + total),
+          h('button', { className: 'arrow', onClick: next, 'aria-label': 'Próximo passo'  }, '›')
         )
       )
     ) : h('div', { className: 'viewer-empty' },

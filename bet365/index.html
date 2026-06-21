@@ -8,11 +8,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/dashboard.css?v=1" />
   <style>
+    html.mapping-active,
+    html.mapping-active body {
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
     .viewer-wrap {
       display: flex; flex-direction: column; flex: 1 1 auto;
-      padding: 40px 48px 64px; gap: 32px;
-      min-height: calc(100vh - 135px);
+      padding: 24px 48px 16px; gap: 20px;
+      height: auto;
+      min-height: 0;
+      overflow: hidden;
+    }
+    #viewer-root {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 0;
+      gap: 20px;
     }
     .viewer-loading {
       display: flex; flex-direction: column; align-items: center;
@@ -25,12 +42,19 @@
     }
     .viewer-content {
       display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
-      gap: 48px; align-items: start; flex: 1 1 auto;
+      gap: 48px; align-items: stretch; flex: 1 1 auto;
+      min-height: 0; overflow: hidden;
     }
     .viewer-image-wrap {
-      position: relative; width: 100%; aspect-ratio: 581/708;
+      position: relative; width: 100%; max-height: 100%;
       background: transparent; border: none; padding: 0;
-      display: block; cursor: zoom-in; overflow: hidden;
+      display: block; cursor: zoom-in;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .viewer-image-wrap:focus-visible {
+      outline: 2px solid #000;
+      outline-offset: 2px;
     }
     .frame-img { width: 100%; height: auto; display: block; border: 1px solid #000; }
     .zoom-hint {
@@ -42,7 +66,7 @@
     .zoom-ico { font-size: 15px; }
     .viewer-image-wrap:hover .zoom-hint,
     .viewer-image-wrap:focus-visible .zoom-hint { opacity: 0.92; }
-    .viewer-detail { display: flex; flex-direction: column; gap: 0; padding-top: 4px; }
+    .viewer-detail { display: flex; flex-direction: column; gap: 0; padding-top: 4px; overflow-y: auto; min-height: 0; scrollbar-width: thin; }
     .detail-title { font-size: 22px; font-weight: 700; line-height: 1.15; margin: 0 0 20px 0; }
     .detail-desc  { font-size: 16px; line-height: 1.6; margin: 0 0 24px 0; text-wrap: pretty; }
     .detail-rule  { height: 1px; background: #000; width: 100%; margin-bottom: 24px; }
@@ -71,6 +95,7 @@
     .arrow { width: 48px; height: 44px; border: none; background: #f3d250; color: #000; font-size: 22px; line-height: 1; display: inline-flex; align-items: center; justify-content: center; transition: filter 0.15s ease; }
     .arrow:hover  { filter: brightness(0.94); }
     .arrow:active { filter: brightness(0.88); }
+    .arrow-indicator { display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; min-width: 48px; height: 44px; font-variant-numeric: tabular-nums; }
     .steps { display: flex; align-items: center; gap: 16px; min-width: 0; }
     .steps-label { font-size: 15px; font-weight: 700; flex: 0 0 auto; }
     .steps-list  { display: flex; overflow-x: auto; }
@@ -104,8 +129,10 @@
     .lb-reset { border: 1px solid rgba(255,255,255,0.25); background: transparent; color: #fff; font-family: inherit; font-size: 14px; padding: 0 18px; height: 44px; }
     .lb-reset:hover { background: rgba(255,255,255,0.1); }
     @media (max-width: 900px) {
-      .viewer-wrap { padding: 24px 20px 48px; gap: 24px; }
-      .viewer-content { grid-template-columns: 1fr; gap: 24px; }
+      html.mapping-active, html.mapping-active body { height: auto; overflow: auto; }
+      .viewer-wrap { padding: 24px 20px 48px; gap: 24px; height: auto; overflow: visible; }
+      .viewer-content { grid-template-columns: 1fr; gap: 24px; overflow: visible; }
+      .viewer-detail { overflow-y: visible; }
       .viewer-image-wrap { max-height: 70vh; max-width: 420px; margin: 0 auto; }
       .viewer-footer { flex-direction: column; align-items: stretch; gap: 16px; }
       .nav-arrows { justify-content: center; }
@@ -166,11 +193,27 @@
   </header>
 
   <div class="secondary-nav" id="secondaryNav" aria-label="Fluxos">
+    <div class="view-toggle" id="viewToggle">
+      <button data-view="mapping" class="is-active">Mapeamento de fluxos</button>
+      <button data-view="data">Dados</button>
+    </div>
     <div id="flowCards" style="display:contents"></div>
+    <div id="dashFilterNav" style="display:none"></div>
   </div>
 
-  <div class="viewer-wrap">
+  <div class="viewer-wrap" id="mappingView">
     <div id="viewer-root"></div>
+  </div>
+
+  <div id="dataView" style="display:none">
+    <div id="app">
+      <div class="wrap">
+        <div class="loading">
+          <div class="spinner"></div>
+          <span>Carregando dados de análise…</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
@@ -186,7 +229,14 @@
     window.VIEWER_NAME     = 'Bet365';
     window.VIEWER_BASE     = '../';
   </script>
-  <script src="../js/platform-viewer.js?v=1"></script>
+  <script src="../js/platform-viewer.js?v=2"></script>
+  <script>
+    window.DASHBOARD_INLINE = true;
+    window.DASHBOARD_BASE = '../';
+    window.DASHBOARD_LOCK_PLATFORM = 'bet365';
+  </script>
+  <script src="../dashboard/dashboard.js?v=3"></script>
+  <script src="../js/platform-tabs.js?v=1"></script>
   <script src="../js/shared-nav.js?v=1"></script>
 </body>
 </html>
