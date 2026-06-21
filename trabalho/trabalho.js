@@ -24,7 +24,7 @@
   // Fontes do markdown, em ordem de preferência. A primeira que responder vence.
   // Para trocar o arquivo dado de trabalho (datado), ajuste a 1ª entrada.
   var MD_SOURCES = [
-    "../../../projeto-final/20-06.md", // VIVO (servidor na raiz do TCC)
+    "../../../projeto-final/21-06.md", // VIVO (servidor na raiz do TCC)
     B + "content/trabalho.md"          // EMBUTIDO (GitHub Pages)
   ];
   // Bases onde procurar figura_NN.png, na mesma ordem de preferência.
@@ -375,8 +375,6 @@
 
         var slot = document.createElement("div");
         slot.className = "fig-slot is-image";
-        slot.appendChild(img);
-        fig.appendChild(slot);
 
         var cap = document.createElement("figcaption");
         cap.className = "fig-cap";
@@ -385,13 +383,19 @@
         if (titleText) {
           cap.innerHTML += '<br><span class="fig-source" style="font-size: 0.9em; color: rgba(0,0,0,0.6);">' + inlineMd(titleText) + '</span>';
         }
+        fig.appendChild(slot);
         fig.appendChild(cap);
 
-        if (parent && parent.tagName.toLowerCase() === "p" && parent.childNodes.length === 1) {
+        var isSingleP = parent && parent.tagName.toLowerCase() === "p" && parent.childNodes.length === 1;
+
+        if (isSingleP) {
           parent.parentNode.replaceChild(fig, parent);
         } else if (parent) {
           parent.replaceChild(fig, img);
         }
+
+        // Now that the figure has replaced the old node in the DOM, append img to the slot safely
+        slot.appendChild(img);
       }
     });
   }
