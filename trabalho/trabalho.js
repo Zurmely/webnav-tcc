@@ -312,6 +312,7 @@
 
   // Resolve (ou re-tenta) todas as figuras ainda não resolvidas como imagem.
   function resolveFigures(root) {
+    // 1) Resolve custom figure slots [FIGURA figura_NN]
     var slots = root.querySelectorAll('.fig-slot[data-figura]:not(.is-image)');
     Array.prototype.forEach.call(slots, function (slot) {
       var id = slot.getAttribute("data-figura");
@@ -343,6 +344,55 @@
           slot.innerHTML = markCardHtml(id, desc);
         }
       });
+    });
+
+    // 2) Resolve standard markdown images ![alt](path)
+    var normalImgs = root.querySelectorAll('img:not(.fig-img)');
+    Array.prototype.forEach.call(normalImgs, function (img) {
+      var srcAttr = img.getAttribute("src") || "";
+      var filename = srcAttr.split('?')[0].split('/').pop();
+      var m = filename.match(/^figura_(\d+)\.png$/i);
+      if (m) {
+        var num = parseInt(m[1], 10);
+        var newSrc = state.pngBases[0] + filename;
+
+        img.className = "fig-img";
+        img.src = newSrc + "?t=" + state.figCacheBust;
+        img.loading = "lazy";
+
+        var captionText = img.getAttribute("alt") || "";
+        var titleText = img.getAttribute("title") || "";
+        var fullCaption = captionText + (titleText ? " (" + titleText + ")" : "");
+
+        img.addEventListener("click", function () {
+          openLightbox(img.src, fullCaption);
+        });
+
+        // Wrap in figure/figcaption to match visual style
+        var parent = img.parentNode;
+        var fig = document.createElement("figure");
+        fig.className = "fig";
+
+        var slot = document.createElement("div");
+        slot.className = "fig-slot is-image";
+        slot.appendChild(img);
+        fig.appendChild(slot);
+
+        var cap = document.createElement("figcaption");
+        cap.className = "fig-cap";
+        var cleanAlt = captionText.replace(/^Figura\s+\d+\s*[\u2013-]\s*/i, "");
+        cap.innerHTML = '<span class="fig-label">Figura ' + num + '</span> — ' + inlineMd(cleanAlt);
+        if (titleText) {
+          cap.innerHTML += '<br><span class="fig-source" style="font-size: 0.9em; color: rgba(0,0,0,0.6);">' + inlineMd(titleText) + '</span>';
+        }
+        fig.appendChild(cap);
+
+        if (parent && parent.tagName.toLowerCase() === "p" && parent.childNodes.length === 1) {
+          parent.parentNode.replaceChild(fig, parent);
+        } else if (parent) {
+          parent.replaceChild(fig, img);
+        }
+      }
     });
   }
 
