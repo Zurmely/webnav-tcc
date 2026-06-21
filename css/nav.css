@@ -1,0 +1,296 @@
+/* ============================================================
+   nav.css — shared top-navigation for all site pages
+   ============================================================ */
+
+/* ---- Base reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Merriweather", ui-serif, Georgia, "Times New Roman", serif;
+  color: #000;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+button { font-family: inherit; cursor: pointer; }
+a { color: inherit; }
+
+/* ---- Design tokens ---- */
+:root {
+  --black:  #000000;
+  --white:  #ffffff;
+  --yellow: #f3d250;
+  --gray:   #d9d9d9;
+  --compact-h: 71px; /* fixed compact nav height */
+}
+
+/* ============================================================
+   HERO HEADER
+   ============================================================ */
+.site-hero {
+  background: var(--black);
+  color: var(--white);
+  padding: 48px;
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.hero-brand {
+  flex: 0 0 397px;
+  width: 397px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero-title {
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 0;
+}
+.hero-title strong { font-weight: 700; }
+
+.hero-rule {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.45);
+  flex-shrink: 0;
+}
+
+.hero-credits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hero-credits p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+.hero-tabs {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+/* ============================================================
+   MAIN TAB (used in both hero and compact nav)
+   ============================================================ */
+.main-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  color: var(--white);
+  white-space: nowrap;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.main-tab__label {
+  font-size: 12px;
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.main-tab__name {
+  font-size: 24px;
+  line-height: normal;
+}
+
+.main-tab.is-active {
+  background: var(--yellow);
+  color: var(--black);
+}
+.main-tab.is-active .main-tab__label { opacity: 0.55; }
+
+.main-tab:hover:not(.is-active) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   COMPACT STICKY NAV (fixed, slides in from top when scrolled)
+   ============================================================ */
+.compact-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--black);
+  height: var(--compact-h);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  transform: translateY(-100%);
+  transition: transform 0.22s ease;
+  will-change: transform;
+}
+
+.compact-nav.is-visible {
+  transform: translateY(0);
+}
+
+.compact-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.compact-tabs::-webkit-scrollbar { display: none; }
+
+.compact-nav .main-tab__name  { font-size: 18px; }
+.compact-nav .main-tab__label { font-size: 11px; }
+
+/* ============================================================
+   SECONDARY NAV (yellow bar below main nav)
+   ============================================================ */
+.secondary-nav {
+  background: var(--yellow);
+  border-top:    1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  padding: 16px 24px;
+  overflow-x: auto;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: top 0.22s ease;
+  scrollbar-width: none;
+  min-height: 64px;
+}
+.secondary-nav::-webkit-scrollbar { display: none; }
+
+/* When hero is scrolled off, secondary nav sits below the fixed compact nav */
+body.nav-scrolled .secondary-nav {
+  top: var(--compact-h);
+}
+
+/* ============================================================
+   CHAPTER TABS  (Trabalho secondary nav)
+   ============================================================ */
+.chap-tab-group {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+
+.chap-tab-group + .chap-tab-group {
+  margin-left: 20px;
+}
+
+.chap-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  background: var(--white);
+  border: 1px solid var(--black);
+  color: var(--black);
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.1;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: -1px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.chap-tab:first-child { margin-left: 0; }
+
+.chap-tab.is-active {
+  background: var(--black);
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+.chap-tab.is-sub {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.chap-tab:hover:not(.is-active) { background: #f4f4f4; }
+
+/* ============================================================
+   SITE FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 48px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 397px;
+}
+
+/* ============================================================
+   FLOW CARDS  (Appendix secondary nav)
+   ============================================================ */
+.flow-card {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px 20px;
+  background: var(--white);
+  border: 1px solid var(--black);
+  color: var(--black);
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  margin-left: -1px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.flow-card:first-child { margin-left: 0; }
+
+.flow-card.is-active {
+  background: var(--black);
+  color: var(--white);
+}
+
+.flow-card:hover:not(.is-active) { background: #f4f4f4; }
+
+.flow-card__name  { font-size: 15px; line-height: 1.1; }
+.flow-card__stats { font-size: 12px; opacity: 0.55; white-space: nowrap; }
+
+/* ============================================================
+   RESPONSIVE — mobile
+   ============================================================ */
+@media (max-width: 960px) {
+  /* Hero is hidden on mobile */
+  .site-hero { display: none; }
+
+  /* Compact nav becomes sticky in-flow (not fixed) */
+  .compact-nav {
+    position: sticky;
+    top: 0;
+    transform: none !important;
+    transition: none;
+  }
+
+  /* Secondary nav sits below sticky compact nav */
+  .secondary-nav,
+  body.nav-scrolled .secondary-nav {
+    top: var(--compact-h);
+  }
+
+  .main-tab__name  { font-size: 16px; }
+  .main-tab__label { font-size: 10px; }
+}
+
+@media (max-width: 600px) {
+  .compact-nav { padding: 0 16px; }
+  .secondary-nav { padding: 12px 16px; }
+  .main-tab { padding: 4px 8px; }
+  .main-tab__name { font-size: 14px; }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Apêndice C — Superbet · Ética no Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <style>
+    .viewer-wrap {
+      display: flex; flex-direction: column; flex: 1 1 auto;
+      padding: 40px 48px 64px; gap: 32px;
+      min-height: calc(100vh - 135px);
+    }
+    .viewer-loading {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 16px; min-height: 400px;
+      font-size: 17px; color: rgba(0,0,0,0.45);
+    }
+    .viewer-empty {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 320px; font-size: 17px; color: rgba(0,0,0,0.4); text-align: center;
+    }
+    .viewer-content {
+      display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: 48px; align-items: start; flex: 1 1 auto;
+    }
+    .viewer-image-wrap {
+      position: relative; width: 100%; aspect-ratio: 581/708;
+      background: transparent; border: none; padding: 0;
+      display: block; cursor: zoom-in; overflow: hidden;
+    }
+    .frame-img { width: 100%; height: auto; display: block; border: 1px solid #000; }
+    .zoom-hint {
+      position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #000; color: #fff; font-size: 13px; padding: 8px 14px;
+      opacity: 0; transition: opacity 0.18s ease; pointer-events: none;
+    }
+    .zoom-ico { font-size: 15px; }
+    .viewer-image-wrap:hover .zoom-hint,
+    .viewer-image-wrap:focus-visible .zoom-hint { opacity: 0.92; }
+    .viewer-detail { display: flex; flex-direction: column; gap: 0; padding-top: 4px; }
+    .detail-title { font-size: 22px; font-weight: 700; line-height: 1.15; margin: 0 0 20px 0; }
+    .detail-desc  { font-size: 16px; line-height: 1.6; margin: 0 0 24px 0; text-wrap: pretty; }
+    .detail-rule  { height: 1px; background: #000; width: 100%; margin-bottom: 24px; }
+    .detail-dp-label { font-size: 15px; font-weight: 700; line-height: 1.2; margin: 0 0 10px 0; }
+    .ficha-grid  { display: flex; flex-direction: column; gap: 18px; }
+    .ficha-field { display: flex; flex-direction: column; gap: 8px; }
+    .ficha-label { font-size: 12px; font-weight: 700; line-height: 1.2; margin: 0; padding-bottom: 4px; border-bottom: 1px solid #d9d9d9; }
+    .heur-violations { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .heur-violation  { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 8px; }
+    .hv-id { flex: 0 0 auto; background: #000; color: #fff; font-size: 11px; font-weight: 700; line-height: 1; padding: 4px 7px; cursor: help; font-variant-numeric: tabular-nums; }
+    .hv-name { flex: 1 1 auto; min-width: 100px; font-size: 14px; line-height: 1.3; }
+    .hv-sev  { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; cursor: help; }
+    .hv-sevbox { width: 22px; height: 22px; border: 1px solid #000; background: #f3d250; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; }
+    .hv-sevlabel { font-size: 12px; line-height: 1.2; color: rgba(0,0,0,0.7); }
+    .hv-sev--none { font-size: 12px; font-style: italic; color: rgba(0,0,0,0.4); }
+    .ficha-obs { font-size: 15px; line-height: 1.55; margin: 0; }
+    .dp-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .dp-tag  { display: inline-flex; align-items: center; background: #f3d250; color: #000; border: 1px solid #000; font-size: 12px; line-height: 1; padding: 5px 10px; cursor: help; white-space: nowrap; }
+    .ph { position: relative; width: 100%; height: 100%; background: #d9d9d9; overflow: hidden; }
+    .ph-stripes { position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent 0 14px, rgba(0,0,0,0.035) 14px 28px); }
+    .ph-meta { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; padding: 16px; }
+    .ph-mono { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; letter-spacing: 0.04em; color: rgba(0,0,0,0.45); }
+    .ph-dim  { color: rgba(0,0,0,0.32); }
+    .viewer-footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 8px; border-top: 1px solid #000; }
+    .nav-arrows { display: flex; gap: 12px; }
+    .arrow { width: 48px; height: 44px; border: none; background: #f3d250; color: #000; font-size: 22px; line-height: 1; display: inline-flex; align-items: center; justify-content: center; transition: filter 0.15s ease; }
+    .arrow:hover  { filter: brightness(0.94); }
+    .arrow:active { filter: brightness(0.88); }
+    .steps { display: flex; align-items: center; gap: 16px; min-width: 0; }
+    .steps-label { font-size: 15px; font-weight: 700; flex: 0 0 auto; }
+    .steps-list  { display: flex; overflow-x: auto; }
+    .step-num { flex: 0 0 auto; min-width: 34px; height: 30px; padding: 0 8px; border: 1px solid #000; background: #fff; color: #000; font-family: inherit; font-size: 12px; line-height: 1; margin-left: -1px; display: inline-flex; align-items: center; justify-content: center; transition: background 0.12s ease; }
+    .step-num:first-child { margin-left: 0; }
+    .step-num:hover   { background: #f4f4f4; }
+    .step-num.is-active { background: #f3d250; position: relative; z-index: 1; }
+    .lb-overlay { position: fixed; inset: 0; z-index: 300; background: rgba(8,8,8,0.96); display: flex; flex-direction: column; color: #fff; }
+    .lb-top  { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; flex: 0 0 auto; gap: 16px; }
+    .lb-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 15px; }
+    .lb-app  { font-weight: 700; }
+    .lb-sep  { opacity: 0.5; }
+    .lb-flow { opacity: 0.85; }
+    .lb-count{ opacity: 0.7; font-size: 14px; }
+    .lb-close { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.25); background: transparent; color: #fff; font-size: 18px; line-height: 1; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; }
+    .lb-close:hover { background: rgba(255,255,255,0.1); }
+    .lb-stage { position: relative; flex: 1 1 auto; overflow-y: auto; overflow-x: hidden; display: flex; align-items: flex-start; justify-content: center; touch-action: none; cursor: zoom-in; user-select: none; }
+    .lb-stage.is-zoomed { overflow-y: hidden; align-items: center; cursor: grab; }
+    .lb-stage.is-zoomed:active { cursor: grabbing; }
+    .lb-imgwrap { width: 92vw; max-width: 92vw; margin: auto 0; will-change: transform; transform-origin: center center; display: block; }
+    .lb-img { width: 100%; height: auto; display: block; pointer-events: none; }
+    .lb-imgwrap .ph { width: 100%; aspect-ratio: 581/708; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+    .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border: none; background: #f3d250; color: #000; font-size: 28px; line-height: 1; display: inline-flex; align-items: center; justify-content: center; z-index: 2; opacity: 0.92; }
+    .lb-nav:hover { opacity: 1; }
+    .lb-prev { left: 18px; }
+    .lb-next { right: 18px; }
+    .lb-controls { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; gap: 14px; padding: 16px; }
+    .lb-zbtn { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.25); background: transparent; color: #fff; font-size: 22px; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
+    .lb-zbtn:hover { background: rgba(255,255,255,0.1); }
+    .lb-zlevel { font-size: 14px; min-width: 54px; text-align: center; opacity: 0.85; font-variant-numeric: tabular-nums; }
+    .lb-reset { border: 1px solid rgba(255,255,255,0.25); background: transparent; color: #fff; font-family: inherit; font-size: 14px; padding: 0 18px; height: 44px; }
+    .lb-reset:hover { background: rgba(255,255,255,0.1); }
+    @media (max-width: 900px) {
+      .viewer-wrap { padding: 24px 20px 48px; gap: 24px; }
+      .viewer-content { grid-template-columns: 1fr; gap: 24px; }
+      .viewer-image-wrap { max-height: 70vh; max-width: 420px; margin: 0 auto; }
+      .viewer-footer { flex-direction: column; align-items: stretch; gap: 16px; }
+      .nav-arrows { justify-content: center; }
+      .arrow { flex: 1 1 auto; max-width: 120px; }
+      .steps { justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-hero" id="heroNav">
+    <div class="hero-brand">
+      <p class="hero-title">
+        <strong>Ética no Design:</strong> uma análise crítica da exploração de padrões deceptivos no
+        desenho de interfaces e da experiência de usuário em aplicações de apostas e jogos de azar
+      </p>
+      <div class="hero-rule"></div>
+      <div class="hero-credits">
+        <p>Aluno: Gabriel Zurmely Gama</p>
+        <p>Orientadora: Profa. Dra. Angélica Beatriz Castro Guimarães</p>
+      </div>
+    </div>
+    <nav class="hero-tabs" aria-label="Navegação principal">
+      <a href="/" class="main-tab"><span class="main-tab__name">Trabalho</span></a>
+      <a href="/betano/"   class="main-tab">
+        <span class="main-tab__label">Apêndice A</span>
+        <span class="main-tab__name">Betano</span>
+      </a>
+      <a href="/bet365/"   class="main-tab">
+        <span class="main-tab__label">Apêndice B</span>
+        <span class="main-tab__name">Bet365</span>
+      </a>
+      <a href="/superbet/" class="main-tab is-active">
+        <span class="main-tab__label">Apêndice C</span>
+        <span class="main-tab__name">Superbet</span>
+      </a>
+      <a href="/dados/"    class="main-tab"><span class="main-tab__name">Dados</span></a>
+    </nav>
+  </header>
+
+  <header class="compact-nav" id="compactNav" aria-hidden="true">
+    <nav class="compact-tabs" aria-label="Navegação principal">
+      <a href="/" class="main-tab"><span class="main-tab__name">Trabalho</span></a>
+      <a href="/betano/"   class="main-tab">
+        <span class="main-tab__label">Ap. A</span>
+        <span class="main-tab__name">Betano</span>
+      </a>
+      <a href="/bet365/"   class="main-tab">
+        <span class="main-tab__label">Ap. B</span>
+        <span class="main-tab__name">Bet365</span>
+      </a>
+      <a href="/superbet/" class="main-tab is-active">
+        <span class="main-tab__label">Ap. C</span>
+        <span class="main-tab__name">Superbet</span>
+      </a>
+      <a href="/dados/"    class="main-tab"><span class="main-tab__name">Dados</span></a>
+    </nav>
+  </header>
+
+  <div class="secondary-nav" id="secondaryNav" aria-label="Fluxos">
+    <div id="flowCards" style="display:contents"></div>
+  </div>
+
+  <div class="viewer-wrap">
+    <div id="viewer-root"></div>
+  </div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+    integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+    integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+    crossorigin="anonymous"></script>
+  <script src="../js/checklist-data.js?v=2"></script>
+  <script src="../js/lightbox.js?v=2"></script>
+  <script>
+    window.VIEWER_PLATFORM = 'superbet';
+    window.VIEWER_NAME     = 'Superbet';
+    window.VIEWER_BASE     = '../';
+  </script>
+  <script src="../js/platform-viewer.js?v=1"></script>
+  <script src="../js/shared-nav.js?v=1"></script>
+</body>
+</html>

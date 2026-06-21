@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dados · Ética no Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <style>
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+
+    .dashboard-wrap {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dashboard-frame {
+      flex: 1 1 auto;
+      border: none;
+      width: 100%;
+      min-height: calc(100vh - 135px);
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-hero" id="heroNav">
+    <div class="hero-brand">
+      <p class="hero-title">
+        <strong>Ética no Design:</strong> uma análise crítica da exploração de padrões deceptivos no
+        desenho de interfaces e da experiência de usuário em aplicações de apostas e jogos de azar
+      </p>
+      <div class="hero-rule"></div>
+      <div class="hero-credits">
+        <p>Aluno: Gabriel Zurmely Gama</p>
+        <p>Orientadora: Profa. Dra. Angélica Beatriz Castro Guimarães</p>
+      </div>
+    </div>
+    <nav class="hero-tabs" aria-label="Navegação principal">
+      <a href="/" class="main-tab"><span class="main-tab__name">Trabalho</span></a>
+      <a href="/betano/"   class="main-tab">
+        <span class="main-tab__label">Apêndice A</span>
+        <span class="main-tab__name">Betano</span>
+      </a>
+      <a href="/bet365/"   class="main-tab">
+        <span class="main-tab__label">Apêndice B</span>
+        <span class="main-tab__name">Bet365</span>
+      </a>
+      <a href="/superbet/" class="main-tab">
+        <span class="main-tab__label">Apêndice C</span>
+        <span class="main-tab__name">Superbet</span>
+      </a>
+      <a href="/dados/"    class="main-tab is-active"><span class="main-tab__name">Dados</span></a>
+    </nav>
+  </header>
+
+  <header class="compact-nav" id="compactNav" aria-hidden="true">
+    <nav class="compact-tabs" aria-label="Navegação principal">
+      <a href="/" class="main-tab"><span class="main-tab__name">Trabalho</span></a>
+      <a href="/betano/"   class="main-tab">
+        <span class="main-tab__label">Ap. A</span>
+        <span class="main-tab__name">Betano</span>
+      </a>
+      <a href="/bet365/"   class="main-tab">
+        <span class="main-tab__label">Ap. B</span>
+        <span class="main-tab__name">Bet365</span>
+      </a>
+      <a href="/superbet/" class="main-tab">
+        <span class="main-tab__label">Ap. C</span>
+        <span class="main-tab__name">Superbet</span>
+      </a>
+      <a href="/dados/"    class="main-tab is-active"><span class="main-tab__name">Dados</span></a>
+    </nav>
+  </header>
+
+  <div class="dashboard-wrap">
+    <iframe
+      class="dashboard-frame"
+      src="../dashboard/index.html"
+      title="Dashboard de dados analíticos"
+      loading="lazy"
+    ></iframe>
+  </div>
+
+  <script src="../js/shared-nav.js?v=1"></script>
+</body>
+</html>

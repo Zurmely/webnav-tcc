@@ -18,16 +18,19 @@
   "use strict";
 
   /* ----------------------------- CONFIG ---------------------------------- */
+  // Prefix for embedded paths when this script is loaded from outside trabalho/.
+  var B = window.TRABALHO_BASE || "";
+
   // Fontes do markdown, em ordem de preferência. A primeira que responder vence.
   // Para trocar o arquivo dado de trabalho (datado), ajuste a 1ª entrada.
   var MD_SOURCES = [
     "../../../projeto-final/20-06.md", // VIVO (servidor na raiz do TCC)
-    "content/trabalho.md"              // EMBUTIDO (GitHub Pages)
+    B + "content/trabalho.md"          // EMBUTIDO (GitHub Pages)
   ];
   // Bases onde procurar figura_NN.png, na mesma ordem de preferência.
   var PNG_BASES = [
     "../../../projeto-final/figuras/output/png/", // VIVO
-    "figuras/"                                    // EMBUTIDO
+    B + "figuras/"                                // EMBUTIDO
   ];
   var POLL_MS = 1500; // intervalo de checagem do markdown vivo
 
@@ -47,7 +50,9 @@
     lightbox: document.getElementById("lightbox"),
     lbImg: document.getElementById("lbImg"),
     lbCap: document.getElementById("lbCap"),
-    lbClose: document.getElementById("lbClose")
+    lbClose: document.getElementById("lbClose"),
+    chapterTabs: document.getElementById("chapterTabs"),
+    secondaryNav: document.getElementById("secondaryNav")
   };
 
   /* ------------------------------ STATE ---------------------------------- */
@@ -341,44 +346,69 @@
     });
   }
 
-  /* ============================ SIDEBAR ================================ */
-  function buildSidebar() {
-    var ul = document.createElement("ul");
-    ul.className = "chap-list";
-
+  /* =================== CHAPTER TABS (secondary nav) =================== */
+  function buildChapterTabs() {
+    if (!els.chapterTabs) return;
+    els.chapterTabs.innerHTML = "";
     state.chapters.forEach(function (ch) {
-      var li = document.createElement("li");
-      li.className = "chap";
-
       var btn = document.createElement("button");
-      btn.className = "chap-item" + (ch.index === state.activeIndex ? " is-active" : "");
+      btn.className = "chap-tab" + (ch.index === state.activeIndex ? " is-active" : "");
       btn.setAttribute("data-index", ch.index);
-      btn.innerHTML =
-        '<span class="chap-num">' + (ch.num ? escapeHtml(ch.num) : "") + "</span>" +
-        '<span class="chap-label">' + escapeHtml(ch.shortLabel || ch.title) + "</span>";
-      btn.addEventListener("click", function () { selectChapter(ch.index, null); closeDrawer(); });
-      li.appendChild(btn);
+      btn.textContent = ch.shortLabel || ch.title;
+      btn.addEventListener("click", function () { selectChapter(ch.index, null); });
+      els.chapterTabs.appendChild(btn);
+    });
+    /* scroll active tab into view */
+    var active = els.chapterTabs.querySelector(".chap-tab.is-active");
+    if (active && els.secondaryNav) active.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }
 
-      if (ch.index === state.activeIndex && ch.subs.length) {
-        var sub = document.createElement("ul");
-        sub.className = "sub-list";
-        ch.subs.forEach(function (s) {
-          var sli = document.createElement("li");
-          var sbtn = document.createElement("button");
-          sbtn.className = "sub-item" + (s.level === 3 ? " sub-item--l3" : "");
-          sbtn.setAttribute("data-sub", s.id);
-          sbtn.textContent = s.title;
-          sbtn.addEventListener("click", function () { scrollToSub(s.id); closeDrawer(); });
-          sli.appendChild(sbtn);
-          sub.appendChild(sli);
-        });
-        li.appendChild(sub);
-      }
+  /* ==================== TOC SIDEBAR (sub-chapters only) ================ */
+  function buildSidebar() {
+    var ch = state.chapters[state.activeIndex];
+    els.sideNav.innerHTML = "";
+    if (!ch) return;
+
+    /* Chapter label at top of TOC panel */
+    if (ch.title) {
+      var label = document.createElement("span");
+      label.className = "toc-chap-label";
+      label.textContent = ch.num ? ch.num + "." : "Capítulo";
+      var title = document.createElement("span");
+      title.className = "toc-chap-title";
+      title.textContent = ch.shortLabel || ch.title;
+      els.sideNav.appendChild(label);
+      els.sideNav.appendChild(title);
+    }
+
+    if (!ch.subs.length) return;
+    var ul = document.createElement("ul");
+    ul.className = "sub-list";
+    ch.subs.forEach(function (s) {
+      var li = document.createElement("li");
+      var sbtn = document.createElement("button");
+      sbtn.className = "sub-item" + (s.level === 3 ? " sub-item--l3" : "");
+      sbtn.setAttribute("data-sub", s.id);
+      sbtn.textContent = s.title;
+      sbtn.addEventListener("click", function () { scrollToSub(s.id); closeDrawer(); });
+      li.appendChild(sbtn);
       ul.appendChild(li);
     });
-
-    els.sideNav.innerHTML = "";
     els.sideNav.appendChild(ul);
+  }
+
+  /* =========== Keep scroll-area height filling viewport below nav ======= */
+  function updateScrollAreaHeight() {
+    if (window.innerWidth <= 960) {
+      /* mobile: let page scroll naturally */
+      els.scrollArea.style.height = "";
+      if (els.sidebar) els.sidebar.style.height = "";
+      return;
+    }
+    var secNavBottom = els.secondaryNav ? els.secondaryNav.getBoundingClientRect().bottom : 0;
+    var remaining = window.innerHeight - secNavBottom;
+    els.scrollArea.style.height = Math.max(remaining, 200) + "px";
+    if (els.sidebar) els.sidebar.style.height = Math.max(remaining, 200) + "px";
   }
 
   /* ======================== RENDER do capítulo ========================= */
@@ -454,6 +484,7 @@
     var ch = state.chapters[index];
     if (history.replaceState) history.replaceState(null, "", "#" + ch.id);
     buildSidebar();
+    buildChapterTabs();
     renderChapter(false);
     if (subId) scrollToSub(subId);
   }
@@ -546,6 +577,7 @@
     }
 
     buildSidebar();
+    buildChapterTabs();
     renderChapter(isReload);
     if (isReload) { state.figCacheBust = Date.now(); flashBadge("Trabalho atualizado"); }
   }
@@ -587,6 +619,11 @@
     els.lbClose.addEventListener("click", closeLightbox);
     els.lightbox.addEventListener("click", function (e) { if (e.target === els.lightbox) closeLightbox(); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLightbox(); });
+
+    /* Scroll-area height: always fill viewport below secondary nav */
+    updateScrollAreaHeight();
+    window.addEventListener("resize", updateScrollAreaHeight);
+    window.addEventListener("scroll", updateScrollAreaHeight, { passive: true });
 
     var spyRaf = null;
     els.scrollArea.addEventListener("scroll", function () {
