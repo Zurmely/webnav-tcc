@@ -28,9 +28,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // trabalho/ -> webnav-tcc/ -> trabalho-web/ -> raiz do TCC
 const TCC_ROOT = path.resolve(__dirname, "..", "..", "..");
 
-const MD_NAME = process.argv[2] || "20-06.md";
+const MD_NAME = process.argv[2] || "21-06.md";
 const SRC_MD = path.join(TCC_ROOT, "projeto-final", MD_NAME);
-const SRC_PNG_DIR = path.join(TCC_ROOT, "projeto-final", "figuras", "output", "png");
+const SRC_PNG_DIR = path.join(TCC_ROOT, "projeto-final", "figuras", "output-v2", "png");
 
 const OUT_CONTENT = path.join(__dirname, "content");
 const OUT_MD = path.join(OUT_CONTENT, "trabalho.md");
