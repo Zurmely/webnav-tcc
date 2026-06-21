@@ -25,15 +25,10 @@ a { color: inherit; }
 }
 
 /* ============================================================
-   HERO HEADER
+   HERO HEADER  — hidden; compact-nav is always shown instead
    ============================================================ */
 .site-hero {
-  background: var(--black);
-  color: var(--white);
-  padding: 48px;
-  display: flex;
-  gap: 48px;
-  align-items: flex-start;
+  display: none;
 }
 
 .hero-brand {
@@ -124,13 +119,6 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   padding: 0 24px;
-  transform: translateY(-100%);
-  transition: transform 0.22s ease;
-  will-change: transform;
-}
-
-.compact-nav.is-visible {
-  transform: translateY(0);
 }
 
 .compact-tabs {
@@ -158,18 +146,12 @@ a { color: inherit; }
   align-items: stretch;
   gap: 0;
   position: sticky;
-  top: 0;
+  top: var(--compact-h);
   z-index: 100;
-  transition: top 0.22s ease;
   scrollbar-width: none;
   min-height: 64px;
 }
 .secondary-nav::-webkit-scrollbar { display: none; }
-
-/* When hero is scrolled off, secondary nav sits below the fixed compact nav */
-body.nav-scrolled .secondary-nav {
-  top: var(--compact-h);
-}
 
 /* ============================================================
    CHAPTER TABS  (Trabalho secondary nav)
