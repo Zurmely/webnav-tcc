@@ -1,4 +1,4 @@
-<!-- GERADO por trabalho/sync-content.mjs a partir de projeto-final/21-06.md. Não editar — edite o arquivo de origem e rode o script novamente. 2026-06-21T21:20:27.220Z -->
+<!-- GERADO por trabalho/sync-content.mjs a partir de projeto-final/21-06.md. Não editar — edite o arquivo de origem e rode o script novamente. 2026-06-22T03:26:43.634Z -->
 Gabriel Zurmely Gama
 
 **Ética no Design: uma análise crítica da exploração de padrões deceptivos no desenho de interfaces e da experiência de usuário**
@@ -556,19 +556,19 @@ O funil de incorporação revelou-se um dos contextos mais densos para a observa
 
 O percurso pelas operações financeiras incluiu o depósito via Pix, necessário para acessar as funcionalidades de aposta efetiva das três plataformas, e o saque documentado exclusivamente na Superbet. A comparação entre o fluxo de depósito e o de saque evidenciou disparidade notável no grau de fricção imposto em cada direção: enquanto o depósito via Pix se completa em poucos toques, com confirmação praticamente imediata e reforço visual positivo, o saque exige etapas adicionais de verificação e confirmação que tornam o processo sensivelmente mais lento e trabalhoso. Essa assimetria deliberada entre a facilidade de entrada e a dificuldade de saída de recursos opera como barreira projetual que favorece a permanência do dinheiro na plataforma.
 
-[FIGURA: COMPARATIVO ENTRE DEPÓSITO E SAQUE]
+![Figura 29 – Assimetria de fricção entre os fluxos de depósito e saque na Superbet](../figuras/output-v2/png/figura_29.png "Elaborado pelo autor (2026).")
 
-A navegação nas áreas de apostas esportivas percorreu o ciclo completo do apostador: acesso à tela principal, seleção e registro de aposta única, aposta múltipla e aposta sugerida pela plataforma, acompanhamento de apostas em aberto com possibilidade de encerramento antecipado (*cashout*), aguardo da conclusão do evento e visualização dos estados de aposta ganha e de aposta perdida. Essa sequência permitiu mapear padrões deceptivos ao longo de toda a jornada, e não apenas em pontos de entrada isolados. Na tela principal de apostas esportivas da Bet365, por exemplo, foi identificada a ocorrência simultânea de seis tipos de padrões deceptivos distintos, conforme anotado na Figura 29: *fake social proof*, interferência visual, *nagging*, *sneaking*, anúncios disfarçados e *trick wording*. Nessa mesma tela, seis heurísticas de Nielsen foram violadas, com gravidade 3 atribuída à heurística de correspondência entre sistema e mundo real (H8) e à heurística de ajuda e documentação (H10).
+A navegação nas áreas de apostas esportivas percorreu o ciclo completo do apostador: acesso à tela principal, seleção e registro de aposta única, aposta múltipla e aposta sugerida pela plataforma, acompanhamento de apostas em aberto com possibilidade de encerramento antecipado (*cashout*), aguardo da conclusão do evento e visualização dos estados de aposta ganha e de aposta perdida. Essa sequência permitiu mapear padrões deceptivos ao longo de toda a jornada, e não apenas em pontos de entrada isolados. Na tela principal de apostas esportivas da Bet365, por exemplo, foi identificada a ocorrência simultânea de seis tipos de padrões deceptivos distintos, conforme anotado na Figura 30: *fake social proof*, interferência visual, *nagging*, *sneaking*, anúncios disfarçados e *trick wording*. Nessa mesma tela, seis heurísticas de Nielsen foram violadas, com gravidade 3 atribuída à heurística de correspondência entre sistema e mundo real (H8) e à heurística de ajuda e documentação (H10).
 
-![Figura 29 – Tela principal de apostas esportivas da Bet365 com seis padrões deceptivos simultâneos](../figuras/output-v2/png/figura_29.png "Elaborado pelo autor (2026).")
+![Figura 30 – Tela principal de apostas esportivas da Bet365 com seis padrões deceptivos simultâneos](../figuras/output-v2/png/figura_30.png "Elaborado pelo autor (2026).")
 
-A análise do cassino contemplou a página inicial, a navegação por promoções e a experiência de jogos individuais, incluindo *slots*, *crash games*[^crash], jogos de roleta, *blackjack*[^blackjack] e jogos de *arcade*[^arcade], com escopo variável por plataforma conforme detalhado na Seção 4.3. O *Fortune Tiger*, popularmente conhecido como Tigrinho e consistentemente posicionado pelas três plataformas entre os títulos mais destacados de suas respectivas seções de cassino, foi analisado em todas elas. A busca de jogos da Bet365 revelou um caso ilustrativo de *comparison prevention*: a pesquisa pelo título *Sugar Rush* retorna múltiplas variações do mesmo jogo, como *Sugar Rush Xmas*, *Sugar Rush 1000* e *Sugar Rush Bonanza*, sem critérios claros de distinção entre elas, dificultando a comparação objetiva e induzindo o usuário a explorar versões que a plataforma prioriza algoritmicamente, conforme a Figura 30. A heurística de estética e design minimalista (H8) recebeu gravidade 4 nessa ocorrência, configurando catástrofe de usabilidade segundo a escala de Nielsen (1993).
+A análise do cassino contemplou a página inicial, a navegação por promoções e a experiência de jogos individuais, incluindo *slots*, *crash games*[^crash], jogos de roleta, *blackjack*[^blackjack] e jogos de *arcade*[^arcade], com escopo variável por plataforma conforme detalhado na Seção 4.3. O *Fortune Tiger*, popularmente conhecido como Tigrinho e consistentemente posicionado pelas três plataformas entre os títulos mais destacados de suas respectivas seções de cassino, foi analisado em todas elas. A busca de jogos da Bet365 revelou um caso ilustrativo de *comparison prevention*: a pesquisa pelo título *Sugar Rush* retorna múltiplas variações do mesmo jogo, como *Sugar Rush Xmas*, *Sugar Rush 1000* e *Sugar Rush Bonanza*, sem critérios claros de distinção entre elas, dificultando a comparação objetiva e induzindo o usuário a explorar versões que a plataforma prioriza algoritmicamente, conforme a Figura 31. A heurística de estética e design minimalista (H8) recebeu gravidade 4 nessa ocorrência, configurando catástrofe de usabilidade segundo a escala de Nielsen (1993).
 
-![Figura 30 – Busca por "Sugar Rush" no cassino da Bet365](../figuras/output-v2/png/figura_30.png "Elaborado pelo autor (2026).")
+![Figura 31 – Busca por "Sugar Rush" no cassino da Bet365](../figuras/output-v2/png/figura_31.png "Elaborado pelo autor (2026).")
 
-A tela de promoções da Bet365, por sua vez, apresentou o padrão de *trick wording*, com imagens de bônus que permitem interpretações ambíguas dos termos e condições, exibidos em letras significativamente menores ao redor dos apelos visuais. Como evidencia a Figura 31, o destaque gráfico recai sobre os valores e as chamadas promocionais, enquanto as restrições que de fato condicionam o acesso ao benefício ocupam tamanho reduzido na hierarquia visual.
+A tela de promoções da Bet365, por sua vez, apresentou o padrão de *trick wording*, com imagens de bônus que permitem interpretações ambíguas dos termos e condições, exibidos em letras significativamente menores ao redor dos apelos visuais. Como evidencia a Figura 32, o destaque gráfico recai sobre os valores e as chamadas promocionais, enquanto as restrições que de fato condicionam o acesso ao benefício ocupam tamanho reduzido na hierarquia visual.
 
-![Figura 31 – Tela de promoções da Bet365](../figuras/output-v2/png/figura_31.png "Elaborado pelo autor (2026).")
+![Figura 32 – Tela de promoções da Bet365](../figuras/output-v2/png/figura_32.png "Elaborado pelo autor (2026).")
 
 [^crash]: Os *crash games* são jogos de cassino *online* em que um multiplicador parte de 1× e cresce de forma contínua e imprevisível até que o jogo "caia" (*crash*). O jogador deve sacar os ganhos antes que esse colapso ocorra: quanto mais tempo aguarda, maior o multiplicador potencial, mas também maior o risco de perder a aposta inteira caso o crash ocorra antes do saque. A mecânica explora a tensão entre aversão à perda e busca por ganhos maiores, combinando aparência de controle com resultado determinado por gerador de números aleatórios.
 
@@ -594,11 +594,11 @@ A comparação se organiza em torno de quatro eixos analíticos. O primeiro eixo
 
 A discussão dos achados à luz do referencial teórico constitui o componente interpretativo central desta seção. Os padrões deceptivos encontrados devem ser articulados com as teorias de Schüll (2012) sobre design para dependência, com os conceitos de *sludge* de Sunstein (2022) discutidos no Capítulo 2, com as taxonomias de *nudge* e *dark nudge* de Newall et al. (2023) apresentadas no Capítulo 3, e com as lacunas regulatórias identificadas no panorama brasileiro. Essa articulação transforma os dados empíricos em argumentos fundamentados que sustentarão as diretrizes propostas no Capítulo 6.
 
-[FIGURA figura_32: gráfico de padrões por app e por tipo (bet x cassino)]
+![Figura 33 – Ocorrências de padrões deceptivos por plataforma e categoria de produto](../figuras/output-v2/png/figura_33.png "Elaborado pelo autor (2026).")
 
-[FIGURA figura_33: heatmap? padrão deceptivo x app/tipo]
+![Figura 34 – Distribuição de padrões deceptivos por plataforma e categoria de produto](../figuras/output-v2/png/figura_34.png "Elaborado pelo autor (2026).")
 
-[FIGURA figura_34: tabela apenas numérica dos tipos de padrões encontrados]
+![Figura 35 – Frequência absoluta dos tipos de padrão deceptivo por plataforma e categoria](../figuras/output-v2/png/figura_35.png "Elaborado pelo autor (2026).")
 
 # **6 DIRETRIZES E BOAS PRÁTICAS PARA DESIGN ÉTICO**
 
@@ -624,7 +624,7 @@ O checklist proposto opera como uma ferramenta de verificação que o designer p
 
 Na etapa de **[ETAPA]**, a prática ética consiste em **[PRÁTICA]**.
 
-[FIGURA figura_35: checklist por etapa]
+[FIGURA figura_36: checklist por etapa]
 
 Nir Eyal, autor de *Hooked: How to Build Habit-Forming Products* (2014), oferece uma contra-referência esclarecedora. Eyal descreveu detalhadamente as mecânicas de engajamento que produzem "produtos formadores de hábito", mas em sua obra posterior, *Indistractable* (2019), reconheceu que essas mesmas mecânicas podem ser empregadas de forma prejudicial, propondo que o teste ético de um produto é a pergunta: "estou ajudando o usuário a fazer o que ele já desejava fazer, ou estou manipulando-o?" (EYAL, 2019). Essa distinção ecoa a "Regra de Ouro da Persuasão" de Fogg (2003), discutida no Capítulo 2, e oferece um critério prático para avaliar cada decisão de design.
 
