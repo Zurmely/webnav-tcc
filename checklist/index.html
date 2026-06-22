@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist · Design ético contra padrões deceptivos</title>
+  <meta name="description"
+    content="Checklist anti-padrões deceptivos para o design de plataformas de apostas — fundamentado no Capítulo 6 e nas 90 fichas de catalogação da pesquisa." />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <script>(function () { var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); })();</script>
+  <style>
+    /* ============================================================
+       CHECKLIST PAGE — local design tokens & layout
+       Reuses the site language: Merriweather (serif body), Inter
+       (labels/UI), black / white / yellow (#f3d250), dark mode.
+       ============================================================ */
+    :root {
+      --ink-2: #313639;
+      --row-tint: #fafaf8;
+      --read-w: 940px;
+      --good: #1f7a52;
+      --bad: #b4341f;
+    }
+
+    .cl-shell {
+      max-width: var(--read-w);
+      margin: 0 auto;
+      padding: 40px 48px 120px;
+    }
+
+    section[id] {
+      scroll-margin-top: 156px;
+    }
+
+    /* ---- Section headers ---- */
+    .cl-sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin: 64px 0 8px;
+    }
+
+    .cl-sec-num {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--ink-2);
+      flex-shrink: 0;
+    }
+
+    .cl-sec-title {
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    .cl-sec-rule {
+      height: 2px;
+      background: #000;
+      width: 100%;
+      margin: 0 0 6px;
+    }
+
+    .cl-lead {
+      font-size: 17px;
+      line-height: 1.72;
+      margin: 0 0 18px;
+      text-wrap: pretty;
+    }
+
+    .cl-lead em {
+      font-style: italic;
+    }
+
+    .cl-lead strong {
+      font-weight: 700;
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .cl-hero {
+      border-bottom: 2px solid #000;
+      padding-bottom: 32px;
+    }
+
+    .cl-kicker {
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      margin: 0 0 14px;
+    }
+
+    .cl-title {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.08;
+      margin: 0 0 20px;
+      text-wrap: balance;
+    }
+
+    .cl-title mark {
+      background: var(--yellow);
+      color: #000;
+      padding: 0 6px;
+    }
+
+    .cl-hero-lead {
+      font-size: 19px;
+      line-height: 1.68;
+      max-width: 720px;
+      margin: 0 0 22px;
+      text-wrap: pretty;
+    }
+
+    .cl-hero-lead em {
+      font-style: italic;
+    }
+
+    .cl-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      margin: 0 0 28px;
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      color: var(--ink-2);
+    }
+
+    .cl-meta b {
+      display: block;
+      font-size: 22px;
+      font-weight: 700;
+      color: #000;
+      line-height: 1.1;
+    }
+
+    .cl-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #000;
+      color: #fff;
+      border: 1px solid #000;
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 13px 22px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-print:hover {
+      background: var(--yellow);
+      color: #000;
+      border-color: #000;
+    }
+
+    .btn-print svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .cl-actions-note {
+      font-family: "Inter", sans-serif;
+      font-size: 12.5px;
+      color: var(--ink-2);
+      max-width: 320px;
+      line-height: 1.45;
+    }
+
+    /* ---- Hero progress ---- */
+    .cl-progress {
+      margin: 26px 0 0;
+      max-width: 520px;
+    }
+
+    .cl-progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      color: var(--ink-2);
+      margin: 0 0 7px;
+    }
+
+    .cl-progress-top b {
+      color: #000;
+      font-weight: 700;
+    }
+
+    .cl-progress-track {
+      height: 8px;
+      background: var(--gray);
+      overflow: hidden;
+    }
+
+    .cl-progress-fill {
+      height: 100%;
+      width: 0;
+      background: #000;
+      transition: width 0.3s ease;
+    }
+
+    .cl-progress-reset {
+      background: none;
+      border: none;
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      color: var(--ink-2);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      padding: 0;
+      margin-top: 8px;
+    }
+
+    .cl-progress-reset:hover {
+      color: #000;
+    }
+
+    /* ============================================================
+       PRINCÍPIOS — three cards
+       ============================================================ */
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .principle {
+      border: 1px solid #000;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #fff;
+    }
+
+    .principle-n {
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--ink-2);
+    }
+
+    .principle h3 {
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.22;
+      margin: 0;
+    }
+
+    .principle p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      margin: 0;
+      color: var(--ink-2);
+    }
+
+    .principle .src {
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      color: var(--ink-2);
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px solid var(--gray);
+    }
+
+    /* ============================================================
+       PADRÕES DECEPTIVOS — pattern cards
+       ============================================================ */
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .pattern {
+      border: 1px solid #000;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      background: #fff;
+      break-inside: avoid;
+    }
+
+    .pattern-top {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .pattern-name {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .pattern-en {
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      color: var(--ink-2);
+      display: block;
+      margin-top: 3px;
+      letter-spacing: 0.01em;
+    }
+
+    .pattern-count {
+      flex-shrink: 0;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      line-height: 1;
+      color: var(--bad);
+    }
+
+    .pattern-count b {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .pattern-count span {
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+    }
+
+    .pattern-def {
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0;
+      color: var(--ink-2);
+    }
+
+    .pattern-fix {
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 12px 0 0;
+      padding: 12px;
+      border: none;
+      background: #1f7a522b;
+      color: #1f7a52;
+      font-weight: 600;
+    }
+
+    .pattern-fix b {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--good);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-right: 6px;
+    }
+
+    /* ============================================================
+       HEURÍSTICAS — list
+       ============================================================ */
+    .heur-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 24px;
+      border-top: 1px solid #000;
+    }
+
+    .heur {
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      gap: 18px;
+      align-items: start;
+      padding: 16px 4px;
+      border-bottom: 1px solid var(--gray);
+      break-inside: avoid;
+    }
+
+    .heur-code {
+      font-family: "Inter", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #000;
+      background: var(--yellow);
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .heur-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 4px;
+      line-height: 1.25;
+    }
+
+    .heur-adapt {
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0;
+      color: var(--ink-2);
+    }
+
+    .heur-stat {
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      color: var(--ink-2);
+      text-align: right;
+      white-space: nowrap;
+      line-height: 1.4;
+    }
+
+    .heur-stat b {
+      color: var(--bad);
+      font-weight: 700;
+    }
+
+    .sev-tag {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      background: var(--bad);
+      color: #fff;
+    }
+
+    .sev-tag.sev-mid {
+      background: #c98a16;
+    }
+
+    /* ============================================================
+       CHECKLIST POR ETAPA — journeys + check items
+       ============================================================ */
+    .journeys {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .journey {
+      break-inside: avoid;
+    }
+
+    .journey-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 4px;
+    }
+
+    .journey-badge {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #fff;
+      background: #000;
+      padding: 6px 11px;
+      flex-shrink: 0;
+    }
+
+    .journey-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .journey-intro {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--ink-2);
+      margin: 0 0 12px;
+      padding-left: 2px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--gray);
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 6px;
+      border-bottom: 1px solid var(--gray);
+      cursor: pointer;
+      transition: background 0.12s ease;
+      break-inside: avoid;
+    }
+
+    .check-item:hover {
+      background: var(--row-tint);
+    }
+
+    .check-box {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border: 2px solid #000;
+      background: #fff;
+      margin-top: 1px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.12s ease;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .check-box svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0;
+      transform: scale(0.6);
+      transition: opacity 0.12s ease, transform 0.12s ease;
+    }
+
+    .check-item.is-checked .check-box {
+      background: var(--yellow);
+    }
+
+    .check-item.is-checked .check-box svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .check-body {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .check-text {
+      font-size: 15.5px;
+      line-height: 1.5;
+      display: block;
+    }
+
+    .check-item.is-checked .check-text {
+      color: var(--ink-2);
+    }
+
+    .check-ref {
+      display: inline-block;
+      margin-top: 6px;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.02em;
+      color: var(--ink-2);
+      border: 1px solid var(--gray);
+      padding: 2px 8px;
+    }
+
+    .check-ref.ref-h {
+      border-color: var(--yellow);
+      background: #fdf7da;
+      color: #000;
+    }
+
+    /* ============================================================
+       PERGUNTAS DIFÍCEIS — emotional
+       ============================================================ */
+    .questions-intro {
+      font-size: 17px;
+      line-height: 1.7;
+      margin: 0 0 8px;
+      max-width: 720px;
+    }
+
+    .questions {
+      margin-top: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      counter-reset: q;
+    }
+
+    .question {
+      position: relative;
+      padding: 26px 26px 26px 78px;
+      border: 1px solid #000;
+      margin-top: -1px;
+      background: #fff;
+      break-inside: avoid;
+    }
+
+    .question::before {
+      counter-increment: q;
+      content: counter(q, decimal-leading-zero);
+      position: absolute;
+      left: 22px;
+      top: 24px;
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink-2);
+    }
+
+    .question p {
+      font-size: 21px;
+      line-height: 1.45;
+      font-weight: 700;
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    .question .q-src {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink-2);
+      line-height: 1.55;
+    }
+
+    .question.is-hot {
+      background: var(--yellow);
+      border-color: #000;
+    }
+
+    .question.is-hot::before {
+      color: #000;
+    }
+
+    /* ============================================================
+       CLOSING manifesto
+       ============================================================ */
+    .closing {
+      margin-top: 64px;
+      background: #000;
+      color: #fff;
+      padding: 48px;
+    }
+
+    .closing h2 {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 18px;
+      text-wrap: balance;
+    }
+
+    .closing p {
+      font-size: 17px;
+      line-height: 1.72;
+      margin: 0 0 16px;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 720px;
+    }
+
+    .closing p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .closing em {
+      font-style: italic;
+      color: #fff;
+    }
+
+    .closing strong {
+      color: var(--yellow);
+      font-weight: 700;
+    }
+
+    .closing-actions {
+      margin-top: 30px;
+    }
+
+    .closing .btn-print {
+      background: var(--yellow);
+      color: #000;
+      border-color: var(--yellow);
+    }
+
+    .closing .btn-print:hover {
+      background: #fff;
+      border-color: #fff;
+    }
+
+    /* ============================================================
+       FLOATING PROGRESS PILL
+       ============================================================ */
+    .pill {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 80;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #000;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      padding: 11px 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+    }
+
+    .pill[hidden] {
+      display: none;
+    }
+
+    .pill b {
+      color: var(--yellow);
+      font-weight: 700;
+    }
+
+    .pill svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* secondary-nav anchor tabs reuse .chap-tab from nav.css */
+    #secNav {
+      display: flex;
+      align-items: stretch;
+      flex-wrap: nowrap;
+    }
+
+    /* ============================================================
+       DARK MODE
+       ============================================================ */
+    [data-theme="dark"] .cl-hero {
+      border-color: #fff;
+    }
+
+    [data-theme="dark"] .cl-sec-rule {
+      background: #fff;
+    }
+
+    [data-theme="dark"] .cl-sec-num,
+    [data-theme="dark"] .cl-kicker,
+    [data-theme="dark"] .cl-lead em,
+    [data-theme="dark"] .principle p,
+    [data-theme="dark"] .principle .src,
+    [data-theme="dark"] .principle-n,
+    [data-theme="dark"] .pattern-def,
+    [data-theme="dark"] .pattern-count span,
+    [data-theme="dark"] .heur-adapt,
+    [data-theme="dark"] .heur-stat,
+    [data-theme="dark"] .journey-intro,
+    [data-theme="dark"] .cl-meta,
+    [data-theme="dark"] .cl-actions-note,
+    [data-theme="dark"] .cl-progress-top,
+    [data-theme="dark"] .question .q-src,
+    [data-theme="dark"] .cl-progress-reset {
+      color: rgba(232, 232, 232, 0.72);
+    }
+
+    [data-theme="dark"] .cl-meta b,
+    [data-theme="dark"] .cl-progress-top b,
+    [data-theme="dark"] .cl-progress-reset:hover {
+      color: #fff;
+    }
+
+    [data-theme="dark"] .principle,
+    [data-theme="dark"] .pattern,
+    [data-theme="dark"] .question {
+      background: #1a1a1a;
+      border-color: #3a3a3a;
+    }
+
+    [data-theme="dark"] .principle .src,
+    [data-theme="dark"] .pattern-fix,
+    [data-theme="dark"] .check-list,
+    [data-theme="dark"] .heur-list {
+      border-color: #2e2e2e;
+    }
+
+    [data-theme="dark"] .heur,
+    [data-theme="dark"] .check-item {
+      border-color: #2e2e2e;
+    }
+
+    [data-theme="dark"] .heur-code {
+      color: #000;
+    }
+
+    [data-theme="dark"] .check-box {
+      border-color: #e8e8e8;
+      background: #111;
+    }
+
+    [data-theme="dark"] .check-item.is-checked .check-box {
+      background: var(--yellow);
+    }
+
+    [data-theme="dark"] .check-item.is-checked .check-box svg path {
+      stroke: #000;
+    }
+
+    [data-theme="dark"] .check-item:hover {
+      background: #222;
+    }
+
+    [data-theme="dark"] .check-ref {
+      border-color: #3a3a3a;
+    }
+
+    [data-theme="dark"] .check-ref.ref-h {
+      background: #2a2710;
+      color: #f3d250;
+    }
+
+    [data-theme="dark"] .btn-print {
+      background: #e8e8e8;
+      color: #111;
+      border-color: #e8e8e8;
+    }
+
+    [data-theme="dark"] .btn-print:hover {
+      background: var(--yellow);
+      border-color: var(--yellow);
+    }
+
+    [data-theme="dark"] .cl-title mark,
+    [data-theme="dark"] .question.is-hot {
+      color: #000;
+    }
+
+    [data-theme="dark"] .question.is-hot p,
+    [data-theme="dark"] .question.is-hot .q-src,
+    [data-theme="dark"] .question.is-hot::before {
+      color: #000;
+    }
+
+    [data-theme="dark"] .closing {
+      background: #000;
+      border: 1px solid #2e2e2e;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 900px) {
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+      .pattern-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .cl-shell {
+        padding: 28px 18px 96px;
+      }
+
+      .cl-title {
+        font-size: 32px;
+      }
+
+      .cl-sec-title {
+        font-size: 23px;
+      }
+
+      .heur {
+        grid-template-columns: 44px 1fr;
+      }
+
+      .heur-stat {
+        grid-column: 2;
+        text-align: left;
+      }
+
+      .question {
+        padding: 22px 18px 22px 18px;
+      }
+
+      .question::before {
+        position: static;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .question p {
+        font-size: 18px;
+      }
+
+      .closing {
+        padding: 32px 22px;
+      }
+    }
+
+    /* ============================================================
+       PRINT  →  Save as PDF (browser native)
+       Forces a clean, light, paginated layout regardless of theme.
+       ============================================================ */
+    @media print {
+      @page {
+        margin: 16mm 14mm;
+      }
+
+      html,
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+
+      .compact-nav,
+      .secondary-nav,
+      .site-hero,
+      .dark-toggle,
+      .pill,
+      .btn-print,
+      .cl-actions,
+      .cl-progress-reset,
+      .scrim {
+        display: none !important;
+      }
+
+      .cl-shell {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      /* neutralise dark theme for paper */
+      [data-theme="dark"] *,
+      [data-theme="dark"] {
+        color: #000 !important;
+      }
+
+      .principle,
+      .pattern,
+      .heur,
+      .check-item,
+      .question,
+      .journey {
+        background: #fff !important;
+        border-color: #000 !important;
+        box-shadow: none !important;
+      }
+
+      .pattern {
+        border-left: 4px solid #000 !important;
+      }
+
+      .cl-sec-rule,
+      .cl-progress-fill {
+        background: #000 !important;
+      }
+
+      .heur-code,
+      .check-item.is-checked .check-box,
+      .question.is-hot {
+        background: #f3d250 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .check-item.is-checked .check-box svg {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .check-item.is-checked .check-box svg path {
+        stroke: #000 !important;
+      }
+
+      .closing {
+        background: #fff !important;
+        color: #000 !important;
+        border: 2px solid #000 !important;
+        padding: 24px !important;
+      }
+
+      .closing p {
+        color: #000 !important;
+      }
+
+      .closing strong {
+        color: #000 !important;
+        text-decoration: underline;
+      }
+
+      .cl-sec-head,
+      .journey,
+      .question,
+      .pattern,
+      .heur {
+        break-inside: avoid;
+      }
+
+      a[href]::after {
+        content: "";
+      }
+    }
+
+    /* hidden helper for print header */
+    .print-only {
+      display: none;
+    }
+
+    @media print {
+      .print-only {
+        display: block;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #000;
+        font-family: "Inter", sans-serif;
+        font-size: 11px;
+        color: #000;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================== HERO HEADER (hidden; compact-nav shown) ===================== -->
+  <header class="site-hero" id="heroNav">
+    <div class="hero-brand">
+      <p class="hero-title">
+        <strong>Ética no Design:</strong> uma análise crítica da exploração de padrões deceptivos no
+        desenho de interfaces e da experiência de usuário em aplicações de apostas e jogos de azar
+      </p>
+      <div class="hero-rule"></div>
+      <div class="hero-credits">
+        <p>Aluno: Gabriel Zurmely Gama</p>
+        <p>Orientadora: Profa. Dra. Angélica Beatriz Castro Guimarães</p>
+      </div>
+    </div>
+    <nav class="hero-tabs" aria-label="Navegação principal">
+      <a href="/" class="main-tab"><span class="main-tab__name">Trabalho</span></a>
+      <a href="/betano/" class="main-tab">
+        <span class="main-tab__label">Apêndice A</span>
+        <span class="main-tab__name">Betano</span>
+      </a>
+      <a href="/bet365/" class="main-tab">
+        <span class="main-tab__label">Apêndice B</span>
+        <span class="main-tab__name">Bet365</span>
+      </a>
+      <a href="/superbet/" class="main-tab">
+        <span class="main-tab__label">Apêndice C</span>
+        <span class="main-tab__name">Superbet</span>
+      </a>
+      <a href="/dados/" class="main-tab"><span class="main-tab__name">Dados</span></a>
+      <a href="/checklist/" class="main-tab is-active"><span class="main-tab__name">Checklist</span></a>
+    </nav>
+  </header>
+
+  <!-- ===================== COMPACT STICKY NAV ===================== -->
+  <header class="compact-nav" id="compactNav" aria-hidden="true">
+    <nav class="compact-tabs" aria-label="Navegação principal">
+      <a href="/" class="main-tab"><span class="main-tab__name">Trabalho</span></a>
+      <a href="/betano/" class="main-tab">
+        <span class="main-tab__label">Ap. A</span>
+        <span class="main-tab__name">Betano</span>
+      </a>
+      <a href="/bet365/" class="main-tab">
+        <span class="main-tab__label">Ap. B</span>
+        <span class="main-tab__name">Bet365</span>
+      </a>
+      <a href="/superbet/" class="main-tab">
+        <span class="main-tab__label">Ap. C</span>
+        <span class="main-tab__name">Superbet</span>
+      </a>
+      <a href="/dados/" class="main-tab"><span class="main-tab__name">Dados</span></a>
+      <a href="/checklist/" class="main-tab is-active"><span class="main-tab__name">Checklist</span></a>
+    </nav>
+    <button class="dark-toggle" id="darkToggle" aria-label="Alternar modo escuro/claro">
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+        fill="currentColor" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- ===================== SECONDARY NAV (section anchors) ===================== -->
+  <div class="secondary-nav" id="secondaryNav" aria-label="Seções do checklist">
+    <nav id="secNav" aria-label="Seções">
+      <a class="chap-tab" href="#principios">Princípios</a>
+      <a class="chap-tab" href="#padroes">Padrões</a>
+      <a class="chap-tab" href="#heuristicas">Heurísticas</a>
+      <a class="chap-tab" href="#checklist">Checklist</a>
+      <a class="chap-tab" href="#perguntas">Perguntas</a>
+    </nav>
+  </div>
+
+  <!-- ===================== CONTENT ===================== -->
+  <main class="cl-shell">
+
+    <div class="print-only">
+      Checklist anti-padrões deceptivos para o design ético de plataformas de apostas — Gabriel Zurmely Gama ·
+      Ética no Design (TCC) · gerado de webnav-tcc/checklist
+    </div>
+
+    <!-- HERO -->
+    <header class="cl-hero">
+      <p class="cl-kicker">Guia prático de boas práticas</p>
+      <h1 class="cl-title">Antes de lançar, <mark>pergunte-se.</mark></h1>
+      <p class="cl-hero-lead">
+        Um guia e checklist anti-padrões deceptivos para quem projeta experiências, criado com base em um benchmark de
+        +400 telas reais
+        de experiências de apostas e jogos de azar. Cada item aqui existe porque alguém, em algum lugar, já foi
+        manipulado por
+        sua ausência.
+      </p>
+
+      <div class="cl-actions">
+        <button class="btn-print" data-print type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9" />
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <rect x="6" y="14" width="12" height="8" />
+          </svg>
+          Baixar PDF / Imprimir
+        </button>
+        <span class="cl-actions-note">Escolha <b>“Salvar como PDF”</b> como destino de impressão.As
+          marcações que você fizer aparecerão também no arquivo salvo.</span>
+      </div>
+
+    </header>
+
+    <!-- INTRO / TESTE -->
+    <p class="cl-lead" style="margin-top:40px">
+      A análise empírica desta pesquisa documentou um emprego sistemático de padrões deceptivos ao longo de toda a
+      jornada do apostador: da tela de cadastro à de saque. As práticas encontradas podem não ter sido apenas falhas
+      acidentais de
+      usabilidade, mas escolhas projetuais que invertem, de forma deliberada, princípios consagrados de design
+      centrado no usuário. Este documento devolve a essas escolhas o seu oposto: um instrumento de verificação que
+      você pode aplicar antes de colocar qualquer interface e experiência no mundo.
+    </p>
+    <p class="cl-lead">
+      Nir Eyal, que ensinou a indústria a construir produtos viciantes, mais tarde propôs
+      a única pergunta que importa: <em>“estou ajudando o usuário a fazer o que ele já desejava fazer — ou estou
+        manipulando-o?”</em> E essa deve ser uma pergunta que todo designer se faz ao projetar.
+    </p>
+
+    <!-- ===================== PRINCÍPIOS ===================== -->
+    <section id="principios">
+      <div class="cl-sec-head">
+        <span class="cl-sec-num">01</span>
+        <h2 class="cl-sec-title">Princípios para o design ético</h2>
+      </div>
+      <div class="cl-sec-rule"></div>
+      <p class="cl-lead">
+        Todo o conteúdo que aparece adiante deriva de três princípios estruturais de design ético para experiências, com
+        ênfase,
+        neste trabalho em específico, em plataformas de apostas.
+      </p>
+
+      <div class="principles">
+        <article class="principle">
+          <span class="principle-n">I</span>
+          <h3>Transparência e clareza informacional</h3>
+          <p>O usuário deve compreender exatamente o que acontece em cada interação. Probabilidades, custos, condições
+            de bônus e consequências de cada ação precisam ser explícitos, acessíveis e visualmente proeminentes.</p>
+          <span class="src">Norman (2013)</span>
+        </article>
+        <article class="principle">
+          <span class="principle-n">II</span>
+          <h3>Consentimento informado e controle do usuário</h3>
+          <p>Cada ação, sobretudo as financeiras, deve ser uma escolha consciente e reversível. Se depositar leva dois
+            toques, sacar deve levar dois. Se aderir a um bônus é imediato, cancelar também deve ser.</p>
+          <span class="src">Friedman &amp; Hendry (2019)</span>
+        </article>
+        <article class="principle">
+          <span class="principle-n">III</span>
+          <h3>Respeito à autonomia e dignidade</h3>
+          <p>A interface não explora vulnerabilidades cognitivas ou emocionais para maximizar receita. O designer é um
+            guardião cuja responsabilidade primária é proteger o usuário, não otimizar métricas à custa
+            dele.
+          </p>
+          <span class="src">Kahneman (2011) · Monteiro (2019) · Costanza-Chock (2020)</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== PADRÕES DECEPTIVOS ===================== -->
+    <section id="padroes">
+      <div class="cl-sec-head">
+        <span class="cl-sec-num">02</span>
+        <h2 class="cl-sec-title">Os padrões deceptivos que você precisa reconhecer</h2>
+      </div>
+      <div class="cl-sec-rule"></div>
+      <p class="cl-lead">
+        Durante a condução do trabalho, os padrões deceptivos mais encontrados foram catalogados. Estes padrões,
+        principalmente no contexto de apostas, devem ser reconhecidos e combatidos.
+      </p>
+      <div class="pattern-grid" id="patternGrid"></div>
+
+    </section>
+
+    <!-- ===================== HEURÍSTICAS ===================== -->
+    <section id="heuristicas">
+      <div class="cl-sec-head">
+        <span class="cl-sec-num">03</span>
+        <h2 class="cl-sec-title">As dez heurísticas</h2>
+      </div>
+      <div class="cl-sec-rule"></div>
+      <p class="cl-lead">
+        As dez heurísticas de Nielsen, adaptadas ao contexto das apostas. Na análise heurística da pesquisa,
+        <strong>todas as dez foram violadas pelo menos uma vez</strong>. Ao lado de cada uma está o que ela significa
+        quando há dinheiro real em jogo — e o peso das violações encontradas, na escala de gravidade de 0 a 4 de
+        Nielsen.
+      </p>
+      <div class="heur-list" id="heurList"></div>
+    </section>
+
+    <!-- ===================== CHECKLIST POR ETAPA ===================== -->
+    <section id="checklist">
+      <div class="cl-sec-head">
+        <span class="cl-sec-num">04</span>
+        <h2 class="cl-sec-title">O checklist, etapa por etapa da jornada</h2>
+      </div>
+      <div class="cl-sec-rule"></div>
+      <p class="cl-lead">
+        Aqui está a ferramenta. Percorra cada etapa da jornada do apostador e marque apenas o que sua interface já
+        cumpre, com honestidade. Cada item carrega a etiqueta do padrão deceptivo ou da heurística que ele protege. Um
+        item desmarcado não é uma pendência de backlog — é uma porta aberta para a manipulação.
+      </p>
+      <div class="journeys" id="journeys"></div>
+    </section>
+
+    <!-- ===================== PERGUNTAS DIFÍCEIS ===================== -->
+    <section id="perguntas">
+      <div class="cl-sec-head">
+        <span class="cl-sec-num">05</span>
+        <h2 class="cl-sec-title">As perguntas que nenhum checklist responde por você</h2>
+      </div>
+      <div class="cl-sec-rule"></div>
+      <p class="questions-intro">
+        Você pode marcar todas as caixas acima e ainda assim estar projetar padrões deceptivos.
+        Enquanto uma checklist mede a sua proficiência em design, estas perguntas medem a sua profissionalidade como
+        designer,
+        então antes de passar o
+        seu trabalho para milhões de usuários, reflita abaixo:
+      </p>
+
+      <div class="questions">
+        <div class="question">
+          <p>Você mostraria esta tela para alguém que ama, e diria, sem desviar o olhar ou criar desculpas:
+            <em>“fui eu que projetei isto”</em>?
+          </p>
+        </div>
+        <div class="question is-hot">
+          <p>A pessoa do outro lado da tela pode estar apostando o dinheiro do aluguel, da comida, do remédio. O seu
+            design a protege dessa hora, ou a empurra para dentro dela?</p>
+        </div>
+        <div class="question">
+          <p>Se este usuário entendesse, com clareza total, tudo o que esta interface faz para mantê-lo aqui — ele
+            agradeceria, ou se sentiria traído?</p>
+        </div>
+        <div class="question">
+          <p>Você está ajudando o usuário a fazer o que ele já queria fazer, ou está fabricando um desejo que só
+            beneficia a plataforma?
+            <span class="q-src">“Regra de Ouro da Persuasão” de Fogg (2003): só
+              persuada alguém a fazer o que você mesmo aceitaria ser persuadido a fazer.</span>
+          </p>
+        </div>
+        <div class="question">
+          <p>Quando alguém perder tudo nesta plataforma, e alguém vai, você conseguirá olhar para trás para dizer que
+            desenhou cada tela para protegê-lo, ou terá que assumir que desenhou cada tela para aumentar os lucros da
+            plataforma?</p>
+        </div>
+        <div class="question">
+          <p>Quantas das suas decisões de design hoje foram tomadas para o usuário, e quantas foram tomadas
+            contra ele, a serviço de métricas em uma <em>dashboard</em>?
+          </p>
+        </div>
+        <div class="question">
+          <p>Se a única forma de bater a meta deste trimestre é explorar a vulnerabilidade de uma pessoa, você prefere
+            que a meta esteja
+            errada, ou você está disposto a estar?</p>
+        </div>
+        <div class="question is-hot">
+          <p>Você diria “não”?
+            <span class="q-src">Voltando a profissionalidade: Monteiro (2019) lembra que designers são responsáveis pelo
+              que colocam no mundo e pelos
+              efeitos que essas criações produzem.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CLOSING ===================== -->
+    <section class="closing">
+      <h2>As interfaces que projetamos não são neutras.</h2>
+      <p>
+        Elas moldam comportamentos, influenciam decisões e <strong>afetam vidas</strong>. No território das apostas,
+        onde a fronteira entre entretenimento e dano é ainda menor, e frequentemente atravessada pelo próprio design da
+        interface, essa responsabilidade se torna ainda mais urgente.
+      </p>
+      <p>
+        A formação em Design entrega ferramentas capazes de proteger ou de explorar o usuário.
+        Reconhecer e assumir essa dupla potência é a condição para que o Design seja, de fato, uma disciplina
+        socialmente responsável. O design possui tanto o poder quanto a responsabilidade de proteger, e não explorar,
+        o ser humano.
+      </p>
+
+      <div class="closing-actions">
+        <button class="btn-print" data-print type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9" />
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <rect x="6" y="14" width="12" height="8" />
+          </svg>
+          Baixar PDF / Imprimir
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- floating progress pill -->
+  <div class="pill" id="pill" hidden>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f3d250" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+    <span><b id="pillCount">0</b>/<span id="pillTotal">0</span> verificados</span>
+  </div>
+
+  <!-- ===================== DATA + LOGIC ===================== -->
+  <script src="../js/checklist-data.js?v=2"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      var TAX = window.CHECKLIST_TAXONOMY || {};
+      var brById = TAX.brignullById || {};
+      var nById = TAX.nielsenById || {};
+
+      /* ----------------------------------------------------------------
+         Frequências e antídotos — derivados da agregação das 90 fichas
+         (data/{plataforma}/*.json → campo checklist).
+         ---------------------------------------------------------------- */
+      var PATTERNS = [
+        { id: "trick_wording", count: 30, fix: "Linguagem simples, direta e sem ambiguidade. Se uma cláusula só funciona escondida em letra miúda, ela não deveria existir." },
+        { id: "visual_interference", count: 14, fix: "Informações tem o mesmo peso visual que o apelo comercial. Nenhum elemento é obscurecido ou destacado para induzir o clique." },
+        { id: "fake_social_proof", count: 11, fix: "Exiba apenas provas sociais reais e verificáveis. Sem depoimentos falsos ou criados por amigos e funcionários." },
+        { id: "nagging", count: 11, fix: "Uma recusa é resposta final, não o início de uma negociação. Pop-ups repetitivos dentro da plataforma depois de uma negativa de push notifications são tão deceptivos quanto." },
+        { id: "obstruction", count: 9, fix: "Quando possível e necessário, equipare a fricção. Ações igualmente importantes devem levar o mesmo tempo mental para o usuário, dando espaço para que ele considere sua escolha." },
+        { id: "comparison_prevention", count: 5, fix: "Permita comparação objetiva entre quaisquer elementos. Isso funciona para etapas de assinatura, compra e busca, que devem exibir resultados de forma criteriosa e, quando possível, filtrada para melhor entendimento." },
+        { id: "sneaking", count: 5, fix: "Revele todas as condições relevantes antes da tomada de decisão, nunca depois." },
+        { id: "preselection", count: 5, fix: "Não pré-marque ou ofereça opções que favorecem a plataforma enquanto se afastam da realidade do usuário." },
+        { id: "disguised_ads", count: 3, fix: "Todo anúncio é rotulado como anúncio. Conteúdo patrocinado nunca se disfarça de recomendação neutra nem de elemento da interface." },
+        { id: "hidden_costs", count: 2, fix: "Todo custo, taxa e requisito é exibido de forma proeminente desde o início do fluxo." },
+        { id: "hidden_subscription", count: 1, fix: "Nenhuma cobrança recorrente sem consentimento explícito. Todas as cobranças devem ter fácil cancelamento." }
+      ];
+
+      /* Heurísticas: adaptação ao contexto de apostas + violações no corpus */
+      var HEUR = [
+        { id: "h1", count: 28, max: 4, adapt: "Saldo, valor apostado e probabilidades reais sempre visíveis — nunca escondidos atrás de cliques ou animações." },
+        { id: "h3", count: 28, max: 4, adapt: "Auto-exclusão, limites de gasto e cancelamento a poucos toques. Desfazer é sempre possível; sair é tão fácil quanto entrar." },
+        { id: "h6", count: 16, max: 4, adapt: "Regras de bônus e condições à vista no momento da decisão — não dependentes da memória do usuário." },
+        { id: "h10", count: 14, max: 4, adapt: "Canais de ajuda e de jogo responsável fáceis de localizar, focados na pessoa, não enterrados no rodapé." },
+        { id: "h4", count: 12, max: 4, adapt: "Botões de sair e sacar seguem as mesmas convenções visuais de entrar e depositar. Sem inversões para confundir." },
+        { id: "h7", count: 11, max: 3, adapt: "Atalhos e personalização servem ao usuário — nunca para acelerar gastos ou automatizar apostas a favor da casa." },
+        { id: "h5", count: 9, max: 4, adapt: "Confirmação antes de apostas de alto valor; barreiras projetadas contra a decisão impulsiva." },
+        { id: "h8", count: 8, max: 4, adapt: "Sem poluição visual que enterre a informação essencial sob apelos comerciais e estímulos." },
+        { id: "h2", count: 5, max: 4, adapt: "Linguagem honesta sobre risco e perda. Nada de eufemismos que disfarçam o que realmente está em jogo." },
+        { id: "h9", count: 2, max: 4, adapt: "Quando algo dá errado, a mensagem é clara, em linguagem humana, e aponta um caminho real de solução." }
+      ];
+
+      /* Checklist acionável por etapa da jornada (jornadas do método, cap. 4-5) */
+      var JOURNEYS = [
+        {
+          badge: "Etapa 01", title: "Cadastro & onboarding",
+          intro: "descricao",
+          items: [
+            { t: "limites de perda e tempo", ref: "Pré-seleção", h: false },
+            { t: "kyc progressivo", ref: "Obstrução", h: false },
+            { t: "respeito a lgpd", ref: "H1 · Visibilidade", h: true },
+            { t: "abandono de cadastro/fluxos", ref: "Insistência", h: false },
+            { t: "ferramentas de jogo saudável neutras", ref: "Pré-seleção", h: false }
+          ]
+        },
+        {
+          badge: "Etapa 02", title: "Depósito & saque",
+          intro: "descricao",
+          items: [
+            { t: "fricção semelhante entre fluxos", ref: "Obstrução", h: false },
+            { t: "saque facilitado", ref: "Obstrução", h: false },
+            { t: "saldo real e valor gasto/perdido", ref: "H1 · Visibilidade", h: true },
+            { t: "sem reforços visuais para depósitos", ref: "Interferência visual", h: false },
+            { t: "é fácil desfazer/cancelar operaçoes financeiras", ref: "H3 · Controle", h: true }
+          ]
+        },
+        {
+          badge: "Etapa 03", title: "Apostas esportivas",
+          intro: "descricao",
+          items: [
+            { t: "sem falsa prova social", ref: "Falsa prova social", h: false },
+            { t: "odds reais e transparentes + termos e condicoes", ref: "H1 · Visibilidade", h: true },
+            { t: "apostas sugeridas sao apresentadas como sugestoes e tem aviso sobre risco", ref: "Anúncios disfarçados", h: false },
+            { t: "cashout em todas as apostas simplificado", ref: "H3 · Controle", h: true },
+            { t: "nao ha tentativa de empurrar multiplas apostas", ref: "Interferência visual", h: false },
+            { t: "confirmacao ao apostar valores altos/apos muitas perdas", ref: "H5 · Prevenção de erros", h: true }
+          ]
+        },
+        {
+          badge: "Etapa 04", title: "Cassino & jogos",
+          intro: "descricao",
+          items: [
+            { t: "busca permite comparacao facil/sem jogos iguais", ref: "Prevenção de comparação", h: false },
+            { t: "comunicacao honesta sobre aleatoriedade dos jogos", ref: "Dissimulação", h: false },
+            { t: "limitacao de autoplay e velocidade, como no reino unido", ref: "H7 · Flexibilidade", h: true },
+            { t: "nao ha sensacao de quase-ganho no feedback visual", ref: "Interferência visual", h: false },
+            { t: "valor perdido e tempo perdido ficam visiveis enquanto se joga", ref: "H1 · Visibilidade", h: true }
+          ]
+        },
+        {
+          badge: "Etapa 05", title: "Promoções & bônus",
+          intro: "descricao",
+          items: [
+            { t: "termos e condicoes simples e bem dispostos", ref: "Redação enganosa", h: false },
+            { t: "termoe explicitos antes da aquisicao/adesao", ref: "Custos ocultos", h: false },
+            { t: "recusar/cancelar bonus é tao facil quanto aderir", ref: "H3 · Controle", h: true },
+            { t: "linguagem clara, simples, direta, sem deceptividade", ref: "Redação enganosa", h: false },
+            { t: "sem falsa urgencia ou escassez", ref: "Dissimulação", h: false }
+          ]
+        },
+        {
+          badge: "Etapa 06", title: "Jogo responsável & saída",
+          intro: "descricao",
+          items: [
+            { t: "auto exclusao e limites de facil acesso e configuracao", ref: "H3 · Controle", h: true },
+            { t: "caminhos de suporte faceis de acesso e comunicacao", ref: "H10 · Ajuda", h: true },
+            { t: "é tao fácil sair como foi entrar", ref: "Difícil de cancelar", h: false },
+            { t: "avisos sobre tempo e gastos claros, tao fortes quanto o feedback de ganho", ref: "Insistência", h: false }
+          ]
+        }
+      ];
+
+      var $ = function (s, c) { return (c || document).querySelector(s); };
+      function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+      function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+      /* ---------- Render: pattern cards ---------- */
+      var grid = $("#patternGrid");
+      PATTERNS.forEach(function (p) {
+        var meta = brById[p.id] || { pt: p.id, en: "", def: "" };
+        var card = el("article", "pattern");
+        card.innerHTML =
+          '<div class="pattern-top">' +
+          '<div><h3 class="pattern-name">' + esc(meta.pt) +
+          '<span class="pattern-en">' + esc(meta.en) + '</span></h3></div>' +
+          '<p class="pattern-def">' + esc(meta.def) + '</p>' +
+          '<p class="pattern-fix">' + esc(p.fix) + '</p> ';
+        grid.appendChild(card);
+      });
+
+      /* ---------- Render: heuristics ---------- */
+      var hl = $("#heurList");
+      HEUR.forEach(function (h) {
+        var meta = nById[h.id] || { pt: h.id, en: "" };
+        var sevClass = h.max >= 4 ? "sev-tag" : "sev-tag sev-mid";
+        var row = el("div", "heur");
+        row.innerHTML =
+          '<div class="heur-code">' + h.id.toUpperCase().replace("H", "H") + '</div>' +
+          '<div><p class="heur-name">' + esc(meta.pt) + '</p>' +
+          '<p class="heur-adapt">' + esc(h.adapt) + '</p></div>' +
+          '<div class="heur-stat"><b>' + h.count + '</b> violações' +
+          '<br><span class="' + sevClass + '">gravidade máx. ' + h.max + '</span></div>';
+        hl.appendChild(row);
+      });
+
+      /* ---------- Render: journeys + check items ---------- */
+      var STORE_KEY = "checklist-eticos-v1";
+      var state = {};
+      try { state = JSON.parse(localStorage.getItem(STORE_KEY) || "{}") || {}; } catch (e) { state = {}; }
+
+      var jWrap = $("#journeys");
+      var total = 0;
+      JOURNEYS.forEach(function (j, ji) {
+        var sec = el("div", "journey");
+        var head = el("div", "journey-head");
+        head.innerHTML = '<span class="journey-badge">' + esc(j.badge) + '</span>' +
+          '<h3 class="journey-title">' + esc(j.title) + '</h3>';
+        sec.appendChild(head);
+        sec.appendChild(el("p", "journey-intro", esc(j.intro)));
+
+        var ul = el("ul", "check-list");
+        j.items.forEach(function (it, ii) {
+          total++;
+          var key = "j" + ji + "i" + ii;
+          var li = el("li", "check-item");
+          li.dataset.key = key;
+          if (state[key]) li.classList.add("is-checked");
+          var refCls = it.h ? "check-ref ref-h" : "check-ref";
+          li.innerHTML =
+            '<span class="check-box" aria-hidden="true">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
+            '</span>' +
+            '<span class="check-body"><span class="check-text">' + esc(it.t) + '</span>' +
+            '<span class="' + refCls + '">' + esc(it.ref) + '</span></span>';
+          li.setAttribute("role", "checkbox");
+          li.setAttribute("tabindex", "0");
+          li.setAttribute("aria-checked", state[key] ? "true" : "false");
+          li.addEventListener("click", function () { toggle(li); });
+          li.addEventListener("keydown", function (ev) {
+            if (ev.key === " " || ev.key === "Enter") { ev.preventDefault(); toggle(li); }
+          });
+          ul.appendChild(li);
+        });
+        sec.appendChild(ul);
+        jWrap.appendChild(sec);
+      });
+
+      function toggle(li) {
+        var key = li.dataset.key;
+        var on = !li.classList.contains("is-checked");
+        li.classList.toggle("is-checked", on);
+        li.setAttribute("aria-checked", on ? "true" : "false");
+        if (on) state[key] = 1; else delete state[key];
+        try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) { }
+        updateProgress();
+      }
+
+      /* ---------- Progress ---------- */
+      var progCount = $("#progCount"), progFill = $("#progFill"),
+        pill = $("#pill"), pillCount = $("#pillCount");
+      $("#progTotal").textContent = total;
+      $("#pillTotal").textContent = total;
+
+      function updateProgress() {
+        var n = 0; for (var k in state) { if (state[k]) n++; }
+        progCount.textContent = n;
+        pillCount.textContent = n;
+        progFill.style.width = total ? (n / total * 100) + "%" : "0%";
+        pill.hidden = n === 0;
+      }
+      updateProgress();
+
+      $("#progReset").addEventListener("click", function () {
+        if (!confirm("Limpar todas as marcações deste checklist?")) return;
+        state = {};
+        try { localStorage.removeItem(STORE_KEY); } catch (e) { }
+        document.querySelectorAll(".check-item.is-checked").forEach(function (li) {
+          li.classList.remove("is-checked"); li.setAttribute("aria-checked", "false");
+        });
+        updateProgress();
+      });
+
+      /* ---------- Print / Save as PDF ---------- */
+      document.querySelectorAll("[data-print]").forEach(function (b) {
+        b.addEventListener("click", function () { window.print(); });
+      });
+
+      /* ---------- Scroll-spy on secondary-nav anchors ---------- */
+      var tabs = Array.prototype.slice.call(document.querySelectorAll("#secNav .chap-tab"));
+      var sections = tabs.map(function (t) { return document.querySelector(t.getAttribute("href")); });
+      if ("IntersectionObserver" in window) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            var i = sections.indexOf(en.target);
+            tabs.forEach(function (t, ti) { t.classList.toggle("is-active", ti === i); });
+          });
+        }, { rootMargin: "-160px 0px -60% 0px", threshold: 0 });
+        sections.forEach(function (s) { if (s) spy.observe(s); });
+      }
+    })();
+  </script>
+  <script src="../js/shared-nav.js?v=1"></script>
+</body>
+
+</html>
