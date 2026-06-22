@@ -254,6 +254,141 @@ a { color: inherit; }
 .flow-card__name  { font-size: 15px; line-height: 1.1; }
 
 /* ============================================================
+   DARK MODE TOGGLE BUTTON
+   ============================================================ */
+.dark-toggle {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.dark-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.dark-toggle .icon-sun { display: none; }
+.dark-toggle .icon-moon { display: block; }
+[data-theme="dark"] .dark-toggle .icon-sun { display: block; }
+[data-theme="dark"] .dark-toggle .icon-moon { display: none; }
+
+/* ============================================================
+   DARK MODE THEME — [data-theme="dark"] on <html>
+   ============================================================ */
+[data-theme="dark"] { color-scheme: dark; }
+
+[data-theme="dark"] body {
+  background: #111111;
+  color: #e8e8e8;
+}
+
+/* Secondary nav border */
+[data-theme="dark"] .secondary-nav {
+  border-color: #333;
+}
+
+/* Chapter tabs */
+[data-theme="dark"] .chap-tab {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+  color: #e8e8e8;
+}
+[data-theme="dark"] .chap-tab.is-active {
+  background: #e0e0e0;
+  color: #111;
+  border-color: #3a3a3a;
+}
+[data-theme="dark"] .chap-tab:hover:not(.is-active) { background: #252525; }
+
+/* Flow cards */
+[data-theme="dark"] .flow-card {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+  color: #e8e8e8;
+}
+[data-theme="dark"] .flow-card.is-active {
+  background: #e0e0e0;
+  color: #111;
+}
+[data-theme="dark"] .flow-card:hover:not(.is-active) { background: #252525; }
+
+/* Sidebar — trabalho page */
+[data-theme="dark"] .sidebar {
+  background: #111;
+  border-color: #2e2e2e;
+}
+[data-theme="dark"] .toc-chap-label {
+  color: rgba(232, 232, 232, 0.38);
+  border-color: #2a2a2a;
+}
+[data-theme="dark"] .toc-chap-title { color: #e8e8e8; }
+[data-theme="dark"] .sub-item { color: rgba(232, 232, 232, 0.62); }
+[data-theme="dark"] .sub-item:hover { background: #1e1e1e; color: #e8e8e8; }
+[data-theme="dark"] .sub-item.is-active { color: #111; background: var(--yellow); }
+
+/* Prose — trabalho page */
+[data-theme="dark"] .prose { color: #e8e8e8; }
+[data-theme="dark"] .prose a { color: #e8e8e8; }
+[data-theme="dark"] .prose blockquote { color: rgba(232, 232, 232, 0.75); }
+[data-theme="dark"] .prose hr { border-color: #2e2e2e; }
+[data-theme="dark"] .prose tbody td { border-color: #2e2e2e; }
+[data-theme="dark"] .prose tbody tr:nth-child(even) { background: #1a1a1a; }
+[data-theme="dark"] .doc-kicker { color: rgba(232, 232, 232, 0.75); }
+[data-theme="dark"] .ed-note { background: #1e1c0a; }
+[data-theme="dark"] .fn-notes { border-color: #2e2e2e; }
+[data-theme="dark"] .fn-notes li { color: rgba(232, 232, 232, 0.75); }
+[data-theme="dark"] .fn-back { color: rgba(232, 232, 232, 0.75); }
+[data-theme="dark"] .fn-back:hover { color: #e8e8e8; }
+[data-theme="dark"] .foot-btn {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+  color: #e8e8e8;
+}
+[data-theme="dark"] .foot-btn:hover { background: #222; }
+[data-theme="dark"] .foot-btn-dir { color: rgba(232, 232, 232, 0.75); }
+
+/* Platform viewer — appendix pages */
+[data-theme="dark"] .viewer-detail {
+  background: #1a1a1a;
+  border-color: #2e2e2e;
+  color: #e8e8e8;
+}
+[data-theme="dark"] .viewer-image-wrap { background: #1a1a1a; }
+[data-theme="dark"] .viewer-loading,
+[data-theme="dark"] .viewer-empty { color: rgba(232, 232, 232, 0.45); }
+[data-theme="dark"] .viewer-footer { border-color: #2e2e2e; }
+[data-theme="dark"] .detail-title { color: #e8e8e8; }
+[data-theme="dark"] .detail-desc { color: rgba(232, 232, 232, 0.75); }
+[data-theme="dark"] .detail-rule { background: #2e2e2e; }
+[data-theme="dark"] .detail-dp-label { color: rgba(232, 232, 232, 0.38); }
+[data-theme="dark"] .ficha-label { color: rgba(232, 232, 232, 0.38); }
+[data-theme="dark"] .hv-sevlabel { color: rgba(232, 232, 232, 0.7); }
+[data-theme="dark"] .hv-name { color: #e8e8e8; }
+[data-theme="dark"] .step-num {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+  color: #e8e8e8;
+}
+[data-theme="dark"] .step-num:hover { background: #252525; }
+
+/* Dados page */
+[data-theme="dark"] .view-toggle button {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+  color: #e8e8e8;
+}
+[data-theme="dark"] .view-toggle button.is-active {
+  background: #e0e0e0;
+  color: #111;
+}
+
+/* ============================================================
    RESPONSIVE — mobile
    ============================================================ */
 @media (max-width: 960px) {

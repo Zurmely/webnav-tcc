@@ -1,6 +1,18 @@
 /* ==========================================================================
    shared-nav.js — compact nav + secondary nav scroll behaviour for all pages
    ========================================================================== */
+
+/* ---- Dark mode toggle ---- */
+(function () {
+  var btn = document.getElementById('darkToggle');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+})();
+
 (function () {
   'use strict';
 
