@@ -1245,10 +1245,7 @@
       </div>
       <div class="cl-sec-rule"></div>
       <p class="cl-lead">
-        As dez heurísticas de Nielsen, adaptadas ao contexto das apostas. Na análise heurística da pesquisa,
-        <strong>todas as dez foram violadas pelo menos uma vez</strong>. Ao lado de cada uma está o que ela significa
-        quando há dinheiro real em jogo — e o peso das violações encontradas, na escala de gravidade de 0 a 4 de
-        Nielsen.
+        descricao
       </p>
       <div class="heur-list" id="heurList"></div>
     </section>
@@ -1261,9 +1258,7 @@
       </div>
       <div class="cl-sec-rule"></div>
       <p class="cl-lead">
-        Aqui está a ferramenta. Percorra cada etapa da jornada do apostador e marque apenas o que sua interface já
-        cumpre, com honestidade. Cada item carrega a etiqueta do padrão deceptivo ou da heurística que ele protege. Um
-        item desmarcado não é uma pendência de backlog — é uma porta aberta para a manipulação.
+        descricao
       </p>
       <div class="journeys" id="journeys"></div>
     </section>
@@ -1398,16 +1393,16 @@
 
       /* Heurísticas: adaptação ao contexto de apostas + violações no corpus */
       var HEUR = [
-        { id: "h1", count: 28, max: 4, adapt: "Saldo, valor apostado e probabilidades reais sempre visíveis — nunca escondidos atrás de cliques ou animações." },
-        { id: "h3", count: 28, max: 4, adapt: "Auto-exclusão, limites de gasto e cancelamento a poucos toques. Desfazer é sempre possível; sair é tão fácil quanto entrar." },
-        { id: "h6", count: 16, max: 4, adapt: "Regras de bônus e condições à vista no momento da decisão — não dependentes da memória do usuário." },
-        { id: "h10", count: 14, max: 4, adapt: "Canais de ajuda e de jogo responsável fáceis de localizar, focados na pessoa, não enterrados no rodapé." },
-        { id: "h4", count: 12, max: 4, adapt: "Botões de sair e sacar seguem as mesmas convenções visuais de entrar e depositar. Sem inversões para confundir." },
-        { id: "h7", count: 11, max: 3, adapt: "Atalhos e personalização servem ao usuário — nunca para acelerar gastos ou automatizar apostas a favor da casa." },
-        { id: "h5", count: 9, max: 4, adapt: "Confirmação antes de apostas de alto valor; barreiras projetadas contra a decisão impulsiva." },
-        { id: "h8", count: 8, max: 4, adapt: "Sem poluição visual que enterre a informação essencial sob apelos comerciais e estímulos." },
-        { id: "h2", count: 5, max: 4, adapt: "Linguagem honesta sobre risco e perda. Nada de eufemismos que disfarçam o que realmente está em jogo." },
-        { id: "h9", count: 2, max: 4, adapt: "Quando algo dá errado, a mensagem é clara, em linguagem humana, e aponta um caminho real de solução." }
+        { id: "h1", count: 28, max: 4, adapt: "desc" },
+        { id: "h3", count: 28, max: 4, adapt: "desc" },
+        { id: "h6", count: 16, max: 4, adapt: "desc" },
+        { id: "h10", count: 14, max: 4, adapt: "desc" },
+        { id: "h4", count: 12, max: 4, adapt: "desc" },
+        { id: "h7", count: 11, max: 3, adapt: "desc" },
+        { id: "h5", count: 9, max: 4, adapt: "desc" },
+        { id: "h8", count: 8, max: 4, adapt: "desc" },
+        { id: "h2", count: 5, max: 4, adapt: "desc" },
+        { id: "h9", count: 2, max: 4, adapt: "desc" }
       ];
 
       /* Checklist acionável por etapa da jornada (jornadas do método, cap. 4-5) */
@@ -1508,8 +1503,7 @@
           '<div class="heur-code">' + h.id.toUpperCase().replace("H", "H") + '</div>' +
           '<div><p class="heur-name">' + esc(meta.pt) + '</p>' +
           '<p class="heur-adapt">' + esc(h.adapt) + '</p></div>' +
-          '<div class="heur-stat"><b>' + h.count + '</b> violações' +
-          '<br><span class="' + sevClass + '">gravidade máx. ' + h.max + '</span></div>';
+          '</div>';
         hl.appendChild(row);
       });
 
