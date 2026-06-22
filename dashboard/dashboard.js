@@ -598,7 +598,7 @@
       sevChart(agg);
     return section("Distribuições por taxonomia",
       "Frequência segundo cada taxonomia no recorte selecionado",
-      '<div class="charts-grid">' + cards + '</div>');
+      '<div class="charts-grid-2">' + cards + '</div>');
   }
 
   function barChart(title, sub, counts, byId, lensKey, sev) {
@@ -828,7 +828,7 @@
     var legend = legendHtml(groups.map(function (g) { return { label: g.label, color: g.color }; }));
     var anySev = groups.some(function (g) { return g.agg.sevAll.length; });
 
-    var cards = "";
+    var sevCardHtml = "", avgCardHtml = "", intensityCardHtml = "";
 
     // 1) Histograma de gravidade agrupado (X = 0..4, séries = grupos)
     if (anySev) {
@@ -846,7 +846,7 @@
           })
         };
       });
-      cards += '<div class="chart-card"><h3>Gravidade por ' + esc(dim) + '</h3>' +
+      sevCardHtml = '<div class="chart-card"><h3>Gravidade por ' + esc(dim) + '</h3>' +
         '<p class="csub">Violações de usabilidade por nível de gravidade (Nielsen 0–4) · clique para ver as telas</p>' +
         vGroupChart(sevData) + legend + '</div>';
 
@@ -861,7 +861,7 @@
             " · " + g.agg.sevAll.length + " violações"
         });
       }).join("");
-      cards += '<div class="chart-card"><h3>Gravidade média</h3>' +
+      avgCardHtml = '<div class="chart-card"><h3>Gravidade média</h3>' +
         '<p class="csub">Média da escala de Nielsen (0–4) por ' + esc(dim) + '</p>' +
         '<div class="hbars">' + avgRows + '</div></div>';
     }
@@ -880,15 +880,22 @@
           x.g.agg.annotated + " telas anotadas — clique para ver as telas"
       });
     }).join("");
-    cards += '<div class="chart-card"><h3>Intensidade de padrões</h3>' +
+    intensityCardHtml = '<div class="chart-card"><h3>Intensidade de padrões</h3>' +
       '<p class="csub">Ocorrências de padrões (Brignull) por tela anotada · clique para ver as telas</p>' +
       '<div class="hbars">' + densRows + '</div></div>';
+
+    // O histograma de gravidade ocupa uma linha inteira (muitas barras agrupadas);
+    // gravidade média + intensidade dividem a linha seguinte.
+    var inner = anySev
+      ? '<div class="cmp-stack">' + sevCardHtml +
+          '<div class="charts-grid-2">' + avgCardHtml + intensityCardHtml + '</div></div>'
+      : intensityCardHtml;
 
     var title = byPlatform ? "Comparação entre plataformas" : "Comparação por tipo de produto";
     var sub = byPlatform
       ? "Distribuição de gravidade e intensidade dos padrões entre Bet365, Betano e Superbet"
       : "Distribuição de gravidade e intensidade entre cassino, apostas e cadastro";
-    return section(title, sub, '<div class="charts-grid">' + cards + '</div>');
+    return section(title, sub, inner);
   }
 
   /* ---- Ranking dos fluxos mais críticos ---- */

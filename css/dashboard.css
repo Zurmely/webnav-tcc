@@ -358,6 +358,12 @@ table.heat tr.totalrow th, table.heat tr.totalrow td {
    ================================================================ */
 .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; }
 
+/* Grade fixa em 2 colunas (Distribuições = 2×2; nunca deixa um cartão órfão). */
+.charts-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+
+/* Pilha da Comparação: o histograma de gravidade ocupa a linha inteira. */
+.cmp-stack { display: flex; flex-direction: column; gap: 18px; }
+
 .chart-card { background: var(--card); border: 1px solid var(--ink); padding: 20px 22px; }
 .chart-card h3 { margin: 0 0 4px; font-size: 16px; }
 .chart-card .csub { margin: 0 0 16px; font-size: 12.5px; color: var(--muted); }
@@ -880,6 +886,10 @@ table.heat tr.totalrow th, table.heat tr.totalrow td {
   .stat-cards { grid-template-columns: repeat(2, 1fr); }
   .dash-head h1 { font-size: 24px; }
   .filterbar { gap: 14px; }
+}
+
+@media (max-width: 720px) {
+  .charts-grid-2 { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
