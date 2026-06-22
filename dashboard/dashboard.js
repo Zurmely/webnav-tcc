@@ -61,12 +61,29 @@
       "Operadora em rápida expansão no mercado brasileiro, com ampla oferta de apostas esportivas e jogos de cassino, incluindo os populares “crash games” e “slots”."
   };
 
+  // Categoria de produto de cada fluxo, derivada do id (convenção de nomes):
+  // casino_* → cassino; sports_betting* → apostas esportivas; demais → conta.
+  function flowCategory(fid) {
+    if (/^casino_/.test(fid)) return "cassino";
+    if (/^sports_betting/.test(fid)) return "apostas";
+    return "conta";
+  }
+
+  // Rótulos e cores das categorias de produto e das plataformas (séries dos
+  // gráficos comparativos). Luminâncias distintas para legibilidade em P&B.
+  var CAT = {
+    cassino: { label: "Cassino", color: "#e0b020" },
+    apostas: { label: "Apostas esportivas", color: "#2a2a2a" },
+    conta: { label: "Cadastro & conta", color: "#c2c2ba" }
+  };
+  var CATS = ["cassino", "apostas", "conta"];
+  var PLAT_COLOR = { bet365: "#2a2a2a", betano: "#c99a21", superbet: "#9aa0a6" };
+
   var MODEL = null; // { platforms: [{id,name,flows:[{id,name,steps:[...]}]}] }
 
   var state = {
     platform: LOCK || "all",
-    flow: "all",
-    lens: "tipos" // tipos | gray | heur
+    flow: "all"
   };
 
   var detailList = []; // passos exibidos atualmente na gaveta (para o lightbox)
@@ -273,14 +290,6 @@
     return '<select class="fselect" id="flowSelect"' + (disabled ? " disabled" : "") + '>' + opts + '</select>';
   }
 
-  function lensSegHtml() {
-    function b(v) {
-      return '<button data-act="lens" data-val="' + v + '"' +
-        (state.lens === v ? ' class="is-active"' : "") + '>' + esc(LENS[v].short) + '</button>';
-    }
-    return '<div class="seg">' + b("tipos") + b("gray") + b("heur") + '</div>';
-  }
-
   function controlsHtml() {
     var out = "";
     if (LOCK) {
@@ -292,7 +301,6 @@
       out += '<div class="fgroup"><span class="flabel">Plataforma</span><div class="pills">' + pills + '</div></div>';
     }
     out += '<div class="fgroup"><span class="flabel">Fluxo</span>' + flowSelectHtml() + '</div>';
-    out += '<div class="fgroup"><span class="flabel">Taxonomia</span>' + lensSegHtml() + '</div>';
     return out;
   }
 
@@ -328,11 +336,36 @@
       if (!aggF.annotated) return emptyFlowHtml();
     }
     var agg = aggregate(collectSteps());
-    return statCardsHtml(agg) +
-      introSectionHtml() +
-      findingsHtml(agg) +
-      heatmapSectionHtml() +
-      chartsSectionHtml(agg);
+
+    // Monta os blocos em ordem narrativa; alguns só aparecem quando há base de
+    // comparação (≥2 grupos). A navegação por âncoras é derivada desta lista.
+    var blocks = [];
+    blocks.push({ id: "geral", label: "Visão geral",
+      html: statCardsHtml(agg) + introSectionHtml() + findingsHtml(agg) });
+
+    var a = catBarsSectionHtml();
+    if (a) blocks.push({ id: "cassino-apostas", label: "Cassino × Apostas", html: a });
+
+    var b = comparisonSectionHtml();
+    if (b) blocks.push({ id: "comparacao", label: "Comparação", html: b });
+
+    var tf = topFlowsSectionHtml();
+    if (tf) blocks.push({ id: "fluxos", label: "Fluxos críticos", html: tf });
+
+    blocks.push({ id: "mapa", label: "Mapa de calor", html: heatmapSectionHtml() });
+    blocks.push({ id: "distribuicoes", label: "Distribuições", html: chartsSectionHtml(agg) });
+
+    return jumpNavHtml(blocks) +
+      blocks.map(function (bk) {
+        return '<div class="sec-anchor" id="sec-' + bk.id + '">' + bk.html + '</div>';
+      }).join("");
+  }
+
+  function jumpNavHtml(blocks) {
+    var links = blocks.map(function (bk) {
+      return '<button class="jn-link" data-act="jump" data-target="sec-' + bk.id + '">' + esc(bk.label) + '</button>';
+    }).join("");
+    return '<nav class="jump-nav" aria-label="Ir para seção"><span class="jn-lab">Seções</span>' + links + '</nav>';
   }
 
   function emptyFlowHtml() {
@@ -474,14 +507,19 @@
 
   /* ------------------------------ mapa de calor ------------------------- */
   function heatmapSectionHtml() {
-    var hint = '<span class="hint">Linhas: ' + esc(LENS[state.lens].col) +
-      ' · Colunas: ' + (state.platform === "all" ? "plataformas" : "fluxos com anotações") +
-      ' · clique numa célula para ver as telas</span>';
-    return section("Mapa de calor", hint, heatTableHtml());
+    var scope = state.platform === "all" ? "plataformas" : "fluxos com anotações";
+    var hint = '<span class="hint">Colunas: ' + scope +
+      ' · uma matriz por taxonomia · clique numa célula para ver as telas</span>';
+    var blocks = ["tipos", "gray", "heur"].map(function (k) {
+      return '<div class="heat-block"><h3 class="block-title">' + esc(LENS[k].col) + '</h3>' +
+        heatTableHtml(k) + '</div>';
+    }).join("");
+    return section("Mapa de calor por taxonomia", hint,
+      blocks +
+      '<div class="legend"><span>Menos frequente</span><span class="bar"></span><span>Mais frequente</span></div>');
   }
 
-  function heatTableHtml() {
-    var lens = state.lens;
+  function heatTableHtml(lens) {
     var rows = LENS[lens].rows;
     var key = lens; // tipos|gray|heur
     function getMeta(it) {
@@ -546,24 +584,21 @@
     colTotals.forEach(function (t) { totalRow += '<td>' + t + '</td>'; });
     totalRow += '<td class="total">' + grand + '</td></tr>';
 
-    return '<div class="table-scroll"><table class="heat">' + head + '<tbody>' + bodyRows + totalRow + '</tbody></table></div>' +
-      '<div class="legend"><span>Menos frequente</span><span class="bar"></span><span>Mais frequente</span></div>';
+    return '<div class="table-scroll"><table class="heat">' + head + '<tbody>' + bodyRows + totalRow + '</tbody></table></div>';
   }
 
   /* ------------------------------ distribuições ------------------------- */
   function chartsSectionHtml(agg) {
-    var inner;
-    if (state.lens === "tipos") {
-      inner = barChart("Tipos de padrão (Brignull)", "Ocorrências por tipo · clique para ver as telas",
-        agg.tipos, brById, "tipos", false);
-    } else if (state.lens === "gray") {
-      inner = barChart("Categorias de Gray et al.", "Agrupamento de alto nível · clique para ver as telas",
-        agg.gray, grById, "gray", false);
-    } else {
-      inner = heurChart(agg) + sevChart(agg);
-    }
-    return section("Distribuições", "Frequência segundo a taxonomia selecionada",
-      '<div class="charts-grid">' + inner + '</div>');
+    var cards =
+      barChart("Tipos de padrão (Brignull)", "Ocorrências por tipo · clique para ver as telas",
+        agg.tipos, brById, "tipos", false) +
+      barChart("Categorias de Gray et al.", "Agrupamento de alto nível · clique para ver as telas",
+        agg.gray, grById, "gray", false) +
+      heurChart(agg) +
+      sevChart(agg);
+    return section("Distribuições por taxonomia",
+      "Frequência segundo cada taxonomia no recorte selecionado",
+      '<div class="charts-grid">' + cards + '</div>');
   }
 
   function barChart(title, sub, counts, byId, lensKey, sev) {
@@ -621,6 +656,281 @@
     return '<div class="chart-card"><h3>' + esc(title) + '</h3><p class="csub">' + esc(sub) + '</p>' + inner + '</div>';
   }
 
+  /* ==================== GRÁFICOS COMPARATIVOS (novos) =================== */
+  // Monta a string de data-attrs que o handler de drill lê. `category` aplica
+  // um filtro adicional por categoria de produto sobre o recorte resultante.
+  function drillAttr(d) {
+    var s = 'data-act="drill" data-drill="' + d.drill + '"';
+    ["lens", "row", "stat", "platform", "flow", "category"].forEach(function (k) {
+      if (d[k] != null && d[k] !== "") s += " data-" + k + '="' + esc(String(d[k])) + '"';
+    });
+    if (d.sev != null) s += ' data-sev="' + d.sev + '"';
+    return s;
+  }
+
+  function legendHtml(items) {
+    return '<div class="series-legend">' + items.map(function (it) {
+      return '<span class="sl-item"><span class="sl-sw" style="background:' + it.color +
+        '"></span>' + esc(it.label) + '</span>';
+    }).join("") + '</div>';
+  }
+
+  function categoryLegendItems() {
+    return CATS.map(function (c) { return { label: CAT[c].label, color: CAT[c].color }; });
+  }
+
+  // Gráfico de colunas agrupadas. data: [{ xLabel, bars:[{label,color,value,drill,tip}] }]
+  function vGroupChart(data) {
+    var max = 0;
+    data.forEach(function (g) { g.bars.forEach(function (b) { if (b.value > max) max = b.value; }); });
+    max = max || 1;
+    var groups = data.map(function (g) {
+      var bars = g.bars.map(function (b) {
+        var h = Math.round((b.value / max) * 100);
+        var clickable = b.value > 0 && b.drill;
+        var attrs = clickable ? " " + b.drill : "";
+        var tip = b.tip ? ' data-tip="' + esc(b.tip) + '"' : "";
+        return '<div class="vbar' + (clickable ? " drill" : "") + '"' + attrs + tip + '>' +
+          '<span class="vbar-cnt">' + (b.value || "") + '</span>' +
+          '<span class="vbar-fill" style="height:' + Math.max(2, h) + '%;background:' + b.color + '"></span></div>';
+      }).join("");
+      return '<div class="vgroup"><div class="vbars">' + bars + '</div>' +
+        '<div class="vglabel">' + esc(g.xLabel) + '</div></div>';
+    }).join("");
+    return '<div class="vchart">' + groups + '</div>';
+  }
+
+  // Barra horizontal colorida (rankings e comparações).
+  function hbar(o) {
+    var clickable = !!o.drill;
+    var attrs = clickable ? " " + o.drill : "";
+    var tip = o.tip ? ' data-tip="' + esc(o.tip) + '"' : "";
+    return '<div class="hbar' + (clickable ? " drill" : "") + '"' + attrs + tip + '>' +
+      '<div class="hbar-top"><span class="hbar-lab">' + esc(o.label) + '</span>' +
+      '<span class="hbar-val">' + esc(o.value) + '</span></div>' +
+      '<div class="hbar-track"><span class="hbar-fill" style="width:' +
+      Math.max(2, Math.round(o.frac * 100)) + '%;background:' + (o.color || "var(--yellow)") + '"></span></div></div>';
+  }
+
+  // Estatísticas por categoria de produto (cassino/apostas/conta) num recorte.
+  function categoryStats(platformId) {
+    var res = {};
+    CATS.forEach(function (c) { res[c] = { occ: 0, heur: 0, screens: 0, annot: 0, sev: [] }; });
+    MODEL.platforms.forEach(function (p) {
+      if (platformId !== "all" && p.id !== platformId) return;
+      p.flows.forEach(function (f) {
+        var r = res[flowCategory(f.id)];
+        f.steps.forEach(function (s) {
+          r.screens++;
+          if (stepAnnotated(s)) r.annot++;
+          var cl = s.checklist || {};
+          r.occ += (cl.tipos || []).length;
+          (cl.heuristicas || []).forEach(function (hh) {
+            r.heur++;
+            if (hh && typeof hh.sev === "number") r.sev.push(hh.sev);
+          });
+        });
+      });
+    });
+    return res;
+  }
+
+  /* ---- Padrões por plataforma e tipo (Cassino × Apostas) ---- */
+  function catBarsSectionHtml() {
+    if (state.flow !== "all") return ""; // sem comparação com um fluxo único
+
+    var data, legend = "";
+    if (state.platform === "all") {
+      // X = plataforma, séries = categoria de produto
+      data = MODEL.platforms.map(function (p) {
+        var cs = categoryStats(p.id);
+        return {
+          xLabel: p.name,
+          bars: CATS.map(function (c) {
+            return {
+              label: CAT[c].label, color: CAT[c].color, value: cs[c].occ,
+              drill: drillAttr({ drill: "cat", platform: p.id, category: c }),
+              tip: CAT[c].label + " · " + p.name + ": " + cs[c].occ + " ocorrências — clique para ver as telas"
+            };
+          })
+        };
+      });
+      legend = legendHtml(categoryLegendItems());
+    } else {
+      // Plataforma única: X = categoria de produto
+      var cs1 = categoryStats(state.platform);
+      data = CATS.filter(function (c) { return cs1[c].screens > 0; }).map(function (c) {
+        return {
+          xLabel: CAT[c].label,
+          bars: [{
+            label: CAT[c].label, color: CAT[c].color, value: cs1[c].occ,
+            drill: drillAttr({ drill: "cat", platform: state.platform, category: c }),
+            tip: CAT[c].label + ": " + cs1[c].occ + " ocorrências — clique para ver as telas"
+          }]
+        };
+      });
+    }
+
+    var totalOcc = data.reduce(function (acc, g) {
+      return acc + g.bars.reduce(function (s, b) { return s + b.value; }, 0);
+    }, 0);
+    if (!totalOcc) return "";
+
+    // Faixa de "intensidade": ocorrências por tela anotada, por categoria.
+    var cs = categoryStats(state.platform);
+    var dens = CATS.filter(function (c) { return cs[c].annot > 0; }).map(function (c) {
+      return '<span class="chiplet"><b>' + esc(CAT[c].label) + ':</b> ' +
+        fnum(cs[c].occ / cs[c].annot) + ' padrões/tela</span>';
+    }).join("");
+
+    var sub = state.platform === "all"
+      ? "Ocorrências de padrões (Brignull) por plataforma e tipo de produto · clique numa coluna para ver as telas"
+      : "Ocorrências de padrões (Brignull) por tipo de produto · clique numa coluna para ver as telas";
+
+    return section("Padrões por plataforma e tipo (Cassino × Apostas)", sub,
+      '<div class="chart-card">' + vGroupChart(data) + legend +
+      (dens ? '<div class="intensity"><span class="intensity-lab">Intensidade — padrões por tela anotada</span>' +
+        '<div class="intro-stats">' + dens + '</div></div>' : "") +
+      '</div>');
+  }
+
+  /* ---- Comparação em profundidade (gravidade, intensidade) ---- */
+  // Grupos comparados: plataformas (visão geral) ou categorias de produto
+  // (quando uma plataforma está selecionada).
+  function comparisonGroups() {
+    if (state.platform === "all") {
+      return MODEL.platforms.map(function (p) {
+        return {
+          id: p.id, label: p.name, color: PLAT_COLOR[p.id] || "#888",
+          platform: p.id, category: null,
+          agg: aggregate(collectSteps({ platform: p.id, flow: "all" }))
+        };
+      });
+    }
+    var recs = collectSteps({ platform: state.platform, flow: "all" });
+    return CATS.map(function (c) {
+      var sub = recs.filter(function (r) { return flowCategory(r.flowId) === c; });
+      return {
+        id: c, label: CAT[c].label, color: CAT[c].color,
+        platform: state.platform, category: c,
+        agg: aggregate(sub)
+      };
+    }).filter(function (g) { return g.agg.heurTotal > 0 || g.agg.tipoTotal > 0; });
+  }
+
+  function comparisonSectionHtml() {
+    if (state.flow !== "all") return "";
+    var groups = comparisonGroups();
+    if (groups.length < 2) return "";
+
+    var byPlatform = state.platform === "all";
+    var dim = byPlatform ? "plataforma" : "tipo de produto";
+    var legend = legendHtml(groups.map(function (g) { return { label: g.label, color: g.color }; }));
+    var anySev = groups.some(function (g) { return g.agg.sevAll.length; });
+
+    var cards = "";
+
+    // 1) Histograma de gravidade agrupado (X = 0..4, séries = grupos)
+    if (anySev) {
+      var sevData = [0, 1, 2, 3, 4].map(function (v) {
+        var meta = sevByVal[v] || { label: "" };
+        return {
+          xLabel: v + " · " + meta.label,
+          bars: groups.map(function (g) {
+            return {
+              label: g.label, color: g.color, value: g.agg.sevDist[v],
+              drill: drillAttr({ drill: "sev", sev: v, platform: g.platform, category: g.category }),
+              tip: g.label + " · gravidade " + v + " (" + meta.label + "): " +
+                g.agg.sevDist[v] + " violações — clique para ver as telas"
+            };
+          })
+        };
+      });
+      cards += '<div class="chart-card"><h3>Gravidade por ' + esc(dim) + '</h3>' +
+        '<p class="csub">Violações de usabilidade por nível de gravidade (Nielsen 0–4) · clique para ver as telas</p>' +
+        vGroupChart(sevData) + legend + '</div>';
+
+      // 2) Gravidade média por grupo
+      var avgRows = groups.map(function (g) {
+        var a = avg(g.agg.sevAll);
+        return hbar({
+          label: g.label, value: g.agg.sevAll.length ? fnum(a) + " / 4" : "—",
+          frac: a / 4, color: g.color,
+          drill: drillAttr({ drill: "stat", stat: "sev", platform: g.platform, category: g.category }),
+          tip: g.label + ": gravidade média " + (g.agg.sevAll.length ? fnum(a) : "—") +
+            " · " + g.agg.sevAll.length + " violações"
+        });
+      }).join("");
+      cards += '<div class="chart-card"><h3>Gravidade média</h3>' +
+        '<p class="csub">Média da escala de Nielsen (0–4) por ' + esc(dim) + '</p>' +
+        '<div class="hbars">' + avgRows + '</div></div>';
+    }
+
+    // 3) Intensidade de padrões por grupo (ocorrências por tela anotada)
+    var densVals = groups.map(function (g) {
+      return { g: g, d: g.agg.annotated ? g.agg.tipoTotal / g.agg.annotated : 0 };
+    });
+    var maxD = densVals.reduce(function (m, x) { return Math.max(m, x.d); }, 0) || 1;
+    var densRows = densVals.map(function (x) {
+      return hbar({
+        label: x.g.label, value: fnum(x.d) + " padrões/tela",
+        frac: x.d / maxD, color: x.g.color,
+        drill: drillAttr({ drill: "stat", stat: "tipos", platform: x.g.platform, category: x.g.category }),
+        tip: x.g.label + ": " + x.g.agg.tipoTotal + " ocorrências em " +
+          x.g.agg.annotated + " telas anotadas — clique para ver as telas"
+      });
+    }).join("");
+    cards += '<div class="chart-card"><h3>Intensidade de padrões</h3>' +
+      '<p class="csub">Ocorrências de padrões (Brignull) por tela anotada · clique para ver as telas</p>' +
+      '<div class="hbars">' + densRows + '</div></div>';
+
+    var title = byPlatform ? "Comparação entre plataformas" : "Comparação por tipo de produto";
+    var sub = byPlatform
+      ? "Distribuição de gravidade e intensidade dos padrões entre Bet365, Betano e Superbet"
+      : "Distribuição de gravidade e intensidade entre cassino, apostas e cadastro";
+    return section(title, sub, '<div class="charts-grid">' + cards + '</div>');
+  }
+
+  /* ---- Ranking dos fluxos mais críticos ---- */
+  function topFlowsSectionHtml() {
+    if (state.flow !== "all") return "";
+    var arr = [];
+    MODEL.platforms.forEach(function (p) {
+      if (state.platform !== "all" && p.id !== state.platform) return;
+      p.flows.forEach(function (f) {
+        var occ = 0, heur = 0, sev = [];
+        f.steps.forEach(function (s) {
+          var cl = s.checklist || {};
+          occ += (cl.tipos || []).length;
+          (cl.heuristicas || []).forEach(function (hh) {
+            heur++;
+            if (hh && typeof hh.sev === "number") sev.push(hh.sev);
+          });
+        });
+        if (occ > 0) arr.push({ p: p, f: f, occ: occ, heur: heur, avgSev: avg(sev), cat: flowCategory(f.id) });
+      });
+    });
+    if (arr.length < 2) return "";
+    arr.sort(function (a, b) { return b.occ - a.occ; });
+    var top = arr.slice(0, 12);
+    var max = top[0].occ || 1;
+    var rows = top.map(function (it) {
+      var label = state.platform === "all" ? (it.f.name + " · " + it.p.name) : it.f.name;
+      return hbar({
+        label: label, value: it.occ + " ocorr.",
+        frac: it.occ / max, color: CAT[it.cat].color,
+        drill: drillAttr({ drill: "stat", stat: "tipos", platform: it.p.id, flow: it.f.id }),
+        tip: it.f.name + " (" + it.p.name + "): " + it.occ + " ocorrências · " + it.heur +
+          " heurísticas" + (it.avgSev ? " · gravidade média " + fnum(it.avgSev) : "") +
+          " — clique para ver as telas"
+      });
+    }).join("");
+    return section("Fluxos com mais padrões",
+      "Ranking dos fluxos por ocorrências de padrões (Brignull) · a cor indica o tipo de produto",
+      '<div class="chart-card"><div class="hbars">' + rows + '</div>' +
+      legendHtml(categoryLegendItems()) + '</div>');
+  }
+
   /* =========================== GAVETA (drill) ========================== */
   function drawerHtml() {
     return '<div class="dd-backdrop" id="ddBackdrop" data-act="dd-close"></div>' +
@@ -663,6 +973,12 @@
       meta.def = sv.def || "";
       meta.match = { key: "sev", id: v };
       pred = function (s) { return ((s.checklist || {}).heuristicas || []).some(function (hh) { return hh && hh.sev === v; }); };
+    } else if (kind === "cat") {
+      var catId = t.getAttribute("data-category");
+      var cm = CAT[catId] || { label: catId };
+      meta.kick = "Padrões por tipo de produto";
+      meta.title = cm.label;
+      pred = function (s) { return ((s.checklist || {}).tipos || []).length > 0; };
     } else { // stat
       var stat = t.getAttribute("data-stat");
       var titles = {
@@ -687,6 +1003,8 @@
     }
 
     var records = recs.filter(function (r) { return pred(r.step); });
+    var catFilter = t.getAttribute("data-category");
+    if (catFilter) records = records.filter(function (r) { return flowCategory(r.flowId) === catFilter; });
     meta.sub = scopeLabel(platform, flow) + " · " + records.length + " tela" + (records.length !== 1 ? "s" : "");
     openDrawer(meta, records);
   }
@@ -912,10 +1230,9 @@
       state.platform = val;
       state.flow = "all";
       render();
-    } else if (act === "lens") {
-      if (state.lens === val) return;
-      state.lens = val;
-      rerenderMain();
+    } else if (act === "jump") {
+      var sec = document.getElementById(t.getAttribute("data-target"));
+      if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
     } else if (act === "drill") {
       drillFromTarget(t);
     } else if (act === "dd-close") {
