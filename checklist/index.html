@@ -31,7 +31,7 @@
 
     .cl-shell {
       max-width: var(--read-w);
-      margin: 0 auto;
+      margin: var(--compact-h) auto 0;
       padding: 40px 48px 120px;
     }
 
@@ -515,7 +515,7 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      border-top: 1px solid var(--gray);
+      margin-top: 12px;
     }
 
     .check-item {
@@ -751,12 +751,7 @@
       height: 16px;
     }
 
-    /* secondary-nav anchor tabs reuse .chap-tab from nav.css */
-    #secNav {
-      display: flex;
-      align-items: stretch;
-      flex-wrap: nowrap;
-    }
+
 
     /* ============================================================
        DARK MODE
@@ -940,7 +935,6 @@
       }
 
       .compact-nav,
-      .secondary-nav,
       .site-hero,
       .dark-toggle,
       .pill,
@@ -1120,16 +1114,7 @@
     </button>
   </header>
 
-  <!-- ===================== SECONDARY NAV (section anchors) ===================== -->
-  <div class="secondary-nav" id="secondaryNav" aria-label="Seções do checklist">
-    <nav id="secNav" aria-label="Seções">
-      <a class="chap-tab" href="#principios">Princípios</a>
-      <a class="chap-tab" href="#padroes">Padrões</a>
-      <a class="chap-tab" href="#heuristicas">Heurísticas</a>
-      <a class="chap-tab" href="#checklist">Checklist</a>
-      <a class="chap-tab" href="#perguntas">Perguntas</a>
-    </nav>
-  </div>
+
 
   <!-- ===================== CONTENT ===================== -->
   <main class="cl-shell">
@@ -1141,7 +1126,6 @@
 
     <!-- HERO -->
     <header class="cl-hero">
-      <p class="cl-kicker">Guia prático de boas práticas</p>
       <h1 class="cl-title">Antes de lançar, <mark>pergunte-se.</mark></h1>
       <p class="cl-hero-lead">
         Um guia e checklist anti-padrões deceptivos para quem projeta experiências, criado com base em um benchmark de
@@ -1230,8 +1214,9 @@
       </div>
       <div class="cl-sec-rule"></div>
       <p class="cl-lead">
-        Durante a condução do trabalho, os padrões deceptivos mais encontrados foram catalogados. Estes padrões,
-        principalmente no contexto de apostas, devem ser reconhecidos e combatidos.
+        Os padrões deceptivos mais recorrentes durante a condução do trabalho estão documentados, em ordem, na tabela
+        abaixo. É importante apontar cada um deles, para que possam ser reconhecidos, combatidos e solucionados.<br>Cada
+        parte da tabela acompanha, em verde, soluções propostas para os padrões mais comuns.
       </p>
       <div class="pattern-grid" id="patternGrid"></div>
 
@@ -1245,7 +1230,10 @@
       </div>
       <div class="cl-sec-rule"></div>
       <p class="cl-lead">
-        descricao
+        Assim como os padrões, as dez heurísticas de Nielsen, apresentadas como parte fundamental de todas as boas
+        experiências e interfaces, também são dispostas em ordem das maiores violações. Entender como cada uma delas
+        funciona te ajudará a auditar sua própria interface. Suas descrições foram incrementadas com exemplos aplicáveis
+        no setor.
       </p>
       <div class="heur-list" id="heurList"></div>
     </section>
@@ -1258,7 +1246,9 @@
       </div>
       <div class="cl-sec-rule"></div>
       <p class="cl-lead">
-        descricao
+        Os princípios, padrões e heurísticas devem ser aplicados, cuidadosamente, nos fluxos desenhados.<br>Nos
+        mapeamentos, os fluxos, problemas, padrões e heurísticas mais problemáticos foram descobertos e ajudaram a
+        moldar a <em>checklist</em>.
       </p>
       <div class="journeys" id="journeys"></div>
     </section>
@@ -1289,18 +1279,17 @@
             design a protege dessa hora, ou a empurra para dentro dela?</p>
         </div>
         <div class="question">
-          <p>Se este usuário entendesse, com clareza total, tudo o que esta interface faz para mantê-lo aqui — ele
+          <p>Se este usuário entendesse, com clareza total, tudo o que esta interface faz para mantê-lo aqui, ele
             agradeceria, ou se sentiria traído?</p>
         </div>
         <div class="question">
           <p>Você está ajudando o usuário a fazer o que ele já queria fazer, ou está fabricando um desejo que só
             beneficia a plataforma?
-            <span class="q-src">“Regra de Ouro da Persuasão” de Fogg (2003): só
-              persuada alguém a fazer o que você mesmo aceitaria ser persuadido a fazer.</span>
           </p>
         </div>
         <div class="question">
-          <p>Quando alguém perder tudo nesta plataforma, e alguém vai, você conseguirá olhar para trás para dizer que
+          <p>Quando alguém perder tudo nesta plataforma, porque alguém vai, você conseguirá olhar para trás para dizer
+            que
             desenhou cada tela para protegê-lo, ou terá que assumir que desenhou cada tela para aumentar os lucros da
             plataforma?</p>
         </div>
@@ -1316,7 +1305,7 @@
         </div>
         <div class="question is-hot">
           <p>Você diria “não”?
-            <span class="q-src">Voltando a profissionalidade: Monteiro (2019) lembra que designers são responsáveis pelo
+            <span class="q-src">Voltando à profissionalidade de Monteiro: designers são responsáveis pelo
               que colocam no mundo e pelos
               efeitos que essas criações produzem.</span>
           </p>
@@ -1393,84 +1382,109 @@
 
       /* Heurísticas: adaptação ao contexto de apostas + violações no corpus */
       var HEUR = [
-        { id: "h1", count: 28, max: 4, adapt: "desc" },
-        { id: "h3", count: 28, max: 4, adapt: "desc" },
-        { id: "h6", count: 16, max: 4, adapt: "desc" },
-        { id: "h10", count: 14, max: 4, adapt: "desc" },
-        { id: "h4", count: 12, max: 4, adapt: "desc" },
-        { id: "h7", count: 11, max: 3, adapt: "desc" },
-        { id: "h5", count: 9, max: 4, adapt: "desc" },
-        { id: "h8", count: 8, max: 4, adapt: "desc" },
-        { id: "h2", count: 5, max: 4, adapt: "desc" },
-        { id: "h9", count: 2, max: 4, adapt: "desc" }
+        {
+          id: "h1", count: 28, max: 4, adapt:
+            "O design deve sempre manter os usuários informados sobre tudo o que está acontecendo, independente se são perdas ou ganhos, por meio de feedback apropriado dentro de um prazo razoável."
+        },
+        {
+          id: "h3", count: 28, max: 4, adapt:
+            "Os usuários frequentemente realizam ações por engano. Eles precisam de uma saída de emergência claramente sinalizada para interromper a ação indesejada sem ter que passar por um processo demorado."
+        },
+        {
+          id: "h6", count: 16, max: 4, adapt:
+            "Minimize a carga de memória do usuário tornando os elementos, ações e opções visíveis. O usuário não deve precisar memorizar informações de uma parte da interface para outra. As informações necessárias para usar e compreender o design e suas funções, independente se beneficiam a plataforma ou não, devem estar visíveis ou facilmente acessíveis quando necessário."
+        },
+        {
+          id: "h10", count: 14, max: 4, adapt:
+            "O ideal é que o sistema não precise de explicações adicionais. No entanto, pode ser necessário fornecer documentação para ajudar os usuários a entender como concluir suas tarefas. Quando for este o caso, apresente-a de forma clara e com linguagem simples."
+        },
+        {
+          id: "h4", count: 12, max: 4, adapt:
+            "Os usuários não devem ter dúvidas se palavras, situações ou ações diferentes significam a mesma coisa. Siga as convenções da plataforma e do setor."
+        },
+        {
+          id: "h7", count: 11, max: 3, adapt:
+            "Entenda ações frequentes que beneficiam usuários e permita que estes as personalizem à medida que evoluem no uso da plataforma."
+        },
+        {
+          id: "h5", count: 9, max: 4, adapt:
+            "Boas mensagens de erro são importantes, mas os melhores projetos previnem que os problemas ocorram em primeiro lugar. Elimine as condições propensas a erros ou verifique-as e apresente aos usuários uma opção de confirmação antes que eles executem ações que possam resultar em erros ou perdas."
+        },
+        {
+          id: "h8", count: 8, max: 4, adapt:
+            "As interfaces não devem conter informações irrelevantes ou raramente necessárias. Cada unidade extra de informação em uma interface compete com as unidades de informação relevantes e diminui sua visibilidade relativa. Tenha certeza de que apenas o que é relevante ao usuário é exibido."
+        },
+        {
+          id: "h2", count: 5, max: 4, adapt:
+            "O design deve representar o mundo dos usuários. Use palavras, frases e conceitos familiares ao usuário, em vez de gírias internas ou potencialmente deceptivas. Siga as convenções do mundo real, apresentando as informações em uma ordem natural, simples e lógica."
+        },
+        {
+          id: "h9", count: 2, max: 4, adapt:
+            "As mensagens de erro devem ser expressas em linguagem direta, clara e simples, indicar precisamente o problema ou status atual e sugerir soluções construtivas."
+        }
       ];
 
       /* Checklist acionável por etapa da jornada (jornadas do método, cap. 4-5) */
       var JOURNEYS = [
         {
-          badge: "Etapa 01", title: "Cadastro & onboarding",
+          badge: "Etapa 01", title: "Cadastro e onboarding",
           intro: "descricao",
           items: [
-            { t: "limites de perda e tempo", ref: "Pré-seleção", h: false },
-            { t: "kyc progressivo", ref: "Obstrução", h: false },
-            { t: "respeito a lgpd", ref: "H1 · Visibilidade", h: true },
-            { t: "abandono de cadastro/fluxos", ref: "Insistência", h: false },
-            { t: "ferramentas de jogo saudável neutras", ref: "Pré-seleção", h: false }
+            { t: "Meu design ajuda o usuário a definir limites de tempo e dinheiro gasto conscientes, adequados e diretamente relacionados ao valor depositado", ref: "Pré-seleção", h: false },
+            { t: "Minhas ferramentas de coleta de dados são progressivas e posicionadas de forma a ajudar os usuários", ref: "Obstrução", h: false },
+            { t: "Permito que os usuários repensem suas ações, abandonando fluxos e depósitos sem insistir", ref: "Insistência", h: false },
+            { t: "Apresento, antes da primeira aposta ou depósito, um fluxo de jogo saudável e responsável para todos os usuários", h: false }
           ]
         },
         {
           badge: "Etapa 02", title: "Depósito & saque",
           intro: "descricao",
           items: [
-            { t: "fricção semelhante entre fluxos", ref: "Obstrução", h: false },
-            { t: "saque facilitado", ref: "Obstrução", h: false },
-            { t: "saldo real e valor gasto/perdido", ref: "H1 · Visibilidade", h: true },
-            { t: "sem reforços visuais para depósitos", ref: "Interferência visual", h: false },
-            { t: "é fácil desfazer/cancelar operaçoes financeiras", ref: "H3 · Controle", h: true }
+            { t: "Meus fluxos de depósito e saque possuem a mesma fricção, sem dificuldades adicionais para algo que beneficie o usuário", ref: "Obstrução", h: false },
+            { t: "Apresento sempre ao usuário seu saldo real, bem como histórico de perdas, ganhos e movimentações", ref: "H1 · Visibilidade", h: true },
+            { t: "Não forço o usuário a realizar novos depósitos a todo momento por meio de interferências ou insistências", ref: "Interferência visual", h: false },
+            { t: "É fácil desfazer ou cancelar operações financeiras dentro de um tempo razoável", ref: "H3 · Controle", h: true }
           ]
         },
         {
           badge: "Etapa 03", title: "Apostas esportivas",
           intro: "descricao",
           items: [
-            { t: "sem falsa prova social", ref: "Falsa prova social", h: false },
-            { t: "odds reais e transparentes + termos e condicoes", ref: "H1 · Visibilidade", h: true },
-            { t: "apostas sugeridas sao apresentadas como sugestoes e tem aviso sobre risco", ref: "Anúncios disfarçados", h: false },
-            { t: "cashout em todas as apostas simplificado", ref: "H3 · Controle", h: true },
-            { t: "nao ha tentativa de empurrar multiplas apostas", ref: "Interferência visual", h: false },
-            { t: "confirmacao ao apostar valores altos/apos muitas perdas", ref: "H5 · Prevenção de erros", h: true }
+            { t: "Meu design não apresenta falsas provas sociais, como apostas quentes ou populares", ref: "Falsa prova social", h: false },
+            { t: "As chances de ganhar sempre são apresentadas de forma clara, com termos e condições de fácil acesso e legibilidade", ref: "H1 · Visibilidade", h: true },
+            { t: "Apostas sugeridas sempre são apresentadas com este rótulo, acompanhadas de aviso de risco", ref: "Anúncios disfarçados", h: false },
+            { t: "As possibilidades de cashout não são definidas de forma arbitrária, e sempre são apresentadas adequadamente ao usuário", ref: "H3 · Controle", h: true },
+            { t: "Minha interface não tenta empurrar apostas múltiplas para usuários, de forma a diminuir sua chance de ganho", ref: "Interferência visual", h: false },
+            { t: "Confirmações adicionais são requeridas para apostas de alto valor, ou após uma grande sequência de perdas", ref: "H5 · Prevenção de erros", h: true }
           ]
         },
         {
-          badge: "Etapa 04", title: "Cassino & jogos",
+          badge: "Etapa 04", title: "Cassino e jogos",
           intro: "descricao",
           items: [
-            { t: "busca permite comparacao facil/sem jogos iguais", ref: "Prevenção de comparação", h: false },
-            { t: "comunicacao honesta sobre aleatoriedade dos jogos", ref: "Dissimulação", h: false },
-            { t: "limitacao de autoplay e velocidade, como no reino unido", ref: "H7 · Flexibilidade", h: true },
-            { t: "nao ha sensacao de quase-ganho no feedback visual", ref: "Interferência visual", h: false },
-            { t: "valor perdido e tempo perdido ficam visiveis enquanto se joga", ref: "H1 · Visibilidade", h: true }
+            { t: "Minhas ferramentas de buscas de jogos de azar apresentam resultados facilmente comparáveis e compreensíveis", ref: "Prevenção de comparação", h: false },
+            { t: "A comunicação sobre aleatoriedade, risco e volatilidade dos jogos sempre é apresentada de forma destacada", ref: "Dissimulação", h: false },
+            { t: "Limito velocidades de autoplay ou de ferramentas que podem potencializar perdas", ref: "H7 · Flexibilidade", h: true },
+            { t: "Meus feedbacks são claros, tanto na perda quanto no ganho, bem como não são extremamente chamativos em uma vitória", ref: "Interferência visual", h: false },
+            { t: "O valor e tempo perdidos sempre ficam visíveis enquanto se joga", ref: "H1 · Visibilidade", h: true }
           ]
         },
         {
-          badge: "Etapa 05", title: "Promoções & bônus",
+          badge: "Etapa 05", title: "Promoções e bônus",
           intro: "descricao",
           items: [
-            { t: "termos e condicoes simples e bem dispostos", ref: "Redação enganosa", h: false },
-            { t: "termoe explicitos antes da aquisicao/adesao", ref: "Custos ocultos", h: false },
-            { t: "recusar/cancelar bonus é tao facil quanto aderir", ref: "H3 · Controle", h: true },
-            { t: "linguagem clara, simples, direta, sem deceptividade", ref: "Redação enganosa", h: false },
-            { t: "sem falsa urgencia ou escassez", ref: "Dissimulação", h: false }
+            { t: "Termos e condições sempre são de fácil legibilidade e compreensão, bem como estão dispostos de maneira explícita antes de qualquer comprometimento do usuário", ref: "Redação enganosa", h: false },
+            { t: "Recusar ou cancelar promoções, bônus e ofertas especiais é tão simples quanto aceitá-las", ref: "H3 · Controle", h: true },
+            { t: "Minhas interfaces deste tipo não apresentam ofertas de falsa escassez, urgência ou que possam incorrer em subscrições e cobranças adicionais", ref: "Dissimulação", h: false }
           ]
         },
         {
-          badge: "Etapa 06", title: "Jogo responsável & saída",
+          badge: "Etapa 06", title: "Jogo responsável e saída",
           intro: "descricao",
           items: [
-            { t: "auto exclusao e limites de facil acesso e configuracao", ref: "H3 · Controle", h: true },
-            { t: "caminhos de suporte faceis de acesso e comunicacao", ref: "H10 · Ajuda", h: true },
-            { t: "é tao fácil sair como foi entrar", ref: "Difícil de cancelar", h: false },
-            { t: "avisos sobre tempo e gastos claros, tao fortes quanto o feedback de ganho", ref: "Insistência", h: false }
+            { t: "Ferramentas de auto exclusão são simples e acessíveis para o uso", ref: "H3 · Controle", h: true },
+            { t: "Limites de perda monetária e de tempo são facilmente acessíveis e configuráveis", ref: "H3 · Controle", h: true },
+            { t: "É simples buscar ajuda, tanto de equipes de jogo responsável, quanto de suporte ao usuário", ref: "H10 · Ajuda", h: true },
           ]
         }
       ];
@@ -1520,7 +1534,6 @@
         head.innerHTML = '<span class="journey-badge">' + esc(j.badge) + '</span>' +
           '<h3 class="journey-title">' + esc(j.title) + '</h3>';
         sec.appendChild(head);
-        sec.appendChild(el("p", "journey-intro", esc(j.intro)));
 
         var ul = el("ul", "check-list");
         j.items.forEach(function (it, ii) {
@@ -1535,7 +1548,7 @@
             '<svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
             '</span>' +
             '<span class="check-body"><span class="check-text">' + esc(it.t) + '</span>' +
-            '<span class="' + refCls + '">' + esc(it.ref) + '</span></span>';
+            '</span>';
           li.setAttribute("role", "checkbox");
           li.setAttribute("tabindex", "0");
           li.setAttribute("aria-checked", state[key] ? "true" : "false");
@@ -1589,19 +1602,7 @@
         b.addEventListener("click", function () { window.print(); });
       });
 
-      /* ---------- Scroll-spy on secondary-nav anchors ---------- */
-      var tabs = Array.prototype.slice.call(document.querySelectorAll("#secNav .chap-tab"));
-      var sections = tabs.map(function (t) { return document.querySelector(t.getAttribute("href")); });
-      if ("IntersectionObserver" in window) {
-        var spy = new IntersectionObserver(function (entries) {
-          entries.forEach(function (en) {
-            if (!en.isIntersecting) return;
-            var i = sections.indexOf(en.target);
-            tabs.forEach(function (t, ti) { t.classList.toggle("is-active", ti === i); });
-          });
-        }, { rootMargin: "-160px 0px -60% 0px", threshold: 0 });
-        sections.forEach(function (s) { if (s) spy.observe(s); });
-      }
+
     })();
   </script>
   <script src="../js/shared-nav.js?v=1"></script>
