@@ -178,7 +178,8 @@ a {
   border-top: 1px solid var(--black);
   border-bottom: 1px solid var(--black);
   padding: 16px 24px;
-  overflow-x: auto;
+  overflow: visible;
+  /* horizontal scroll now lives on .sec-rail so the "more" balloon can escape below */
   display: flex;
   align-items: stretch;
   gap: 0;
@@ -308,6 +309,176 @@ a {
 .flow-card__name {
   font-size: 15px;
   line-height: 1.1;
+}
+
+/* ============================================================
+   SECONDARY-NAV SCROLL RAIL  (desktop side-arrows + "more" balloon)
+   The chapter/flow row scrolls inside .sec-rail, which is capped to the
+   width left over in the bar. Arrows flank it and a small balloon nudges
+   first-time readers that there's more to the side.
+   ============================================================ */
+
+/* Fixed controls on the left never shrink — only the rail absorbs overflow. */
+.secondary-nav > .view-toggle,
+.secondary-nav > .sec-nav-mob {
+  flex: 0 0 auto;
+}
+
+.sec-rail {
+  flex: 0 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.sec-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.sec-arrow {
+  flex: 0 0 auto;
+  display: none;
+  /* shown only when the row overflows on desktop (.sec-has-overflow) */
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  /* keep our background on :disabled instead of the UA dark-scheme control color */
+  background: var(--white);
+  border: 1px solid var(--black);
+  color: var(--black);
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.sec-arrow svg {
+  display: block;
+}
+
+.sec-arrow--left {
+  margin-right: 8px;
+}
+
+.sec-arrow--right {
+  margin-left: 8px;
+}
+
+.sec-arrow:hover:not(:disabled) {
+  background: #f4f4f4;
+}
+
+.sec-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.secondary-nav.sec-has-overflow .sec-arrow {
+  display: inline-flex;
+}
+
+/* "There's more" balloon, anchored just under the right arrow */
+.sec-more-tip {
+  position: absolute;
+  top: calc(100% + 9px);
+  right: 24px;
+  z-index: 120;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  background: var(--black);
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-size: 12.5px;
+  line-height: 1.3;
+  padding: 8px 8px 8px 12px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.28);
+}
+
+.secondary-nav.sec-tip-on .sec-more-tip {
+  display: inline-flex;
+}
+
+.sec-more-tip::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 16px;
+  width: 11px;
+  height: 11px;
+  background: var(--black);
+  transform: rotate(45deg);
+}
+
+.sec-more-tip__txt {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.sec-more-tip__close {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 11px;
+  line-height: 1;
+  padding: 0;
+}
+
+.sec-more-tip__close:hover {
+  color: var(--white);
+}
+
+[data-theme="dark"] .sec-arrow {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+  color: #e8e8e8;
+}
+
+[data-theme="dark"] .sec-arrow:hover:not(:disabled) {
+  background: #252525;
+}
+
+[data-theme="dark"] .sec-more-tip {
+  background: #e8e8e8;
+  color: #111;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.55);
+}
+
+[data-theme="dark"] .sec-more-tip::before {
+  background: #e8e8e8;
+}
+
+[data-theme="dark"] .sec-more-tip__close {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .sec-more-tip__close:hover {
+  color: #000;
+}
+
+/* On mobile the whole bar scrolls as before — no separate rail scroll, no arrows. */
+@media (max-width: 960px) {
+  .secondary-nav {
+    overflow-x: auto;
+  }
+
+  .sec-rail {
+    overflow: visible;
+    flex: 0 0 auto;
+  }
 }
 
 /* ============================================================

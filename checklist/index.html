@@ -185,7 +185,6 @@
       font-family: "Inter", sans-serif;
       font-size: 12.5px;
       color: var(--ink-2);
-      max-width: 320px;
       line-height: 1.45;
     }
 
@@ -779,8 +778,14 @@
     [data-theme="dark"] .cl-actions-note,
     [data-theme="dark"] .cl-progress-top,
     [data-theme="dark"] .question .q-src,
+    [data-theme="dark"] .pattern-en,
+    [data-theme="dark"] .pattern-count span,
     [data-theme="dark"] .cl-progress-reset {
       color: rgba(232, 232, 232, 0.72);
+    }
+
+    [data-theme="dark"] .question::before {
+      color: rgba(232, 232, 232, 0.78);
     }
 
     [data-theme="dark"] .cl-meta b,
@@ -849,15 +854,34 @@
       border-color: var(--yellow);
     }
 
-    [data-theme="dark"] .cl-title mark,
-    [data-theme="dark"] .question.is-hot {
+    [data-theme="dark"] .cl-title mark {
       color: #000;
     }
 
-    [data-theme="dark"] .question.is-hot p,
-    [data-theme="dark"] .question.is-hot .q-src,
+    [data-theme="dark"] .question.is-hot {
+      background: #2a2410;
+      border-color: var(--yellow);
+    }
+
+    [data-theme="dark"] .question.is-hot p {
+      color: #f4eeda;
+    }
+
+    [data-theme="dark"] .question.is-hot .q-src {
+      color: rgba(243, 210, 80, 0.78);
+    }
+
     [data-theme="dark"] .question.is-hot::before {
-      color: #000;
+      color: var(--yellow);
+    }
+
+    [data-theme="dark"] .pattern-fix {
+      background: rgba(31, 122, 82, 0.18);
+      color: #6dd6a3;
+    }
+
+    [data-theme="dark"] .pattern-fix b {
+      color: #6dd6a3;
     }
 
     [data-theme="dark"] .closing {
@@ -1143,10 +1167,9 @@
             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
             <rect x="6" y="14" width="12" height="8" />
           </svg>
-          Baixar PDF / Imprimir
+          Baixar PDF
         </button>
-        <span class="cl-actions-note">Escolha <b>“Salvar como PDF”</b> como destino de impressão.As
-          marcações que você fizer aparecerão também no arquivo salvo.</span>
+        <span class="cl-actions-note">O arquivo <b>Checklist.pdf</b> será baixado para o seu dispositivo.</span>
       </div>
 
     </header>
@@ -1336,7 +1359,7 @@
             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
             <rect x="6" y="14" width="12" height="8" />
           </svg>
-          Baixar PDF / Imprimir
+          Baixar PDF
         </button>
       </div>
     </section>
@@ -1597,9 +1620,16 @@
         updateProgress();
       });
 
-      /* ---------- Print / Save as PDF ---------- */
+      /* ---------- Download PDF ---------- */
       document.querySelectorAll("[data-print]").forEach(function (b) {
-        b.addEventListener("click", function () { window.print(); });
+        b.addEventListener("click", function () {
+          var a = document.createElement("a");
+          a.href = "Checklist.pdf";
+          a.download = "Checklist.pdf";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        });
       });
 
 
