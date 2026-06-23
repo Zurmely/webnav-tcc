@@ -1598,19 +1598,21 @@
       /* ---------- Progress ---------- */
       var progCount = $("#progCount"), progFill = $("#progFill"),
         pill = $("#pill"), pillCount = $("#pillCount");
-      $("#progTotal").textContent = total;
-      $("#pillTotal").textContent = total;
+      var progTotal = $("#progTotal"), pillTotal = $("#pillTotal");
+      if (progTotal) progTotal.textContent = total;
+      if (pillTotal) pillTotal.textContent = total;
 
       function updateProgress() {
         var n = 0; for (var k in state) { if (state[k]) n++; }
-        progCount.textContent = n;
-        pillCount.textContent = n;
-        progFill.style.width = total ? (n / total * 100) + "%" : "0%";
-        pill.hidden = n === 0;
+        if (progCount) progCount.textContent = n;
+        if (pillCount) pillCount.textContent = n;
+        if (progFill) progFill.style.width = total ? (n / total * 100) + "%" : "0%";
+        if (pill) pill.hidden = n === 0;
       }
       updateProgress();
 
-      $("#progReset").addEventListener("click", function () {
+      var progReset = $("#progReset");
+      if (progReset) progReset.addEventListener("click", function () {
         if (!confirm("Limpar todas as marcações deste checklist?")) return;
         state = {};
         try { localStorage.removeItem(STORE_KEY); } catch (e) { }
