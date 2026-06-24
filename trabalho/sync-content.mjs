@@ -14,8 +14,8 @@
    caminho VIVO e ignora estas cópias — rode este script só antes de publicar.
 
    Uso:
-     node sync-content.mjs            # usa o MD padrão (20-06.md)
-     node sync-content.mjs 21-06.md   # usa outro arquivo datado
+     node sync-content.mjs                      # usa o MD padrão (23-06/24-from-abnt.md)
+     node sync-content.mjs 23-06/24-from-abnt.md  # ou outro arquivo datado
    ========================================================================== */
 
 import { readdir, mkdir, copyFile, readFile, writeFile, rm } from "node:fs/promises";
@@ -28,7 +28,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // trabalho/ -> webnav-tcc/ -> trabalho-web/ -> raiz do TCC
 const TCC_ROOT = path.resolve(__dirname, "..", "..", "..");
 
-const MD_NAME = process.argv[2] || "21-06.md";
+const MD_NAME = process.argv[2] || "23-06/24-from-abnt.md";
 const SRC_MD = path.join(TCC_ROOT, "projeto-final", MD_NAME);
 const SRC_PNG_DIR = path.join(TCC_ROOT, "projeto-final", "figuras", "output-v2", "png");
 

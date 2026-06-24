@@ -1071,16 +1071,11 @@
           '<span class="zoom">⤢ ampliar</span></button>'
       : '<div class="det-thumb"><div class="imgfail">sem imagem</div></div>';
 
-    var dp = s.darkPatterns && String(s.darkPatterns).trim()
-      ? '<div class="commentary"><span class="clab">Comentário do analista</span>' + esc(s.darkPatterns) + '</div>'
-      : "";
-
     return '<div class="det-card">' + thumb +
       '<div class="det-body">' +
         '<div class="det-crumb"><b>' + esc(rec.platformName) + '</b> · ' + esc(rec.flowName) + '</div>' +
         '<h3 class="det-title">' + esc(s.title || "Sem título") + '</h3>' +
         (s.description ? '<p class="det-desc">' + esc(s.description) + '</p>' : "") +
-        dp +
         fichaHtml(s.checklist, match) +
       '</div></div>';
   }

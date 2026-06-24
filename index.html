@@ -22,11 +22,20 @@
     }
 
     /* ---- Content wrap: TOC + main ---- */
+    /* Desktop: scroll-area is JS-sized to fill the viewport below the nav and
+       scrolls internally, so the wrap must NOT add its own height — a 100vh
+       minimum here (the wrap starts below the fixed/sticky nav) would push the
+       body taller than the viewport and let the footer peek in. Mobile restores
+       natural full-height scrolling in the media query below. */
     .content-wrap {
       display: flex;
       align-items: flex-start;
-      min-height: 100vh;
+      min-height: 0;
     }
+
+    /* Desktop is a fixed-height doc shell (scroll-area scrolls internally), so a
+       page-level footer would only ever crop in at the bottom. Shown on mobile. */
+    .site-footer { display: none; }
 
     /* ===================== TOC PANEL (desktop sidebar) ===================== */
     .sidebar {
@@ -403,6 +412,7 @@
       .sec-nav-mob { display: flex; }
       .content-wrap { min-height: auto; }
       .scroll-area { height: auto !important; overflow-y: visible; }
+      .site-footer { display: block; }
       :root { --pad: 22px; }
       .doc-title { font-size: 27px; }
       .prose { font-size: 16px; }

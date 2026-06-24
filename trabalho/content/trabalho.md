@@ -1,155 +1,101 @@
-<!-- GERADO por trabalho/sync-content.mjs a partir de projeto-final/21-06.md. Não editar — edite o arquivo de origem e rode o script novamente. 2026-06-22T03:26:43.634Z -->
-Gabriel Zurmely Gama
+<!-- GERADO por trabalho/sync-content.mjs a partir de projeto-final/23-06/24-from-abnt.md. Não editar — edite o arquivo de origem e rode o script novamente. 2026-06-24T03:48:43.176Z -->
+Este website hospeda a monografia apresentada ao curso de **Design** da **Escola de Arquitetura** da **Universidade Federal de Minas Gerais (UFMG)** como requisito parcial à obtenção do título de Bacharel em Design, intitulado:
 
-**Ética no Design: uma análise crítica da exploração de padrões deceptivos no desenho de interfaces e da experiência de usuário**
+**Ética no Design:** uma análise crítica da exploração de padrões deceptivos no desenho de interfaces e da experiência de usuário em aplicações de apostas e jogos de azar
 
-**em aplicações de apostas e jogos de azar**
+---
 
-Belo Horizonte
-
-2026
-
-Gabriel Zurmely Gama
-
-**Ética no Design: uma análise crítica da exploração de padrões deceptivos no desenho de interfaces e da experiência de usuário**
-
-**em aplicações de apostas e jogos de azar**
-
-Monografia apresentada ao curso de Design da Escola de Arquitetura da Universidade Federal de Minas Gerais como requisito parcial à obtenção do título de Bacharel em Design
-
-**Área de concentração:** Design
+**Aluno:** Gabriel Zurmely Gama
 
 **Orientadora:** Profa. Dra. Angélica Beatriz Castro Guimarães
 
-Belo Horizonte
-
-2026
-
-**FICHA CATALOGRÁFICA**
-
-- Impressa no verso da folha de rosto.
-- Deverá ser preenchida pelo aluno no site da Biblioteca da EA/UFMG e enviada para os bibliotecários para revisão e complementação dos dados.
-- Não é contada na paginação.
-
-**FOLHA DE APROVAÇÃO**
-
-- É inserida após a defesa do trabalho.
-- É contada na paginação.
-- Obrigatória - para os cursos de mestrado e doutorado.
-- Opcional – para os cursos de especialização.
-
-**DEDICATÓRIA**(Opcional)
-
-**AGRADECIMENTOS**(Opcional)
-
-**EPÍGRAFE**(Opcional)
+---
 
 **RESUMO**
 
-É a apresentação das ideias principais do trabalho. Limita-se a um único parágrafo. Deve conter no mínimo 150 e no máximo 500 palavras. O título RESUMO deve estar centralizado. O mesmo é válido para o abstract que é o resumo em língua inglesa.
+O mercado brasileiro de apostas online atravessa um período de expansão acelerada, estando posicionado como o quinto maior mercado de apostas esportivas do mundo. Nesse cenário, a mediação entre o apostador e a plataforma se dá quase integralmente por meio de interfaces digitais projetadas por designers, profissionais cujas escolhas projetuais moldam comportamentos e, por extensão, impactam a vida dos usuários. O presente trabalho investiga como plataformas de apostas online exploram padrões deceptivos (*deceptive patterns*), em suas interfaces para influenciar o comportamento do usuário, articulando discussão ética, fundamentação em experiência do usuário, mapeamento regulatório e análise empírica. O referencial teórico organiza-se em quatro eixos: a responsabilidade ética do designer, com base em Papanek, Monteiro e Friedman; os fundamentos de UX e UI, com Norman, Nielsen, Fogg e Kahneman; as taxonomias de padrões deceptivos de Brignull, Gray et al. e Mathur et al.; e a psicologia do jogo, com Schüll, Griffiths e os conceitos de reforço intermitente e vieses cognitivos. O panorama regulatório examina respostas internacionais, como o *Digital Services Act* europeu, o arcabouço da FTC americana e a abordagem *Safer by Design* da *UK Gambling Commission*, evidenciando a lacuna do ordenamento brasileiro. O método emprega estudo de caso qualitativo-descritivo de três aplicativos de apostas líderes no mercado nacional, Bet365, Betano e Superbet, com coleta de capturas de tela e catalogação de ocorrências de padrões deceptivos em fichas padronizadas. Os resultados evidenciam o emprego de padrões deceptivos ao longo de toda a jornada do apostador. A partir desses achados, são propostos princípios de design ético para estas plataformas, um *checklist* de verificação por etapa da jornada do usuário e recomendações para designers, reguladores e academia, contribuindo para o debate sobre a responsabilidade social do Design e para a formulação de políticas públicas que reconheçam o projeto de interfaces como variável relevante na proteção do consumidor.
 
-Palavras-chave: Palavra-chave 1. Palavra-chave 2. Palavra-chave 3. Palavra-chave 4. Palavra-chave 5.**(mínimo de três e máximo de cinco)**
+**Palavras chave:** Padrões deceptivos. Ética no design. Apostas online. Experiência do usuário. Interfaces digitais.
+
+---
 
 **ABSTRACT**
 
-Keywords: Keyword 1. Keyword 2. Keyword 3. Keyword 4. Keyword 5. **(mínimo de três e máximo de cinco)**
+The Brazilian online betting market is currently undergoing a period of accelerated expansion, ranking as the fifth-largest sports betting market worldwide. Within this context, the mediation between the bettor and the platform occurs almost exclusively through digital interfaces created by designers, professionals whose design choices shape behaviors and, by extension, significantly impact users' lives. This study investigates how online betting platforms exploit deceptive patterns within their interfaces to influence user behavior, articulating an ethical discussion, theoretical foundations in user experience (UX), a regulatory mapping, and an empirical analysis. The theoretical framework is organized into four axes: the ethical responsibility of the designer, drawing upon Papanek, Monteiro, and Friedman; the foundations of UX and UI, grounded in Norman, Nielsen, Fogg, and Kahneman; the taxonomies of deceptive patterns proposed by Brignull, Gray et al., and Mathur et al.; and the psychology of gambling, informed by Schüll, Griffiths, and the concepts of intermittent reinforcement and cognitive biases. The regulatory landscape examines international responses, such as the European Digital Services Act, the American FTC framework, and the UK Gambling Commission's *Safer by Design* approach, thereby highlighting the existing gap within the Brazilian legal framework. The methodology employs a qualitative-descriptive case study of three leading betting applications in the domestic market: Bet365, Betano, and Superbet, involving the collection of screenshots and the cataloging of deceptive pattern occurrences using standardized forms. The results reveal the pervasive utilization of deceptive patterns throughout the bettor's journey. Based on these findings, this paper proposes ethical design principles for such platforms, alongside a verification checklist tailored to each stage of the user journey, and recommendations for designers, regulators, and academia. Ultimately, this research contributes to the broader debate on the social responsibility of Design and the formulation of public policies that recognize interface design as a critical variable in consumer protection.
 
-**LISTA DE ILUSTRAÇÕES**(se existir ilustração é obrigatório)
+**Keywords:** Deceptive patterns. Design ethics. Online betting. User experience. Digital interfaces.
 
-Uma lista com o título LISTA DE ILUSTRAÇÕES, onde as ilustrações serão apresentadas na ordem em que aparecem no texto e de acordo com a sua designação.
+[**1 INTRODUÇÃO 14**](#_heading=h.klse2d2s91iu)
 
-Quando em número considerável, recomenda-se elaboração de lista própria para cada tipo, como por exemplo:
+[1.1 Contextualização 14](#_heading=h.w5b8mnpww490)
 
-- Lista de figuras (desenhos, fluxogramas, fotografias, mapas e outros).
-- Lista de tabelas.
-- Lista de quadros.
-- Lista de gráficos.
+[1.2 Justificativa 16](#_heading=h.lgzgyvofm6w0)
 
-**Lista de abreviaturas e siglas**(Opcional)
+[1.3 Problema de Pesquisa 17](#_heading=h.mxl1dhkf2i90)
 
-**Lista de símbolos ou fórmulas**(Opcional)
+[1.4 Objetivos 18](#_heading=h.anlxnzvqa3ls)
 
-**SUMÁRIO**
+[1.4.1 Objetivo Geral 18](#_heading=h.la0npo1b1o4z)
 
-[1 INTRODUÇÃO 13](#_heading=h.1wg8edcbspl6)
+[1.4.2 Objetivos Específicos 18](#_heading=h.o2rg71v0p1zi)
 
-[1.1 Contextualização 13](#_heading=h.x68ses1q415v)
+[1.5 Estrutura do Trabalho 19](#_heading=h.fioro4ma2rgo)
 
-[1.2 Justificativa 14](#_heading=h.2lgbwjtau64q)
+[**2 REFERENCIAL TEÓRICO 21**](#_heading=h.2775k9x8bcj3)
 
-[1.3 Problema de Pesquisa 15](#_heading=h.jr23jfvowqps)
+[2.1 Ética no Design 21](#_heading=h.mep4p8nuh8gr)
 
-[1.4 Objetivos 15](#_heading=h.mhnmsv2dwjkh)
+[2.2 Experiência do Usuário (UX) e Design de Interfaces (UI) 25](#_heading=h.a3xv9cbpo1du)
 
-[*1.4.1 Objetivo Geral* 15](#_heading=h.oqxp4nmnkun4)
+[2.3 Padrões Deceptivos 32](#_heading=h.rg9vgo8qoqfm)
 
-[*1.4.2 Objetivos Específicos* 15](#_heading=h.rccpvwegm6an)
+[2.4 Jogos de Azar e Comportamento do Usuário 46](#_heading=h.hnu3h5mkt0v2)
 
-[1.5 Estrutura do Trabalho 16](#_heading=h.udje1gh3pxr7)
+[**3 ESTADO DA ARTE E MARCO REGULATÓRIO 55**](#_heading=h.j29lh15hom79)
 
-[2 REFERENCIAL TEÓRICO 17](#_heading=h.uzq7ntok80dr)
+[3.1 Panorama Internacional 55](#_heading=h.s3hp9jlfdzes)
 
-[2.1 Ética no Design 17](#_heading=h.ejwqflg7694q)
+[3.2 Panorama Nacional 58](#_heading=h.3882aib70d2s)
 
-[2.2 Experiência do Usuário (UX) e Design de Interfaces (UI) 20](#_heading=h.c0xqfwqbcpwd)
+[3.3 Lacunas Regulatórias 60](#_heading=h.fkm1olgizsti)
 
-[2.3 Padrões Deceptivos 23](#_heading=h.7ztnk4bztgvu)
+[**4 MÉTODO 63**](#_heading=h.f892x0wq2t3b)
 
-[2.4 Jogos de Azar e Comportamento do Usuário 27](#_heading=h.kn27quuzu32m)
+[4.1 Classificação da Pesquisa 63](#_heading=h.ernx3va4lkw)
 
-[3 ESTADO DA ARTE E MARCO REGULATÓRIO 32](#_heading=h.90wupsaa22d5)
+[4.2 Definição do Corpus 64](#_heading=h.juz1u09ma3sb)
 
-[3.1 Panorama Internacional 32](#_heading=h.ghqm96aozc85)
+[4.3 Procedimentos de Coleta 66](#_heading=h.md4ctfcj63pg)
 
-[3.2 Panorama Nacional 34](#_heading=h.85voxwqz9nz6)
+[4.4 Critérios de Categorização 68](#_heading=h.kfwzt4ftnfr8)
 
-[3.3 Lacunas Regulatórias 35](#_heading=h.n7d0mdfldr1w)
+[4.5 Limitações do método 70](#_heading=h.d7pjhh34wfq4)
 
-[4 MÉTODO 37](#_heading=h.ze6j9blgkevu)
+[**5 ANÁLISE DE ESTUDO DE CASO 73**](#_heading=h.dp7uvlv3g739)
 
-[4.1 Classificação da Pesquisa 37](#_heading=h.ri1669f6zav7)
+[5.1 Apresentação dos Aplicativos Analisados 73](#_heading=h.ptuw8ad71i5j)
 
-[4.2 Definição do Corpus 37](#_heading=h.mhnwp63cnko9)
+[5.2 Mapeamento de Padrões Deceptivos 74](#_heading=h.hzgrvjz7jewj)
 
-[4.3 Procedimentos de Coleta 39](#_heading=h.bzocu7erj6rj)
+[5.3 Análise Heurística 79](#_heading=h.8xdf4cdryiuz)
 
-[4.4 Critérios de Categorização 40](#_heading=h.a5ys2gx18bah)
+[5.4 Análise Comparativa 80](#_heading=h.iidd8p69pjdj)
 
-[4.5 Limitações Metodológicas 41](#_heading=h.3ajkvaezur4q)
+[**6 DIRETRIZES E BOAS PRÁTICAS PARA DESIGN ÉTICO 83**](#_heading=h.7x3vuom23qh)
 
-[5 ANÁLISE DE ESTUDO DE CASO 42](#_heading=h.jewgxnbo1gwr)
+[6.1 Princípios de Design Ético para Plataformas de Apostas 83](#_heading=h.j7mexffxqgzr)
 
-[5.1 Apresentação dos Aplicativos Analisados 42](#_heading=h.uf30q529zn1u)
+[6.2 Guia e checklist anti-padrões deceptivos 85](#_heading=h.kke4879c16lc)
 
-[5.2 Mapeamento de Padrões Deceptivos 42](#_heading=h.a2gqe8zdoqec)
+[6.3 Recomendações para Stakeholders 88](#_heading=h.v4zcsnv0c4p)
 
-[5.3 Análise Heurística 43](#_heading=h.vel3v7y7m8h3)
+[**7 CONSIDERAÇÕES FINAIS 91**](#_heading=h.l6ktqlybhd4g)
 
-[5.4 Análise Comparativa 44](#_heading=h.2nf62pucnvfg)
+[7.1 Limitações do Estudo 92](#_heading=h.y5kw3ez0h23e)
 
-[6 DIRETRIZES E BOAS PRÁTICAS PARA DESIGN ÉTICO 45](#_heading=h.j35bm7anev5r)
+[7.2 Sugestões para Pesquisas Futuras 93](#_heading=h.oq8u6b4zqji3)
 
-[6.1 Princípios de Design Ético para Plataformas de Apostas 45](#_heading=h.r6hp6e7pnf7d)
-
-[6.2 Guia Prático de Boas Práticas 46](#_heading=h.c6hffslrrn0k)
-
-[6.3 Recomendações para Stakeholders 48](#_heading=h.848vkalyqp3x)
-
-[7 CONSIDERAÇÕES FINAIS 50](#_heading=h.j1lluptgn3hc)
-
-[7.1 Retomada dos Objetivos 50](#_heading=h.3ljmq18j6yqn)
-
-[7.2 Contribuições do Trabalho 51](#_heading=h.tl2qb2do39sf)
-
-[7.3 Limitações do Estudo 52](#_heading=h.4hvkqanvo7vk)
-
-[7.4 Sugestões para Pesquisas Futuras 52](#_heading=h.h82yxx83735y)
-
-[REFERÊNCIAS 55](#_heading=h.qh4j2muep9sw)
-
-[APÊNDICE (se existir é obrigatório) 59](#_heading=h.mpnqs4qysbqk)
-
-[ANEXO (se existir é obrigatório) 60](#_heading=h.qnd74iojgcpv)
+[**REFERÊNCIAS 96**](#_heading=h.qh4j2muep9sw)
 
 # 
 
@@ -189,13 +135,13 @@ Essa pergunta se justifica por duas razões complementares. Primeiro, porque o m
 
 ## 1.4 Objetivos
 
-### *1.4.1 Objetivo Geral*
+### 1.4.1 Objetivo Geral
 
 O presente trabalho investiga as interfaces e a arquitetura de informação de plataformas de apostas e jogos de azar *online* atuantes no Brasil. Historicamente, essas aplicações vêm utilizando configurações e fluxos de navegação altamente persuasivos, que frequentemente configuram padrões deceptivos, de forma livre no mercado, em grande parte por não terem sido, até o momento, submetidas a um escrutínio acadêmico e técnico sistemático sob a perspectiva ética do Design.
 
 A investigação aprofundada sobre esses aspectos justifica-se pelo fato de que o estudo detalhado dessas interfaces auxilia na compreensão de seu real impacto social e psicológico sobre os usuários, permitindo avaliar a extensão de sua influência no comportamento impulsivo e nas perdas financeiras. A produção desse conhecimento crítico fornece conhecimentos científicos essenciais para subsidiar a regulamentação do setor e estabelecer limites éticos projetuais, servindo como base tanto para auditar os serviços existentes quanto para balizar o desenvolvimento de novas plataformas digitais em conformidade com o bem-estar social. Adicionalmente, este projeto busca fomentar o desenvolvimento de uma consciência ética e reflexiva nos próprios designers, capacitando-os a avaliar criticamente as implicações humanas e morais de suas decisões cotidianas de projeto diante dos imperativos de mercado.
 
-### *1.4.2 Objetivos Específicos*
+### 1.4.2 Objetivos Específicos
 
 O alcance do objetivo geral se operacionaliza por meio de quatro objetivos específicos, que refletem as etapas lógicas da pesquisa. O primeiro consiste em mapear os principais padrões deceptivos utilizados em plataformas de apostas, a partir da literatura acadêmica e de taxonomias consolidadas. O segundo objetivo busca catalogar e categorizar ocorrências de padrões deceptivos em aplicativos selecionados, por meio de análise empírica das interfaces. O terceiro propõe avaliar a conformidade dessas interfaces com princípios éticos de design e heurísticas de usabilidade estabelecidas. Por fim, o quarto objetivo visa propor diretrizes de design ético que conciliem objetivos de negócio e respeito ao usuário, oferecendo uma contribuição propositiva ao campo.
 
@@ -215,7 +161,7 @@ Os achados empíricos sustentam, então, a etapa propositiva: a formulação de 
 
 A análise crítica dos padrões deceptivos em aplicações de apostas exige uma fundamentação teórica que articule campos do conhecimento aparentemente distintos, mas profundamente interconectados. O presente capítulo organiza essa fundamentação em quatro eixos conceituais que, juntos, compõem o arcabouço necessário para compreender o fenômeno investigado nesta pesquisa. O primeiro eixo examina a dimensão ética do design, situando o projetista como agente moral dotado de responsabilidade sobre os impactos de suas decisões. O segundo eixo apresenta os fundamentos da experiência do usuário e do design de interfaces, evidenciando o poder de influência que o designer exerce sobre o comportamento humano. O terceiro eixo aborda os padrões deceptivos como manifestação do abuso deliberado desse poder. O quarto eixo, por fim, conecta esses conceitos ao contexto específico dos jogos de azar, demonstrando como vulnerabilidades cognitivas conhecidas são exploradas por meio do design de interfaces.
 
-Esses quatro eixos não operam isoladamente. A ética no design estabelece o horizonte normativo que distingue persuasão legítima de manipulação. Os fundamentos de UX e UI fornecem as ferramentas técnicas que tanto podem servir ao usuário quanto ser instrumentalizadas contra ele. Os padrões deceptivos representam a cristalização dessa instrumentalização em estratégias deliberadas, enquanto a psicologia do jogo revela por que essas estratégias encontram terreno particularmente fértil no universo das apostas. A articulação progressiva desses eixos ao longo do capítulo oferece a base conceitual sobre a qual se apoiam o mapeamento regulatório do Capítulo 3, o método do Capítulo 4 e a análise empírica do Capítulo 5.
+Esses quatro eixos não operam isoladamente. A ética no design estabelece o horizonte normativo que distingue persuasão legítima de manipulação. Os fundamentos de UX e UI fornecem as ferramentas técnicas que tanto podem servir ao usuário quanto ser instrumentalizadas contra ele. Os padrões deceptivos representam a cristalização dessa instrumentalização em estratégias deliberadas, enquanto a psicologia do jogo revela por que essas estratégias encontram terreno particularmente fértil no universo das apostas. A articulação progressiva desses eixos ao longo do capítulo oferece a base conceitual sobre a qual se apoiarão o mapeamento regulatório, o método e a análise de estudo de caso.
 
 ## 2.1 Ética no Design
 
@@ -235,7 +181,7 @@ A dimensão ética se torna ainda mais complexa quando considerada à luz das di
 
 [^churn]: O termo *churn*, oriundo do inglês, designa a taxa de cancelamento ou evasão de clientes de um serviço ao longo de determinado período. No mercado de apostas, mede a proporção de usuários que deixam de utilizar a plataforma, funcionando como indicador central de retenção e, por consequência, de receita projetada.
 
-A convergência entre as perspectivas de Papanek, Monteiro, Friedman e Hendry, Fry e Manzini delineia um campo teórico robusto para a avaliação ética das interfaces de apostas. A responsabilidade social do designer, a recusa ética como obrigação profissional, a integração de valores humanos no processo projetual, a dimensão política do ato de projetar e a reflexividade proporcional ao impacto compõem um repertório conceitual que será mobilizado ao longo dos capítulos seguintes desta pesquisa, especialmente na formulação de diretrizes éticas no Capítulo 6.
+A convergência entre as perspectivas de Papanek, Monteiro, Friedman e Hendry, Fry e Manzini delineia um campo teórico robusto para a avaliação ética das interfaces de apostas. A responsabilidade social do designer, a recusa ética como obrigação profissional, a integração de valores humanos no processo projetual, a dimensão política do ato de projetar e a reflexividade proporcional ao impacto compõem um repertório conceitual que será mobilizado ao longo dos capítulos seguintes desta pesquisa, especialmente na formulação de diretrizes éticas.
 
 Durante a trajetória de formação acadêmica em Design, percebe-se que as salas de aula e os projetos universitários frequentemente enfatizam o potencial transformador da disciplina, projetando a possibilidade de uma atuação voltada à promoção do bem-estar social e de mudanças positivas na sociedade. No entanto, a inserção profissional no mercado revela um cenário de profunda disparidade: sob a pressão de imperativos econômicos e do foco irrestrito na otimização do capital, a margem para que os designers manifestem suas convicções morais ou questionamentos éticos torna-se sensivelmente reduzida. Diante de estruturas corporativas rígidas e orientadas por métricas de lucratividade, muitos profissionais veem-se induzidos a adotar práticas que apenas mantêm e reproduzem o *status quo* estabelecido, silenciando o potencial crítico da atividade projetual.
 
@@ -245,11 +191,11 @@ Compreender como o design de interfaces influencia o comportamento do usuário e
 
 Don Norman, em *The Design of Everyday Things*, publicado originalmente em 1988 e revisado em 2013, introduziu conceitos que se tornaram pilares do design de interação. Noções como *affordances*, *signifiers*, *mapping* e *feedback* fundamentam a maneira como os designers comunicam ao usuário as possibilidades de interação com um sistema (NORMAN, 2013). Norman argumenta que o bom design torna as ações possíveis visíveis, as consequências previsíveis e os erros reversíveis. Um botão que se parece com um botão comunica sua clicabilidade; um formulário que confirma o envio dos dados reduz a ansiedade do usuário; uma interface que permite desfazer uma ação oferece segurança para experimentar. Esses princípios, quando aplicados de forma consistente, criam interfaces intuitivas que respeitam o modelo mental do usuário. Quando violados deliberadamente, abrem espaço para a confusão, o erro e a manipulação.
 
-O conceito de *affordance*, em particular, merece atenção pela sua aplicabilidade ao contexto das apostas *online*. Na formulação de Norman, uma *affordance* é a relação entre as propriedades de um objeto e as capacidades do agente que determina como o objeto pode ser utilizado. No ambiente digital, as *affordances* são majoritariamente perceptuais, ou seja, comunicadas por meio de pistas visuais que o designer escolhe deliberadamente. Um botão verde com a inscrição "Apostar Agora" comunica ação imediata e positiva; um link discreto em cinza claro com a palavra "limites" comunica irrelevância. A hierarquia visual da interface, incluindo tamanho, cor, posicionamento e contraste dos elementos, constitui um sistema de *affordances* que guia o comportamento do usuário de forma muitas vezes inconsciente. Essa dimensão projetual será especialmente relevante para a análise dos aplicativos de apostas no Capítulo 5, pois permite avaliar se a interface comunica ao usuário as informações necessárias para uma tomada de decisão autônoma ou se, ao contrário, o conduz por caminhos que servem primordialmente aos interesses da plataforma.
+O conceito de *affordance*, em particular, merece atenção pela sua aplicabilidade ao contexto das apostas *online*. Na formulação de Norman, uma *affordance* é a relação entre as propriedades de um objeto e as capacidades do agente que determina como o objeto pode ser utilizado. No ambiente digital, as *affordances* são majoritariamente perceptuais, ou seja, comunicadas por meio de pistas visuais que o designer escolhe deliberadamente. Um botão verde com a inscrição "Apostar Agora" comunica ação imediata e positiva; um link discreto em cinza claro com a palavra "limites" comunica irrelevância. A hierarquia visual da interface, incluindo tamanho, cor, posicionamento e contraste dos elementos, constitui um sistema de *affordances* que guia o comportamento do usuário de forma muitas vezes inconsciente. Essa dimensão projetual será especialmente relevante para a análise dos aplicativos de apostas, pois permite avaliar se a interface comunica ao usuário as informações necessárias para uma tomada de decisão autônoma ou se, ao contrário, o conduz por caminhos que servem primordialmente aos interesses da plataforma.
 
 Jakob Nielsen estabeleceu, em 1994, as dez heurísticas de usabilidade que se tornaram referência mundial para a avaliação de interfaces (NIELSEN, 1994). Essas heurísticas compreendem a visibilidade do status do sistema, a correspondência entre o sistema e o mundo real, o controle e a liberdade do usuário, a consistência e os padrões de design, a prevenção de erros, o reconhecimento em vez da memorização, a flexibilidade e a eficiência de uso, o design estético e minimalista, o suporte ao reconhecimento, diagnóstico e recuperação de erros, e a oferta de ajuda e documentação. Cada uma dessas heurísticas representa um princípio de design centrado no usuário cuja violação gera fricção, frustração ou, em cenários mais graves, indução ao erro. Conforme será demonstrado na seção 2.3, muitos padrões deceptivos operam precisamente pela violação sistemática de uma ou mais dessas heurísticas.
 
-A pertinência das heurísticas de Nielsen para o presente estudo vai além de seu uso como ferramenta de avaliação. As heurísticas estabelecem um padrão normativo para o design de interfaces que funciona como referência comparativa: ao confrontar a interface de um aplicativo de apostas com esses princípios, torna-se possível identificar não apenas falhas de usabilidade, mas violações deliberadas que configuram padrões deceptivos. A heurística de controle e liberdade do usuário, por exemplo, postula que os usuários devem ter a capacidade de desfazer e refazer ações com facilidade. Quando uma plataforma de apostas permite o depósito instantâneo via Pix, mas exige dias de processamento e documentação complementar para o saque, a violação dessa heurística não é acidental, mas projetada. O método de análise heurística adaptado, que será detalhado no Capítulo 4, operacionaliza essa abordagem comparativa.
+A pertinência das heurísticas de Nielsen para o presente estudo vai além de seu uso como ferramenta de avaliação. As heurísticas estabelecem um padrão normativo para o design de interfaces que funciona como referência comparativa: ao confrontar a interface de um aplicativo de apostas com esses princípios, torna-se possível identificar não apenas falhas de usabilidade, mas violações deliberadas que configuram padrões deceptivos. A heurística de controle e liberdade do usuário, por exemplo, postula que os usuários devem ter a capacidade de desfazer e refazer ações com facilidade. Quando uma plataforma de apostas permite o depósito instantâneo via Pix, mas exige dias de processamento e documentação complementar para o saque, a violação dessa heurística não é acidental, mas projetada. O método de análise heurística adaptado, que será detalhado posteriormente, operacionaliza essa abordagem comparativa.
 
 ![Figura 3 – Heurísticas de usabilidade de Nielsen](../figuras/output-v2/png/figura_03.png "Elaborado pelo autor com base em Nielsen (1994).")
 
@@ -269,13 +215,13 @@ A arquitetura de informação contribui para essa discussão ao determinar como 
 
 A linha que separa o design persuasivo legítimo da manipulação não é, em muitos casos, nítida. Uma notificação que lembra o usuário de um evento esportivo pode ser considerada um serviço útil; a mesma notificação, acompanhada de uma oferta de "aposta grátis" e enviada em horário estratégico com base no histórico de uso do apostador, opera em um registro inteiramente diferente. A transição entre persuasão e manipulação depende, entre outros fatores, da transparência das intenções do designer, do grau de autonomia preservado ao usuário e da assimetria informacional explorada. Os conceitos apresentados nesta seção, da usabilidade de Nielsen e Norman ao design persuasivo de Fogg, constituem ferramentas projetuais que conferem ao designer poder real sobre o comportamento do usuário. Como esse poder é exercido, se a serviço ou em detrimento do usuário, é uma escolha que define a fronteira entre design responsável e prática deceptiva. A seção subsequente examinará como, na prática, esse poder tem sido sistematicamente mobilizado contra os interesses do usuário por meio dos chamados padrões deceptivos.
 
-## **2.3 Padrões Deceptivos**
+## 2.3 Padrões Deceptivos
 
 Os fundamentos de UX e UI discutidos na seção anterior demonstram que o design de interfaces possui capacidade comprovada de influenciar comportamentos. Os padrões deceptivos representam a mobilização deliberada dessa capacidade contra os interesses do usuário. Enquanto o design centrado no usuário busca alinhar os objetivos do sistema aos do indivíduo que o utiliza, os padrões deceptivos operam na direção oposta: exploram conhecimentos sobre cognição, percepção e comportamento para induzir o usuário a ações que beneficiam exclusivamente a plataforma.
 
 O termo *dark patterns* foi cunhado pelo designer britânico Harry Brignull em 2010, quando lançou o site darkpatterns.org (posteriormente renomeado para *deceptive.design*) com o objetivo de catalogar e denunciar práticas de design intencionalmente enganosas em interfaces digitais, traduzido na literatura brasileira como "padrões deceptivos" (BRIGNULL, 2010). A contribuição de Brignull foi significativa não apenas por nomear o fenômeno, mas por estabelecer uma distinção conceitual entre erros de usabilidade e manipulação intencional. Um formulário confuso pode ser resultado de incompetência projetual, mas um fluxo de cancelamento propositalmente labiríntico é um padrão deceptivo, pois reflete uma decisão consciente de dificultar uma ação que contraria os interesses comerciais da plataforma.
 
-A partir do trabalho inaugural de Brignull, a academia produziu taxonomias cada vez mais refinadas para categorizar os padrões deceptivos. Gray et al. (2018), em artigo seminal publicado na conferência CHI, propuseram uma das classificações mais influentes ao organizar os padrões deceptivos em cinco categorias: *nagging* (insistência), *obstruction* (obstrução), *sneaking* (dissimulação), *interface interference* (interferência na interface) e *forced action* (ação forçada) (GRAY et al., 2018). Cada categoria agrupa estratégias específicas que compartilham uma lógica de funcionamento comum. *Nagging* refere-se a interrupções repetitivas que pressionam o usuário a tomar uma decisão favorável à plataforma; no contexto de apostas, manifesta-se em notificações insistentes sobre promoções ou eventos ao vivo. *Obstruction*designa a inserção de fricções deliberadas em processos que o usuário deseja completar, como tornar o saque de valores significativamente mais complexo que o depósito. *Sneaking* envolve ocultar ou disfarçar informações relevantes, como termos de rollover[^rollover] anexados a bônus promocionais. *Interface interference* compreende a manipulação de elementos visuais para direcionar o usuário a uma opção específica, como destacar visualmente o botão de depósito e tornar o de autoexclusão discreto. *Forced action*, por fim, condiciona o acesso a um recurso desejado à realização de uma ação não relacionada, como exigir o fornecimento de dados pessoais para acessar estatísticas de jogos.
+A partir do trabalho inaugural de Brignull, a academia produziu taxonomias cada vez mais refinadas para categorizar os padrões deceptivos. Gray et al. (2018), em artigo seminal publicado na conferência CHI, propuseram uma das classificações mais influentes ao organizar os padrões deceptivos em cinco categorias: *nagging* (insistência), *obstruction* (obstrução), *sneaking* (dissimulação), *interface interference* (interferência na interface) e *forced action* (ação forçada) (GRAY et al., 2018). Cada categoria agrupa estratégias específicas que compartilham uma lógica de funcionamento comum. *Nagging* refere-se a interrupções repetitivas que pressionam o usuário a tomar uma decisão favorável à plataforma; no contexto de apostas, manifesta-se em notificações insistentes sobre promoções ou eventos ao vivo. *Obstruction* designa a inserção de fricções deliberadas em processos que o usuário deseja completar, como tornar o saque de valores significativamente mais complexo que o depósito. *Sneaking* envolve ocultar ou disfarçar informações relevantes, como termos de rollover[^rollover] anexados a bônus promocionais. *Interface interference* compreende a manipulação de elementos visuais para direcionar o usuário a uma opção específica, como destacar visualmente o botão de depósito e tornar o de autoexclusão discreto. *Forced action*, por fim, condiciona o acesso a um recurso desejado à realização de uma ação não relacionada, como exigir o fornecimento de dados pessoais para acessar estatísticas de jogos.
 
 [^rollover]: A cláusula de *rollover* estabelece o número de vezes que o valor do bônus, ou a soma do bônus e do depósito, conforme os termos da promoção, deve ser apostado antes que qualquer saque seja permitido. Por exemplo, um bônus de R$ 100 com *rollover* de 20× exige que o apostador realize apostas que totalizem R$ 2.000 antes de poder retirar os fundos oriundos do bônus. Essa condição, frequentemente apresentada em letras miúdas ou em páginas de termos e condições de difícil acesso, é um dos principais mecanismos pelos quais plataformas de apostas tornam bônus promocionais menos vantajosos do que aparentam ser à primeira vista.
 
@@ -287,14 +233,14 @@ Di Geronimo et al. (2020) complementam esse panorama ao propor um questionário 
 
 Jamie Luguri e Lior Strahilevitz (2021) conduziram estudos experimentais que demonstraram o impacto diferenciado dos padrões deceptivos conforme sua agressividade. Os autores distinguem entre padrões deceptivos "leves" (como configurações padrão desfavoráveis) e "agressivos" (como manipulação visual e *confirm shaming*). Os resultados indicam que padrões deceptivos agressivos são significativamente mais eficazes em influenciar o comportamento do usuário, mas também geram maior reação adversa quando identificados, produzindo perda de confiança na plataforma (LUGURI; STRAHILEVITZ, 2021). Essa constatação é particularmente relevante para o mercado de apostas, onde a relação do usuário com a plataforma tende a ser contínua e baseada em confiança percebida.
 
-As taxonomias de Gray et al. e de Mathur et al. convivem com um esforço de catalogação de natureza mais aplicada, conduzido pelo próprio Brignull na plataforma *deceptive.design*, sucessora do site original de 2010. Diferentemente das classificações publicadas em conferências, esse catálogo é revisado de forma contínua, à medida que novas práticas surgem e que a nomenclatura se estabiliza, e reúne atualmente dezesseis tipos reconhecidos de padrões deceptivos (BRIGNULL, [s.d.]). Como a literatura consolidou tais designações em inglês, o Quadro 1 as apresenta em sua forma original, acompanhadas de uma tradução para o português e da respectiva definição, fixando o vocabulário analítico que será retomado na investigação empírica dos capítulos seguintes. Vários desses tipos, conforme se demonstrará na sequência, encontram nas plataformas de apostas um terreno de aplicação especialmente fértil.
+As taxonomias de Gray et al. e de Mathur et al. convivem com um esforço de catalogação de natureza mais aplicada, conduzido pelo próprio Brignull na plataforma *deceptive.design*, sucessora do site original de 2010. Diferentemente das classificações publicadas em conferências, esse catálogo é revisado de forma contínua, à medida que novas práticas surgem e que a nomenclatura se estabiliza, e reúne atualmente dezesseis tipos reconhecidos de padrões deceptivos. Como a literatura consolidou tais designações em inglês, o Quadro 1 as apresenta em sua forma original, acompanhadas de uma tradução para o português e da respectiva definição, fixando o vocabulário analítico que será retomado na investigação empírica dos capítulos seguintes. Vários desses tipos, conforme se demonstrará na sequência, encontram nas plataformas de apostas um terreno de aplicação especialmente fértil.
 
 **Quadro 1 – Tipos de padrões deceptivos catalogados por Brignull**
 
-| Padrão (inglês) | Tradução | Definição |
+| **Padrão (inglês)** | **Tradução** | **Definição** |
 | --- | --- | --- |
 | *Comparison Prevention* | Prevenção de comparação | O usuário tem dificuldade de comparar produtos porque preços e características são combinados de modo complexo ou porque informações essenciais são difíceis de localizar. |
-| *Confirmshaming* | Constrangimento da recusa | O usuário é manipulado emocionalmente a fazer algo que, de outro modo, não faria, geralmente por meio de linguagem que envergonha quem recusa uma oferta. |
+| *Confirm shaming* | Constrangim-ento da recusa | O usuário é manipulado emocionalmente a fazer algo que, de outro modo, não faria, geralmente por meio de linguagem que envergonha quem recusa uma oferta. |
 | *Disguised Ads* | Anúncios disfarçados | O usuário acredita estar clicando em um elemento da interface ou em conteúdo legítimo, quando na verdade interage com um anúncio disfarçado. |
 | *Fake Scarcity* | Falsa escassez | O usuário é pressionado a concluir uma ação porque recebe uma indicação falsa de estoque limitado ou de alta procura. |
 | *Fake Social Proof* | Falsa prova social | O usuário é induzido a crer que um produto é mais popular ou confiável do que de fato é, ao ser exposto a avaliações, depoimentos ou mensagens de atividade forjados. |
@@ -310,7 +256,7 @@ As taxonomias de Gray et al. e de Mathur et al. convivem com um esforço de cata
 | *Trick Wording* | Redação enganosa | O usuário é induzido a tomar uma ação em razão do emprego de linguagem confusa ou capciosa. |
 | *Visual Interference* | Interferência visual | O usuário espera que a informação seja apresentada de modo claro e previsível, mas ela aparece oculta, obscurecida ou disfarçada. |
 
-Fonte: Elaborado pelo autor com base em Brignull ([s.d.]).
+Fonte: Elaborado pelo autor com base em Brignull.
 
 Entre esses tipos, alguns merecem detalhamento pela recorrência com que reaparecem nas casas de apostas. O *trick wording* recorre a linguagem ambígua para induzir o usuário a decisões contrárias a seus interesses. Em aplicativos de apostas, materializa-se, por exemplo, em ofertas de odds aumentadas que anunciam até 25% a mais de ganhos sobre as cotas regulares, mas condicionam o benefício a exigências reveladas apenas em um asterisco discreto, como cotas mínimas por seleção e a obrigatoriedade de apostas múltiplas. O apostador atraído pelo destaque do percentual elevado raramente percebe que as restrições em letra reduzida diminuem drasticamente a probabilidade de aproveitar a vantagem anunciada, e acaba assumindo um risco maior do que aceitaria diante de uma cota convencional.
 
@@ -350,7 +296,7 @@ A compreensão dos padrões deceptivos se enriquece quando articulada à *Nudge 
 
 No contexto das apostas *online*, a arquitetura de escolha se manifesta em decisões projetuais aparentemente triviais, mas com consequências significativas. O valor pré-preenchido no campo de depósito, por exemplo, funciona como um *nudge* que ancora a percepção do apostador sobre qual seria um valor "normal" de depósito. Se o campo apresenta R$ 50 como valor padrão, em vez de deixá-lo em branco ou iniciar em R$ 10, o apostador é sutilmente direcionado a depositar um valor mais alto. A ordem de apresentação das opções de apostas, com eventos ao vivo e múltiplas destacadas no topo e apostas mais conservadoras relegadas a menus secundários, constitui outra forma de *nudge* que favorece comportamentos de maior risco. Thaler e Sunstein reconhecem que toda arquitetura de escolha implica um posicionamento, pois não existe organização neutra de opções. A questão ética reside em saber a serviço de quem essa arquitetura é projetada.
 
-Cass Sunstein aprofundou essa distinção ao introduzir o conceito de "*sludge*" na obra homônima de 2022. *Sludge* designa a fricção excessiva imposta a processos que beneficiam o indivíduo, como formulários desnecessariamente longos para acessar benefícios sociais ou procedimentos deliberadamente burocráticos para cancelar um serviço (SUNSTEIN, 2022). No contexto das apostas, o *sludge* se manifesta quando a plataforma exige verificações documentais extensas apenas para o saque, mas não para o depósito; quando o processo de definição de limites de apostas demanda múltiplas confirmações e períodos de espera, mas o aumento do limite é quase instantâneo; ou quando o acesso a ferramentas de jogo responsável requer navegação por múltiplos menus que desencorajam o uso. Sunstein argumenta que, enquanto os *nudges* operam pela facilitação, o *sludge* opera pela obstrução, e ambos são ferramentas de poder que podem ser empregadas eticamente ou antieticamente dependendo da intenção e do contexto. A combinação de *nudges* em direção ao jogo e *sludge* em direção à proteção das plataformas configura o que Newall et al. (2023) denominaram "*dark nudges*" no contexto específico das apostas esportivas *online*, conceito que será retomado no Capítulo 3 ao discutir as respostas regulatórias internacionais a essas práticas.
+Cass Sunstein aprofundou essa distinção ao introduzir o conceito de "*sludge*" na obra homônima de 2022. *Sludge* designa a fricção excessiva imposta a processos que beneficiam o indivíduo, como formulários desnecessariamente longos para acessar benefícios sociais ou procedimentos deliberadamente burocráticos para cancelar um serviço (SUNSTEIN, 2022). No contexto das apostas, o *sludge* se manifesta quando a plataforma exige verificações documentais extensas apenas para o saque, mas não para o depósito; quando o processo de definição de limites de apostas demanda múltiplas confirmações e períodos de espera, mas o aumento do limite é quase instantâneo; ou quando o acesso a ferramentas de jogo responsável requer navegação por múltiplos menus que desencorajam o uso. Sunstein argumenta que, enquanto os *nudges* operam pela facilitação, o *sludge* opera pela obstrução, e ambos são ferramentas de poder que podem ser empregadas eticamente ou antieticamente dependendo da intenção e do contexto. A combinação de *nudges* em direção ao jogo e *sludge* em direção à proteção das plataformas configura o que Newall et al. (2023) denominaram "*dark nudges*" no contexto específico das apostas esportivas *online*, conceito que será retomado ao discutir as respostas regulatórias internacionais a essas práticas.
 
 A relação entre padrões deceptivos e as heurísticas de Nielsen, apresentadas na seção 2.2, é direta e reveladora. Cada padrão deceptivo, quando analisado sob a ótica das heurísticas, corresponde à violação deliberada de ao menos um princípio de usabilidade. *Hidden Costs* violam a heurística de visibilidade do status do sistema, pois ocultam informações que o usuário precisaria para tomar uma decisão informada. *Hard to Cancel* viola a heurística de controle e liberdade do usuário, pois restringe a capacidade de reverter ou abandonar uma ação. *Visual Interference* viola a heurística de design estético e minimalista, pois introduz elementos visuais que competem pela atenção do usuário para desviar seu foco de informações relevantes. *Confirmshaming* viola a heurística de correspondência entre o sistema e o mundo real, pois emprega linguagem manipulativa que distorce o significado da ação do usuário. *Sneaking* viola a heurística de prevenção de erros, pois oculta condições que, se conhecidas, levariam o usuário a tomar uma decisão diferente. Essa correspondência entre padrões deceptivos e violações heurísticas é analiticamente valiosa porque demonstra que os padrões deceptivos não constituem uma categoria inteiramente nova de análise, mas a subversão intencional de princípios de design amplamente reconhecidos e documentados. A fronteira entre "design ruim" e "padrão deceptivo" reside, portanto, na intencionalidade: o designer que viola uma heurística por desconhecimento produz uma interface mal projetada, enquanto aquele que a viola deliberadamente para extrair vantagem produz uma interface deceptiva.
 
@@ -390,7 +336,7 @@ A relação entre design de interface e comportamento de jogo problemático é m
 
 No cenário brasileiro contemporâneo, os conceitos teóricos que explicam a dependência e a vulnerabilidade cognitiva encontram um terreno de manifestação prática alarmante. Observa-se a materialização desse fenômeno na publicidade massiva e quase irrestrita das plataformas de apostas, que ocupam posições de destaque no esporte mais popular do país, patrocinando a maioria dos clubes de futebol profissional e dominando os intervalos de transmissões esportivas e redes sociais. Essa ampla exposição ocorre em uma sociedade profundamente digitalizada e conectada por meio de dispositivos móveis, porém marcada por desigualdades estruturais no acesso à educação formal e à literacia digital. Sob essa perspectiva, a proliferação de problemas decorrentes de jogos de azar surge como uma consequência previsível: a ausência de uma legislação robusta que exija transparência no design das plataformas e limite o alcance de estratégias publicitárias agressivas deixa a população vulnerável a dinâmicas comportamentais viciantes e altamente sofisticadas, as quais operam sem qualquer contrapeso educativo ou regulatório eficaz.
 
-A articulação dos quatro eixos teóricos apresentados neste capítulo revela uma cadeia conceitual coerente que fundamenta a análise proposta nos capítulos seguintes desta pesquisa. A ética no design estabelece que o profissional projetista carrega responsabilidade moral sobre os artefatos que cria, e que a assimetria de poder entre designer e usuário impõe limites éticos ao exercício dessa atividade. Os fundamentos de UX e UI demonstram que o design de interfaces possui ferramentas técnicas poderosas para influenciar o comportamento do usuário, desde os princípios de usabilidade de Nielsen e Norman até as técnicas de persuasão sistematizadas por Fogg. Os padrões deceptivos representam a subversão deliberada dessas ferramentas, convertendo recursos de facilitação em instrumentos de manipulação codificados em categorias bem documentadas pela literatura acadêmica. A psicologia do jogo, por fim, evidencia que o contexto das apostas amplifica a nocividade dessas práticas, pois os mecanismos de reforço intermitente, os vieses cognitivos e as dinâmicas de gamificação tornam os apostadores particularmente suscetíveis à manipulação projetual.
+A articulação dos quatro eixos teóricos apresentados neste capítulo revela uma cadeia conceitual coerente que fundamenta a análise proposta nos textos seguintes desta pesquisa. A ética no design estabelece que o profissional projetista carrega responsabilidade moral sobre os artefatos que cria, e que a assimetria de poder entre designer e usuário impõe limites éticos ao exercício dessa atividade. Os fundamentos de UX e UI demonstram que o design de interfaces possui ferramentas técnicas poderosas para influenciar o comportamento do usuário, desde os princípios de usabilidade de Nielsen e Norman até as técnicas de persuasão sistematizadas por Fogg. Os padrões deceptivos representam a subversão deliberada dessas ferramentas, convertendo recursos de facilitação em instrumentos de manipulação codificados em categorias bem documentadas pela literatura acadêmica. A psicologia do jogo, por fim, evidencia que o contexto das apostas amplifica a nocividade dessas práticas, pois os mecanismos de reforço intermitente, os vieses cognitivos e as dinâmicas de gamificação tornam os apostadores particularmente suscetíveis à manipulação projetual.
 
 A progressão argumentativa deste capítulo, do dever ético ao poder técnico, da formalização do abuso à vulnerabilidade do contexto, estabelece a lente analítica que orientará o restante da monografia. Esse conjunto conceitual, articulado aqui em suas tensões internas e complementaridades, orienta os passos seguintes da pesquisa. O que se busca a partir daqui é verificar empiricamente como esses mecanismos se manifestam no mercado brasileiro, situando o fenômeno no contexto regulatório em que ele ocorre e, com base nesses achados, propondo caminhos concretos que o design pode percorrer em direção à ética.
 
@@ -398,7 +344,7 @@ A progressão argumentativa deste capítulo, do dever ético ao poder técnico, 
 
 O referencial teórico apresentado demonstra que o designer possui ferramentas técnicas capazes de influenciar o comportamento do usuário e que os padrões deceptivos representam o abuso deliberado dessas ferramentas, particularmente nocivo no contexto dos jogos de azar. Para que a análise proposta nesta pesquisa se situe adequadamente no cenário contemporâneo, é necessário compreender como diferentes jurisdições têm respondido a esse fenômeno. O presente capítulo examina o panorama regulatório internacional e nacional relativo aos padrões deceptivos e às apostas *online*, identificando avanços, lacunas e oportunidades de intervenção. A ponte entre a fundamentação teórica dos capítulos anteriores e a prática da pesquisa que se desenvolverá passa, necessariamente, por esse mapeamento regulatório.
 
-## **3.1 Panorama Internacional**
+## 3.1 Panorama Internacional
 
 A preocupação com padrões deceptivos nas interfaces digitais ganhou tração regulatória em diferentes partes do mundo ao longo da última década, embora com abordagens e graus de maturidade distintos. O continente europeu lidera os esforços legislativos, seguido pelos Estados Unidos e pelo Reino Unido, cada um com abordagens que refletem suas tradições regulatórias próprias.
 
@@ -412,19 +358,19 @@ O European Data Protection Board (EDPB) complementou esse arcabouço ao publicar
 
 Nos Estados Unidos, a Federal Trade Commission (FTC) adota uma abordagem baseada em *enforcement*[^enforcement] e não em legislação específica. O relatório *Bringing Dark Patterns to Light*, publicado em 2022, sistematiza a posição da agência e categoriza os padrões deceptivos em quatro eixos: indução de crenças falsas, ocultação ou retardamento de informações relevantes, cobrança de valores não autorizados e obscurecimento ou subversão de escolhas de privacidade (FTC, 2022). A FTC tem utilizado instrumentos legais já existentes, como o FTC Act e o Restore *Online* Shoppers' Confidence Act (ROSCA), para processar empresas que empregam padrões deceptivos, com atenção especial às chamadas "*subscription traps*", nas quais cancelar um serviço é deliberadamente mais complexo do que contratá-lo. Woodrow Hartzog, em *Privacy's Blueprint* (2018), argumenta que o design deveria ser reconhecido juridicamente como uma forma de comunicação regulável, antecipando muitas das propostas que a FTC viria a operacionalizar (HARTZOG, 2018).
 
+[^enforcement]: *Enforcement* designa a aplicação coercitiva de normas já existentes por meio de investigações, multas e processos administrativos ou judiciais, sem que a agência reguladora precise aguardar a criação de legislação específica. Difere da abordagem regulatória clássica, que parte da elaboração de uma lei dirigida ao problema para depois fiscalizar seu cumprimento.
+
 A Organização para a Cooperação e Desenvolvimento Econômico (OCDE) contribuiu para a consolidação do campo ao publicar, em 2022, o relatório *Dark Commercial Patterns*, que oferece um panorama comparativo das abordagens regulatórias de seus países-membros e propõe um framework analítico para a compreensão e o combate a essas práticas em escala global (OCDE, 2022).
 
 No que se refere especificamente ao mercado de apostas *online*, a UK *Gambling* Commission se destaca como a autoridade reguladora mais avançada na integração de critérios de design às suas normas. Em 2023, a Comissão publicou o White Paper *High Stakes: Gambling Reform for the Digital Age*, que desencadeou uma série de consultas públicas sobre design de jogos remotos, verificação financeira de risco e práticas de marketing. A abordagem britânica se distingue por adotar o conceito de "Safer by Design", que preconiza a incorporação de recursos de segurança diretamente na arquitetura dos jogos *online*, indo além de ferramentas individuais de autocontrole (UK GAMBLING COMMISSION, 2023). Medidas concretas incluem a proibição do *autoplay* em *slots* *online*[^slot], a limitação de velocidade de rotação, a proibição de recursos que criem ilusão de controle e a exigência de informações em tempo real sobre gastos acumulados e tempo de jogo. Essas medidas configuram um modelo no qual o design é reconhecido como variável regulável, e não apenas como competência exclusiva do desenvolvedor.
 
-[^enforcement]: *Enforcement* designa a aplicação coercitiva de normas já existentes por meio de investigações, multas e processos administrativos ou judiciais, sem que a agência reguladora precise aguardar a criação de legislação específica. Difere da abordagem regulatória clássica, que parte da elaboração de uma lei dirigida ao problema para depois fiscalizar seu cumprimento.
-
 [^slot]: Os *slots*, ou caça-níqueis *online*, são jogos de cassino baseados em roletas giratórios com símbolos, letras e números, cujo resultado é determinado de forma aleatória. Essa versão digital das máquinas caça-níqueis tradicionais caracteriza-se pela rapidez das rodadas e pela facilidade de repetição contínua, fatores associados ao comportamento de jogo compulsivo.
 
-Newall et al. (2023) documentaram a presença de "*dark nudges*" em plataformas de apostas esportivas *online*, identificando práticas como mensagens urgentes de baixo estoque ("restam poucas vagas", comuns em jogos de mesa *online* com número limitado de assentos por mesa), exibição seletiva de probabilidades e personalização algorítmica de ofertas como estratégias que exploram vieses cognitivos, como a falácia do jogador e a ilusão de controle, discutidos no Capítulo 2, para incentivar o aumento de apostas.
+Newall et al. (2023) documentaram a presença de "*dark nudges*" em plataformas de apostas esportivas *online*, identificando práticas como mensagens urgentes de baixo estoque ("restam poucas vagas", comuns em jogos de mesa *online* com número limitado de assentos por mesa), exibição seletiva de probabilidades e personalização algorítmica de ofertas como estratégias que exploram vieses cognitivos, como a falácia do jogador e a ilusão de controle, discutidos no referencial teórico, para incentivar o aumento de apostas.
 
 ![Figura 19 – Regulação de padrões deceptivos por jurisdição](../figuras/output-v2/png/figura_19.png "Elaborado pelo autor (2026).")
 
-## **3.2 Panorama Nacional**
+## 3.2 Panorama Nacional
 
 O cenário regulatório brasileiro combina avanços recentes na formalização do mercado de apostas com uma ausência quase total de normas específicas sobre design de interfaces. Essa combinação cria um ambiente no qual as plataformas operam com liberdade para empregar padrões deceptivos sem risco significativo de sanção.
 
@@ -438,7 +384,7 @@ A Lei Geral de Proteção de Dados (LGPD), Lei 13.709 de 2018, introduz o concei
 
 ![Figura 20 – Evolução da LGPD e da regulação de apostas no Brasil](../figuras/output-v2/png/figura_20.png "Elaborado pelo autor (2026).")
 
-## **3.3 Lacunas Regulatórias**
+## 3.3 Lacunas Regulatórias
 
 A análise comparativa entre os panoramas internacional e nacional revela uma defasagem significativa na abordagem brasileira ao tema dos padrões deceptivos. Enquanto a União Europeia proíbe explicitamente a manipulação de interfaces pelo DSA, a FTC americana processa empresas que empregam design enganoso e a UK *Gambling* Commission regula diretamente o design de jogos *online*, o Brasil carece de qualquer instrumento legislativo que aborde especificamente os padrões deceptivos enquanto categoria regulável.
 
@@ -448,11 +394,11 @@ Projetos de lei em tramitação no Congresso Nacional sinalizam uma crescente at
 
 O cenário regulatório descrito neste capítulo reforça a relevância da pesquisa proposta neste trabalho. A ausência de normas específicas sobre padrões deceptivos no Brasil, combinada com a rápida expansão do mercado de apostas *online*, cria um ambiente no qual as interfaces operam em um vácuo de supervisão que favorece a adoção de práticas deceptivas. Compreender como essas práticas se manifestam nos aplicativos de apostas disponíveis no mercado brasileiro, tarefa a ser desenvolvida nos capítulos seguintes, constitui uma contribuição tanto para o campo do Design quanto para a formulação de políticas públicas que reconheçam o design como variável relevante na proteção do consumidor. Sob a ótica de um designer em formação, a necessidade de regulamentar não apenas o conteúdo veiculado pelas plataformas, mas as próprias práticas de design de suas interfaces, encontra respaldo em discussões históricas sobre a responsabilidade social da profissão. Um exemplo relevante dessa preocupação reside nos debates em torno do Projeto de Lei n.º 3.055, de 2019, que propõe a regulamentação da atividade de designer no Brasil (BRASIL, 2019), evidenciando que a prática projetual ultrapassa a mera execução técnica, incidindo diretamente sobre os impactos e comportamentos que os artefatos geram na sociedade. No contexto das apostas *online*, essa premissa torna-se crítica. Se a prática do jogo de azar carrega, por natureza, um potencial nocivo à integridade financeira e mental do indivíduo, a intervenção do design tem o poder de ressignificar essa atividade, mascarando seus riscos inerentes para apresentá-la como um entretenimento inofensivo e desejável. Portanto, torna-se necessário que os marcos regulatórios nacionais incorporem parâmetros éticos e profissionais de design, sob o risco de permitirmos que a habilidade técnica seja empregada como um instrumento livre de supervisão e ativamente direcionado à indução ao dano.
 
-# **4 MÉTODO**
+# 4 MÉTODO
 
-O presente capítulo descreve o percurso metodológico adotado para investigar como plataformas de apostas *online* utilizam padrões deceptivos em suas interfaces. As escolhas aqui apresentadas foram orientadas pelo problema de pesquisa formulado no Capítulo 1, fundamentadas no arcabouço teórico do Capítulo 2 e contextualizadas pelo cenário regulatório mapeado no Capítulo 3. A descrição detalhada de cada etapa metodológica visa garantir a replicabilidade do estudo e a transparência dos critérios de análise.
+O presente capítulo descreve o percurso metodológico adotado para investigar como plataformas de apostas *online* utilizam padrões deceptivos em suas interfaces. As escolhas aqui apresentadas foram orientadas pelo problema de pesquisa formulado no primeiro capítulo, fundamentadas no arcabouço teórico e contextualizadas pelo cenário regulatório mapeado. A descrição detalhada de cada etapa metodológica visa garantir a replicabilidade do estudo e a transparência dos critérios de análise.
 
-## **4.1 Classificação da Pesquisa**
+## 4.1 Classificação da Pesquisa
 
 Esta pesquisa se classifica como exploratória e descritiva, duas categorias que, conforme Gil (2017), não são mutuamente excludentes, mas complementares quando o campo investigado ainda carece de sistematização. O caráter exploratório decorre da relativa escassez de estudos que analisem padrões deceptivos especificamente em aplicativos de apostas no mercado brasileiro, o que exige uma abordagem aberta à identificação de padrões emergentes. O caráter descritivo se manifesta no esforço de catalogar, categorizar e documentar sistematicamente as ocorrências de padrões deceptivos nas interfaces analisadas.
 
@@ -460,7 +406,7 @@ A abordagem adotada é predominantemente qualitativa, com elementos quantitativo
 
 A pesquisa emprega o estudo de caso como estratégia de investigação. Yin (2015) define o estudo de caso como uma investigação empírica que examina um fenômeno contemporâneo em profundidade e em seu contexto real, especialmente quando os limites entre fenômeno e contexto não são claramente evidentes. Nesta pesquisa, o "caso" corresponde ao conjunto de aplicativos de apostas selecionados, e o "contexto" abrange o mercado brasileiro de apostas regulamentado pela Lei 14.790/2023 e as práticas de design nele empregadas.
 
-## **4.2 Definição do Corpus**
+## 4.2 Definição do Corpus
 
 A seleção das plataformas a serem analisadas seguiu critérios definidos a priori, com o objetivo de compor uma amostra que, embora reduzida em número, reflita a diversidade do mercado brasileiro de apostas *online* e permita uma investigação em profundidade. Quatro critérios orientaram essa seleção: posição consolidada entre os aplicativos de apostas mais baixados nas lojas brasileiras (Google Play e *App* Store); participação expressiva no mercado nacional, conforme dados disponíveis para o período 2025-2026; diversidade de perfis operacionais, contemplando plataformas com ênfases distintas em apostas esportivas, cassino *online* ou modelo misto; e presença de funcionalidades variadas que permitam a análise de múltiplas jornadas do usuário, desde o cadastro até o saque.
 
@@ -482,7 +428,7 @@ A composição do corpus com essas três plataformas garante, portanto, diversid
 
 O período de coleta de dados compreende os dias 25 e 26 de abril de 2026, janela durante a qual as interfaces foram documentadas em suas versões vigentes. Essa delimitação temporal é necessária dada a volatilidade das interfaces digitais, que podem ser alteradas remotamente e sem aviso prévio, conforme discutido na seção de limitações. A versão exata de cada aplicativo foi registrada no momento da coleta para garantir rastreabilidade.
 
-## **4.3 Procedimentos de Coleta**
+## 4.3 Procedimentos de Coleta
 
 Os procedimentos de coleta combinam duas técnicas complementares, cada uma fundamentada na literatura de avaliação de interfaces e auditoria de padrões deceptivos.
 
@@ -504,9 +450,9 @@ Jornadas equivalentes às percorridas na plataforma principal podem ser suprimid
 
 As ferramentas utilizadas na coleta incluem software de captura de tela nativo dos dispositivos, ferramentas de anotação visual para marcação de interfaces e uma ficha de catalogação padronizada para o registro estruturado de cada achado, detalhada na Seção 4.4. Essa ficha articula as taxonomias de padrões deceptivos adotadas com as dez heurísticas de usabilidade de Nielsen (1994), adaptadas ao contexto de apostas, e fornece critérios explícitos para a identificação de violações associadas a padrões deceptivos, conforme a correlação entre padrões deceptivos e heurísticas estabelecida na Seção 2.3 do referencial teórico.
 
-## **4.4 Critérios de Categorização**
+## 4.4 Critérios de Categorização
 
-A categorização das ocorrências de padrões deceptivos identificadas durante a coleta apoia-se nas taxonomias consolidadas pela literatura acadêmica, articuladas em dois níveis de granularidade. No nível mais específico, cada ocorrência recebe um ou mais dos dezesseis tipos catalogados por Brignull e sistematizados no Quadro 1 do Capítulo 2; no nível mais amplo, é enquadrada em uma das cinco categorias propostas por Gray et al. (2018), que organizam os padrões deceptivos em *Nagging* (insistência), *Obstruction* (obstrução), *Sneaking* (dissimulação), *Interface Interference* (interferência na interface) e *Forced Action* (ação forçada). A combinação dos dois níveis registra tanto a manifestação concreta do padrão quanto a lógica de manipulação que o agrupa, conforme detalhado no Capítulo 2.
+A categorização das ocorrências de padrões deceptivos identificadas durante a coleta apoia-se nas taxonomias consolidadas pela literatura acadêmica, articuladas em dois níveis de granularidade. No nível mais específico, cada ocorrência recebe um ou mais dos dezesseis tipos catalogados por Brignull e sistematizados no Quadro 1 do referencial teórico; no nível mais amplo, é enquadrada em uma das cinco categorias propostas por Gray et al. (2018), que organizam os padrões deceptivos em *Nagging* (insistência), *Obstruction* (obstrução), *Sneaking* (dissimulação), *Interface Interference* (interferência na interface) e *Forced Action* (ação forçada). A combinação dos dois níveis registra tanto a manifestação concreta do padrão quanto a lógica de manipulação que o agrupa, conforme detalhado no referencial teórico.
 
 Cada ocorrência é registrada em uma ficha de catalogação padronizada, instrumento que uniformiza a documentação e a avaliação entre as três plataformas. A ficha reúne, para o padrão identificado, a evidência visual correspondente, o tipo na taxonomia de Brignull, a categoria equivalente em Gray et al. (2018), a heurística ou as heurísticas de Nielsen violadas com a respectiva gravidade e um campo de observações destinado à descrição do mecanismo manipulativo e ao registro de decisões de classificação limítrofes. Agregada ao longo de cada plataforma, essa estrutura multidimensional permite distinguir ocorrências isoladas de padrões pouco impactantes de práticas sistêmicas de alta gravidade, refinamento analítico ausente em estudos que se restringem à contagem de ocorrências.
 
@@ -516,7 +462,7 @@ O sistema de codificação segue o método de análise de conteúdo proposto por
 
 O protocolo de análise heurística adaptado operacionaliza as dez heurísticas de Nielsen no contexto de aplicativos de apostas, definindo para cada heurística critérios específicos de avaliação e exemplos de violações esperadas. A pontuação de severidade segue a escala de 0 a 4 proposta por Nielsen (1993), na qual 0 indica ausência de problema, 1 indica problema cosmético, 2 indica problema menor, 3 indica problema maior e 4 indica catástrofe de usabilidade. Mathur et al. (2019) e Gunawan et al. (2021) adotaram frameworks de categorização análogos em suas auditorias de larga escala, demonstrando a viabilidade dessa abordagem para a análise sistemática de padrões deceptivos.
 
-## **4.5 Limitações do método**
+## 4.5 Limitações do método
 
 Toda pesquisa opera sob restrições que condicionam o alcance de seus achados, e o reconhecimento explícito dessas limitações é condição para a integridade acadêmica do trabalho.
 
@@ -530,19 +476,19 @@ A quarta limitação se refere ao tamanho da amostra. A análise de três plataf
 
 A quinta limitação se refere à coleta de dados por meio de capturas de tela estáticas. A gravação de vídeo das sessões de uso seria um método preferível, pois permitiria documentar interações animadas, transições de interface, efeitos sonoros e sequências de microcopy que se revelam apenas durante o movimento, elementos com potencial relevância para a identificação de padrões deceptivos que operam em outros domínios. Contudo, durante a tentativa de gravação de determinados fluxos, as plataformas analisadas exibiram comportamentos que inviabilizaram o registro em vídeo, como bloqueio de captura de tela por proteção de conteúdo. Frente a essa restrição imposta pelas próprias plataformas, a coleta foi integralmente conduzida por capturas de tela. Essa solução garantiu a documentação visual das interfaces, mas implicou a perda de evidências dinâmicas, em especial de padrões deceptivos que se manifestam por animações, sons de celebração ou sequências de *feedback* imediato após apostas. A análise se atém, portanto, ao estado estático das interfaces, o que pode subestimar a intensidade de certos mecanismos manipulativos cuja eficácia depende da experiência completa do usuário.
 
-# **5 ANÁLISE DE ESTUDO DE CASO**
+# 5 ANÁLISE DE ESTUDO DE CASO
 
-O presente capítulo aplica o arcabouço metodológico descrito no Capítulo 4 à análise empírica de aplicativos de apostas disponíveis no mercado brasileiro. A fundamentação teórica do Capítulo 2, que articula ética no design, fundamentos de UX/UI, taxonomias de padrões deceptivos e psicologia do jogo, serve como lente analítica para a interpretação dos achados. Paralelamente, o panorama regulatório do Capítulo 3 oferece o contexto normativo no qual essas interfaces operam, com suas lacunas e oportunidades de intervenção. O objetivo deste capítulo é documentar, categorizar e analisar as ocorrências de padrões deceptivos nas plataformas selecionadas, produzindo evidências empíricas que sustentem a criação de diretrizes de *design* ético.
+O presente capítulo aplica o arcabouço metodológico descrito anteriormente à análise empírica de aplicativos de apostas disponíveis no mercado brasileiro. A fundamentação teórica, que articula ética no design, fundamentos de UX/UI, taxonomias de padrões deceptivos e psicologia do jogo, serve como lente analítica para a interpretação dos achados. Paralelamente, o panorama regulatório do oferece o contexto normativo no qual essas interfaces operam, com suas lacunas e oportunidades de intervenção. O objetivo deste capítulo é documentar, categorizar e analisar as ocorrências de padrões deceptivos nas plataformas selecionadas, produzindo evidências empíricas que sustentem a criação de diretrizes de *design* ético.
 
 A estrutura segue a lógica da pesquisa: apresentação dos aplicativos analisados, mapeamento dos padrões deceptivos identificados por plataforma, avaliação heurística das interfaces e análise comparativa dos achados.
 
-## **5.1 Apresentação dos Aplicativos Analisados**
+## 5.1 Apresentação dos Aplicativos Analisados
 
-A composição do corpus seguiu os critérios de seleção definidos no Capítulo 4, priorizando diversidade de modelo de negócio, relevância de mercado e variedade de funcionalidades. A seleção contemplou plataformas que representam os principais segmentos do mercado brasileiro de apostas *online*: apostas esportivas puras, cassino *online* e plataformas mistas que integram ambas as modalidades. Essa diversidade permite identificar se determinados tipos de padrões deceptivos estão associados a modelos de negócio específicos ou se constituem práticas transversais ao setor.
+A composição do corpus seguiu os critérios de seleção definidos pelo método, priorizando diversidade de modelo de negócio, relevância de mercado e variedade de funcionalidades. A seleção contemplou plataformas que representam os principais segmentos do mercado brasileiro de apostas *online*: apostas esportivas puras, cassino *online* e plataformas mistas que integram ambas as modalidades. Essa diversidade permite identificar se determinados tipos de padrões deceptivos estão associados a modelos de negócio específicos ou se constituem práticas transversais ao setor.
 
 Para cada aplicativo selecionado, foi elaborado um perfil que inclui informações sobre a empresa responsável, o tipo de plataforma, o ano de entrada no mercado brasileiro, o público-alvo declarado e dados de mercado relevantes, como posição nos rankings de downloads e participação estimada no *market share* nacional. Esses perfis contextualizam a análise subsequente e permitem ao leitor avaliar a representatividade da amostra.
 
-## **5.2 Mapeamento de Padrões Deceptivos**
+## 5.2 Mapeamento de Padrões Deceptivos
 
 O mapeamento de padrões deceptivos constitui o núcleo empírico desta pesquisa. A análise se baseia na navegação controlada de jornadas pré-definidas em cada aplicativo, conforme descrito na Seção 4.3, e articula as taxonomias de Brignull e de Gray et al. (2018) na classificação das ocorrências. Cada padrão identificado é registrado na ficha de catalogação definida na Seção 4.4, que reúne a captura de tela anotada, a descrição textual do mecanismo manipulativo, o tipo de padrão na taxonomia de Brignull, a categoria correspondente em Gray et al. (2018), a heurística de Nielsen violada e a gravidade atribuída na escala de 0 a 4 de Nielsen (1993).
 
@@ -550,7 +496,7 @@ O mapeamento de padrões deceptivos constitui o núcleo empírico desta pesquisa
 
 A execução do mapeamento percorreu as cinco categorias de jornadas definidas na Seção 4.3, resultando em 279 capturas de tela organizadas por plataforma e por fluxo. Cada etapa foi navegada de forma controlada, segundo o método de percurso cognitivo de Wharton et al. (1994), com registro sistemático de toda tela que apresentasse interface com potencial relevância analítica.
 
-O funil de incorporação revelou-se um dos contextos mais densos para a observação de padrões deceptivos. No fluxo de cadastro, as três plataformas estruturam o formulário de criação de conta de maneira que demanda a coleta de um volume expressivo de dados pessoais antes de o usuário ter acesso a qualquer funcionalidade. A Betano impõe, ao segundo passo do cadastro, o preenchimento obrigatório de campos de limite de perda e de limite de tempo de aposta, mas oferece como opções de limite de perda valores que vão de R$2.500 a R$250.000, conforme a Figura 28. A pré-disposição de tetos de perda dessa magnitude esvazia a função protetiva do instrumento: em vez de ancorar o usuário em um patamar prudente, a interface normaliza limites de perda elevadíssimos justamente no momento de maior entusiasmo e menor familiaridade com o ambiente, antes mesmo de a conta estar ativa. O fluxo prosseguiu pela verificação de e-mail, confirmação de telefone via SMS e pelo processo de verificação de identidade por documento (KYC), percurso que impõe ao usuário um investimento progressivo de tempo e dados pessoais sensíveis que torna o abandono da plataforma progressivamente mais custoso.
+O funil de incorporação revelou-se um dos contextos mais densos para a observação de padrões deceptivos. No fluxo de cadastro, as três plataformas estruturam o formulário de criação de conta de maneira que demanda a coleta de um volume expressivo de dados pessoais antes de o usuário ter acesso a qualquer funcionalidade. A Betano impõe, ao segundo passo do cadastro, o preenchimento obrigatório de campos de limite de perda e de limite de tempo de aposta, mas oferece como opções de limite de perda valores que vão de R$2.500 a R$250.000, conforme a Figura 28 (identificada como passo 12 do fluxo de Cadastro da plataforma Betano - navegue pelas abas do site). A pré-disposição de tetos de perda dessa magnitude esvazia a função protetiva do instrumento: em vez de ancorar o usuário em um patamar prudente, a interface normaliza limites de perda elevadíssimos justamente no momento de maior entusiasmo e menor familiaridade com o ambiente, antes mesmo de a conta estar ativa. O fluxo prosseguiu pela verificação de e-mail, confirmação de telefone via SMS e pelo processo de verificação de identidade por documento (KYC), percurso que impõe ao usuário um investimento progressivo de tempo e dados pessoais sensíveis que torna o abandono da plataforma progressivamente mais custoso.
 
 ![Figura 28 – Limites obrigatórios com valores de perda sugeridos elevados no cadastro da Betano](../figuras/output-v2/png/figura_28.png "Elaborado pelo autor (2026).")
 
@@ -558,17 +504,11 @@ O percurso pelas operações financeiras incluiu o depósito via Pix, necessári
 
 ![Figura 29 – Assimetria de fricção entre os fluxos de depósito e saque na Superbet](../figuras/output-v2/png/figura_29.png "Elaborado pelo autor (2026).")
 
-A navegação nas áreas de apostas esportivas percorreu o ciclo completo do apostador: acesso à tela principal, seleção e registro de aposta única, aposta múltipla e aposta sugerida pela plataforma, acompanhamento de apostas em aberto com possibilidade de encerramento antecipado (*cashout*), aguardo da conclusão do evento e visualização dos estados de aposta ganha e de aposta perdida. Essa sequência permitiu mapear padrões deceptivos ao longo de toda a jornada, e não apenas em pontos de entrada isolados. Na tela principal de apostas esportivas da Bet365, por exemplo, foi identificada a ocorrência simultânea de seis tipos de padrões deceptivos distintos, conforme anotado na Figura 30: *fake social proof*, interferência visual, *nagging*, *sneaking*, anúncios disfarçados e *trick wording*. Nessa mesma tela, seis heurísticas de Nielsen foram violadas, com gravidade 3 atribuída à heurística de correspondência entre sistema e mundo real (H8) e à heurística de ajuda e documentação (H10).
+A navegação nas áreas de apostas esportivas percorreu o ciclo completo do apostador: acesso à tela principal, seleção e registro de aposta única, aposta múltipla e aposta sugerida pela plataforma, acompanhamento de apostas em aberto com possibilidade de encerramento antecipado (*cashout*), aguardo da conclusão do evento e visualização dos estados de aposta ganha e de aposta perdida. Essa sequência permitiu mapear padrões deceptivos ao longo de toda a jornada, e não apenas em pontos de entrada isolados. Na tela principal de apostas esportivas da Bet365, por exemplo, foi identificada a ocorrência simultânea de seis tipos de padrões deceptivos distintos, conforme anotado na Figura 30 abaixo (identificada como passo 1 do fluxo de Apostas esportivas da plataforma Bet365 - navegue pelas abas do site): *fake social proof*, interferência visual, *nagging*, *sneaking*, anúncios disfarçados e *trick wording*. Nessa mesma tela, seis heurísticas de Nielsen foram violadas, com gravidade 3 atribuída à heurística de correspondência entre sistema e mundo real (H8) e à heurística de ajuda e documentação (H10).
 
-![Figura 30 – Tela principal de apostas esportivas da Bet365 com seis padrões deceptivos simultâneos](../figuras/output-v2/png/figura_30.png "Elaborado pelo autor (2026).")
+![Figura 30 – Tela principal de apostas esportivas da Bet365](../figuras/output-v2/png/figura_30.png "Elaborado pelo autor (2026).")
 
 A análise do cassino contemplou a página inicial, a navegação por promoções e a experiência de jogos individuais, incluindo *slots*, *crash games*[^crash], jogos de roleta, *blackjack*[^blackjack] e jogos de *arcade*[^arcade], com escopo variável por plataforma conforme detalhado na Seção 4.3. O *Fortune Tiger*, popularmente conhecido como Tigrinho e consistentemente posicionado pelas três plataformas entre os títulos mais destacados de suas respectivas seções de cassino, foi analisado em todas elas. A busca de jogos da Bet365 revelou um caso ilustrativo de *comparison prevention*: a pesquisa pelo título *Sugar Rush* retorna múltiplas variações do mesmo jogo, como *Sugar Rush Xmas*, *Sugar Rush 1000* e *Sugar Rush Bonanza*, sem critérios claros de distinção entre elas, dificultando a comparação objetiva e induzindo o usuário a explorar versões que a plataforma prioriza algoritmicamente, conforme a Figura 31. A heurística de estética e design minimalista (H8) recebeu gravidade 4 nessa ocorrência, configurando catástrofe de usabilidade segundo a escala de Nielsen (1993).
-
-![Figura 31 – Busca por "Sugar Rush" no cassino da Bet365](../figuras/output-v2/png/figura_31.png "Elaborado pelo autor (2026).")
-
-A tela de promoções da Bet365, por sua vez, apresentou o padrão de *trick wording*, com imagens de bônus que permitem interpretações ambíguas dos termos e condições, exibidos em letras significativamente menores ao redor dos apelos visuais. Como evidencia a Figura 32, o destaque gráfico recai sobre os valores e as chamadas promocionais, enquanto as restrições que de fato condicionam o acesso ao benefício ocupam tamanho reduzido na hierarquia visual.
-
-![Figura 32 – Tela de promoções da Bet365](../figuras/output-v2/png/figura_32.png "Elaborado pelo autor (2026).")
 
 [^crash]: Os *crash games* são jogos de cassino *online* em que um multiplicador parte de 1× e cresce de forma contínua e imprevisível até que o jogo "caia" (*crash*). O jogador deve sacar os ganhos antes que esse colapso ocorra: quanto mais tempo aguarda, maior o multiplicador potencial, mas também maior o risco de perder a aposta inteira caso o crash ocorra antes do saque. A mecânica explora a tensão entre aversão à perda e busca por ganhos maiores, combinando aparência de controle com resultado determinado por gerador de números aleatórios.
 
@@ -576,9 +516,15 @@ A tela de promoções da Bet365, por sua vez, apresentou o padrão de *trick wor
 
 [^arcade]: No contexto de cassinos *online*, jogos de *arcade* designam modalidades que não se enquadram nas categorias tradicionais de *slots* ou jogos de mesa. Caracterizam-se por mecânicas gamificadas, visuais inspirados nos fliperamas e dinâmicas como cliques sobre elementos em grade, apostas em posições e minijogos com estrutura de objetivos progressivos. Apesar da aparência de jogo de habilidade, o resultado é igualmente determinado por algoritmos de aleatoriedade.
 
-O catálogo completo das 90 fichas de catalogação preenchidas, com a evidência visual anotada, a classificação taxonômica e a avaliação heurística de cada ocorrência nas três plataformas, está disponível no Apêndice A para a Betano, B para a Bet365 e C para a Superbet.
+![Figura 31 – Busca por "Sugar Rush" no cassino da Bet365](../figuras/output-v2/png/figura_31.png "Elaborado pelo autor (2026).")
 
-## **5.3 Análise Heurística**
+A tela de promoções da Bet365, por sua vez, apresentou o padrão de *trick wording*, com imagens de bônus que permitem interpretações ambíguas dos termos e condições, exibidos em letras significativamente menores ao redor dos apelos visuais. Como evidencia a Figura 32, o destaque gráfico recai sobre os valores e as chamadas promocionais, enquanto as restrições que de fato condicionam o acesso ao benefício ocupam tamanho reduzido na hierarquia visual.
+
+![Figura 32 – Tela de promoções da Bet365](../figuras/output-v2/png/figura_32.png "Elaborado pelo autor (2026).")
+
+O catálogo completo das 90 fichas de catalogação preenchidas, com a evidência visual anotada, a classificação taxonômica e a avaliação heurística de cada ocorrência nas três plataformas, está disponível nas abas superiores do website.
+
+## 5.3 Análise Heurística
 
 A análise heurística complementa o mapeamento de padrões deceptivos ao oferecer uma avaliação sistemática da qualidade de usabilidade das interfaces, utilizando as dez heurísticas de Nielsen (1994) como referência, adaptadas ao contexto de aplicativos de apostas. Enquanto o mapeamento da seção anterior identifica práticas manipulativas específicas, a análise heurística avalia o quanto a interface como um todo respeita ou viola princípios estabelecidos de design centrado no usuário.
 
@@ -586,13 +532,11 @@ A adaptação das heurísticas ao contexto de apostas é necessária porque o am
 
 A pontuação de severidade para cada violação identificada segue a escala de 0 a 4 proposta por Nielsen (1993) e descrita no capítulo anterior. A localização exata da violação na interface é registrada, incluindo a tela, o elemento específico e o fluxo de interação no qual se insere. A relação entre cada violação heurística e os padrões deceptivos identificados na seção anterior é explicitada quando pertinente, reforçando a conexão entre as duas abordagens analíticas.
 
-## **5.4 Análise Comparativa**
+## 5.4 Análise Comparativa
 
 A análise comparativa consolida os dados obtidos nas seções anteriores, permitindo identificar padrões transversais, correlações relevantes e variações entre as plataformas analisadas. Essa consolidação é essencial para superar a fragmentação inerente à análise individual de cada aplicativo e extrair conclusões que iluminem o comportamento do setor como um todo.
 
 A comparação se organiza em torno de quatro eixos analíticos. O primeiro eixo examina a frequência de cada tipo de padrão deceptivo por aplicativo, identificando quais categorias da taxonomia de Gray et al. (2018) são mais prevalentes e se há padrões dominantes no mercado brasileiro. O segundo eixo investiga os padrões deceptivos mais recorrentes entre todas as plataformas, revelando práticas que transcendem plataformas individuais e podem ser consideradas endêmicas ao setor. O terceiro eixo analisa as heurísticas de Nielsen mais violadas, conectando as falhas de usabilidade aos mecanismos de manipulação identificados. O quarto eixo busca correlações entre o tipo de plataforma (esportiva versus cassino) e os tipos de padrões deceptivos predominantes, testando a hipótese de que modelos de negócio distintos favorecem categorias distintas de padrões deceptivos.
-
-A discussão dos achados à luz do referencial teórico constitui o componente interpretativo central desta seção. Os padrões deceptivos encontrados devem ser articulados com as teorias de Schüll (2012) sobre design para dependência, com os conceitos de *sludge* de Sunstein (2022) discutidos no Capítulo 2, com as taxonomias de *nudge* e *dark nudge* de Newall et al. (2023) apresentadas no Capítulo 3, e com as lacunas regulatórias identificadas no panorama brasileiro. Essa articulação transforma os dados empíricos em argumentos fundamentados que sustentarão as diretrizes propostas no Capítulo 6.
 
 ![Figura 33 – Ocorrências de padrões deceptivos por plataforma e categoria de produto](../figuras/output-v2/png/figura_33.png "Elaborado pelo autor (2026).")
 
@@ -600,11 +544,21 @@ A discussão dos achados à luz do referencial teórico constitui o componente i
 
 ![Figura 35 – Frequência absoluta dos tipos de padrão deceptivo por plataforma e categoria](../figuras/output-v2/png/figura_35.png "Elaborado pelo autor (2026).")
 
-# **6 DIRETRIZES E BOAS PRÁTICAS PARA DESIGN ÉTICO**
+Os dados consolidados nas figuras permitem identificar um padrão estabelecido no setor: 84 ocorrências de padrões deceptivos distribuídas de forma consistente entre Betano (26), Bet365 (32) e Superbet (26). Na análise, há predomínio das telas de cassino (47 ocorrências) sobre as de apostas esportivas (37), número que se mantém semelhante quando analisado os padrões/tela, mas que pode ser alterado se o tamanho destas telas também for levado em consideração.
 
-A fundamentação teórica e o mapeamento regulatório dos capítulos anteriores demonstram que o design de interfaces de aplicativos de apostas opera em um terreno no qual ferramentas poderosas de influência comportamental, documentadas no Capítulo 2, são frequentemente empregadas de maneira a explorar vulnerabilidades cognitivas dos usuários, em um cenário regulatório que ainda não reconhece o design como variável relevante de proteção ao consumidor, conforme mapeado no Capítulo 3. Os procedimentos metodológicos do Capítulo 4 e a análise empírica a ser desenvolvida no Capítulo 5 fornecerão a base evidencial para a etapa propositiva que este capítulo desenvolve. O presente capítulo traduz o arcabouço teórico da pesquisa em princípios orientadores, um guia prático de boas práticas e recomendações para diferentes stakeholders, oferecendo uma contribuição que aspira a ser simultaneamente fundamentada teoricamente e aplicável na prática profissional.
+Com 28 das 84 ocorrências catalogadas, a redação enganosa constitui o tipo mais frequente e aprofunda essa interpretação. Schüll (2012) documenta como a linguagem empregada nas máquinas de jogo funciona como dispositivo de dissociação: sons de vitória em resultados líquidos negativos, terminologia que nomeia perdas como "créditos consumidos" e frases que restituem ao jogador a sensação de agência sobre resultados aleatórios são escolhas linguísticas com propósito comportamental preciso. Nos aplicativos analisados, a concentração de redação enganosa nas seções de cassino, 22 das 28 ocorrências do tipo, distribuídas entre Bet365 com 10, Betano com 7 e Superbet com 5, evidencia que essa estratégia é tanto transversal às plataformas quanto particularmente intensa nos ambientes de jogo contínuo. Newall et al. (2023), ao catalogarem *dark nudges* em plataformas de apostas esportivas *online*, identificaram a exibição seletiva de probabilidades e a personalização algorítmica de mensagens como mecanismos que exploram vieses cognitivos, especialmente a ilusão de controle e a falácia do jogador. A redação enganosa documentada neste corpus opera no mesmo registro: ao formular perdas em linguagem gamificada, ao nomear exigências de aposta como "missões" e ao apresentar *odds* enviesadas como "ganhos aumentados", as interfaces intervêm ativamente na percepção do apostador sobre o risco que assume.
 
-## **6.1 Princípios de Design Ético para Plataformas de Apostas**
+A segunda e terceira posições no ranking de frequência, interferência visual com 14 ocorrências e falsa prova social com 11, reforçam a articulação com Newall et al. (2023). A interferência visual compreende a hierarquização de elementos que amplifica a visibilidade de conteúdo comercial e reduz a de conteúdo protetivo, como o contraste entre *banners* promocionais dominantes e ferramentas de jogo responsável relegadas a rodapés. A falsa prova social manifesta-se em notificações que simulam atividade de outros apostadores ou que exibem montantes ganhos na plataforma sem o contexto das perdas acumuladas. Sob essa perspectiva, não se trata apenas de violações individuais da taxonomia de Brignull, mas de uma arquitetura coordenada que alinha múltiplos padrões deceptivos para produzir um efeito cumulativo sobre o processo decisório do usuário.
+
+Complementar aos padrões de facilitação do engajamento, o conceito de *sludge* introduzido por Sunstein (2022) ilumina outra dimensão dos achados: não o que os padrões incentivam, mas o que dificultam. Obstrução (3 ocorrências), custos ocultos (2) e assinatura oculta (1) representam, em termos absolutos, os tipos menos frequentes do corpus. Esse dado, contudo, não implica irrelevância, pois essas categorias não descrevem estímulos ao engajamento, mas fricções deliberadas nos percursos que beneficiam o usuário, como saque de saldo, cancelamento de promoções e acesso a ferramentas de limite. Sunstein argumenta que o *sludge* opera como a contrafação do *nudge*: enquanto este facilita comportamentos desejáveis ao reduzir barreiras, aquele os inibe ao multiplicá-las. A combinação de *nudges* em direção ao jogo, representados pelo volume de padrões que facilitam o depósito, ampliam o tempo de sessão e estimulam novas apostas, com *sludge* em direção à proteção configura exatamente o que Newall et al. (2023) denominaram a arquitetura deceptiva das plataformas de apostas. O dado empírico que torna essa articulação especialmente precisa é a consistência transversal: as três plataformas analisadas repetem a mesma assimetria, com volume expressivo de padrões de facilitação do engajamento e padrões de obstrução concentrados nos fluxos de saída.
+
+Essa consistência transversal, finalmente, ilumina a dimensão regulatória dos achados. As três plataformas do corpus operam no mercado brasileiro sob licença da Secretaria de Prêmios e Apostas, cumprindo os requisitos estabelecidos pela Lei 14.790/2023 e pelas portarias regulatórias subsequentes. A presença sistemática de 84 ocorrências de padrões deceptivos em suas interfaces demonstra que o cumprimento das exigências legais vigentes é compatível com a manutenção de práticas projetuais manipulativas, revelando a lacuna identificada no panorama regulatório nacional: a regulamentação atual não reconhece o design de interface como variável de proteção ao consumidor. Em contraste, a regulamentação britânica, examinada no Capítulo 3, estabelece restrições específicas sobre velocidade de jogo, funcionalidade de *autoplay* e visibilidade de gastos acumulados, reconhecendo que a arquitetura da interface é tão relevante para a proteção do apostador quanto as exigências de licenciamento operacional. A ausência de equivalente na legislação brasileira, frente a um corpus que demonstra o emprego sistemático das mesmas estratégias projetuais documentadas internacionalmente, constitui a lacuna normativa mais urgente que os achados desta pesquisa evidenciam.
+
+# 6 DIRETRIZES E BOAS PRÁTICAS PARA DESIGN ÉTICO
+
+A fundamentação teórica e o mapeamento regulatório dos capítulos anteriores demonstram que o design de interfaces de aplicativos de apostas opera em um terreno no qual ferramentas poderosas de influência comportamental, documentadas no referencial teórico são frequentemente empregadas de maneira a explorar vulnerabilidades cognitivas dos usuários, em um cenário regulatório que ainda não reconhece o design como variável relevante de proteção ao consumidor, conforme apontado nas referências do marco regulatório. Os procedimentos metodológicos e a análise do estudo de caso fornecem a base para a construção destas diretrizes. O presente capítulo traduz o arcabouço teórico da pesquisa em princípios orientadores e em um *checklist*estruturado para designers.
+
+## 6.1 Princípios de Design Ético para Plataformas de Apostas
 
 A proposição de diretrizes para o design ético de plataformas de apostas não parte do zero, mas se ancora na confluência dos marcos teóricos discutidos ao longo desta pesquisa. Três princípios estruturais emergem dessa articulação: transparência e clareza informacional, consentimento informado e controle do usuário, e respeito à autonomia e dignidade do jogador.
 
@@ -612,25 +566,29 @@ O princípio da transparência e clareza informacional sustenta que o usuário d
 
 O princípio do consentimento informado e controle do usuário estabelece que cada ação do usuário, especialmente as que envolvem transações financeiras, deve resultar de uma escolha consciente e reversível. Friedman e Hendry (2019) fundamentam esse princípio no arcabouço do *Value Sensitive Design*, argumentando que a tecnologia deve ser projetada de modo a preservar e fortalecer a agência do usuário, não a comprometê-la. Na prática, esse princípio se traduz na equiparação de fricção entre processos complementares: se o depósito pode ser realizado em poucos toques, o saque deve oferecer equivalente simplicidade; se a adesão a um bônus é imediata, o cancelamento deve ser igualmente acessível. A assimetria deliberada entre facilidade de adesão e dificuldade de desistência, identificada por Sunstein (2022) como *sludge*, configura uma violação direta desse princípio.
 
-O princípio do respeito à autonomia e dignidade do jogador determina que a interface não deve explorar vulnerabilidades cognitivas ou emocionais do usuário para maximizar engajamento ou receita. A teoria dos sistemas duais de Kahneman (2011), discutida no Capítulo 2, demonstrou que a maior parte das interações com interfaces digitais é mediada pelo processamento automático (Sistema 1), o que torna o usuário particularmente suscetível a manipulações visuais e temporais. O design ético reconhece essa assimetria e opta por proteger o usuário em vez de explorá-la. Monteiro (2019) sintetiza essa orientação ao afirmar que o designer é um "gatekeeper" cuja responsabilidade primária é proteger o usuário, não otimizar métricas de engajamento. Sasha Costanza-Chock (2020), em *Design Justice*, amplia essa perspectiva ao enfatizar que o design deve priorizar o impacto sobre as comunidades mais afetadas, não as intenções do projetista.
+O princípio do respeito à autonomia e dignidade do jogador determina que a interface não deve explorar vulnerabilidades cognitivas ou emocionais do usuário para maximizar engajamento ou receita. A teoria dos sistemas duais de Kahneman (2011), discutida no referencial téorico, demonstrou que a maior parte das interações com interfaces digitais é mediada pelo processamento automático (Sistema 1), o que torna o usuário particularmente suscetível a manipulações visuais e temporais. O design ético reconhece essa assimetria e opta por proteger o usuário em vez de explorá-la. Monteiro (2019) sintetiza essa orientação ao afirmar que o designer é um "gatekeeper" cuja responsabilidade primária é proteger o usuário, não otimizar métricas de engajamento. Sasha Costanza-Chock (2020), em *Design Justice*, amplia essa perspectiva ao enfatizar que o design deve priorizar o impacto sobre as comunidades mais afetadas, não as intenções do projetista.
 
 Nesse cenário, o posicionamento como futuro designer diante de um mercado altamente dependente de métricas de engajamento coercitivo impõe reflexões complexas. Embora o alinhamento entre os imperativos de lucratividade das plataformas e a integridade ética da experiência do usuário represente um desafio prático de difícil conciliação, compreende-se que o repertório histórico da profissão, expresso em manifestos de design, códigos de conduta profissional e heurísticas consolidadas de experiência do usuário, oferece os instrumentos necessários para orientar tomadas de decisão mais justas. Sob uma perspectiva crítica radical, a responsabilidade do projetista inicia-se na avaliação da própria natureza do produto que ajuda a conceber. Se um artefato digital ou modelo de negócios é intrinsecamente prejudicial ao bem-estar coletivo, sua concepção merece ser criticamente questionada, cabendo ao designer o discernimento ético e a autonomia profissional de avaliar sua participação no projeto.
 
-## **6.2 Guia Prático de Boas Práticas**
+## 6.2 Guia e checklist anti-padrões deceptivos
 
-A tradução dos princípios em práticas aplicáveis exige instrumentos que possam ser integrados ao fluxo de trabalho cotidiano de equipes de design e produto. O guia aqui proposto tem como eixo central um checklist anti-padrões deceptivos categorizado por etapa da jornada do usuário, oferecendo verificações concretas que permitem auditar ou projetar interfaces de apostas com maior rigor ético.
+A tradução dos princípios em práticas aplicáveis exige instrumentos que possam ser integrados ao fluxo de trabalho cotidiano de equipes de design e produto. O guia proposto materializa-se em uma ferramenta de verificação de qualidade e atributos do design, incluindo atributos éticos, construída a partir do catálogo de telas construído nesta pesquisa.
 
-O checklist proposto opera como uma ferramenta de verificação que o designer pode aplicar ao projetar ou auditar qualquer interface de plataforma de apostas. Cada item corresponde a uma verificação concreta, fundamentada nos princípios da seção anterior e nas categorias de padrões deceptivos da taxonomia de Gray et al. (2018). O checklist se organiza pelas etapas da jornada do usuário, conforme as jornadas percorridas no método de coleta e navegação.
+Conforme sintetiza a Figura 36, o guia estrutura-se em cinco camadas complementares. A primeira retoma os três princípios estruturais discutidos na seção anterior, que funcionam como fundamento de tudo o que se segue. A segunda reúne os padrões deceptivos mais recorrentes no corpus, ordenados por frequência de ocorrência e acompanhados de antídotos projetuais concretos, de modo que cada prática manipulativa identificada na taxonomia de Gray et al. (2018) seja confrontada com uma alternativa ética. A terceira recupera as dez heurísticas de Nielsen (1994), apresentadas em ordem decrescente de violação no corpus e adaptadas ao contexto específico das apostas. A quarta consiste no checklist propriamente dito, organizado por etapa da jornada do usuário. A quinta, de natureza distinta das anteriores, propõe um conjunto de perguntas reflexivas que nenhuma lista de conferência é capaz de responder no lugar de quem projeta.
 
-Na etapa de **[ETAPA]**, a prática ética consiste em **[PRÁTICA]**.
+![Figura 36 – Estrutura do guia e do checklist anti-padrões deceptivos](../figuras/output-v2/png/figura_36.png "Elaborado pelo autor (2026).")
 
-[FIGURA figura_36: checklist por etapa]
+O checklist propriamente dito opera como ferramenta de verificação que o designer pode aplicar ao projetar ou ao auditar qualquer interface de plataforma de apostas. Cada item corresponde a uma verificação objetiva, fundamentada nos princípios da seção anterior, nas categorias de padrões deceptivos de Gray et al. (2018) e nas heurísticas de usabilidade. Sua organização acompanha as etapas da jornada percorridas no método de coleta, do cadastro e onboarding ao depósito e saque, das apostas esportivas ao cassino e jogos, das promoções e bônus até as ferramentas de jogo responsável e saída. Na etapa de depósito e saque, por exemplo, a prática ética consiste em equiparar a fricção dos dois fluxos, de modo que sacar não seja deliberadamente mais difícil do que depositar, e em manter o saldo real e o histórico de perdas e ganhos permanentemente visíveis ao usuário. Já na etapa de jogo responsável, exige-se que ferramentas de autoexclusão e de limite de tempo e de gasto sejam tão simples e acessíveis quanto os elementos que estimulam o jogo. Cada verificação remete, assim, a um princípio invertido pelos padrões documentados na análise empírica, convertendo o diagnóstico em orientação projetual diretamente acionável. O instrumento completo, com a totalidade dos itens de verificação, dos padrões catalogados e das heurísticas adaptadas, encontra-se disponibilizado em sua versão integral na aba Checklist do site.
 
-Nir Eyal, autor de *Hooked: How to Build Habit-Forming Products* (2014), oferece uma contra-referência esclarecedora. Eyal descreveu detalhadamente as mecânicas de engajamento que produzem "produtos formadores de hábito", mas em sua obra posterior, *Indistractable* (2019), reconheceu que essas mesmas mecânicas podem ser empregadas de forma prejudicial, propondo que o teste ético de um produto é a pergunta: "estou ajudando o usuário a fazer o que ele já desejava fazer, ou estou manipulando-o?" (EYAL, 2019). Essa distinção ecoa a "Regra de Ouro da Persuasão" de Fogg (2003), discutida no Capítulo 2, e oferece um critério prático para avaliar cada decisão de design.
+Nir Eyal, autor de *Hooked: How to Build Habit-Forming Products* (2014), oferece uma contra-referência esclarecedora. Eyal descreveu detalhadamente as mecânicas de engajamento que produzem "produtos formadores de hábito", mas em sua obra posterior, *Indistractable* (2019), reconheceu que essas mesmas mecânicas podem ser empregadas de forma prejudicial, propondo que o teste ético de um produto é a pergunta: "estou ajudando o usuário a fazer o que ele já desejava fazer, ou estou manipulando-o?" (EYAL, 2019). Essa distinção ecoa a "Regra de Ouro da Persuasão" de Fogg (2003), discutida no referencial teórico, e oferece um critério prático para avaliar cada decisão de design.
 
 A conciliação entre objetivos de negócio e ética no design é frequentemente apresentada como um dilema irreconciliável, mas essa premissa merece questionamento. Tim Brown, em *Change by Design* (2009), argumenta que o *design thinking* integra viabilidade comercial, factibilidade técnica e desejabilidade humana como dimensões complementares, não concorrentes. No setor de apostas, essa complementaridade se manifesta na construção de confiança como ativo competitivo. Plataformas que tratam seus usuários com transparência e respeito tendem a cultivar bases de usuários mais leais, reduzindo o abandono motivado pela percepção de manipulação, um fenômeno comum em serviços que exploram padrões deceptivos. A ética, sob essa perspectiva, não é um custo a ser suportado, mas um investimento na sustentabilidade do modelo de negócio.
 
-## **6.3 Recomendações para Stakeholders**
+A camada final do guia desloca deliberadamente o eixo da avaliação. Se as etapas anteriores aferem a proficiência do projetista, ou seja, sua competência técnica em reconhecer padrões deceptivos e substituí-los por soluções honestas, o conjunto de perguntas que encerra o instrumento dirige-se a algo que nenhuma lista de conferência consegue verificar: a profissionalidade de quem projeta. É possível marcar todas as caixas de verificação e, ainda assim, conceber uma interface manipulativa, porque a integridade de um projeto não se reduz ao cumprimento de um protocolo. Perguntas como "Você mostraria esta tela para alguém que ama, e diria, sem desviar o olhar ou criar desculpas: “fui eu que projetei isto”?" ou "Quando alguém perder tudo nesta plataforma, porque alguém vai, você conseguirá olhar para trás para dizer que desenhou cada tela para protegê-lo, ou terá que assumir que desenhou cada tela para aumentar os lucros da plataforma?" não admitem resposta automática, pois convocam o julgamento ético individual diante das consequências concretas do próprio trabalho.
+
+Essa distinção entre proficiência e profissionalidade recoloca a tese central desta pesquisa no plano da responsabilidade profissional. Monteiro (2019) sustenta que o designer responde pelo que coloca no mundo e pelos efeitos que suas criações produzem, o que faz da disposição de dizer "não" a um requisito capaz de comprometer a autonomia do usuário não um gesto de insubordinação, mas o exercício mais elementar do ofício. A profissionalidade, sob essa ótica, não se demonstra apenas na perícia com que se executa uma demanda, e sim no discernimento de avaliar a legitimidade daquilo que se executa. Um guia de boas práticas oferece os instrumentos para projetar de forma ética, porém é a postura profissional do designer, sua autonomia crítica e sua disposição de assumir a responsabilidade pelos artefatos que concebe, que determina se esses instrumentos serão de fato mobilizados. Nessa direção, o checklist proposto não se encerra em si mesmo, mas aspira a contribuir para a formação não apenas de projetistas mais proficientes, e sim de profissionais conscientes do peso social de cada decisão de interface.
+
+## 6.3 Recomendações para Stakeholders
 
 As evidências acumuladas ao longo desta pesquisa sustentam recomendações dirigidas a três grupos de stakeholders cujas ações podem contribuir para a redução dos padrões deceptivos em plataformas de apostas: designers e equipes de produto, reguladores e legisladores, e a academia.
 
@@ -644,25 +602,25 @@ Propostas regulatórias elaboradas em colaboração interdisciplinar entre Desig
 
 As diretrizes e recomendações aqui apresentadas não pretendem esgotar as possibilidades de atuação ética no design de plataformas de apostas, mas oferecem um ponto de partida fundamentado em evidências teóricas e empíricas.
 
-# **7 CONSIDERAÇÕES FINAIS**
+# 7 CONSIDERAÇÕES FINAIS
 
-O percurso desta pesquisa partiu de uma pergunta central: como as plataformas de apostas *online* utilizam padrões deceptivos em suas interfaces para influenciar o comportamento do usuário, e qual a responsabilidade dos designers nisto? Os resultados obtidos ao longo do trabalho responderam a essa pergunta de forma articulada: o referencial teórico fundamentou a distinção entre persuasão legítima e manipulação deliberada; o mapeamento regulatório evidenciou uma lacuna normativa significativa no reconhecimento do design como variável de proteção ao consumidor; o estudo empírico documentou, em 90 ocorrências catalogadas em três plataformas, um emprego sistemático de padrões deceptivos ao longo de toda a jornada do apostador; e as diretrizes propostas traduziram esses achados em instrumentos aplicáveis. Em conjunto, os resultados confirmam que as práticas identificadas não são falhas acidentais de usabilidade, mas escolhas projetuais que invertem deliberadamente princípios de design centrado no usuário para favorecer o engajamento comercial.
+O percurso desta pesquisa partiu de uma pergunta central: como as plataformas de apostas *online* utilizam padrões deceptivos em suas interfaces para influenciar o comportamento do usuário, e qual a responsabilidade dos designers nisto? Os resultados obtidos ao longo do trabalho responderam a essa pergunta de forma articulada: o referencial teórico fundamentou a distinção entre persuasão legítima e manipulação deliberada; o mapeamento regulatório evidenciou uma lacuna normativa significativa no reconhecimento do design como variável de proteção ao consumidor; o estudo empírico documentou um emprego sistemático de padrões deceptivos ao longo de toda a jornada do apostador; e as diretrizes propostas traduziram esses achados em instrumentos aplicáveis. Em conjunto, os resultados confirmam que as práticas identificadas não são sempre falhas acidentais de usabilidade, mas escolhas projetuais que invertem deliberadamente princípios de design centrado no usuário para favorecer o engajamento comercial.
 
 A contribuição social deste trabalho consiste na conscientização sobre práticas manipulativas que afetam milhões de brasileiros usuários de plataformas de apostas, muitos dos quais desconhecem os mecanismos de design que influenciam suas decisões. Ao nomear e documentar essas práticas, a pesquisa contribui para a literacia crítica sobre interfaces digitais e para o debate público sobre a regulamentação do setor.
 
 A contribuição para o campo do Design reside no reposicionamento do designer como agente ético, não apenas executor de demandas de negócio. A formação em Design, conforme discutido ao longo deste trabalho, confere ao profissional ferramentas capazes de proteger ou explorar o usuário. Reconhecer e assumir essa dupla potência é condição para que o Design se consolide como disciplina socialmente responsável. Costanza-Chock (2020) e Norman (2023) indicam caminhos promissores para essa consolidação, caminhos que esta pesquisa busca percorrer. Em termos pessoais e formativos, o desenvolvimento desta pesquisa deu-se de forma paralela a uma vivência profissional ativa no mercado de produtos digitais, o que propiciou uma compreensão aprofundada da responsabilidade inerente à atuação do designer. Vivenciar no cotidiano corporativo o desenvolvimento de produtos e fluxos de interação direcionados a dezenas de milhões de usuários tornou evidente que as decisões de design não são escolhas meramente técnicas, mas intervenções sociais com ampla escala de impacto. O esforço para conciliar as demandas do mercado com a fundamentação teórica deste trabalho permitiu amadurecer a capacidade de identificar dilemas éticos, repensar práticas projetuais e buscar soluções que priorizem a autonomia do usuário. Esse processo revelou que o emprego de métodos estruturados e processos reflexivos é condição fundamental não apenas para a validação científica de investigações acadêmicas, mas para a consolidação de uma atuação profissional de fato comprometida com a ética e a justiça social.
 
-## **7.1 Limitações do Estudo**
+## 7.1 Limitações do Estudo
 
-O reconhecimento das limitações é parte constitutiva da integridade acadêmica desta pesquisa. As limitações metodológicas já discutidas no Capítulo 4 se confirmaram ao longo do estudo e se complementam com outras que emergiram durante a execução.
+O reconhecimento das limitações é parte constitutiva da integridade acadêmica desta pesquisa. As limitações metodológicas já discutidas no método se confirmaram ao longo do estudo e se complementam com outras que emergiram durante a execução.
 
-A limitação de escopo é a mais evidente: a análise se concentrou em um número delimitado de aplicativos disponíveis no mercado brasileiro, durante uma janela temporal específica. Essa delimitação, embora necessária para garantir profundidade analítica, impede generalizações amplas para o mercado como um todo. Aplicativos não incluídos na amostra podem apresentar padrões distintos dos aqui documentados.
+A limitação de escopo é a mais evidente: o estudo se concentrou em um número delimitado de aplicativos disponíveis no mercado brasileiro, durante uma janela temporal específica. Essa delimitação, embora necessária para garantir profundidade analítica, impede generalizações amplas para o mercado como um todo. Aplicativos não incluídos na amostra podem apresentar padrões distintos dos aqui documentados.
 
-A volatilidade das interfaces, já antecipada como limitação, revelou-se um fator concreto: atualizações frequentes dos aplicativos podem ter alterado interfaces entre o início e o fim da coleta. Os registros de versão e data de cada captura mitigam parcialmente essa limitação, mas não a eliminam. A natureza qualitativa da análise introduz graus de subjetividade na categorização, mitigados pelos critérios explícitos de codificação, mas não inteiramente suprimidos. Pesquisas futuras que envolvam múltiplos avaliadores e cálculos de concordância intercoder podem ampliar a confiabilidade dos achados.
+A volatilidade das interfaces, já antecipada como limitação, revelou-se um fator concreto: atualizações frequentes dos aplicativos podem ter alterado interfaces entre o momento da coleta e a data de divulgação deste estudo. Os registros da data de cada captura mitigam parcialmente essa limitação, mas não a eliminam. A natureza qualitativa da análise introduz graus de subjetividade na categorização, mitigados pelos critérios explícitos de codificação, mas não inteiramente suprimidos. Pesquisas futuras que envolvam múltiplos avaliadores e cálculos de concordância entre pares podem ampliar a confiabilidade dos achados.
 
 A ausência de testes com usuários reais constitui outra limitação significativa. A análise conduzida neste trabalho é uma inspeção realizada pelo pesquisador, não uma avaliação do impacto percebido pelos apostadores. Compreender como os padrões deceptivos identificados afetam efetivamente o comportamento e a experiência dos usuários demandaria métodos complementares, como testes de usabilidade, entrevistas e estudos experimentais.
 
-## **7.2 Sugestões para Pesquisas Futuras**
+## 7.2 Sugestões para Pesquisas Futuras
 
 As limitações reconhecidas apontam diretamente para oportunidades de pesquisa futura que podem expandir e aprofundar os achados deste trabalho.
 
@@ -678,7 +636,9 @@ O design participativo, que envolve apostadores na co-criação de interfaces é
 
 Este trabalho encerra com a convicção de que o design possui tanto o poder quanto a responsabilidade de proteger, e não explorar, o ser humano. As interfaces que projetamos não são neutras: elas moldam comportamentos, influenciam decisões e afetam vidas. No contexto das apostas *online*, onde a fronteira entre entretenimento e dano é tênue e frequentemente transgredida pelo próprio design da interface, essa responsabilidade se torna ainda mais urgente. Conforme Monteiro (2019) recordou ao campo, ignorância não é desculpa. Designers são responsáveis pelo que colocam no mundo e pelos efeitos que essas criações produzem. O desafio, e a oportunidade, é projetar um futuro digital que honre essa responsabilidade. Em última análise, inspirando-se nas trajetórias dos autores pioneiros que fundamentaram esta pesquisa, os quais não apenas conceituaram termos cruciais como os padrões deceptivos, mas também impulsionaram mobilizações globais por uma tecnologia mais humana, reafirma-se a convicção de que o papel do designer transcende a mera configuração visual e estética das interfaces. A atividade projetual revela-se como uma interseção complexa de saberes psicológicos, éticos, políticos e técnicos. Compreender o design de experiência do usuário, sob essa ótica, vai muito além de dominar um conjunto de heurísticas e padrões de usabilidade consagrados; implica, fundamentalmente, assumir a responsabilidade e o compromisso ético de aplicar esses conhecimentos de maneira a assegurar a dignidade humana. Projetar o futuro digital demanda, portanto, o discernimento necessário para orientar a prática do design como instrumento de proteção e respeito, contribuindo para a construção de um ecossistema tecnológico mais transparente e responsável.
 
-# [REFERÊNCIAS](#bookmark=id.l6k8ku2k6bu1)
+# 
+
+# REFERÊNCIAS
 
 BARDIN, Laurence. **Análise de Conteúdo**. Tradução de Luís Antero Reto e Augusto Pinheiro. São Paulo: Edições 70, 2011.
 
@@ -700,11 +660,11 @@ BRASIL. Câmara dos Deputados. **Projeto de Lei n.º 3.055, de 2019**. Dispõe s
 
 BRIGNULL, Harry. **Deceptive Design**. 2010. Disponível em: https://www.deceptive.design/. Acesso em: 28 mar. 2026.
 
-BRIGNULL, Harry. **Types of Deceptive Design**. Deceptive Design, [s.d.]. Disponível em: https://www.deceptive.design/types. Acesso em: 14 jun. 2026.
+BRIGNULL, Harry. **Types of Deceptive Design**. Deceptive Design,. Disponível em: https://www.deceptive.design/types. Acesso em: 14 jun. 2026.
 
 BROWN, Tim. **Change by Design**: How Design Thinking Transforms Organizations and Inspires Innovation. New York: HarperBusiness, 2009.
 
-CENTER FOR HUMANE TECHNOLOGY. **Humane Technology Resources**. [s.d.]. Disponível em: https://www.humanetech.com/. Acesso em: 28 mar. 2026.
+CENTER FOR HUMANE TECHNOLOGY. **Humane Technology Resources**. Disponível em: https://www.humanetech.com/. Acesso em: 28 mar. 2026.
 
 CLARK, Luke. Decision-Making During *Gambling*: An Integration of Cognitive and Psychobiological Approaches. **Philosophical Transactions of the Royal Society B: Biological Sciences**, v. 365, n. 1538, p. 319-330, 2010.
 
@@ -716,7 +676,7 @@ DI GERONIMO, Linda et al. UI Dark Patterns and Where to Find Them: A Study on *M
 
 DONEDA, Danilo. **Da Privacidade à Proteção de Dados Pessoais**: Elementos da Formação da Lei Geral de Proteção de Dados. 2. ed. São Paulo: Thomson Reuters Brasil, 2020.
 
-ETHICAL OS TOOLKIT. **Ethical OS**: A Guide to Anticipating the Future Impact of Today's Technology. [s.d.]. Disponível em: https://ethicalos.org/. Acesso em: 28 mar. 2026.
+ETHICAL OS TOOLKIT. **Ethical OS**: A Guide to Anticipating the Future Impact of Today's Technology. Disponível em: https://ethicalos.org/. Acesso em: 28 mar. 2026.
 
 EUROPEAN DATA PROTECTION BOARD. **Guidelines 03/2022 on Dark Patterns in Social Media Platform Interfaces**: How to Recognise and Avoid Them. Brussels: EDPB, 2022.
 
@@ -798,8 +758,3 @@ WHARTON, Cathleen et al. The *Cognitive Walkthrough* Method: A Practitioner's Gu
 
 YIN, Robert K. **Estudo de Caso**: Planejamento e Métodos. 5. ed. Tradução de Cristhian Matheus Herrera. Porto Alegre: Bookman, 2015.
 
-# [APÊNDICE](#bookmark=id.l6k8ku2k6bu1) (se existir é obrigatório)
-
-Apêndice refere-se ao material elaborado pelo próprio autor do trabalho. Por ser material complementar ao texto, devem ser incluídos quando forem absolutamente necessários à compreensão do mesmo.
-
-Quando existirem, devem figurar no SUMÁRIO e com a devida paginação. Havendo mais de um Apêndice, deverão ser designados por letras: Apêndice A, Apêndice B....

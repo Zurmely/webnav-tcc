@@ -24,7 +24,7 @@
   // Fontes do markdown, em ordem de preferência. A primeira que responder vence.
   // Para trocar o arquivo dado de trabalho (datado), ajuste a 1ª entrada.
   var MD_SOURCES = [
-    "../../../projeto-final/21-06.md", // VIVO (servidor na raiz do TCC)
+    "../../../projeto-final/23-06/24-from-abnt.md", // VIVO (servidor na raiz do TCC)
     B + "content/trabalho.md"          // EMBUTIDO (GitHub Pages)
   ];
   // Bases onde procurar figura_NN.png, na mesma ordem de preferência.
@@ -154,7 +154,7 @@
 
     // Capítulo sintético com os elementos pré-textuais (capa, resumo, sumário).
     if (preLines.join("").trim()) {
-      out.push(makeChapter("Elementos Pré-Textuais", preLines, true));
+      out.push(makeChapter("SOBRE", preLines, true));
     }
     chapters.forEach(function (c) {
       out.push(makeChapter(c.headingRaw, c.bodyLines, false));
@@ -472,9 +472,9 @@
 
     var prevTop = keepScroll ? els.scrollArea.scrollTop : 0;
 
-    var kicker = ch.isPre ? "Capa, resumo & sumário"
+    var kicker = ch.isPre ? "TCC"
       : (ch.num ? "Capítulo " + ch.num : "Seção");
-    var titleText = ch.isPre ? "Elementos Pré-Textuais" : (ch.shortLabel || ch.title);
+    var titleText = ch.isPre ? "Sobre" : (ch.shortLabel || ch.title);
 
     var doc = document.createElement("div");
     doc.className = "doc";
@@ -618,14 +618,14 @@
     state.chapters = chapters;
 
     if (!isReload) {
-      // capítulo inicial: hash -> 1º capítulo numerado -> 0
+      // capítulo inicial: hash -> pretextual (Sobre) -> 0
       var fromHash = null;
       if (location.hash) {
         var h = location.hash.slice(1);
         for (var i = 0; i < chapters.length; i++) if (chapters[i].id === h) { fromHash = i; break; }
       }
-      var firstNumbered = chapters.findIndex(function (c) { return c.num === "1" || (!c.isPre && c.num); });
-      state.activeIndex = fromHash != null ? fromHash : (firstNumbered >= 0 ? firstNumbered : 0);
+      var firstPre = chapters.findIndex(function (c) { return c.isPre; });
+      state.activeIndex = fromHash != null ? fromHash : (firstPre >= 0 ? firstPre : 0);
     } else {
       state.activeIndex = Math.min(state.activeIndex, chapters.length - 1);
     }
@@ -678,6 +678,12 @@
     updateScrollAreaHeight();
     window.addEventListener("resize", updateScrollAreaHeight);
     window.addEventListener("scroll", updateScrollAreaHeight, { passive: true });
+    /* The secondary nav reflows taller once web fonts load, which would leave the
+       scroll-area a few px too tall and let the body scroll. Recompute whenever the
+       nav's measured size changes so the doc fills the viewport exactly. */
+    if (window.ResizeObserver && els.secondaryNav) {
+      new ResizeObserver(updateScrollAreaHeight).observe(els.secondaryNav);
+    }
 
     var spyRaf = null;
     els.scrollArea.addEventListener("scroll", function () {
