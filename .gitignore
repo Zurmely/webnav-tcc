@@ -22,4 +22,4 @@ Desktop.ini
 # Logs e temporários
 *.log
 *.tmp
-.claude
+**/.claude/
