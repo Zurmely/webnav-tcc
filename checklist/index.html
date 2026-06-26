@@ -29,6 +29,17 @@
       --bad: #b4341f;
     }
 
+    /* ---- Text selection — yellow highlight, readable in light & dark ---- */
+    ::selection {
+      background: var(--yellow);
+      color: #000;
+    }
+
+    ::-moz-selection {
+      background: var(--yellow);
+      color: #000;
+    }
+
     .cl-shell {
       max-width: var(--read-w);
       margin: var(--compact-h) auto 0;
@@ -1154,9 +1165,10 @@
       <p class="cl-hero-lead">
         Um guia e checklist anti-padrões deceptivos para quem projeta experiências, criado com base em um benchmark de
         +400 telas reais
-        de experiências de apostas e jogos de azar. Cada item aqui existe porque alguém, em algum lugar, já foi
-        manipulado por
-        sua ausência.
+        de experiências de apostas e jogos de azar.
+        Cada item aqui existe porque alguém, em algum lugar, já foi
+        manipulado pela aplicação de padrões deceptivos, pela violação de heurísticas ou pelo desprezo à princípios
+        éticos no desenho de interfaces.
       </p>
 
       <div class="cl-actions">

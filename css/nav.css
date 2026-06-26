@@ -319,8 +319,8 @@ a {
    ============================================================ */
 
 /* Fixed controls on the left never shrink — only the rail absorbs overflow. */
-.secondary-nav > .view-toggle,
-.secondary-nav > .sec-nav-mob {
+.secondary-nav>.view-toggle,
+.secondary-nav>.sec-nav-mob {
   flex: 0 0 auto;
 }
 
@@ -524,6 +524,10 @@ a {
    ============================================================ */
 [data-theme="dark"] {
   color-scheme: dark;
+}
+
+[data-theme="dark"] .check-item.is-checked .check-text {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 [data-theme="dark"] body {

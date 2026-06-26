@@ -225,13 +225,20 @@ select { font-family: inherit; }
 .chiplet b { color: var(--ink); font-variant-numeric: tabular-nums; }
 
 .intro-top {
+  /* É um <button>: zera a moldura/fundo do user-agent (que aparece como uma
+     borda branca grossa sob color-scheme:dark) e deixa só o divisor tracejado. */
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  border-top: 1px dashed var(--line);
   font-size: 12.5px;
   color: var(--muted);
-  border-top: 1px dashed var(--line);
-  padding-top: 12px;
+  padding: 14px 0 2px;
   line-height: 1.5;
   text-align: left;
   display: block;
+  width: 100%;
 }
 
 .intro-top b { color: var(--ink); }
@@ -898,3 +905,103 @@ table.heat tr.totalrow th, table.heat tr.totalrow td {
   .vchart { height: 180px; gap: 10px; }
   .vgroup { min-width: 64px; }
 }
+
+/* ================================================================
+   MODO ESCURO — [data-theme="dark"]
+   ----------------------------------------------------------------
+   O painel é construído sobre tokens claros (--card:#fff, --ink:#000…)
+   e nav.css escurece apenas o <body>; sem este bloco o painel renderiza
+   claro sobre fundo escuro (cartões brancos, texto invisível).
+
+   Escopo em #app: é onde vivem o conteúdo, a gaveta (.dd) e o lightbox
+   (.dlb). A secondary-nav amarela fica FORA de #app e mantém de propósito
+   seu visual claro-sobre-amarelo. Aqui --ink passa a ser a cor estrutural
+   escura (bordas/realces); os poucos usos de --ink como TEXTO são
+   corrigidos explicitamente abaixo.
+   ================================================================ */
+[data-theme="dark"] #app {
+  --paper: #141414;
+  --card: #1a1a1a;
+  --ink: #3a3a3a;
+  --line: #2b2b2b;
+  --line-strong: #3a3a3a;
+  --muted: #9a9a92;
+  --gray: #3a3a3a;
+  --yellow-soft: #2a2410;
+}
+
+/* Textos com cor fixa escura (o restante herda a cor clara do body). */
+[data-theme="dark"] #app .intro-card .desc,
+[data-theme="dark"] #app .bar-label .name,
+[data-theme="dark"] #app .hbar-lab,
+[data-theme="dark"] #app .sl-item,
+[data-theme="dark"] #app .det-desc,
+[data-theme="dark"] #app .obs,
+[data-theme="dark"] #app .dd-def {
+  color: rgba(232, 232, 232, 0.78);
+}
+
+[data-theme="dark"] #app .stat-card .sub,
+[data-theme="dark"] #app .chiplet {
+  color: var(--muted);
+}
+
+/* Realces em negrito que usavam var(--ink) como cor de texto. */
+[data-theme="dark"] #app .intro-top b,
+[data-theme="dark"] #app .chiplet b,
+[data-theme="dark"] #app .det-crumb b {
+  color: #f0f0f0;
+}
+
+/* Cartão "Padrão mais frequente": realce sutil ao passar o mouse (o token
+   amarelo-suave é um âmbar escuro no modo escuro). */
+[data-theme="dark"] #app .intro-top.drill:hover { background: var(--yellow-soft); }
+
+/* Navegação entre seções (jump-nav) — era #fafaf7 (clara). */
+[data-theme="dark"] #app .jump-nav { background: #161616; }
+[data-theme="dark"] #app .jn-link { background: var(--card); color: #d8d8d8; }
+[data-theme="dark"] #app .jn-link:hover {
+  background: #e8e8e8;
+  color: #111;
+  border-color: #e8e8e8;
+}
+
+/* Chiplets e trilhas de barras — eram cinzas muito claros (#f5f5f5). */
+[data-theme="dark"] #app .chiplet,
+[data-theme="dark"] #app .bar-track,
+[data-theme="dark"] #app .hbar-track { background: #242424; }
+
+/* Bordas das barras/swatches p/ delinear sobre o fundo escuro. */
+[data-theme="dark"] #app .vbar-fill { border-color: rgba(255, 255, 255, 0.18); }
+[data-theme="dark"] #app .sl-sw { border-color: rgba(255, 255, 255, 0.28); }
+
+/* Pistas de "drill" — eram dourado escuro (#7a5c00). */
+[data-theme="dark"] #app .drill-cue,
+[data-theme="dark"] #app .stat-card.drill::after,
+[data-theme="dark"] #app .commentary .clab { color: #d9b96b; }
+
+[data-theme="dark"] #app .findings li.drill:hover,
+[data-theme="dark"] #app .intro-top.drill:hover { color: #fff; }
+
+/* Mapa de calor. */
+[data-theme="dark"] #app table.heat td.zero { color: #5c5c54; }
+[data-theme="dark"] #app .heat-tools button { color: var(--muted); }
+[data-theme="dark"] #app .heat-tools button.is-active {
+  background: #e8e8e8;
+  color: #111;
+  border-color: #e8e8e8;
+}
+
+/* Realces de hover (outline) precisavam clarear p/ aparecer. */
+[data-theme="dark"] #app table.heat td.cell.drill:hover,
+[data-theme="dark"] #app .vbar.drill:hover .vbar-fill { outline-color: #e8e8e8; }
+
+/* ---- Gaveta de telas (.dd) ---- */
+[data-theme="dark"] #app .dd-head .dd-title { color: #111; } /* cabeçalho amarelo */
+[data-theme="dark"] #app .dd-def { background: #1d1d1d; }
+[data-theme="dark"] #app .chip.gray-chip { background: #2a2a2a; color: #e8e8e8; }
+[data-theme="dark"] #app .commentary { border-color: var(--line); }
+[data-theme="dark"] #app .det-thumb .imgfail { background: #2a2a2a; }
+
+/* Spinner de carregamento. */
+[data-theme="dark"] #app .spinner { border-color: #333; border-top-color: #e8e8e8; }
