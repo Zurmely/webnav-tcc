@@ -724,7 +724,7 @@ MATHUR, Arunesh; MAYER, Jonathan; KSHIRSAGAR, Mihir. **What Makes a Dark Pattern
 
 MONTEIRO, Mike. **Ruined by Design**: How Designers Destroyed the World, and What We Can Do to Fix It. San Francisco: Mule Books, 2019.
 
-NEWALL, Philip W. S. et al. *Dark Nudges* and *Sludge* in *Online* Sports Betting. **Behavioural Public Policy**, p. 1-20, 2023.
+NEWALL, Philip W. S. **Sludge, dark patterns and dark nudges: A taxonomy of online gambling platforms' deceptive design features**. Addiction, 2025.
 
 NIELSEN, Jakob. **10 Usability Heuristics for** ***User Interface*** **Design**. Nielsen Norman Group, 1994. Disponível em: https://www.nngroup.com/articles/ten-usability-heuristics/. Acesso em: 28 mar. 2026.
 
